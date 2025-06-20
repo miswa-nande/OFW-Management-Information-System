@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\source\\repos\\final\\ofw management information system\\ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|OFW Management Information System||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
@@ -46,10 +50,6 @@
       "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:dashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\source\\repos\\final\\ofw management information system\\ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\source\\repos\\final\\ofw management information system\\ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -80,7 +80,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 340,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -96,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "OFW Management Information System",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\OFW Management Information System.vbproj",
               "RelativeDocumentMoniker": "OFW Management Information System.vbproj",
@@ -108,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "jobdetails.vb",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\jobdetails.vb",
               "RelativeDocumentMoniker": "jobdetails.vb",
@@ -134,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ofws.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\ofws.vb",
               "RelativeDocumentMoniker": "ofws.vb",
@@ -146,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "applications.vb",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\applications.vb",
               "RelativeDocumentMoniker": "applications.vb",
@@ -159,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "deploymentrecords.vb",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\deploymentrecords.vb",
               "RelativeDocumentMoniker": "deploymentrecords.vb",
@@ -172,12 +172,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "joboffers.vb",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\joboffers.vb",
               "RelativeDocumentMoniker": "joboffers.vb",
-              "ToolTip": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\joboffers.vb*",
-              "RelativeToolTip": "joboffers.vb*",
+              "ToolTip": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\joboffers.vb",
+              "RelativeToolTip": "joboffers.vb",
               "ViewState": "AgIAAAEAAAAAAAAAAIAywBQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-20T03:12:03.258Z",
@@ -198,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "ofwProfile.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\ofwProfile.vb",
               "RelativeDocumentMoniker": "ofwProfile.vb",
@@ -210,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "dashboard.vb",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\dashboard.vb",
               "RelativeDocumentMoniker": "dashboard.vb",
@@ -223,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "dashboard.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\dashboard.vb",
               "RelativeDocumentMoniker": "dashboard.vb",
@@ -271,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "jobdetails.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\jobdetails.vb",
               "RelativeDocumentMoniker": "jobdetails.vb",
@@ -283,19 +283,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "joboffers.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\joboffers.vb",
               "RelativeDocumentMoniker": "joboffers.vb",
-              "ToolTip": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\joboffers.vb [Design]*",
-              "RelativeToolTip": "joboffers.vb [Design]*",
+              "ToolTip": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\joboffers.vb [Design]",
+              "RelativeToolTip": "joboffers.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-06-20T01:30:06.931Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "addOfw.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\source\\repos\\Final\\OFW Management Information System\\addOfw.vb",
               "RelativeDocumentMoniker": "addOfw.vb",
