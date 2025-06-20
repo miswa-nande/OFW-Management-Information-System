@@ -22,18 +22,18 @@ Partial Class dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblNumOfw = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -55,7 +55,7 @@ Partial Class dashboard
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Deployed = New System.Windows.Forms.DataGridView()
         Me.lblNumDeployed = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -92,7 +92,7 @@ Partial Class dashboard
         CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Deployed, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,16 +142,16 @@ Partial Class dashboard
         '
         'ChartOFW
         '
-        ChartArea5.Name = "ChartArea1"
-        Me.ChartOFW.ChartAreas.Add(ChartArea5)
-        Legend5.Name = "Legend1"
-        Me.ChartOFW.Legends.Add(Legend5)
+        ChartArea1.Name = "ChartArea1"
+        Me.ChartOFW.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.ChartOFW.Legends.Add(Legend1)
         Me.ChartOFW.Location = New System.Drawing.Point(18, 115)
         Me.ChartOFW.Name = "ChartOFW"
-        Series5.ChartArea = "ChartArea1"
-        Series5.Legend = "Legend1"
-        Series5.Name = "Series1"
-        Me.ChartOFW.Series.Add(Series5)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.ChartOFW.Series.Add(Series1)
         Me.ChartOFW.Size = New System.Drawing.Size(404, 239)
         Me.ChartOFW.TabIndex = 13
         Me.ChartOFW.Text = "Chart1"
@@ -214,16 +214,16 @@ Partial Class dashboard
         '
         'ChartAgencies
         '
-        ChartArea6.Name = "ChartArea1"
-        Me.ChartAgencies.ChartAreas.Add(ChartArea6)
-        Legend6.Name = "Legend1"
-        Me.ChartAgencies.Legends.Add(Legend6)
+        ChartArea2.Name = "ChartArea1"
+        Me.ChartAgencies.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ChartAgencies.Legends.Add(Legend2)
         Me.ChartAgencies.Location = New System.Drawing.Point(18, 116)
         Me.ChartAgencies.Name = "ChartAgencies"
-        Series6.ChartArea = "ChartArea1"
-        Series6.Legend = "Legend1"
-        Series6.Name = "Series1"
-        Me.ChartAgencies.Series.Add(Series6)
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.ChartAgencies.Series.Add(Series2)
         Me.ChartAgencies.Size = New System.Drawing.Size(404, 239)
         Me.ChartAgencies.TabIndex = 14
         Me.ChartAgencies.Text = "Chart2"
@@ -276,16 +276,16 @@ Partial Class dashboard
         '
         'ChartEmployers
         '
-        ChartArea7.Name = "ChartArea1"
-        Me.ChartEmployers.ChartAreas.Add(ChartArea7)
-        Legend7.Name = "Legend1"
-        Me.ChartEmployers.Legends.Add(Legend7)
+        ChartArea3.Name = "ChartArea1"
+        Me.ChartEmployers.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        Me.ChartEmployers.Legends.Add(Legend3)
         Me.ChartEmployers.Location = New System.Drawing.Point(16, 116)
         Me.ChartEmployers.Name = "ChartEmployers"
-        Series7.ChartArea = "ChartArea1"
-        Series7.Legend = "Legend1"
-        Series7.Name = "Series1"
-        Me.ChartEmployers.Series.Add(Series7)
+        Series3.ChartArea = "ChartArea1"
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.ChartEmployers.Series.Add(Series3)
         Me.ChartEmployers.Size = New System.Drawing.Size(404, 239)
         Me.ChartEmployers.TabIndex = 15
         Me.ChartEmployers.Text = "Chart3"
@@ -316,18 +316,18 @@ Partial Class dashboard
         'ChartTopAgencies
         '
         Me.ChartTopAgencies.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea8.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea8.Name = "ChartArea1"
-        Me.ChartTopAgencies.ChartAreas.Add(ChartArea8)
-        Legend8.Name = "Legend1"
-        Me.ChartTopAgencies.Legends.Add(Legend8)
+        ChartArea4.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea4.Name = "ChartArea1"
+        Me.ChartTopAgencies.ChartAreas.Add(ChartArea4)
+        Legend4.Name = "Legend1"
+        Me.ChartTopAgencies.Legends.Add(Legend4)
         Me.ChartTopAgencies.Location = New System.Drawing.Point(16, 109)
         Me.ChartTopAgencies.Name = "ChartTopAgencies"
-        Series8.ChartArea = "ChartArea1"
-        Series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series8.Legend = "Legend1"
-        Series8.Name = "Series1"
-        Me.ChartTopAgencies.Series.Add(Series8)
+        Series4.ChartArea = "ChartArea1"
+        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series4.Legend = "Legend1"
+        Series4.Name = "Series1"
+        Me.ChartTopAgencies.Series.Add(Series4)
         Me.ChartTopAgencies.Size = New System.Drawing.Size(852, 411)
         Me.ChartTopAgencies.TabIndex = 16
         Me.ChartTopAgencies.Text = "Chart4"
@@ -357,7 +357,7 @@ Partial Class dashboard
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel6.Controls.Add(Me.DataGridView2)
+        Me.Panel6.Controls.Add(Me.Deployed)
         Me.Panel6.Controls.Add(Me.lblNumDeployed)
         Me.Panel6.Controls.Add(Me.PictureBox9)
         Me.Panel6.Controls.Add(Me.Label13)
@@ -367,13 +367,13 @@ Partial Class dashboard
         Me.Panel6.Size = New System.Drawing.Size(436, 540)
         Me.Panel6.TabIndex = 13
         '
-        'DataGridView2
+        'Deployed
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(18, 109)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(404, 411)
-        Me.DataGridView2.TabIndex = 12
+        Me.Deployed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Deployed.Location = New System.Drawing.Point(18, 109)
+        Me.Deployed.Name = "Deployed"
+        Me.Deployed.Size = New System.Drawing.Size(404, 411)
+        Me.Deployed.TabIndex = 12
         '
         'lblNumDeployed
         '
@@ -687,7 +687,7 @@ Partial Class dashboard
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Deployed, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
@@ -720,7 +720,7 @@ Partial Class dashboard
     Friend WithEvents lblNumDeployed As Label
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Deployed As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnDeployments As Button

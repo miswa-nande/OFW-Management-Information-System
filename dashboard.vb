@@ -23,4 +23,10 @@
         newForm.Show()     ' Show the new form
         Me.Hide()          ' Hide current form (or use Me.Close() to fully close it)
     End Sub
+
+    Private Sub deployed_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadDeploymentsToDGV(Deployed) ' load data for this DGV
+        FormatDGVUniformly(Deployed) ' reuse the same format logic
+    End Sub
+
 End Class
