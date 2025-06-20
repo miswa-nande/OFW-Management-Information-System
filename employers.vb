@@ -1,4 +1,10 @@
 ﻿Public Class employers
+
+    Private Sub employers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadEmployersToDGV(DataGridView1)
+        FormatDGVUniformly(DataGridView1)
+    End Sub
+
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
         Dim newForm As New deployments()
         newForm.Show()     ' Show the new form
@@ -25,10 +31,18 @@
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim dlg As New addEmployer()
         dlg.ShowDialog() ' Opens as a modal dialog
+        LoadEmployersToDGV(DataGridView1)
+        FormatDGVUniformly(DataGridView1)
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Dim dlg As New editEmployer()
         dlg.ShowDialog() ' Opens as a modal dialog
+        LoadEmployersToDGV(DataGridView1)
+        FormatDGVUniformly(DataGridView1)
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class

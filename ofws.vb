@@ -1,12 +1,21 @@
 ﻿Public Class ofws
+    Private Sub ofws_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadOFWsToDGV(DataGridView1)
+        FormatDGVUniformly(DataGridView1)
+    End Sub
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim dlg As New addOfw()
         dlg.ShowDialog() ' Opens as a modal dialog
+        LoadOFWsToDGV(DataGridView1)
+        FormatDGVUniformly(DataGridView1)
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Dim dlg As New editOfw()
         dlg.ShowDialog() ' Opens as a modal dialog
+        LoadOFWsToDGV(DataGridView1)
+        FormatDGVUniformly(DataGridView1)
     End Sub
 
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
