@@ -22,23 +22,36 @@ Partial Class dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblNumOfw = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ChartOFW = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblNumAgencies = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ChartAgencies = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label9 = New System.Windows.Forms.Label()
+        Me.ChartEmployers = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ChartTopAgencies = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -60,14 +73,23 @@ Partial Class dashboard
         Me.btnOfw = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.logo = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SvnDaysBTN = New System.Windows.Forms.Button()
+        Me.OneMonthBTN = New System.Windows.Forms.Button()
+        Me.ThreeMonthBTN = New System.Windows.Forms.Button()
+        Me.refreshBtn = New System.Windows.Forms.Button()
+        Me.CustomDate = New System.Windows.Forms.DateTimePicker()
         Me.Panel2.SuspendLayout()
+        CType(Me.ChartOFW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.ChartAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
+        CType(Me.ChartEmployers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,15 +129,32 @@ Partial Class dashboard
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Panel2.Controls.Add(Me.ChartOFW)
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.lblNumOfw)
         Me.Panel2.Controls.Add(Me.PictureBox5)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(504, 38)
+        Me.Panel2.Location = New System.Drawing.Point(504, 100)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(436, 369)
         Me.Panel2.TabIndex = 1
+        '
+        'ChartOFW
+        '
+        ChartArea5.Name = "ChartArea1"
+        Me.ChartOFW.ChartAreas.Add(ChartArea5)
+        Legend5.Name = "Legend1"
+        Me.ChartOFW.Legends.Add(Legend5)
+        Me.ChartOFW.Location = New System.Drawing.Point(18, 115)
+        Me.ChartOFW.Name = "ChartOFW"
+        Series5.ChartArea = "ChartArea1"
+        Series5.Legend = "Legend1"
+        Series5.Name = "Series1"
+        Me.ChartOFW.Series.Add(Series5)
+        Me.ChartOFW.Size = New System.Drawing.Size(404, 239)
+        Me.ChartOFW.TabIndex = 13
+        Me.ChartOFW.Text = "Chart1"
         '
         'Label7
         '
@@ -124,9 +163,8 @@ Partial Class dashboard
         Me.Label7.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.Label7.Location = New System.Drawing.Point(121, 224)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(193, 38)
+        Me.Label7.Size = New System.Drawing.Size(0, 38)
         Me.Label7.TabIndex = 12
-        Me.Label7.Text = "Graph here"
         '
         'PictureBox5
         '
@@ -164,26 +202,31 @@ Partial Class dashboard
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel3.Controls.Add(Me.Label8)
+        Me.Panel3.Controls.Add(Me.ChartAgencies)
         Me.Panel3.Controls.Add(Me.PictureBox6)
         Me.Panel3.Controls.Add(Me.lblNumAgencies)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(952, 37)
+        Me.Panel3.Location = New System.Drawing.Point(952, 100)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(436, 369)
         Me.Panel3.TabIndex = 12
         '
-        'Label8
+        'ChartAgencies
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label8.Location = New System.Drawing.Point(135, 224)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(193, 38)
-        Me.Label8.TabIndex = 13
-        Me.Label8.Text = "Graph here"
+        ChartArea6.Name = "ChartArea1"
+        Me.ChartAgencies.ChartAreas.Add(ChartArea6)
+        Legend6.Name = "Legend1"
+        Me.ChartAgencies.Legends.Add(Legend6)
+        Me.ChartAgencies.Location = New System.Drawing.Point(18, 116)
+        Me.ChartAgencies.Name = "ChartAgencies"
+        Series6.ChartArea = "ChartArea1"
+        Series6.Legend = "Legend1"
+        Series6.Name = "Series1"
+        Me.ChartAgencies.Series.Add(Series6)
+        Me.ChartAgencies.Size = New System.Drawing.Size(404, 239)
+        Me.ChartAgencies.TabIndex = 14
+        Me.ChartAgencies.Text = "Chart2"
         '
         'PictureBox6
         '
@@ -221,26 +264,31 @@ Partial Class dashboard
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel4.Controls.Add(Me.Label9)
+        Me.Panel4.Controls.Add(Me.ChartEmployers)
         Me.Panel4.Controls.Add(Me.PictureBox8)
         Me.Panel4.Controls.Add(Me.lblNumEmployers)
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel4.Location = New System.Drawing.Point(1400, 37)
+        Me.Panel4.Location = New System.Drawing.Point(1400, 99)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(436, 369)
         Me.Panel4.TabIndex = 13
         '
-        'Label9
+        'ChartEmployers
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label9.Location = New System.Drawing.Point(141, 224)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(193, 38)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "Graph here"
+        ChartArea7.Name = "ChartArea1"
+        Me.ChartEmployers.ChartAreas.Add(ChartArea7)
+        Legend7.Name = "Legend1"
+        Me.ChartEmployers.Legends.Add(Legend7)
+        Me.ChartEmployers.Location = New System.Drawing.Point(16, 116)
+        Me.ChartEmployers.Name = "ChartEmployers"
+        Series7.ChartArea = "ChartArea1"
+        Series7.Legend = "Legend1"
+        Series7.Name = "Series1"
+        Me.ChartEmployers.Series.Add(Series7)
+        Me.ChartEmployers.Size = New System.Drawing.Size(404, 239)
+        Me.ChartEmployers.TabIndex = 15
+        Me.ChartEmployers.Text = "Chart3"
         '
         'PictureBox8
         '
@@ -256,22 +304,33 @@ Partial Class dashboard
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel5.Controls.Add(Me.DataGridView1)
+        Me.Panel5.Controls.Add(Me.ChartTopAgencies)
         Me.Panel5.Controls.Add(Me.PictureBox7)
         Me.Panel5.Controls.Add(Me.Label12)
         Me.Panel5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel5.Location = New System.Drawing.Point(952, 450)
+        Me.Panel5.Location = New System.Drawing.Point(952, 479)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(884, 540)
         Me.Panel5.TabIndex = 13
         '
-        'DataGridView1
+        'ChartTopAgencies
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 114)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(849, 406)
-        Me.DataGridView1.TabIndex = 11
+        Me.ChartTopAgencies.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea8.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea8.Name = "ChartArea1"
+        Me.ChartTopAgencies.ChartAreas.Add(ChartArea8)
+        Legend8.Name = "Legend1"
+        Me.ChartTopAgencies.Legends.Add(Legend8)
+        Me.ChartTopAgencies.Location = New System.Drawing.Point(16, 109)
+        Me.ChartTopAgencies.Name = "ChartTopAgencies"
+        Series8.ChartArea = "ChartArea1"
+        Series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series8.Legend = "Legend1"
+        Series8.Name = "Series1"
+        Me.ChartTopAgencies.Series.Add(Series8)
+        Me.ChartTopAgencies.Size = New System.Drawing.Size(852, 411)
+        Me.ChartTopAgencies.TabIndex = 16
+        Me.ChartTopAgencies.Text = "Chart4"
         '
         'PictureBox7
         '
@@ -303,7 +362,7 @@ Partial Class dashboard
         Me.Panel6.Controls.Add(Me.PictureBox9)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel6.Location = New System.Drawing.Point(504, 450)
+        Me.Panel6.Location = New System.Drawing.Point(504, 479)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(436, 540)
         Me.Panel6.TabIndex = 13
@@ -530,12 +589,76 @@ Partial Class dashboard
         Me.logo.TabIndex = 1
         Me.logo.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(1223, 28)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(149, 47)
+        Me.Button1.TabIndex = 49
+        Me.Button1.Text = "Today"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'SvnDaysBTN
+        '
+        Me.SvnDaysBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SvnDaysBTN.Location = New System.Drawing.Point(1378, 28)
+        Me.SvnDaysBTN.Name = "SvnDaysBTN"
+        Me.SvnDaysBTN.Size = New System.Drawing.Size(149, 47)
+        Me.SvnDaysBTN.TabIndex = 50
+        Me.SvnDaysBTN.Text = "7 Days"
+        Me.SvnDaysBTN.UseVisualStyleBackColor = True
+        '
+        'OneMonthBTN
+        '
+        Me.OneMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OneMonthBTN.Location = New System.Drawing.Point(1533, 28)
+        Me.OneMonthBTN.Name = "OneMonthBTN"
+        Me.OneMonthBTN.Size = New System.Drawing.Size(149, 47)
+        Me.OneMonthBTN.TabIndex = 51
+        Me.OneMonthBTN.Text = "1 Month"
+        Me.OneMonthBTN.UseVisualStyleBackColor = True
+        '
+        'ThreeMonthBTN
+        '
+        Me.ThreeMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ThreeMonthBTN.Location = New System.Drawing.Point(1687, 28)
+        Me.ThreeMonthBTN.Name = "ThreeMonthBTN"
+        Me.ThreeMonthBTN.Size = New System.Drawing.Size(149, 47)
+        Me.ThreeMonthBTN.TabIndex = 52
+        Me.ThreeMonthBTN.Text = "3 Months"
+        Me.ThreeMonthBTN.UseVisualStyleBackColor = True
+        '
+        'refreshBtn
+        '
+        Me.refreshBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.refreshBtn.Location = New System.Drawing.Point(506, 28)
+        Me.refreshBtn.Name = "refreshBtn"
+        Me.refreshBtn.Size = New System.Drawing.Size(149, 47)
+        Me.refreshBtn.TabIndex = 53
+        Me.refreshBtn.Text = "Refresh"
+        Me.refreshBtn.UseVisualStyleBackColor = True
+        '
+        'CustomDate
+        '
+        Me.CustomDate.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CustomDate.Location = New System.Drawing.Point(901, 37)
+        Me.CustomDate.Name = "CustomDate"
+        Me.CustomDate.Size = New System.Drawing.Size(310, 26)
+        Me.CustomDate.TabIndex = 54
+        '
         'dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.CustomDate)
+        Me.Controls.Add(Me.refreshBtn)
+        Me.Controls.Add(Me.ThreeMonthBTN)
+        Me.Controls.Add(Me.OneMonthBTN)
+        Me.Controls.Add(Me.SvnDaysBTN)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
@@ -548,16 +671,19 @@ Partial Class dashboard
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.ChartOFW, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.ChartAgencies, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        CType(Me.ChartEmployers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
@@ -590,9 +716,6 @@ Partial Class dashboard
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel6 As Panel
     Friend WithEvents lblNumDeployed As Label
     Friend WithEvents PictureBox9 As PictureBox
@@ -612,4 +735,14 @@ Partial Class dashboard
     Friend WithEvents logo As PictureBox
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents btnConfig As Button
+    Friend WithEvents ChartOFW As DataVisualization.Charting.Chart
+    Friend WithEvents ChartAgencies As DataVisualization.Charting.Chart
+    Friend WithEvents ChartEmployers As DataVisualization.Charting.Chart
+    Friend WithEvents ChartTopAgencies As DataVisualization.Charting.Chart
+    Friend WithEvents Button1 As Button
+    Friend WithEvents SvnDaysBTN As Button
+    Friend WithEvents OneMonthBTN As Button
+    Friend WithEvents ThreeMonthBTN As Button
+    Friend WithEvents refreshBtn As Button
+    Friend WithEvents CustomDate As DateTimePicker
 End Class
