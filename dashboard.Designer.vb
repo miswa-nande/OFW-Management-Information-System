@@ -112,7 +112,7 @@ Partial Class dashboard
         Me.Panel2.Controls.Add(Me.PictureBox5)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(504, 37)
+        Me.Panel2.Location = New System.Drawing.Point(504, 38)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(436, 369)
         Me.Panel2.TabIndex = 1
