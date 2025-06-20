@@ -73,7 +73,7 @@ Partial Class dashboard
         Me.btnOfw = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.logo = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TodayBTN = New System.Windows.Forms.Button()
         Me.SvnDaysBTN = New System.Windows.Forms.Button()
         Me.OneMonthBTN = New System.Windows.Forms.Button()
         Me.ThreeMonthBTN = New System.Windows.Forms.Button()
@@ -149,6 +149,7 @@ Partial Class dashboard
         Me.ChartOFW.Location = New System.Drawing.Point(18, 115)
         Me.ChartOFW.Name = "ChartOFW"
         Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea
         Series1.Legend = "Legend1"
         Series1.Name = "Series1"
         Me.ChartOFW.Series.Add(Series1)
@@ -589,15 +590,15 @@ Partial Class dashboard
         Me.logo.TabIndex = 1
         Me.logo.TabStop = False
         '
-        'Button1
+        'TodayBTN
         '
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(1223, 28)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(149, 47)
-        Me.Button1.TabIndex = 49
-        Me.Button1.Text = "Today"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TodayBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TodayBTN.Location = New System.Drawing.Point(1223, 28)
+        Me.TodayBTN.Name = "TodayBTN"
+        Me.TodayBTN.Size = New System.Drawing.Size(149, 47)
+        Me.TodayBTN.TabIndex = 49
+        Me.TodayBTN.Text = "Today"
+        Me.TodayBTN.UseVisualStyleBackColor = True
         '
         'SvnDaysBTN
         '
@@ -658,7 +659,7 @@ Partial Class dashboard
         Me.Controls.Add(Me.ThreeMonthBTN)
         Me.Controls.Add(Me.OneMonthBTN)
         Me.Controls.Add(Me.SvnDaysBTN)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.TodayBTN)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
@@ -739,7 +740,7 @@ Partial Class dashboard
     Friend WithEvents ChartAgencies As DataVisualization.Charting.Chart
     Friend WithEvents ChartEmployers As DataVisualization.Charting.Chart
     Friend WithEvents ChartTopAgencies As DataVisualization.Charting.Chart
-    Friend WithEvents Button1 As Button
+    Friend WithEvents TodayBTN As Button
     Friend WithEvents SvnDaysBTN As Button
     Friend WithEvents OneMonthBTN As Button
     Friend WithEvents ThreeMonthBTN As Button
