@@ -135,7 +135,7 @@ Partial Class dashboard
         Me.Panel2.Controls.Add(Me.PictureBox5)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(504, 100)
+        Me.Panel2.Location = New System.Drawing.Point(504, 73)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(436, 369)
         Me.Panel2.TabIndex = 1
@@ -208,7 +208,7 @@ Partial Class dashboard
         Me.Panel3.Controls.Add(Me.lblNumAgencies)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(952, 100)
+        Me.Panel3.Location = New System.Drawing.Point(952, 73)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(436, 369)
         Me.Panel3.TabIndex = 12
@@ -270,7 +270,7 @@ Partial Class dashboard
         Me.Panel4.Controls.Add(Me.lblNumEmployers)
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel4.Location = New System.Drawing.Point(1400, 99)
+        Me.Panel4.Location = New System.Drawing.Point(1400, 72)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(436, 369)
         Me.Panel4.TabIndex = 13
@@ -309,7 +309,7 @@ Partial Class dashboard
         Me.Panel5.Controls.Add(Me.PictureBox7)
         Me.Panel5.Controls.Add(Me.Label12)
         Me.Panel5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel5.Location = New System.Drawing.Point(952, 479)
+        Me.Panel5.Location = New System.Drawing.Point(952, 452)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(884, 540)
         Me.Panel5.TabIndex = 13
@@ -363,7 +363,7 @@ Partial Class dashboard
         Me.Panel6.Controls.Add(Me.PictureBox9)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel6.Location = New System.Drawing.Point(504, 479)
+        Me.Panel6.Location = New System.Drawing.Point(504, 452)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(436, 540)
         Me.Panel6.TabIndex = 13
@@ -434,7 +434,7 @@ Partial Class dashboard
         '
         Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox11.Image = Global.OFW_Management_Information_System.My.Resources.Resources.config_ic
-        Me.PictureBox11.Location = New System.Drawing.Point(33, 983)
+        Me.PictureBox11.Location = New System.Drawing.Point(33, 948)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(39, 41)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -448,7 +448,7 @@ Partial Class dashboard
         Me.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfig.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfig.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnConfig.Location = New System.Drawing.Point(26, 977)
+        Me.btnConfig.Location = New System.Drawing.Point(26, 942)
         Me.btnConfig.Name = "btnConfig"
         Me.btnConfig.Size = New System.Drawing.Size(325, 52)
         Me.btnConfig.TabIndex = 12
@@ -593,7 +593,7 @@ Partial Class dashboard
         'TodayBTN
         '
         Me.TodayBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TodayBTN.Location = New System.Drawing.Point(1223, 28)
+        Me.TodayBTN.Location = New System.Drawing.Point(1223, 17)
         Me.TodayBTN.Name = "TodayBTN"
         Me.TodayBTN.Size = New System.Drawing.Size(149, 47)
         Me.TodayBTN.TabIndex = 49
@@ -603,7 +603,7 @@ Partial Class dashboard
         'SvnDaysBTN
         '
         Me.SvnDaysBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SvnDaysBTN.Location = New System.Drawing.Point(1378, 28)
+        Me.SvnDaysBTN.Location = New System.Drawing.Point(1378, 17)
         Me.SvnDaysBTN.Name = "SvnDaysBTN"
         Me.SvnDaysBTN.Size = New System.Drawing.Size(149, 47)
         Me.SvnDaysBTN.TabIndex = 50
@@ -613,7 +613,7 @@ Partial Class dashboard
         'OneMonthBTN
         '
         Me.OneMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OneMonthBTN.Location = New System.Drawing.Point(1533, 28)
+        Me.OneMonthBTN.Location = New System.Drawing.Point(1533, 17)
         Me.OneMonthBTN.Name = "OneMonthBTN"
         Me.OneMonthBTN.Size = New System.Drawing.Size(149, 47)
         Me.OneMonthBTN.TabIndex = 51
@@ -623,7 +623,7 @@ Partial Class dashboard
         'ThreeMonthBTN
         '
         Me.ThreeMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ThreeMonthBTN.Location = New System.Drawing.Point(1687, 28)
+        Me.ThreeMonthBTN.Location = New System.Drawing.Point(1687, 17)
         Me.ThreeMonthBTN.Name = "ThreeMonthBTN"
         Me.ThreeMonthBTN.Size = New System.Drawing.Size(149, 47)
         Me.ThreeMonthBTN.TabIndex = 52
@@ -633,7 +633,7 @@ Partial Class dashboard
         'refreshBtn
         '
         Me.refreshBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.refreshBtn.Location = New System.Drawing.Point(506, 28)
+        Me.refreshBtn.Location = New System.Drawing.Point(506, 17)
         Me.refreshBtn.Name = "refreshBtn"
         Me.refreshBtn.Size = New System.Drawing.Size(149, 47)
         Me.refreshBtn.TabIndex = 53
@@ -643,7 +643,7 @@ Partial Class dashboard
         'CustomDate
         '
         Me.CustomDate.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CustomDate.Location = New System.Drawing.Point(901, 37)
+        Me.CustomDate.Location = New System.Drawing.Point(901, 26)
         Me.CustomDate.Name = "CustomDate"
         Me.CustomDate.Size = New System.Drawing.Size(310, 26)
         Me.CustomDate.TabIndex = 54
