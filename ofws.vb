@@ -1,4 +1,4 @@
-﻿Public Class ofws
+Public Class ofws
     Private Sub ofws_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Load OFW data
         LoadOFWsToDGV(DataGridView1)
@@ -178,4 +178,12 @@
     Private Sub chkbxEmployed_CheckedChanged(sender As Object, e As EventArgs) Handles chkbxEmployed.CheckedChanged
         ApplyOFWFilters()
     End Sub
+    ' REPORT GENERATION
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        Dim dt As DataTable = CType(DataGridView1.DataSource, DataTable)
+        Dim previewForm As New ReportPreviewForm(dt)
+        previewForm.ShowDialog()
+    End Sub
+
+
 End Class
