@@ -627,7 +627,7 @@ Partial Class dashboard
         Me.ThreeMonthBTN.Name = "ThreeMonthBTN"
         Me.ThreeMonthBTN.Size = New System.Drawing.Size(149, 47)
         Me.ThreeMonthBTN.TabIndex = 52
-        Me.ThreeMonthBTN.Text = "3 Months"
+        Me.ThreeMonthBTN.Text = "1 Year"
         Me.ThreeMonthBTN.UseVisualStyleBackColor = True
         '
         'refreshBtn
