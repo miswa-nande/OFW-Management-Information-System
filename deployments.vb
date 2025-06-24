@@ -18,6 +18,28 @@
         FormatDGVUniformly(DataGridView1)
     End Sub
 
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If DataGridView1.SelectedRows.Count > 0 Then
+            ' Get the ID of the selected deployment
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim deploymentId As Integer = Convert.ToInt32(selectedRow.Cells("DeploymentID").Value)
+
+            ' Ask for confirmation
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this deployment record? This action cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If result = DialogResult.Yes Then
+                ' Call the generic delete method
+                DeleteRecord("DeploymentRecord", "DeploymentID", deploymentId)
+
+                ' Refresh the DataGridView
+                LoadDeploymentsToDGV(DataGridView1)
+                FormatDGVUniformly(DataGridView1)
+            End If
+        Else
+            MessageBox.Show("Please select a deployment record to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
     Private Sub btnOfw_Click(sender As Object, e As EventArgs) Handles btnOfw.Click
         Dim newForm As New ofws()
         newForm.Show()     ' Show the new form

@@ -176,31 +176,31 @@ Module modDB
 
     ' Loads all OFWs into the provided DataGridView
     Public Sub LoadOFWsToDGV(dgv As DataGridView)
-        Dim query As String = "SELECT OFWId, FirstName, MiddleName, LastName, DOB, Sex, CivilStatus, EducationalLevel, ContactNum, EmergencyContactNum, PassportNum, VISANum, OECNum, EmploymentStatus, DateAdded, AgencyID FROM ofw"
+        Dim query As String = "SELECT OFWId, FirstName, MiddleName, LastName, DOB, Sex, CivilStatus, Street, Barangay, City, Province, Zipcode, EducationalLevel, Skills, ContactNum, EmergencyContactNum, PassportNum, VISANum, OECNum, EmploymentStatus, DateAdded, AgencyID FROM ofw"
         LoadToDGV(query, dgv)
     End Sub
 
     ' Loads all Employers into the provided DataGridView
     Public Sub LoadEmployersToDGV(dgv As DataGridView)
-        Dim query As String = "SELECT EmployerID, EmployerFirstName, EmployerMiddleName, EmployerLastName, CompanyName, CompanyStreet, CompanyCity, CompanyState, CompanyCountry, CompanyZipcode, EmployerContactNum, EmployerEmail, Industry, NumOfOFWHired, ActiveJobPlacement FROM employer"
+        Dim query As String = "SELECT EmployerID, EmployerFirstName, EmployerMiddleName, EmployerLastName, CompanyName, CompanyStreet, CompanyCity, CompanyState, CompanyCountry, CompanyZipcode, EmployerContactNum, EmployerEmail, Industry, NumOfOFWHired, ActiveJobPlacement, DateAdded FROM employer"
         LoadToDGV(query, dgv)
     End Sub
 
     ' Loads all Deployments into the provided DataGridView
     Public Sub LoadDeploymentsToDGV(dgv As DataGridView)
-        Dim query As String = "SELECT DeploymentID, DeploymentDate, CountryOfDeployment, Salary, ContractDuration, ContractNumber, DeploymentStatus, ContractStartDate, ContractEndDate, RepatriationStatus, ReasonForReturn, ReturnDate, Remarks, OFWId, JobPlacementID, AgencyID, EmployerID FROM deploymentrecord"
+        Dim query As String = "SELECT DeploymentID, DeploymentDate, CountryOfDeployment, Salary, MedicalCleared, VisaIssued, POEACleared, PDOSCompleted, FlightNumber, Airport, DeploymentRemarks, ContractDuration, ContractNumber, DeploymentStatus, ContractStartDate, ContractEndDate, RepatriationStatus, ReasonForReturn, ReturnDate, Remarks, ApplicationID, JobPlacementID, AgencyID FROM DeploymentRecord"
         LoadToDGV(query, dgv)
     End Sub
 
     ' Loads all Agencies into the provided DataGridView
     Public Sub LoadAgenciesToDGV(dgv As DataGridView)
-        Dim query As String = "SELECT AgencyID, AgencyName, AgencyLicenseNumber, Street, City, State, Zipcode, ContactNum, Email, WebsiteUrl, Specialization, YearsOfOperation, NumOfDeployedWorkers, GovAccreditationStat, NumActiveJobOrders, LicenseExpDate, Notes FROM agency"
+        Dim query As String = "SELECT AgencyID, AgencyName, AgencyLicenseNumber, Street, City, State, Zipcode, ContactNum, Email, WebsiteUrl, Specialization, YearsOfOperation, NumOfDeployedWorkers, GovAccreditationStat, NumActiveJobOrders, LicenseExpDate, Notes, DateAdded FROM agency"
         LoadToDGV(query, dgv)
     End Sub
 
     ' Loads all Job Placements into the provided DataGridView
     Public Sub LoadJobPlacementsToDGV(dgv As DataGridView)
-        Dim query As String = "SELECT JobPlacementID, JobTitle, JobDescription, CountryOfEmployment, SalaryRange, EmploymentContractDuration, RequiredSkills, JobType, VisaType, NumOfVacancies, Conditions, PostingDate, Benefits, ApplicationDeadline, JobStatus, EmployerID FROM jobplacement"
+        Dim query As String = "SELECT JobPlacementID, JobTitle, JobDescription, CountryOfEmployment, SalaryRange, EmploymentContractDuration, RequiredSkills, JobType, VisaType, NumOfVacancies, Conditions, PostingDate, Benefits, ApplicationDeadline, JobStatus, EmployerID, AgencyID FROM jobplacement"
         LoadToDGV(query, dgv)
     End Sub
 
@@ -221,5 +221,27 @@ Module modDB
                 col.MinimumWidth = 100
             Next
         End With
+    End Sub
+
+    Public Sub DeleteRecord(tableName As String, primaryKeyColumn As String, id As Integer)
+        Try
+            openConn(db_name)
+            Dim query As String = $"DELETE FROM {tableName} WHERE {primaryKeyColumn} = @id"
+            Using cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@id", id)
+                Dim result = cmd.ExecuteNonQuery()
+                If result > 0 Then
+                    MsgBox("Record deleted successfully.", MsgBoxStyle.Information)
+                Else
+                    MsgBox("Record not found or could not be deleted.", MsgBoxStyle.Exclamation)
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox("An error occurred: " & ex.Message, MsgBoxStyle.Critical)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
     End Sub
 End Module

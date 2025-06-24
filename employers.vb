@@ -43,6 +43,28 @@
         FormatDGVUniformly(DataGridView1)
     End Sub
 
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If DataGridView1.SelectedRows.Count > 0 Then
+            ' Get the ID of the selected employer
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim employerId As Integer = Convert.ToInt32(selectedRow.Cells("EmployerID").Value)
+
+            ' Ask for confirmation
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this employer? This action cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If result = DialogResult.Yes Then
+                ' Call the generic delete method
+                DeleteRecord("employer", "EmployerID", employerId)
+
+                ' Refresh the DataGridView
+                LoadEmployersToDGV(DataGridView1)
+                FormatDGVUniformly(DataGridView1)
+            End If
+        Else
+            MessageBox.Show("Please select an employer to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
     Private Sub ApplyEmployerFilters()
         Dim allCleared As Boolean =
             txtbxIdNum.Text.Trim() = "" AndAlso

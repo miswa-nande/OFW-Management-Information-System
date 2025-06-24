@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class addOfw
     Private selectedImagePath As String = ""
@@ -41,20 +42,57 @@ Public Class addOfw
         Dim visa As String = txtbxVisa.Text.Trim()
         Dim oec As String = txtbxOec.Text.Trim()
 
-        ' Convert image to Base64
-        Dim base64Image As String = ""
-        If Not String.IsNullOrEmpty(selectedImagePath) Then
-            Dim imgBytes() As Byte = File.ReadAllBytes(selectedImagePath)
-            base64Image = Convert.ToBase64String(imgBytes)
+        ' Image to Byte Array for BLOB
+        Dim imgBytes() As Byte = Nothing
+        If Not String.IsNullOrEmpty(selectedImagePath) AndAlso File.Exists(selectedImagePath) Then
+            imgBytes = File.ReadAllBytes(selectedImagePath)
         End If
 
-        Dim query As String = $"
-            INSERT INTO ofw (FirstName, MiddleName, LastName, DOB, Sex, CivilStatus, Street, Barangay, City, Province, ZipCode, ContactNumber, EmergencyContactNumber, PassportNumber, EducationLevel, Skills, VisaNumber, OECNumber, ProfileImage)
-            VALUES ('{fName}', '{mName}', '{lName}', '{dob:yyyy-MM-dd}', '{sex}', '{civilStat}', '{street}', '{brgy}', '{city}', '{prov}', '{zip}', '{contact}', '{eContact}', '{passport}', '{educ}', '{skills}', '{visa}', '{oec}', '{base64Image}')"
+        ' Default values for missing fields from the form
+        Dim employmentStatus As String = "Active" ' Or "Inactive", etc.
+        Dim agencyId As Object = DBNull.Value ' Assuming no agency is linked on creation, or get it from a combobox if available
 
-        readQuery(query)
-        MsgBox("OFW record added successfully!", MsgBoxStyle.Information)
-        Me.Close()
+        Try
+            openConn(db_name)
+            Dim query As String = "INSERT INTO ofw (FirstName, MiddleName, LastName, DOB, Sex, CivilStatus, Street, Barangay, City, Province, Zipcode, EducationalLevel, Skills, ContactNum, EmergencyContactNum, PassportNum, VISANum, OECNum, EmploymentStatus, PictureFace, AgencyID) VALUES (@fName, @mName, @lName, @dob, @sex, @civilStat, @street, @brgy, @city, @prov, @zip, @educ, @skills, @contact, @eContact, @passport, @visa, @oec, @status, @pic, @agency)"
+            Using cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@fName", fName)
+                cmd.Parameters.AddWithValue("@mName", mName)
+                cmd.Parameters.AddWithValue("@lName", lName)
+                cmd.Parameters.AddWithValue("@dob", dob)
+                cmd.Parameters.AddWithValue("@sex", sex)
+                cmd.Parameters.AddWithValue("@civilStat", civilStat)
+                cmd.Parameters.AddWithValue("@street", street)
+                cmd.Parameters.AddWithValue("@brgy", brgy)
+                cmd.Parameters.AddWithValue("@city", city)
+                cmd.Parameters.AddWithValue("@prov", prov)
+                cmd.Parameters.AddWithValue("@zip", zip)
+                cmd.Parameters.AddWithValue("@educ", educ)
+                cmd.Parameters.AddWithValue("@skills", skills)
+                cmd.Parameters.AddWithValue("@contact", contact)
+                cmd.Parameters.AddWithValue("@eContact", eContact)
+                cmd.Parameters.AddWithValue("@passport", passport)
+                cmd.Parameters.AddWithValue("@visa", visa)
+                cmd.Parameters.AddWithValue("@oec", oec)
+                cmd.Parameters.AddWithValue("@status", employmentStatus)
+                If imgBytes IsNot Nothing Then
+                    cmd.Parameters.Add("@pic", MySqlDbType.Blob).Value = imgBytes
+                Else
+                    cmd.Parameters.Add("@pic", MySqlDbType.Blob).Value = DBNull.Value
+                End If
+                cmd.Parameters.AddWithValue("@agency", agencyId)
+
+                cmd.ExecuteNonQuery()
+                MsgBox("OFW record added successfully!", MsgBoxStyle.Information)
+                Me.Close()
+            End Using
+        Catch ex As Exception
+            MsgBox("An error occurred: " & ex.Message, MsgBoxStyle.Critical)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
