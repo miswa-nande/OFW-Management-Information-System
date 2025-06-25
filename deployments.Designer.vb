@@ -26,7 +26,7 @@ Partial Class deployments
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtbxOecNum = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -129,18 +129,18 @@ Partial Class deployments
         Me.Label12.TabIndex = 75
         Me.Label12.Text = "ADD"
         '
-        'Button1
+        'btnClear
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(1513, 839)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(345, 41)
-        Me.Button1.TabIndex = 70
-        Me.Button1.Text = "F I L T E R"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClear.Location = New System.Drawing.Point(1513, 839)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(345, 41)
+        Me.btnClear.TabIndex = 70
+        Me.btnClear.Text = "C L E A R"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'Label11
         '
@@ -625,7 +625,7 @@ Partial Class deployments
         Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtbxOecNum)
         Me.Controls.Add(Me.Label10)
@@ -682,7 +682,7 @@ Partial Class deployments
     Friend WithEvents btnGenerate As PictureBox
     Friend WithEvents btnEdit As PictureBox
     Friend WithEvents btnAdd As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnClear As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents txtbxOecNum As TextBox
     Friend WithEvents Label10 As Label

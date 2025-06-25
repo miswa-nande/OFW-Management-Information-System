@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class agencies
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class agencies
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnConfig = New System.Windows.Forms.Button()
         Me.btnDeployments = New System.Windows.Forms.Button()
@@ -29,7 +29,6 @@ Partial Class agencies
         Me.btnOfw = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnJobPlacements = New System.Windows.Forms.Button()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
@@ -41,7 +40,7 @@ Partial Class agencies
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.btnFilter = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtbxNumActiveJobs = New System.Windows.Forms.TextBox()
@@ -120,7 +119,7 @@ Partial Class agencies
         Me.btnEmployers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEmployers.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEmployers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnEmployers.Location = New System.Drawing.Point(13, 683)
+        Me.btnEmployers.Location = New System.Drawing.Point(13, 624)
         Me.btnEmployers.Name = "btnEmployers"
         Me.btnEmployers.Size = New System.Drawing.Size(382, 100)
         Me.btnEmployers.TabIndex = 5
@@ -173,7 +172,6 @@ Partial Class agencies
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.btnJobPlacements)
         Me.Panel1.Controls.Add(Me.PictureBox11)
         Me.Panel1.Controls.Add(Me.PictureBox6)
         Me.Panel1.Controls.Add(Me.btnConfig)
@@ -191,20 +189,6 @@ Partial Class agencies
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(382, 1094)
         Me.Panel1.TabIndex = 81
-        '
-        'btnJobPlacements
-        '
-        Me.btnJobPlacements.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.btnJobPlacements.FlatAppearance.BorderSize = 0
-        Me.btnJobPlacements.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnJobPlacements.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnJobPlacements.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnJobPlacements.Location = New System.Drawing.Point(52, 618)
-        Me.btnJobPlacements.Name = "btnJobPlacements"
-        Me.btnJobPlacements.Size = New System.Drawing.Size(343, 60)
-        Me.btnJobPlacements.TabIndex = 51
-        Me.btnJobPlacements.Text = "Job Placements"
-        Me.btnJobPlacements.UseVisualStyleBackColor = False
         '
         'PictureBox11
         '
@@ -242,7 +226,7 @@ Partial Class agencies
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox3.Location = New System.Drawing.Point(32, 711)
+        Me.PictureBox3.Location = New System.Drawing.Point(32, 654)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(51, 48)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -324,18 +308,18 @@ Partial Class agencies
         Me.Label12.TabIndex = 77
         Me.Label12.Text = "ADD"
         '
-        'btnFilter
+        'btnClear
         '
-        Me.btnFilter.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnFilter.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnFilter.Location = New System.Drawing.Point(1513, 730)
-        Me.btnFilter.Name = "btnFilter"
-        Me.btnFilter.Size = New System.Drawing.Size(345, 41)
-        Me.btnFilter.TabIndex = 72
-        Me.btnFilter.Text = "F I L T E R"
-        Me.btnFilter.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClear.Location = New System.Drawing.Point(1513, 730)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(345, 41)
+        Me.btnClear.TabIndex = 72
+        Me.btnClear.Text = "C L E A R"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'Label11
         '
@@ -620,7 +604,7 @@ Partial Class agencies
         Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnAdd)
-        Me.Controls.Add(Me.btnFilter)
+        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.txtbxNumActiveJobs)
@@ -687,7 +671,7 @@ Partial Class agencies
     Friend WithEvents btnGenerate As PictureBox
     Friend WithEvents btnEdit As PictureBox
     Friend WithEvents btnAdd As PictureBox
-    Friend WithEvents btnFilter As Button
+    Friend WithEvents btnClear As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents txtbxNumActiveJobs As TextBox
@@ -710,5 +694,4 @@ Partial Class agencies
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents txtbxSpecialization As TextBox
     Friend WithEvents dateLicExp As DateTimePicker
-    Friend WithEvents btnJobPlacements As Button
 End Class

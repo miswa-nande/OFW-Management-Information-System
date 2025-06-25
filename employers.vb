@@ -45,18 +45,13 @@
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If DataGridView1.SelectedRows.Count > 0 Then
-            ' Get the ID of the selected employer
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim employerId As Integer = Convert.ToInt32(selectedRow.Cells("EmployerID").Value)
 
-            ' Ask for confirmation
             Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this employer? This action cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If result = DialogResult.Yes Then
-                ' Call the generic delete method
                 DeleteRecord("employer", "EmployerID", employerId)
-
-                ' Refresh the DataGridView
                 LoadEmployersToDGV(DataGridView1)
                 FormatDGVUniformly(DataGridView1)
             End If
@@ -135,6 +130,7 @@
         FormatDGVUniformly(DataGridView1)
     End Sub
 
+    ' Live filters
     Private Sub txtbxIdNum_TextChanged(sender As Object, e As EventArgs) Handles txtbxIdNum.TextChanged
         ApplyEmployerFilters()
     End Sub
@@ -175,8 +171,26 @@
         ApplyEmployerFilters()
     End Sub
 
-    Private Sub btnFilter_Click(sender As Object, e As EventArgs) Handles btnFilter.Click
-        ApplyEmployerFilters()
+    ' Clear filter fields and reload all data
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtbxIdNum.Clear()
+        txtbxFName.Clear()
+        txtbxMName.Clear()
+        txtbxLName.Clear()
+        txtbxEmail.Clear()
+        txtbxContactNum.Clear()
+        txtbxCompanyName.Clear()
+        txtbxIndustry.Clear()
+        txtbxNumOfOFW.Clear()
+        txtbxActiveJobs.Clear()
+
+        LoadEmployersToDGV(DataGridView1)
+        FormatDGVUniformly(DataGridView1)
     End Sub
 
+    Private Sub btnJobPlacements_Click_1(sender As Object, e As EventArgs) Handles btnJobPlacements.Click
+        Dim newForm As New jobplacement()
+        newForm.Show()
+        Me.Hide()
+    End Sub
 End Class

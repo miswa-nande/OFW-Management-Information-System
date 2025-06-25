@@ -65,11 +65,27 @@ Public Class ofws
 
     ' FILTER LOGIC
     Private Sub ApplyOFWFilters()
+        ' Check if all filters are empty
+        If txtbxIdNum.Text.Trim() = "" AndAlso
+           txtbxFName.Text.Trim() = "" AndAlso
+           txtbxMName.Text.Trim() = "" AndAlso
+           txtbxLName.Text.Trim() = "" AndAlso
+           cbxSex.SelectedIndex = -1 AndAlso
+           cbxCivStat.SelectedIndex = -1 AndAlso
+           txtbxZipcode.Text.Trim() = "" AndAlso
+           txtbxVisaNum.Text.Trim() = "" AndAlso
+           txtbxOecNum.Text.Trim() = "" Then
+
+            LoadOFWsToDGV(DataGridView1)
+            FormatDGVUniformly(DataGridView1)
+            Return
+        End If
+
         ' Base query
         Dim query As String = "SELECT OFWId, FirstName, MiddleName, LastName, DOB, Sex, CivilStatus, Street, Barangay, City, Province, Zipcode, EducationalLevel, Skills, ContactNum, EmergencyContactNum, PassportNum, VISANum, OECNum, EmploymentStatus, DateAdded, AgencyID FROM ofw WHERE 1=1"
         Dim params As New List(Of MySqlParameter)
 
-        ' Add filters based on user input
+        ' Add filters
         If txtbxIdNum.Text.Trim() <> "" Then
             query &= " AND OFWId LIKE @ofwId"
             params.Add(New MySqlParameter("@ofwId", "%" & txtbxIdNum.Text.Trim() & "%"))
@@ -123,7 +139,7 @@ Public Class ofws
             End If
         End If
 
-        ' Execute the parameterized query
+        ' Execute
         Try
             openConn(db_name)
             Using cmd As New MySqlCommand(query, conn)
@@ -184,6 +200,23 @@ Public Class ofws
     Private Sub chkbxEmployed_CheckedChanged(sender As Object, e As EventArgs) Handles chkbxEmployed.CheckedChanged
         ApplyOFWFilters()
     End Sub
+
+    ' CLEAR BUTTON
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtbxIdNum.Clear()
+        txtbxFName.Clear()
+        txtbxMName.Clear()
+        txtbxLName.Clear()
+        txtbxZipcode.Clear()
+        txtbxVisaNum.Clear()
+        txtbxOecNum.Clear()
+        cbxSex.SelectedIndex = -1
+        cbxCivStat.SelectedIndex = -1
+
+        LoadOFWsToDGV(DataGridView1)
+        FormatDGVUniformly(DataGridView1)
+    End Sub
+
     ' REPORT GENERATION
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
         Dim dt As DataTable = CType(DataGridView1.DataSource, DataTable)
@@ -191,20 +224,16 @@ Public Class ofws
         previewForm.ShowDialog()
     End Sub
 
+    ' DELETE
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If DataGridView1.SelectedRows.Count > 0 Then
-            ' Get the ID of the selected OFW
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim ofwId As Integer = Convert.ToInt32(selectedRow.Cells("OFWId").Value)
 
-            ' Ask for confirmation
             Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this OFW record? This action cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If result = DialogResult.Yes Then
-                ' Call the generic delete method
                 DeleteRecord("ofw", "OFWId", ofwId)
-
-                ' Refresh the DataGridView
                 LoadOFWsToDGV(DataGridView1)
                 FormatDGVUniformly(DataGridView1)
             End If
@@ -212,7 +241,4 @@ Public Class ofws
             MessageBox.Show("Please select an OFW to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
-
-
 End Class
