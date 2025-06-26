@@ -197,6 +197,7 @@
     <Compile Include="applications.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserSession.vb" />
     <Compile Include="dashboard.Designer.vb">
       <DependentUpon>dashboard.vb</DependentUpon>
     </Compile>
@@ -312,6 +313,7 @@
     <Compile Include="ReportPreviewForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Session.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="addAgency.resx">

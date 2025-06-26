@@ -49,20 +49,6 @@ Partial Class applicationForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.picProfile = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblFullName = New System.Windows.Forms.Label()
-        Me.lblContactNum = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.lblCivilStat = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.lblSex = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.lblDOB = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.lblFullAddress = New System.Windows.Forms.Label()
-        Me.Label25 = New System.Windows.Forms.Label()
         Me.lblPassportNum = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.lblVisaNum = New System.Windows.Forms.Label()
@@ -73,6 +59,20 @@ Partial Class applicationForm
         Me.Label33 = New System.Windows.Forms.Label()
         Me.lblEducLevel = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
+        Me.lblFullAddress = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.lblContactNum = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblCivilStat = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblSex = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.lblDOB = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblFullName = New System.Windows.Forms.Label()
+        Me.picProfile = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.picProfile, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -378,160 +378,6 @@ Partial Class applicationForm
         Me.Panel1.Size = New System.Drawing.Size(732, 507)
         Me.Panel1.TabIndex = 278
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(19, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(260, 36)
-        Me.Label3.TabIndex = 254
-        Me.Label3.Text = "Application Form"
-        '
-        'picProfile
-        '
-        Me.picProfile.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.picProfile.Image = Global.OFW_Management_Information_System.My.Resources.Resources.profile_ic
-        Me.picProfile.Location = New System.Drawing.Point(25, 71)
-        Me.picProfile.Name = "picProfile"
-        Me.picProfile.Size = New System.Drawing.Size(193, 193)
-        Me.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picProfile.TabIndex = 255
-        Me.picProfile.TabStop = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label4.Location = New System.Drawing.Point(237, 72)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(103, 24)
-        Me.Label4.TabIndex = 257
-        Me.Label4.Text = "lblIdNum"
-        '
-        'lblFullName
-        '
-        Me.lblFullName.AutoSize = True
-        Me.lblFullName.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFullName.Location = New System.Drawing.Point(234, 105)
-        Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(266, 33)
-        Me.lblFullName.TabIndex = 256
-        Me.lblFullName.Text = "Concat'd Fullname"
-        '
-        'lblContactNum
-        '
-        Me.lblContactNum.AutoSize = True
-        Me.lblContactNum.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContactNum.Location = New System.Drawing.Point(537, 171)
-        Me.lblContactNum.Name = "lblContactNum"
-        Me.lblContactNum.Size = New System.Drawing.Size(192, 20)
-        Me.lblContactNum.TabIndex = 265
-        Me.lblContactNum.Text = "ContactNumPlaceholder"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label12.Location = New System.Drawing.Point(537, 142)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(140, 20)
-        Me.Label12.TabIndex = 264
-        Me.Label12.Text = "Contact Number :"
-        '
-        'lblCivilStat
-        '
-        Me.lblCivilStat.AutoSize = True
-        Me.lblCivilStat.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCivilStat.Location = New System.Drawing.Point(353, 171)
-        Me.lblCivilStat.Name = "lblCivilStat"
-        Me.lblCivilStat.Size = New System.Drawing.Size(150, 20)
-        Me.lblCivilStat.TabIndex = 263
-        Me.lblCivilStat.Text = "CivStatPlaceholder"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label9.Location = New System.Drawing.Point(353, 142)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 20)
-        Me.Label9.TabIndex = 262
-        Me.Label9.Text = "Civil Status : "
-        '
-        'lblSex
-        '
-        Me.lblSex.AutoSize = True
-        Me.lblSex.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSex.Location = New System.Drawing.Point(467, 171)
-        Me.lblSex.Name = "lblSex"
-        Me.lblSex.Size = New System.Drawing.Size(122, 20)
-        Me.lblSex.TabIndex = 261
-        Me.lblSex.Text = "SexPlaceholder"
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.BackColor = System.Drawing.Color.Transparent
-        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label20.Location = New System.Drawing.Point(467, 142)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(41, 20)
-        Me.Label20.TabIndex = 260
-        Me.Label20.Text = "Sex :"
-        '
-        'lblDOB
-        '
-        Me.lblDOB.AutoSize = True
-        Me.lblDOB.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDOB.Location = New System.Drawing.Point(236, 171)
-        Me.lblDOB.Name = "lblDOB"
-        Me.lblDOB.Size = New System.Drawing.Size(93, 20)
-        Me.lblDOB.TabIndex = 259
-        Me.lblDOB.Text = "mm/dd/yyy"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.BackColor = System.Drawing.Color.Transparent
-        Me.Label23.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label23.Location = New System.Drawing.Point(236, 142)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(111, 20)
-        Me.Label23.TabIndex = 258
-        Me.Label23.Text = "Date of Birth : "
-        '
-        'lblFullAddress
-        '
-        Me.lblFullAddress.AutoSize = True
-        Me.lblFullAddress.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFullAddress.Location = New System.Drawing.Point(237, 231)
-        Me.lblFullAddress.Name = "lblFullAddress"
-        Me.lblFullAddress.Size = New System.Drawing.Size(161, 20)
-        Me.lblFullAddress.TabIndex = 280
-        Me.lblFullAddress.Text = "concat'd full address"
-        '
-        'Label25
-        '
-        Me.Label25.AutoSize = True
-        Me.Label25.BackColor = System.Drawing.Color.Transparent
-        Me.Label25.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label25.Location = New System.Drawing.Point(237, 202)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(79, 20)
-        Me.Label25.TabIndex = 279
-        Me.Label25.Text = "Address : "
-        '
         'lblPassportNum
         '
         Me.lblPassportNum.AutoSize = True
@@ -641,6 +487,160 @@ Partial Class applicationForm
         Me.Label35.Size = New System.Drawing.Size(152, 20)
         Me.Label35.TabIndex = 283
         Me.Label35.Text = "Educational Level : "
+        '
+        'lblFullAddress
+        '
+        Me.lblFullAddress.AutoSize = True
+        Me.lblFullAddress.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFullAddress.Location = New System.Drawing.Point(237, 231)
+        Me.lblFullAddress.Name = "lblFullAddress"
+        Me.lblFullAddress.Size = New System.Drawing.Size(161, 20)
+        Me.lblFullAddress.TabIndex = 280
+        Me.lblFullAddress.Text = "concat'd full address"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.BackColor = System.Drawing.Color.Transparent
+        Me.Label25.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label25.Location = New System.Drawing.Point(237, 202)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(79, 20)
+        Me.Label25.TabIndex = 279
+        Me.Label25.Text = "Address : "
+        '
+        'lblContactNum
+        '
+        Me.lblContactNum.AutoSize = True
+        Me.lblContactNum.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContactNum.Location = New System.Drawing.Point(537, 171)
+        Me.lblContactNum.Name = "lblContactNum"
+        Me.lblContactNum.Size = New System.Drawing.Size(192, 20)
+        Me.lblContactNum.TabIndex = 265
+        Me.lblContactNum.Text = "ContactNumPlaceholder"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label12.Location = New System.Drawing.Point(537, 142)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(140, 20)
+        Me.Label12.TabIndex = 264
+        Me.Label12.Text = "Contact Number :"
+        '
+        'lblCivilStat
+        '
+        Me.lblCivilStat.AutoSize = True
+        Me.lblCivilStat.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCivilStat.Location = New System.Drawing.Point(353, 171)
+        Me.lblCivilStat.Name = "lblCivilStat"
+        Me.lblCivilStat.Size = New System.Drawing.Size(150, 20)
+        Me.lblCivilStat.TabIndex = 263
+        Me.lblCivilStat.Text = "CivStatPlaceholder"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label9.Location = New System.Drawing.Point(353, 142)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(98, 20)
+        Me.Label9.TabIndex = 262
+        Me.Label9.Text = "Civil Status : "
+        '
+        'lblSex
+        '
+        Me.lblSex.AutoSize = True
+        Me.lblSex.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSex.Location = New System.Drawing.Point(467, 171)
+        Me.lblSex.Name = "lblSex"
+        Me.lblSex.Size = New System.Drawing.Size(122, 20)
+        Me.lblSex.TabIndex = 261
+        Me.lblSex.Text = "SexPlaceholder"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.Transparent
+        Me.Label20.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label20.Location = New System.Drawing.Point(467, 142)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(41, 20)
+        Me.Label20.TabIndex = 260
+        Me.Label20.Text = "Sex :"
+        '
+        'lblDOB
+        '
+        Me.lblDOB.AutoSize = True
+        Me.lblDOB.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDOB.Location = New System.Drawing.Point(236, 171)
+        Me.lblDOB.Name = "lblDOB"
+        Me.lblDOB.Size = New System.Drawing.Size(93, 20)
+        Me.lblDOB.TabIndex = 259
+        Me.lblDOB.Text = "mm/dd/yyy"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.Transparent
+        Me.Label23.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label23.Location = New System.Drawing.Point(236, 142)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(111, 20)
+        Me.Label23.TabIndex = 258
+        Me.Label23.Text = "Date of Birth : "
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label4.Location = New System.Drawing.Point(237, 72)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(103, 24)
+        Me.Label4.TabIndex = 257
+        Me.Label4.Text = "lblIdNum"
+        '
+        'lblFullName
+        '
+        Me.lblFullName.AutoSize = True
+        Me.lblFullName.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFullName.Location = New System.Drawing.Point(234, 105)
+        Me.lblFullName.Name = "lblFullName"
+        Me.lblFullName.Size = New System.Drawing.Size(266, 33)
+        Me.lblFullName.TabIndex = 256
+        Me.lblFullName.Text = "Concat'd Fullname"
+        '
+        'picProfile
+        '
+        Me.picProfile.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.picProfile.Image = Global.OFW_Management_Information_System.My.Resources.Resources.profile_ic
+        Me.picProfile.Location = New System.Drawing.Point(25, 71)
+        Me.picProfile.Name = "picProfile"
+        Me.picProfile.Size = New System.Drawing.Size(193, 193)
+        Me.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picProfile.TabIndex = 255
+        Me.picProfile.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(19, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(260, 36)
+        Me.Label3.TabIndex = 254
+        Me.Label3.Text = "Application Form"
         '
         'applicationForm
         '
