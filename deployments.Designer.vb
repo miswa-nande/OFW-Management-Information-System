@@ -90,7 +90,7 @@ Partial Class deployments
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(1796, 999)
+        Me.Label15.Location = New System.Drawing.Point(1796, 988)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(64, 21)
         Me.Label15.TabIndex = 78
@@ -101,7 +101,7 @@ Partial Class deployments
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(1685, 999)
+        Me.Label14.Location = New System.Drawing.Point(1685, 988)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(94, 21)
         Me.Label14.TabIndex = 77
@@ -112,7 +112,7 @@ Partial Class deployments
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(1614, 999)
+        Me.Label13.Location = New System.Drawing.Point(1614, 988)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(44, 21)
         Me.Label13.TabIndex = 76
@@ -123,7 +123,7 @@ Partial Class deployments
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(1518, 999)
+        Me.Label12.Location = New System.Drawing.Point(1518, 988)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(47, 21)
         Me.Label12.TabIndex = 75
@@ -380,7 +380,7 @@ Partial Class deployments
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(418, 183)
+        Me.DataGridView1.Location = New System.Drawing.Point(418, 172)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1048, 831)
@@ -391,7 +391,7 @@ Partial Class deployments
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(548, 39)
+        Me.Label1.Location = New System.Drawing.Point(548, 28)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(658, 112)
         Me.Label1.TabIndex = 48
@@ -436,7 +436,7 @@ Partial Class deployments
         '
         Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox11.Image = Global.OFW_Management_Information_System.My.Resources.Resources.config_ic
-        Me.PictureBox11.Location = New System.Drawing.Point(33, 983)
+        Me.PictureBox11.Location = New System.Drawing.Point(33, 957)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(39, 41)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -461,7 +461,7 @@ Partial Class deployments
         Me.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConfig.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfig.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnConfig.Location = New System.Drawing.Point(26, 977)
+        Me.btnConfig.Location = New System.Drawing.Point(26, 951)
         Me.btnConfig.Name = "btnConfig"
         Me.btnConfig.Size = New System.Drawing.Size(325, 52)
         Me.btnConfig.TabIndex = 83
@@ -559,7 +559,7 @@ Partial Class deployments
         'btnDelete
         '
         Me.btnDelete.Image = Global.OFW_Management_Information_System.My.Resources.Resources.delete_ic
-        Me.btnDelete.Location = New System.Drawing.Point(1795, 935)
+        Me.btnDelete.Location = New System.Drawing.Point(1795, 924)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(61, 61)
         Me.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -569,7 +569,7 @@ Partial Class deployments
         'btnGenerate
         '
         Me.btnGenerate.Image = Global.OFW_Management_Information_System.My.Resources.Resources.report_ic
-        Me.btnGenerate.Location = New System.Drawing.Point(1701, 935)
+        Me.btnGenerate.Location = New System.Drawing.Point(1701, 924)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(61, 61)
         Me.btnGenerate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -580,7 +580,7 @@ Partial Class deployments
         '
         Me.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEdit.Image = Global.OFW_Management_Information_System.My.Resources.Resources.edit_ic
-        Me.btnEdit.Location = New System.Drawing.Point(1607, 935)
+        Me.btnEdit.Location = New System.Drawing.Point(1607, 924)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(61, 61)
         Me.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -591,7 +591,7 @@ Partial Class deployments
         '
         Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAdd.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addDep_ic
-        Me.btnAdd.Location = New System.Drawing.Point(1513, 935)
+        Me.btnAdd.Location = New System.Drawing.Point(1513, 924)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(61, 61)
         Me.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -602,7 +602,7 @@ Partial Class deployments
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox5.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
-        Me.PictureBox5.Location = New System.Drawing.Point(417, 28)
+        Me.PictureBox5.Location = New System.Drawing.Point(417, 17)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(125, 123)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

@@ -5,6 +5,8 @@
         FormatDGVUniformly(DataGridView1)
         cbxGovtAccredStat.Items.AddRange({"Accredited", "Not Accredited", "Pending"})
         cbxGovtAccredStat.SelectedIndex = -1
+
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
@@ -171,4 +173,9 @@
         FormatDGVUniformly(DataGridView1)
     End Sub
 
+    Private Sub btnConfig_Click(sender As Object, e As EventArgs) Handles btnConfig.Click
+        Dim newForm As New AdminConfiguration()
+        newForm.Show()
+        Me.Hide()
+    End Sub
 End Class

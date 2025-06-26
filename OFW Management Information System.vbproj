@@ -167,6 +167,12 @@
     <Compile Include="addOfw.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AdminConfiguration.Designer.vb">
+      <DependentUpon>AdminConfiguration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminConfiguration.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="agcDashboard.Designer.vb">
       <DependentUpon>agcDashboard.vb</DependentUpon>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addOfw.resx">
       <DependentUpon>addOfw.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminConfiguration.resx">
+      <DependentUpon>AdminConfiguration.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="agcDashboard.resx">
       <DependentUpon>agcDashboard.vb</DependentUpon>

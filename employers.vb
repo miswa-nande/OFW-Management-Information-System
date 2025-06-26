@@ -3,6 +3,8 @@
     Private Sub employers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadEmployersToDGV(DataGridView1)
         FormatDGVUniformly(DataGridView1)
+
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
@@ -190,6 +192,12 @@
 
     Private Sub btnJobPlacements_Click_1(sender As Object, e As EventArgs) Handles btnJobPlacements.Click
         Dim newForm As New jobplacement()
+        newForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnConfig_Click(sender As Object, e As EventArgs) Handles btnConfig.Click
+        Dim newForm As New AdminConfiguration()
         newForm.Show()
         Me.Hide()
     End Sub

@@ -34,6 +34,7 @@
         LoadAgencyChartWithFilter()
         LoadEmployerChartWithFilter()
         LoadTopAgenciesChart()
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub LoadDashboardCounts()
@@ -231,4 +232,9 @@
         LoadTopAgenciesChart(d, d)
     End Sub
 
+    Private Sub btnConfig_Click(sender As Object, e As EventArgs) Handles btnConfig.Click
+        Dim newForm As New AdminConfiguration()
+        newForm.Show()
+        Me.Hide()
+    End Sub
 End Class

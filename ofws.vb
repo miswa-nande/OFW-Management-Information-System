@@ -23,6 +23,8 @@ Public Class ofws
         ' Optional: No default selection
         cbxSex.SelectedIndex = -1
         cbxCivStat.SelectedIndex = -1
+
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -59,6 +61,12 @@ Public Class ofws
 
     Private Sub btnEmployers_Click(sender As Object, e As EventArgs) Handles btnEmployers.Click
         Dim newForm As New employers()
+        newForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnConfig_Click(sender As Object, e As EventArgs) Handles btnConfig.Click
+        Dim newForm As New AdminConfiguration()
         newForm.Show()
         Me.Hide()
     End Sub
