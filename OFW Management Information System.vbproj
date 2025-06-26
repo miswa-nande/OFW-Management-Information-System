@@ -399,6 +399,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ofws.resx">
       <DependentUpon>ofws.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportPreviewForm.resx">
       <DependentUpon>ReportPreviewForm.vb</DependentUpon>
