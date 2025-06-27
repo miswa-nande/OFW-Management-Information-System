@@ -22,73 +22,78 @@ Partial Class dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblNumOfw = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ChartOFW = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblNumAgencies = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.ChartAgencies = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.ChartEmployers = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.ChartTopAgencies = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Deployed = New System.Windows.Forms.DataGridView()
         Me.lblNumDeployed = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnConfig = New System.Windows.Forms.Button()
-        Me.btnDeployments = New System.Windows.Forms.Button()
-        Me.btnEmployers = New System.Windows.Forms.Button()
-        Me.btnAgencies = New System.Windows.Forms.Button()
-        Me.btnOfw = New System.Windows.Forms.Button()
-        Me.btnDashboard = New System.Windows.Forms.Button()
-        Me.TodayBTN = New System.Windows.Forms.Button()
-        Me.SvnDaysBTN = New System.Windows.Forms.Button()
-        Me.OneMonthBTN = New System.Windows.Forms.Button()
-        Me.ThreeMonthBTN = New System.Windows.Forms.Button()
-        Me.refreshBtn = New System.Windows.Forms.Button()
-        Me.CustomDate = New System.Windows.Forms.DateTimePicker()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.btnConfig = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnDeployments = New System.Windows.Forms.Button()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.btnEmployers = New System.Windows.Forms.Button()
+        Me.btnAgencies = New System.Windows.Forms.Button()
+        Me.btnOfw = New System.Windows.Forms.Button()
+        Me.btnDashboard = New System.Windows.Forms.Button()
         Me.logo = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.TodayBTN = New System.Windows.Forms.Button()
+        Me.SvnDaysBTN = New System.Windows.Forms.Button()
+        Me.OneMonthBTN = New System.Windows.Forms.Button()
+        Me.OneYearBTN = New System.Windows.Forms.Button()
+        Me.refreshBtn = New System.Windows.Forms.Button()
+        Me.CustomDate = New System.Windows.Forms.DateTimePicker()
         Me.Panel2.SuspendLayout()
         CType(Me.ChartOFW, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.ChartAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.ChartEmployers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         CType(Me.Deployed, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,11 +102,6 @@ Partial Class dashboard
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -142,17 +142,17 @@ Partial Class dashboard
         '
         'ChartOFW
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.ChartOFW.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.ChartOFW.Legends.Add(Legend1)
+        ChartArea5.Name = "ChartArea1"
+        Me.ChartOFW.ChartAreas.Add(ChartArea5)
+        Legend5.Name = "Legend1"
+        Me.ChartOFW.Legends.Add(Legend5)
         Me.ChartOFW.Location = New System.Drawing.Point(18, 115)
         Me.ChartOFW.Name = "ChartOFW"
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.ChartOFW.Series.Add(Series1)
+        Series5.ChartArea = "ChartArea1"
+        Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea
+        Series5.Legend = "Legend1"
+        Series5.Name = "Series1"
+        Me.ChartOFW.Series.Add(Series5)
         Me.ChartOFW.Size = New System.Drawing.Size(404, 239)
         Me.ChartOFW.TabIndex = 13
         Me.ChartOFW.Text = "Chart1"
@@ -166,6 +166,17 @@ Partial Class dashboard
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(0, 38)
         Me.Label7.TabIndex = 12
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox5.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
+        Me.PictureBox5.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 10
+        Me.PictureBox5.TabStop = False
         '
         'Label4
         '
@@ -204,19 +215,30 @@ Partial Class dashboard
         '
         'ChartAgencies
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.ChartAgencies.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.ChartAgencies.Legends.Add(Legend2)
+        ChartArea6.Name = "ChartArea1"
+        Me.ChartAgencies.ChartAreas.Add(ChartArea6)
+        Legend6.Name = "Legend1"
+        Me.ChartAgencies.Legends.Add(Legend6)
         Me.ChartAgencies.Location = New System.Drawing.Point(18, 116)
         Me.ChartAgencies.Name = "ChartAgencies"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.ChartAgencies.Series.Add(Series2)
+        Series6.ChartArea = "ChartArea1"
+        Series6.Legend = "Legend1"
+        Series6.Name = "Series1"
+        Me.ChartAgencies.Series.Add(Series6)
         Me.ChartAgencies.Size = New System.Drawing.Size(404, 239)
         Me.ChartAgencies.TabIndex = 14
         Me.ChartAgencies.Text = "Chart2"
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.agency_ic
+        Me.PictureBox6.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 10
+        Me.PictureBox6.TabStop = False
         '
         'Label6
         '
@@ -255,19 +277,30 @@ Partial Class dashboard
         '
         'ChartEmployers
         '
-        ChartArea3.Name = "ChartArea1"
-        Me.ChartEmployers.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.ChartEmployers.Legends.Add(Legend3)
+        ChartArea7.Name = "ChartArea1"
+        Me.ChartEmployers.ChartAreas.Add(ChartArea7)
+        Legend7.Name = "Legend1"
+        Me.ChartEmployers.Legends.Add(Legend7)
         Me.ChartEmployers.Location = New System.Drawing.Point(16, 116)
         Me.ChartEmployers.Name = "ChartEmployers"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.ChartEmployers.Series.Add(Series3)
+        Series7.ChartArea = "ChartArea1"
+        Series7.Legend = "Legend1"
+        Series7.Name = "Series1"
+        Me.ChartEmployers.Series.Add(Series7)
         Me.ChartEmployers.Size = New System.Drawing.Size(404, 239)
         Me.ChartEmployers.TabIndex = 15
         Me.ChartEmployers.Text = "Chart3"
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox8.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
+        Me.PictureBox8.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 10
+        Me.PictureBox8.TabStop = False
         '
         'Panel5
         '
@@ -284,21 +317,32 @@ Partial Class dashboard
         'ChartTopAgencies
         '
         Me.ChartTopAgencies.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea4.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea4.Name = "ChartArea1"
-        Me.ChartTopAgencies.ChartAreas.Add(ChartArea4)
-        Legend4.Name = "Legend1"
-        Me.ChartTopAgencies.Legends.Add(Legend4)
+        ChartArea8.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea8.Name = "ChartArea1"
+        Me.ChartTopAgencies.ChartAreas.Add(ChartArea8)
+        Legend8.Name = "Legend1"
+        Me.ChartTopAgencies.Legends.Add(Legend8)
         Me.ChartTopAgencies.Location = New System.Drawing.Point(16, 109)
         Me.ChartTopAgencies.Name = "ChartTopAgencies"
-        Series4.ChartArea = "ChartArea1"
-        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Me.ChartTopAgencies.Series.Add(Series4)
+        Series8.ChartArea = "ChartArea1"
+        Series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series8.Legend = "Legend1"
+        Series8.Name = "Series1"
+        Me.ChartTopAgencies.Series.Add(Series8)
         Me.ChartTopAgencies.Size = New System.Drawing.Size(852, 411)
         Me.ChartTopAgencies.TabIndex = 16
         Me.ChartTopAgencies.Text = "Chart4"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox7.Image = Global.OFW_Management_Information_System.My.Resources.Resources.joblist_ic
+        Me.PictureBox7.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 10
+        Me.PictureBox7.TabStop = False
         '
         'Label12
         '
@@ -343,6 +387,17 @@ Partial Class dashboard
         Me.lblNumDeployed.TabIndex = 11
         Me.lblNumDeployed.Text = "###,###"
         '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox9.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deployment_ic
+        Me.PictureBox9.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 10
+        Me.PictureBox9.TabStop = False
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -375,6 +430,17 @@ Partial Class dashboard
         Me.Panel1.Size = New System.Drawing.Size(382, 1094)
         Me.Panel1.TabIndex = 48
         '
+        'PictureBox11
+        '
+        Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox11.Image = Global.OFW_Management_Information_System.My.Resources.Resources.config_ic
+        Me.PictureBox11.Location = New System.Drawing.Point(33, 948)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(39, 41)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 13
+        Me.PictureBox11.TabStop = False
+        '
         'btnConfig
         '
         Me.btnConfig.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -390,6 +456,17 @@ Partial Class dashboard
         Me.btnConfig.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnConfig.UseVisualStyleBackColor = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
+        Me.PictureBox1.Location = New System.Drawing.Point(32, 440)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 11
+        Me.PictureBox1.TabStop = False
+        '
         'btnDeployments
         '
         Me.btnDeployments.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -403,6 +480,49 @@ Partial Class dashboard
         Me.btnDeployments.TabIndex = 10
         Me.btnDeployments.Text = "DEPLOYMENTS"
         Me.btnDeployments.UseVisualStyleBackColor = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.admin_ic
+        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 9
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
+        Me.PictureBox3.Location = New System.Drawing.Point(32, 653)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 8
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.agency_ic
+        Me.PictureBox2.Location = New System.Drawing.Point(32, 546)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox10.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
+        Me.PictureBox10.Location = New System.Drawing.Point(32, 334)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 6
+        Me.PictureBox10.TabStop = False
         '
         'btnEmployers
         '
@@ -461,6 +581,15 @@ Partial Class dashboard
         Me.btnDashboard.Text = "DASHBOARD"
         Me.btnDashboard.UseVisualStyleBackColor = False
         '
+        'logo
+        '
+        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
+        Me.logo.Location = New System.Drawing.Point(32, 28)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(307, 123)
+        Me.logo.TabIndex = 1
+        Me.logo.TabStop = False
+        '
         'TodayBTN
         '
         Me.TodayBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -478,7 +607,7 @@ Partial Class dashboard
         Me.SvnDaysBTN.Name = "SvnDaysBTN"
         Me.SvnDaysBTN.Size = New System.Drawing.Size(149, 47)
         Me.SvnDaysBTN.TabIndex = 50
-        Me.SvnDaysBTN.Text = "7 Days"
+        Me.SvnDaysBTN.Text = "Last 7 Days"
         Me.SvnDaysBTN.UseVisualStyleBackColor = True
         '
         'OneMonthBTN
@@ -488,18 +617,18 @@ Partial Class dashboard
         Me.OneMonthBTN.Name = "OneMonthBTN"
         Me.OneMonthBTN.Size = New System.Drawing.Size(149, 47)
         Me.OneMonthBTN.TabIndex = 51
-        Me.OneMonthBTN.Text = "1 Month"
+        Me.OneMonthBTN.Text = "Last Month"
         Me.OneMonthBTN.UseVisualStyleBackColor = True
         '
-        'ThreeMonthBTN
+        'OneYearBTN
         '
-        Me.ThreeMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ThreeMonthBTN.Location = New System.Drawing.Point(1687, 17)
-        Me.ThreeMonthBTN.Name = "ThreeMonthBTN"
-        Me.ThreeMonthBTN.Size = New System.Drawing.Size(149, 47)
-        Me.ThreeMonthBTN.TabIndex = 52
-        Me.ThreeMonthBTN.Text = "1 Year"
-        Me.ThreeMonthBTN.UseVisualStyleBackColor = True
+        Me.OneYearBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.OneYearBTN.Location = New System.Drawing.Point(1687, 17)
+        Me.OneYearBTN.Name = "OneYearBTN"
+        Me.OneYearBTN.Size = New System.Drawing.Size(149, 47)
+        Me.OneYearBTN.TabIndex = 52
+        Me.OneYearBTN.Text = "Last Year"
+        Me.OneYearBTN.UseVisualStyleBackColor = True
         '
         'refreshBtn
         '
@@ -519,135 +648,6 @@ Partial Class dashboard
         Me.CustomDate.Size = New System.Drawing.Size(310, 26)
         Me.CustomDate.TabIndex = 54
         '
-        'PictureBox11
-        '
-        Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox11.Image = Global.OFW_Management_Information_System.My.Resources.Resources.config_ic
-        Me.PictureBox11.Location = New System.Drawing.Point(33, 948)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(39, 41)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox11.TabIndex = 13
-        Me.PictureBox11.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
-        Me.PictureBox1.Location = New System.Drawing.Point(32, 440)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 11
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.admin_ic
-        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 9
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox3.Location = New System.Drawing.Point(32, 653)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 8
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.agency_ic
-        Me.PictureBox2.Location = New System.Drawing.Point(32, 546)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox10.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
-        Me.PictureBox10.Location = New System.Drawing.Point(32, 334)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox10.TabIndex = 6
-        Me.PictureBox10.TabStop = False
-        '
-        'logo
-        '
-        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
-        Me.logo.Location = New System.Drawing.Point(32, 28)
-        Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(307, 123)
-        Me.logo.TabIndex = 1
-        Me.logo.TabStop = False
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox9.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deployment_ic
-        Me.PictureBox9.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 10
-        Me.PictureBox9.TabStop = False
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.Image = Global.OFW_Management_Information_System.My.Resources.Resources.joblist_ic
-        Me.PictureBox7.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 10
-        Me.PictureBox7.TabStop = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox8.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox8.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 10
-        Me.PictureBox8.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.agency_ic
-        Me.PictureBox6.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 10
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
-        Me.PictureBox5.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 10
-        Me.PictureBox5.TabStop = False
-        '
         'dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -656,7 +656,7 @@ Partial Class dashboard
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.CustomDate)
         Me.Controls.Add(Me.refreshBtn)
-        Me.Controls.Add(Me.ThreeMonthBTN)
+        Me.Controls.Add(Me.OneYearBTN)
         Me.Controls.Add(Me.OneMonthBTN)
         Me.Controls.Add(Me.SvnDaysBTN)
         Me.Controls.Add(Me.TodayBTN)
@@ -673,18 +673,23 @@ Partial Class dashboard
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.ChartOFW, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.ChartAgencies, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.ChartEmployers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.Deployed, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -693,11 +698,6 @@ Partial Class dashboard
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -743,7 +743,7 @@ Partial Class dashboard
     Friend WithEvents TodayBTN As Button
     Friend WithEvents SvnDaysBTN As Button
     Friend WithEvents OneMonthBTN As Button
-    Friend WithEvents ThreeMonthBTN As Button
+    Friend WithEvents OneYearBTN As Button
     Friend WithEvents refreshBtn As Button
     Friend WithEvents CustomDate As DateTimePicker
 End Class
