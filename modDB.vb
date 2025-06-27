@@ -25,21 +25,25 @@ Module modDB
 
     Public Sub UpdateConnectionString()
         Try
-            Dim config As String = System.IO.Directory.GetCurrentDirectory & "\config.txt"
-            Dim text As String = Nothing
-            If System.IO.File.Exists(config) Then
-                Using reader As System.IO.StreamReader = New System.IO.StreamReader(config)
+            Dim configPath As String = Path.Combine(Application.StartupPath, "config", "sql_config.txt")
+            Dim lines() As String = File.ReadAllLines(configPath)
 
-                    text = reader.ReadToEnd
-                End Using
-                Dim arr_text() As String = Split(text, vbCrLf)
+            Dim db_server As String = ""
+            Dim db_uid As String = ""
+            Dim db_pwd As String = ""
+            Dim db_name As String = ""
 
-                strConnection = "server=" & Split(arr_text(0), "=")(1) & ";uid=" & Split(arr_text(1), "=")(1) & ";password=" & Split(arr_text(2), "=")(1) & ";database=" & Split(arr_text(3), "=")(1) & ";" & "allowuservariables='True';"
-            Else
-                MsgBox("Do not exist")
-            End If
+            For Each line As String In lines
+                If line.StartsWith("Localhost:") Then db_server = line.Substring("Localhost:".Length).Trim()
+                If line.StartsWith("Root:") Then db_uid = line.Substring("Root:".Length).Trim()
+                If line.StartsWith("Password:") Then db_pwd = line.Substring("Password:".Length).Trim()
+                If line.StartsWith("DB_Name:") Then db_name = line.Substring("DB_Name:".Length).Trim()
+            Next
+
+            strConnection = $"server={db_server};uid={db_uid};password={db_pwd};database={db_name};allowuservariables='True';"
+
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error reading config: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 

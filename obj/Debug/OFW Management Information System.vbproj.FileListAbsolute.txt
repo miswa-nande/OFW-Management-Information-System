@@ -507,5 +507,9 @@ C:\Users\charl\Desktop\OFWMIS\obj\Debug\OFW Mana.2B6B6796.Up2Date
 C:\Users\charl\Desktop\OFWMIS\obj\Debug\OFW Management Information System.exe
 C:\Users\charl\Desktop\OFWMIS\obj\Debug\OFW Management Information System.xml
 C:\Users\charl\Desktop\OFWMIS\obj\Debug\OFW Management Information System.pdb
-C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.agcDashboard.resources
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.AdminConfiguration.resources
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.empAgencies.resources
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.empDashboard.resources
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.empJobs.resources
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.empOfws.resources
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.empProfile.resources
