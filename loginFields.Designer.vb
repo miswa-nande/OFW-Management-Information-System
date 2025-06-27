@@ -67,11 +67,11 @@ Partial Class loginFields
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label1.Location = New System.Drawing.Point(822, 610)
+        Me.Label1.Location = New System.Drawing.Point(756, 610)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 19)
+        Me.Label1.Size = New System.Drawing.Size(130, 19)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "User ID :"
+        Me.Label1.Text = "Username/ Email :"
         '
         'Label2
         '
