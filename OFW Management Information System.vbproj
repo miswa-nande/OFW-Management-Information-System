@@ -215,12 +215,6 @@
     <Compile Include="empOfws.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="empProfile.Designer.vb">
-      <DependentUpon>empProfile.vb</DependentUpon>
-    </Compile>
-    <Compile Include="empProfile.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UserSession.vb" />
     <Compile Include="dashboard.Designer.vb">
       <DependentUpon>dashboard.vb</DependentUpon>
@@ -405,9 +399,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="empOfws.resx">
       <DependentUpon>empOfws.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="empProfile.resx">
-      <DependentUpon>empProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="jobdetails.resx">
       <DependentUpon>jobdetails.vb</DependentUpon>

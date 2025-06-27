@@ -24,13 +24,11 @@ Partial Class empAgencies
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.btnAgencies = New System.Windows.Forms.Button()
-        Me.btnProfile = New System.Windows.Forms.Button()
         Me.btnOfws = New System.Windows.Forms.Button()
         Me.btnJobs = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -62,7 +60,6 @@ Partial Class empAgencies
         Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,17 +88,6 @@ Partial Class empAgencies
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 9
         Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.profile_ic
-        Me.PictureBox3.Location = New System.Drawing.Point(32, 653)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 8
-        Me.PictureBox3.TabStop = False
         '
         'PictureBox2
         '
@@ -163,20 +149,6 @@ Partial Class empAgencies
         Me.btnAgencies.Text = "AGENCIES"
         Me.btnAgencies.UseVisualStyleBackColor = False
         '
-        'btnProfile
-        '
-        Me.btnProfile.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnProfile.FlatAppearance.BorderSize = 0
-        Me.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProfile.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProfile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnProfile.Location = New System.Drawing.Point(13, 625)
-        Me.btnProfile.Name = "btnProfile"
-        Me.btnProfile.Size = New System.Drawing.Size(382, 100)
-        Me.btnProfile.TabIndex = 5
-        Me.btnProfile.Text = "PROFILE"
-        Me.btnProfile.UseVisualStyleBackColor = False
-        '
         'btnOfws
         '
         Me.btnOfws.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -211,10 +183,8 @@ Partial Class empAgencies
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.btnAgencies)
         Me.Panel1.Controls.Add(Me.PictureBox4)
-        Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox10)
-        Me.Panel1.Controls.Add(Me.btnProfile)
         Me.Panel1.Controls.Add(Me.btnOfws)
         Me.Panel1.Controls.Add(Me.btnJobs)
         Me.Panel1.Controls.Add(Me.btnDashboard)
@@ -539,7 +509,6 @@ Partial Class empAgencies
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -553,13 +522,11 @@ Partial Class empAgencies
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents logo As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents btnDashboard As Button
     Friend WithEvents btnAgencies As Button
-    Friend WithEvents btnProfile As Button
     Friend WithEvents btnOfws As Button
     Friend WithEvents btnJobs As Button
     Friend WithEvents Panel1 As Panel

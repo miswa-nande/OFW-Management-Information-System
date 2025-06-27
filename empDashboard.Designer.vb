@@ -22,16 +22,20 @@ Partial Class empDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Deployed = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnAgencies = New System.Windows.Forms.Button()
-        Me.btnProfile = New System.Windows.Forms.Button()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.btnOfws = New System.Windows.Forms.Button()
         Me.btnJobs = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
+        Me.logo = New System.Windows.Forms.PictureBox()
         Me.refreshBtn = New System.Windows.Forms.Button()
         Me.ThreeMonthBTN = New System.Windows.Forms.Button()
         Me.OneMonthBTN = New System.Windows.Forms.Button()
@@ -42,49 +46,56 @@ Partial Class empDashboard
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ChartTopAgencies = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.lblNumJobPosted = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.logo = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.lblContactNum = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblFullAddress = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblIndustry = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblEmail = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lblCompanyName = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblFullName = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.Deployed, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.Panel6.SuspendLayout()
-        Me.Panel4.SuspendLayout()
-        Me.Panel5.SuspendLayout()
-        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel6.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Deployed
@@ -92,7 +103,7 @@ Partial Class empDashboard
         Me.Deployed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Deployed.Location = New System.Drawing.Point(18, 109)
         Me.Deployed.Name = "Deployed"
-        Me.Deployed.Size = New System.Drawing.Size(959, 633)
+        Me.Deployed.Size = New System.Drawing.Size(959, 305)
         Me.Deployed.TabIndex = 12
         '
         'Panel1
@@ -101,10 +112,8 @@ Partial Class empDashboard
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.btnAgencies)
         Me.Panel1.Controls.Add(Me.PictureBox4)
-        Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox10)
-        Me.Panel1.Controls.Add(Me.btnProfile)
         Me.Panel1.Controls.Add(Me.btnOfws)
         Me.Panel1.Controls.Add(Me.btnJobs)
         Me.Panel1.Controls.Add(Me.btnDashboard)
@@ -113,6 +122,17 @@ Partial Class empDashboard
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(382, 1094)
         Me.Panel1.TabIndex = 60
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
+        Me.PictureBox1.Location = New System.Drawing.Point(32, 440)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 11
+        Me.PictureBox1.TabStop = False
         '
         'btnAgencies
         '
@@ -128,19 +148,37 @@ Partial Class empDashboard
         Me.btnAgencies.Text = "AGENCIES"
         Me.btnAgencies.UseVisualStyleBackColor = False
         '
-        'btnProfile
+        'PictureBox4
         '
-        Me.btnProfile.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnProfile.FlatAppearance.BorderSize = 0
-        Me.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProfile.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProfile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnProfile.Location = New System.Drawing.Point(13, 625)
-        Me.btnProfile.Name = "btnProfile"
-        Me.btnProfile.Size = New System.Drawing.Size(382, 100)
-        Me.btnProfile.TabIndex = 5
-        Me.btnProfile.Text = "PROFILE"
-        Me.btnProfile.UseVisualStyleBackColor = False
+        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.admin_ic
+        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 9
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.joblist_ic
+        Me.PictureBox2.Location = New System.Drawing.Point(32, 546)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox10.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
+        Me.PictureBox10.Location = New System.Drawing.Point(32, 334)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 6
+        Me.PictureBox10.TabStop = False
         '
         'btnOfws
         '
@@ -184,6 +222,15 @@ Partial Class empDashboard
         Me.btnDashboard.TabIndex = 2
         Me.btnDashboard.Text = "DASHBOARD"
         Me.btnDashboard.UseVisualStyleBackColor = False
+        '
+        'logo
+        '
+        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
+        Me.logo.Location = New System.Drawing.Point(32, 28)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(307, 123)
+        Me.logo.TabIndex = 1
+        Me.logo.TabStop = False
         '
         'refreshBtn
         '
@@ -273,7 +320,7 @@ Partial Class empDashboard
         Me.Panel2.Controls.Add(Me.PictureBox5)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(504, 73)
+        Me.Panel2.Location = New System.Drawing.Point(498, 412)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(313, 147)
         Me.Panel2.TabIndex = 55
@@ -288,6 +335,17 @@ Partial Class empDashboard
         Me.Label7.Size = New System.Drawing.Size(0, 38)
         Me.Label7.TabIndex = 12
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox5.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
+        Me.PictureBox5.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 10
+        Me.PictureBox5.TabStop = False
+        '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption
@@ -295,10 +353,21 @@ Partial Class empDashboard
         Me.Panel6.Controls.Add(Me.PictureBox9)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel6.Location = New System.Drawing.Point(498, 247)
+        Me.Panel6.Location = New System.Drawing.Point(498, 573)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(992, 760)
+        Me.Panel6.Size = New System.Drawing.Size(992, 434)
         Me.Panel6.TabIndex = 57
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox9.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deployment_ic
+        Me.PictureBox9.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 10
+        Me.PictureBox9.TabStop = False
         '
         'Label13
         '
@@ -329,10 +398,21 @@ Partial Class empDashboard
         Me.Panel4.Controls.Add(Me.lblNumEmployers)
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel4.Location = New System.Drawing.Point(838, 73)
+        Me.Panel4.Location = New System.Drawing.Point(832, 412)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(313, 147)
         Me.Panel4.TabIndex = 58
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox8.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
+        Me.PictureBox8.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 10
+        Me.PictureBox8.TabStop = False
         '
         'lblNumEmployers
         '
@@ -358,24 +438,43 @@ Partial Class empDashboard
         Me.Panel5.Size = New System.Drawing.Size(322, 934)
         Me.Panel5.TabIndex = 59
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(19, 349)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(282, 567)
+        Me.DataGridView1.TabIndex = 17
+        '
         'ChartTopAgencies
         '
         Me.ChartTopAgencies.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea1.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea1.Name = "ChartArea1"
-        Me.ChartTopAgencies.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.ChartTopAgencies.Legends.Add(Legend1)
+        ChartArea2.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea2.Name = "ChartArea1"
+        Me.ChartTopAgencies.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ChartTopAgencies.Legends.Add(Legend2)
         Me.ChartTopAgencies.Location = New System.Drawing.Point(19, 109)
         Me.ChartTopAgencies.Name = "ChartTopAgencies"
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.ChartTopAgencies.Series.Add(Series1)
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.ChartTopAgencies.Series.Add(Series2)
         Me.ChartTopAgencies.Size = New System.Drawing.Size(291, 224)
         Me.ChartTopAgencies.TabIndex = 16
         Me.ChartTopAgencies.Text = "Chart4"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox7.Image = Global.OFW_Management_Information_System.My.Resources.Resources.joblist_ic
+        Me.PictureBox7.Location = New System.Drawing.Point(19, 18)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 10
+        Me.PictureBox7.TabStop = False
         '
         'Label12
         '
@@ -395,10 +494,21 @@ Partial Class empDashboard
         Me.Panel3.Controls.Add(Me.lblNumJobPosted)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(1177, 73)
+        Me.Panel3.Location = New System.Drawing.Point(1171, 412)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(313, 147)
+        Me.Panel3.Size = New System.Drawing.Size(319, 147)
         Me.Panel3.TabIndex = 59
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
+        Me.PictureBox6.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 10
+        Me.PictureBox6.TabStop = False
         '
         'lblNumJobPosted
         '
@@ -422,131 +532,159 @@ Partial Class empDashboard
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Total number " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of Jobs Posted :"
         '
-        'DataGridView1
+        'lblContactNum
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(19, 349)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(282, 567)
-        Me.DataGridView1.TabIndex = 17
+        Me.lblContactNum.AutoSize = True
+        Me.lblContactNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContactNum.Location = New System.Drawing.Point(1216, 237)
+        Me.lblContactNum.Name = "lblContactNum"
+        Me.lblContactNum.Size = New System.Drawing.Size(240, 22)
+        Me.lblContactNum.TabIndex = 289
+        Me.lblContactNum.Text = "ContactNumPlaceholder"
         '
-        'PictureBox6
+        'Label2
         '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
-        Me.PictureBox6.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 10
-        Me.PictureBox6.TabStop = False
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label2.Location = New System.Drawing.Point(1216, 208)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(177, 22)
+        Me.Label2.TabIndex = 288
+        Me.Label2.Text = "Contact Number :"
         '
-        'PictureBox1
+        'Label10
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox1.Location = New System.Drawing.Point(32, 440)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 11
-        Me.PictureBox1.TabStop = False
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label10.Location = New System.Drawing.Point(500, 80)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(132, 33)
+        Me.Label10.TabIndex = 287
+        Me.Label10.Text = "lblIdNum"
         '
-        'PictureBox4
+        'lblFullAddress
         '
-        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.admin_ic
-        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 9
-        Me.PictureBox4.TabStop = False
+        Me.lblFullAddress.AutoSize = True
+        Me.lblFullAddress.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFullAddress.Location = New System.Drawing.Point(502, 308)
+        Me.lblFullAddress.Name = "lblFullAddress"
+        Me.lblFullAddress.Size = New System.Drawing.Size(200, 22)
+        Me.lblFullAddress.TabIndex = 286
+        Me.lblFullAddress.Text = "concat'd full address"
         '
-        'PictureBox3
+        'Label9
         '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.profile_ic
-        Me.PictureBox3.Location = New System.Drawing.Point(32, 653)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 8
-        Me.PictureBox3.TabStop = False
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label9.Location = New System.Drawing.Point(502, 279)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(98, 22)
+        Me.Label9.TabIndex = 285
+        Me.Label9.Text = "Address : "
         '
-        'PictureBox2
+        'lblIndustry
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.joblist_ic
-        Me.PictureBox2.Location = New System.Drawing.Point(32, 546)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
+        Me.lblIndustry.AutoSize = True
+        Me.lblIndustry.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIndustry.Location = New System.Drawing.Point(743, 237)
+        Me.lblIndustry.Name = "lblIndustry"
+        Me.lblIndustry.Size = New System.Drawing.Size(192, 22)
+        Me.lblIndustry.TabIndex = 284
+        Me.lblIndustry.Text = "IndustryPlaceholder"
         '
-        'PictureBox10
+        'Label4
         '
-        Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox10.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
-        Me.PictureBox10.Location = New System.Drawing.Point(32, 334)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox10.TabIndex = 6
-        Me.PictureBox10.TabStop = False
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label4.Location = New System.Drawing.Point(743, 208)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(98, 22)
+        Me.Label4.TabIndex = 283
+        Me.Label4.Text = "Industry : "
         '
-        'logo
+        'lblEmail
         '
-        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
-        Me.logo.Location = New System.Drawing.Point(32, 28)
-        Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(307, 123)
-        Me.logo.TabIndex = 1
-        Me.logo.TabStop = False
+        Me.lblEmail.AutoSize = True
+        Me.lblEmail.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmail.Location = New System.Drawing.Point(1011, 237)
+        Me.lblEmail.Name = "lblEmail"
+        Me.lblEmail.Size = New System.Drawing.Size(165, 22)
+        Me.lblEmail.TabIndex = 282
+        Me.lblEmail.Text = "EmailPlaceholder"
         '
-        'PictureBox5
+        'Label5
         '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
-        Me.PictureBox5.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 10
-        Me.PictureBox5.TabStop = False
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label5.Location = New System.Drawing.Point(1011, 208)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(66, 22)
+        Me.Label5.TabIndex = 281
+        Me.Label5.Text = "Email :"
         '
-        'PictureBox9
+        'lblCompanyName
         '
-        Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox9.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deployment_ic
-        Me.PictureBox9.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 10
-        Me.PictureBox9.TabStop = False
+        Me.lblCompanyName.AutoSize = True
+        Me.lblCompanyName.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCompanyName.Location = New System.Drawing.Point(502, 237)
+        Me.lblCompanyName.Name = "lblCompanyName"
+        Me.lblCompanyName.Size = New System.Drawing.Size(159, 22)
+        Me.lblCompanyName.TabIndex = 280
+        Me.lblCompanyName.Text = "CompanyName"
         '
-        'PictureBox8
+        'Label8
         '
-        Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox8.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox8.Location = New System.Drawing.Point(16, 18)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 10
-        Me.PictureBox8.TabStop = False
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Label8.Location = New System.Drawing.Point(502, 208)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(179, 22)
+        Me.Label8.TabIndex = 279
+        Me.Label8.Text = "Company Name : "
         '
-        'PictureBox7
+        'lblFullName
         '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.Image = Global.OFW_Management_Information_System.My.Resources.Resources.joblist_ic
-        Me.PictureBox7.Location = New System.Drawing.Point(19, 18)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 10
-        Me.PictureBox7.TabStop = False
+        Me.lblFullName.AutoSize = True
+        Me.lblFullName.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFullName.Location = New System.Drawing.Point(496, 125)
+        Me.lblFullName.Name = "lblFullName"
+        Me.lblFullName.Size = New System.Drawing.Size(527, 58)
+        Me.lblFullName.TabIndex = 278
+        Me.lblFullName.Text = "FullNamePlaceholder"
+        '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(1316, 347)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(174, 35)
+        Me.Button2.TabIndex = 291
+        Me.Button2.Text = "Log Out"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(498, 347)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(174, 35)
+        Me.Button1.TabIndex = 290
+        Me.Button1.Text = "Edit Profile"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'empDashboard
         '
@@ -554,6 +692,20 @@ Partial Class empDashboard
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.lblContactNum)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lblFullAddress)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lblIndustry)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblEmail)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblCompanyName)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.lblFullName)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.refreshBtn)
@@ -571,30 +723,30 @@ Partial Class empDashboard
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Deployed, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel6.PerformLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -603,10 +755,8 @@ Partial Class empDashboard
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnAgencies As Button
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
-    Friend WithEvents btnProfile As Button
     Friend WithEvents btnOfws As Button
     Friend WithEvents btnJobs As Button
     Friend WithEvents btnDashboard As Button
@@ -638,4 +788,18 @@ Partial Class empDashboard
     Friend WithEvents lblNumJobPosted As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents lblContactNum As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents lblFullAddress As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents lblIndustry As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents lblEmail As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents lblCompanyName As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents lblFullName As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class
