@@ -28,7 +28,6 @@ Partial Class applications
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dateContractStart = New System.Windows.Forms.DateTimePicker()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.txtbxContractNum = New System.Windows.Forms.TextBox()
         Me.btnApplications = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -40,21 +39,23 @@ Partial Class applications
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnJobOffers = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btnProfile = New System.Windows.Forms.Button()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnProfile = New System.Windows.Forms.Button()
         Me.logo = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label11
@@ -116,19 +117,6 @@ Partial Class applications
         Me.Label17.Size = New System.Drawing.Size(136, 21)
         Me.Label17.TabIndex = 173
         Me.Label17.Text = "Date Submitted"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(1504, 430)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(343, 41)
-        Me.Button1.TabIndex = 172
-        Me.Button1.Text = "F I L T E R"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'txtbxContractNum
         '
@@ -263,31 +251,6 @@ Partial Class applications
         Me.Panel1.Size = New System.Drawing.Size(382, 1094)
         Me.Panel1.TabIndex = 157
         '
-        'btnProfile
-        '
-        Me.btnProfile.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnProfile.FlatAppearance.BorderSize = 0
-        Me.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProfile.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProfile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnProfile.Location = New System.Drawing.Point(13, 199)
-        Me.btnProfile.Name = "btnProfile"
-        Me.btnProfile.Size = New System.Drawing.Size(382, 100)
-        Me.btnProfile.TabIndex = 2
-        Me.btnProfile.Text = "PROFILE"
-        Me.btnProfile.UseVisualStyleBackColor = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
-        Me.PictureBox5.Location = New System.Drawing.Point(408, 28)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(125, 123)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 158
-        Me.PictureBox5.TabStop = False
-        '
         'PictureBox6
         '
         Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
@@ -331,6 +294,20 @@ Partial Class applications
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
+        'btnProfile
+        '
+        Me.btnProfile.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.btnProfile.FlatAppearance.BorderSize = 0
+        Me.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProfile.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProfile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btnProfile.Location = New System.Drawing.Point(13, 199)
+        Me.btnProfile.Name = "btnProfile"
+        Me.btnProfile.Size = New System.Drawing.Size(382, 100)
+        Me.btnProfile.TabIndex = 2
+        Me.btnProfile.Text = "PROFILE"
+        Me.btnProfile.UseVisualStyleBackColor = False
+        '
         'logo
         '
         Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
@@ -340,12 +317,50 @@ Partial Class applications
         Me.logo.TabIndex = 1
         Me.logo.TabStop = False
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox5.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
+        Me.PictureBox5.Location = New System.Drawing.Point(408, 28)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(125, 123)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 158
+        Me.PictureBox5.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(1504, 430)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(343, 41)
+        Me.Button1.TabIndex = 172
+        Me.Button1.Text = "F I L T E R"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button2.Location = New System.Drawing.Point(1504, 973)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(343, 41)
+        Me.Button2.TabIndex = 183
+        Me.Button2.Text = "VIEW APPLICATION"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'applications
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtbxJobTitle)
         Me.Controls.Add(Me.cbxContractStat)
@@ -368,12 +383,12 @@ Partial Class applications
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -385,7 +400,6 @@ Partial Class applications
     Friend WithEvents Label4 As Label
     Friend WithEvents dateContractStart As DateTimePicker
     Friend WithEvents Label17 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents txtbxContractNum As TextBox
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents btnApplications As Button
@@ -404,4 +418,6 @@ Partial Class applications
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnProfile As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

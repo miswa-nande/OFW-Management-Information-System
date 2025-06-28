@@ -173,6 +173,48 @@
     <Compile Include="AdminConfiguration.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="agcApplications.Designer.vb">
+      <DependentUpon>agcApplications.vb</DependentUpon>
+    </Compile>
+    <Compile Include="agcApplications.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agcDashboard.Designer.vb">
+      <DependentUpon>agcDashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="agcDashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agcDeployment.Designer.vb">
+      <DependentUpon>agcDeployment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="agcDeployment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agcEmployers.Designer.vb">
+      <DependentUpon>agcEmployers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="agcEmployers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agcJobs.Designer.vb">
+      <DependentUpon>agcJobs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="agcJobs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="agcOfws.Designer.vb">
+      <DependentUpon>agcOfws.vb</DependentUpon>
+    </Compile>
+    <Compile Include="agcOfws.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationDetails.Designer.vb">
+      <DependentUpon>ApplicationDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="empAgencies.Designer.vb">
       <DependentUpon>empAgencies.vb</DependentUpon>
     </Compile>
@@ -213,6 +255,12 @@
       <DependentUpon>empOfws.vb</DependentUpon>
     </Compile>
     <Compile Include="empOfws.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JobApplicants.Designer.vb">
+      <DependentUpon>JobApplicants.vb</DependentUpon>
+    </Compile>
+    <Compile Include="JobApplicants.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserSession.vb" />
@@ -352,6 +400,27 @@
     <EmbeddedResource Include="AdminConfiguration.resx">
       <DependentUpon>AdminConfiguration.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="agcApplications.resx">
+      <DependentUpon>agcApplications.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agcDashboard.resx">
+      <DependentUpon>agcDashboard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agcDeployment.resx">
+      <DependentUpon>agcDeployment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agcEmployers.resx">
+      <DependentUpon>agcEmployers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agcJobs.resx">
+      <DependentUpon>agcJobs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agcOfws.resx">
+      <DependentUpon>agcOfws.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationDetails.resx">
+      <DependentUpon>ApplicationDetails.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="empAgencies.resx">
       <DependentUpon>empAgencies.vb</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +468,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="empOfws.resx">
       <DependentUpon>empOfws.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JobApplicants.resx">
+      <DependentUpon>JobApplicants.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="jobdetails.resx">
       <DependentUpon>jobdetails.vb</DependentUpon>
