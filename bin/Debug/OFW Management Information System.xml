@@ -77,6 +77,16 @@ OFW Management Information System
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:OFW_Management_Information_System.My.Resources.Resources.eye">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:OFW_Management_Information_System.My.Resources.Resources.hidden">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:OFW_Management_Information_System.My.Resources.Resources.job_ic">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
