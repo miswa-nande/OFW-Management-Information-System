@@ -1,4 +1,13 @@
-﻿Public Class addEmployer
+﻿Imports MySql.Data.MySqlClient
+
+Public Class addEmployer
+    Private Sub addEmployer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Change button to "Save" if this is after registration
+        If Session.CurrentLoggedUser.userType = "Employer" Then
+            btnAdd.Text = "Save"
+        End If
+    End Sub
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         ' Input validation
         If Not IsNumeric(txtbxContactNum.Text.Trim()) Then
@@ -25,21 +34,63 @@
         Dim country As String = txtbxCountry.Text.Trim()
         Dim zipcode As String = txtbxZipcode.Text.Trim()
 
-        ' SQL INSERT
-        Dim query As String = $"
-            INSERT INTO employer (FirstName, MiddleName, LastName, ContactNumber, Email, CompanyName, Industry, Street, City, State, Country, ZipCode)
-            VALUES ('{fName}', '{mName}', '{lName}', '{contact}', '{email}', '{company}', '{industry}', '{street}', '{city}', '{state}', '{country}', '{zipcode}')"
+        Try
+            openConn(db_name)
 
-        readQuery(query)
-        MsgBox("Employer added successfully!", MsgBoxStyle.Information)
-        Me.Close()
+            ' Insert employer record
+            Dim query As String = "
+                INSERT INTO employer 
+                (FirstName, MiddleName, LastName, ContactNumber, Email, CompanyName, Industry, Street, City, State, Country, ZipCode)
+                VALUES 
+                (@fName, @mName, @lName, @contact, @email, @company, @industry, @street, @city, @state, @country, @zipcode)"
+
+            Using cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@fName", fName)
+                cmd.Parameters.AddWithValue("@mName", mName)
+                cmd.Parameters.AddWithValue("@lName", lName)
+                cmd.Parameters.AddWithValue("@contact", contact)
+                cmd.Parameters.AddWithValue("@email", email)
+                cmd.Parameters.AddWithValue("@company", company)
+                cmd.Parameters.AddWithValue("@industry", industry)
+                cmd.Parameters.AddWithValue("@street", street)
+                cmd.Parameters.AddWithValue("@city", city)
+                cmd.Parameters.AddWithValue("@state", state)
+                cmd.Parameters.AddWithValue("@country", country)
+                cmd.Parameters.AddWithValue("@zipcode", zipcode)
+
+                cmd.ExecuteNonQuery()
+
+                If Session.CurrentLoggedUser.userType = "Employer" Then
+                    Dim insertedId As Integer = CInt(cmd.LastInsertedId)
+                    Dim updateQuery As String = $"UPDATE users SET reference_id = {insertedId} WHERE user_id = {Session.CurrentLoggedUser.id}"
+                    readQuery(updateQuery)
+                    MsgBox("Profile saved. Redirecting to employer dashboard...", MsgBoxStyle.Information)
+
+                    ' Optional: Show employer dashboard
+                    Dim empForm As New empDashboard() ' ← change if your form is named differently
+                    empForm.Show()
+                    Me.Close()
+                Else
+                    MsgBox("Employer added successfully!", MsgBoxStyle.Information)
+                    Me.Close()
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox("Error saving employer profile: " & ex.Message, MsgBoxStyle.Critical)
+        Finally
+            If conn.State = ConnectionState.Open Then conn.Close()
+        End Try
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        If Session.CurrentLoggedUser.userType = "Employer" Then
+            Dim loginForm As New loginPage()
+            loginForm.Show()
+        End If
         Me.Close()
     End Sub
 
-    ' Input restrictions for numeric fields
+    ' Input restrictions
     Private Sub txtbxContactNum_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxContactNum.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
             e.Handled = True
