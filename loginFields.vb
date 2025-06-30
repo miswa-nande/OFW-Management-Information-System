@@ -85,7 +85,7 @@
                     Dim form As New dashboard()
                     form.Show()
                 Case "Agency"
-                    Dim form As New agencyDashboard()
+                    Dim form As New agcDashboard()
                     form.Show()
                 Case "Employer"
                     Dim form As New empDashboard()
@@ -100,5 +100,11 @@
             cmdRead?.Close()
             MsgBox("Invalid ID or password for " & userType & ".", MsgBoxStyle.Critical)
         End If
+    End Sub
+
+    Private Sub LabelSignUp()(sender As Object, e As EventArgs) Handles Label4.Click
+         Dim RegForm As New UserRegistration()
+        RegForm.Show()
+        Me.Hide()
     End Sub
 End Class

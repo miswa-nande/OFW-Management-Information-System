@@ -263,6 +263,12 @@
     <Compile Include="JobApplicants.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserRegistration.Designer.vb">
+      <DependentUpon>UserRegistration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegistration.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserSession.vb" />
     <Compile Include="dashboard.Designer.vb">
       <DependentUpon>dashboard.vb</DependentUpon>
@@ -503,6 +509,9 @@
     <EmbeddedResource Include="ReportPreviewForm.resx">
       <DependentUpon>ReportPreviewForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserRegistration.resx">
+      <DependentUpon>UserRegistration.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -572,6 +581,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ofwProfile_ic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hidden1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
