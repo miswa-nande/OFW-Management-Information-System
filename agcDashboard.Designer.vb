@@ -22,12 +22,12 @@ Partial Class agcDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea9 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend9 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series9 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea10 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend10 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series10 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea17 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend17 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series17 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea18 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend18 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series18 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -149,18 +149,18 @@ Partial Class agcDashboard
         'ChartTopAgencies
         '
         Me.ChartTopAgencies.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea9.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea9.Name = "ChartArea1"
-        Me.ChartTopAgencies.ChartAreas.Add(ChartArea9)
-        Legend9.Name = "Legend1"
-        Me.ChartTopAgencies.Legends.Add(Legend9)
+        ChartArea17.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea17.Name = "ChartArea1"
+        Me.ChartTopAgencies.ChartAreas.Add(ChartArea17)
+        Legend17.Name = "Legend1"
+        Me.ChartTopAgencies.Legends.Add(Legend17)
         Me.ChartTopAgencies.Location = New System.Drawing.Point(19, 109)
         Me.ChartTopAgencies.Name = "ChartTopAgencies"
-        Series9.ChartArea = "ChartArea1"
-        Series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series9.Legend = "Legend1"
-        Series9.Name = "Series1"
-        Me.ChartTopAgencies.Series.Add(Series9)
+        Series17.ChartArea = "ChartArea1"
+        Series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series17.Legend = "Legend1"
+        Series17.Name = "Series1"
+        Me.ChartTopAgencies.Series.Add(Series17)
         Me.ChartTopAgencies.Size = New System.Drawing.Size(291, 224)
         Me.ChartTopAgencies.TabIndex = 16
         Me.ChartTopAgencies.Text = "Chart4"
@@ -816,16 +816,16 @@ Partial Class agcDashboard
         '
         'Chart1
         '
-        ChartArea10.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea10)
-        Legend10.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend10)
+        ChartArea18.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea18)
+        Legend18.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend18)
         Me.Chart1.Location = New System.Drawing.Point(16, 109)
         Me.Chart1.Name = "Chart1"
-        Series10.ChartArea = "ChartArea1"
-        Series10.Legend = "Legend1"
-        Series10.Name = "Series1"
-        Me.Chart1.Series.Add(Series10)
+        Series18.ChartArea = "ChartArea1"
+        Series18.Legend = "Legend1"
+        Series18.Name = "Series1"
+        Me.Chart1.Series.Add(Series18)
         Me.Chart1.Size = New System.Drawing.Size(458, 300)
         Me.Chart1.TabIndex = 11
         Me.Chart1.Text = "Chart1"

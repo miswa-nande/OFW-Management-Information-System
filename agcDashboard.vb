@@ -18,4 +18,20 @@
     Private Sub lblSpecialization_Click(sender As Object, e As EventArgs) Handles lblSpecialization.Click
 
     End Sub
+
+    Private Sub lblFullAddress_Click(sender As Object, e As EventArgs) Handles lblFullAddress.Click
+
+    End Sub
+
+    Private Sub lblEmail_Click(sender As Object, e As EventArgs) Handles lblEmail.Click
+
+    End Sub
+
+    Private Sub lblAccreditationStatus_Click(sender As Object, e As EventArgs) Handles lblAccreditationStatus.Click
+
+    End Sub
+
+    Private Sub lblContactNum_Click(sender As Object, e As EventArgs) Handles lblContactNum.Click
+
+    End Sub
 End Class
