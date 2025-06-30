@@ -118,13 +118,13 @@ Public Class UserRegistration
             ' Redirect to corresponding profile page
             Select Case userType
                 Case "OFW"
-                    Dim ofwProfile As New ofwProfile() ' Load empty OFW profile form
+                    Dim ofwProfile As New addOfw() ' Load empty OFW profile form
                     ofwProfile.Show()
                 Case "Agency"
-                    Dim agencyProfile As New agcProfile()
+                    Dim agencyProfile As New addAgency()
                     agencyProfile.Show()
                 Case "Employer"
-                    Dim employerProfile As New empProfile()
+                    Dim employerProfile As New addEmployer()
                     employerProfile.Show()
             End Select
 

@@ -8,6 +8,10 @@ Public Class addOfw
         cbxSex.Items.AddRange({"Male", "Female", "Other"})
         cbxCivStat.Items.AddRange({"Single", "Married", "Widowed", "Separated"})
         cbxEducLevel.Items.AddRange({"High School", "Vocational", "College", "Postgraduate"})
+
+        If Session.CurrentLoggedUser.userType = "OFW" Then
+            btnAdd.Text = "Save"
+        End If
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -42,15 +46,13 @@ Public Class addOfw
         Dim visa As String = txtbxVisa.Text.Trim()
         Dim oec As String = txtbxOec.Text.Trim()
 
-        ' Image to Byte Array for BLOB
         Dim imgBytes() As Byte = Nothing
         If Not String.IsNullOrEmpty(selectedImagePath) AndAlso File.Exists(selectedImagePath) Then
             imgBytes = File.ReadAllBytes(selectedImagePath)
         End If
 
-        ' Default values for missing fields from the form
-        Dim employmentStatus As String = "Active" ' Or "Inactive", etc.
-        Dim agencyId As Object = DBNull.Value ' Assuming no agency is linked on creation, or get it from a combobox if available
+        Dim employmentStatus As String = "Active"
+        Dim agencyId As Object = DBNull.Value
 
         Try
             openConn(db_name)
@@ -83,8 +85,19 @@ Public Class addOfw
                 cmd.Parameters.AddWithValue("@agency", agencyId)
 
                 cmd.ExecuteNonQuery()
-                MsgBox("OFW record added successfully!", MsgBoxStyle.Information)
-                Me.Close()
+
+                If Session.CurrentLoggedUser.userType = "OFW" Then
+                    Dim insertedId As Integer = CInt(cmd.LastInsertedId)
+                    Dim updateQuery As String = $"UPDATE users SET reference_id = {insertedId} WHERE user_id = {Session.CurrentLoggedUser.id}"
+                    readQuery(updateQuery)
+                    MsgBox("Profile saved. Redirecting to OFW profile...", MsgBoxStyle.Information)
+                    Dim profileForm As New ofwProfile()
+                    profileForm.Show()
+                    Me.Close()
+                Else
+                    MsgBox("OFW record added successfully!", MsgBoxStyle.Information)
+                    Me.Close()
+                End If
             End Using
         Catch ex As Exception
             MsgBox("An error occurred: " & ex.Message, MsgBoxStyle.Critical)
@@ -96,6 +109,10 @@ Public Class addOfw
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        If Session.CurrentLoggedUser.userType = "OFW" Then
+            Dim loginForm As New loginPage()
+            loginForm.Show()
+        End If
         Me.Close()
     End Sub
 
@@ -128,7 +145,6 @@ Public Class addOfw
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        ' Optional: Click to change image
         btnAddImg.PerformClick()
     End Sub
 

@@ -46,7 +46,7 @@ Partial Class applications
         Me.btnProfile = New System.Windows.Forms.Button()
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -328,18 +328,18 @@ Partial Class applications
         Me.PictureBox5.TabIndex = 158
         Me.PictureBox5.TabStop = False
         '
-        'Button1
+        'btnClear
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(1504, 430)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(343, 41)
-        Me.Button1.TabIndex = 172
-        Me.Button1.Text = "F I L T E R"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClear.Location = New System.Drawing.Point(1504, 430)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(343, 41)
+        Me.btnClear.TabIndex = 172
+        Me.btnClear.Text = "C L E A R"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -367,7 +367,7 @@ Partial Class applications
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.dateContractStart)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.txtbxContractNum)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label3)
@@ -418,6 +418,6 @@ Partial Class applications
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnProfile As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnClear As Button
     Friend WithEvents Button2 As Button
 End Class

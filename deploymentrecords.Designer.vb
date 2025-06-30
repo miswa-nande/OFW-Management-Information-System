@@ -23,13 +23,18 @@ Partial Class deploymentrecords
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.btnDeployment = New System.Windows.Forms.Button()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnApplications = New System.Windows.Forms.Button()
         Me.btnJobOffers = New System.Windows.Forms.Button()
         Me.btnProfile = New System.Windows.Forms.Button()
+        Me.logo = New System.Windows.Forms.PictureBox()
         Me.dateContractStart = New System.Windows.Forms.DateTimePicker()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtbxContractNum = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -52,19 +57,14 @@ Partial Class deploymentrecords
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtbxJobTitle = New System.Windows.Forms.TextBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.logo = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -84,6 +84,17 @@ Partial Class deploymentrecords
         Me.Panel1.Size = New System.Drawing.Size(382, 1094)
         Me.Panel1.TabIndex = 114
         '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
+        Me.PictureBox6.Location = New System.Drawing.Point(32, 440)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 11
+        Me.PictureBox6.TabStop = False
+        '
         'btnDeployment
         '
         Me.btnDeployment.BackColor = System.Drawing.SystemColors.ControlLightLight
@@ -98,6 +109,38 @@ Partial Class deploymentrecords
         Me.btnDeployment.TabIndex = 10
         Me.btnDeployment.Text = "DEPLOYMENT"
         Me.btnDeployment.UseVisualStyleBackColor = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofwProfile_ic
+        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 9
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
+        Me.PictureBox2.Location = New System.Drawing.Point(32, 546)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addjob_ic
+        Me.PictureBox1.Location = New System.Drawing.Point(32, 334)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
         '
         'btnApplications
         '
@@ -141,6 +184,15 @@ Partial Class deploymentrecords
         Me.btnProfile.Text = "PROFILE"
         Me.btnProfile.UseVisualStyleBackColor = False
         '
+        'logo
+        '
+        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
+        Me.logo.Location = New System.Drawing.Point(32, 28)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(307, 123)
+        Me.logo.TabIndex = 1
+        Me.logo.TabStop = False
+        '
         'dateContractStart
         '
         Me.dateContractStart.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -161,18 +213,18 @@ Partial Class deploymentrecords
         Me.Label17.TabIndex = 146
         Me.Label17.Text = "Contract Start Date"
         '
-        'Button1
+        'btnClear
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button1.Location = New System.Drawing.Point(1504, 653)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(353, 41)
-        Me.Button1.TabIndex = 137
-        Me.Button1.Text = "F I L T E R"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClear.Location = New System.Drawing.Point(1504, 653)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(353, 41)
+        Me.btnClear.TabIndex = 137
+        Me.btnClear.Text = "C L E A R"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -398,58 +450,6 @@ Partial Class deploymentrecords
         Me.PictureBox5.TabIndex = 115
         Me.PictureBox5.TabStop = False
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
-        Me.PictureBox6.Location = New System.Drawing.Point(32, 440)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 11
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofwProfile_ic
-        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 9
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
-        Me.PictureBox2.Location = New System.Drawing.Point(32, 546)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addjob_ic
-        Me.PictureBox1.Location = New System.Drawing.Point(32, 334)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
-        'logo
-        '
-        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
-        Me.logo.Location = New System.Drawing.Point(32, 28)
-        Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(307, 123)
-        Me.logo.TabIndex = 1
-        Me.logo.TabStop = False
-        '
         'deploymentrecords
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -466,7 +466,7 @@ Partial Class deploymentrecords
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.dateContractStart)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.txtbxContractNum)
         Me.Controls.Add(Me.Label9)
@@ -487,13 +487,13 @@ Partial Class deploymentrecords
         Me.Text = "OFW | Deployment Records"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -511,7 +511,7 @@ Partial Class deploymentrecords
     Friend WithEvents logo As PictureBox
     Friend WithEvents dateContractStart As DateTimePicker
     Friend WithEvents Label17 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnClear As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents txtbxContractNum As TextBox
     Friend WithEvents Label9 As Label

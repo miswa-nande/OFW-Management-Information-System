@@ -37,7 +37,7 @@ Partial Class joboffers
         Me.Label17 = New System.Windows.Forms.Label()
         Me.cbxVisaType = New System.Windows.Forms.ComboBox()
         Me.txtbxSalaryRange = New System.Windows.Forms.TextBox()
-        Me.btnFilter = New System.Windows.Forms.Button()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbxCountry = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -239,18 +239,18 @@ Partial Class joboffers
         Me.txtbxSalaryRange.Size = New System.Drawing.Size(165, 27)
         Me.txtbxSalaryRange.TabIndex = 170
         '
-        'btnFilter
+        'btnClear
         '
-        Me.btnFilter.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnFilter.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnFilter.Location = New System.Drawing.Point(1506, 637)
-        Me.btnFilter.Name = "btnFilter"
-        Me.btnFilter.Size = New System.Drawing.Size(345, 41)
-        Me.btnFilter.TabIndex = 161
-        Me.btnFilter.Text = "F I L T E R"
-        Me.btnFilter.UseVisualStyleBackColor = False
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClear.Location = New System.Drawing.Point(1506, 637)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(345, 41)
+        Me.btnClear.TabIndex = 161
+        Me.btnClear.Text = "C L E A R"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'Label8
         '
@@ -432,7 +432,7 @@ Partial Class joboffers
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.cbxVisaType)
         Me.Controls.Add(Me.txtbxSalaryRange)
-        Me.Controls.Add(Me.btnFilter)
+        Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.cbxCountry)
         Me.Controls.Add(Me.Label7)
@@ -479,7 +479,7 @@ Partial Class joboffers
     Friend WithEvents Label17 As Label
     Friend WithEvents cbxVisaType As ComboBox
     Friend WithEvents txtbxSalaryRange As TextBox
-    Friend WithEvents btnFilter As Button
+    Friend WithEvents btnClear As Button
     Friend WithEvents Label8 As Label
     Friend WithEvents cbxCountry As ComboBox
     Friend WithEvents Label7 As Label

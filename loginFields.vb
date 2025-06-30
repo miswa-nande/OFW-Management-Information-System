@@ -22,14 +22,16 @@
             Exit Sub
         End If
 
-        Dim query As String = String.Format("
+        Dim encryptedPass As String = Encrypt(password)
+
+        Dim query As String = String.Format("""
             SELECT * FROM users 
             WHERE (username = '{0}' OR email = '{0}') 
             AND password = '{1}' 
             AND user_type = '{2}' 
-            AND status = 'Active'",
+            AND status = 'Active'""",
             userId.Replace("'", "''"),
-            password.Replace("'", "''"),
+            encryptedPass.Replace("'", "''"),
             userType.Replace("'", "''"))
 
         readQuery(query)
@@ -37,27 +39,24 @@
         If cmdRead IsNot Nothing AndAlso cmdRead.HasRows Then
             cmdRead.Read()
 
-            ' Save session info
             Session.CurrentLoggedUser.id = CInt(cmdRead("user_id"))
             Session.CurrentLoggedUser.userType = userType
+            Session.CurrentReferenceID = CInt(cmdRead("reference_id"))
 
-            Dim refID As Integer = CInt(cmdRead("reference_id"))
-
-            ' Initialize full name variable
+            Dim refID As Integer = Session.CurrentReferenceID
             Dim fullName As String = ""
-
-            ' Determine full name based on user type and reference_id
             Dim nameQuery As String = ""
+
             Select Case userType
                 Case "OFW"
-                    nameQuery = $"SELECT CONCAT(FirstName, ' ', LastName) AS FullName FROM ofw WHERE OFWId = {refID}"
                     Session.LoggedInOfwID = refID
+                    nameQuery = $"SELECT CONCAT(FirstName, ' ', LastName) AS FullName FROM ofw WHERE OFWId = {refID}"
                 Case "Agency"
-                    nameQuery = $"SELECT AgencyName AS FullName FROM agency WHERE AgencyID = {refID}"
                     Session.LoggedInAgencyID = refID
+                    nameQuery = $"SELECT AgencyName AS FullName FROM agency WHERE AgencyID = {refID}"
                 Case "Employer"
-                    nameQuery = $"SELECT CONCAT(EmployerFirstName, ' ', EmployerLastName) AS FullName FROM employer WHERE EmployerID = {refID}"
                     Session.LoggedInEmployerID = refID
+                    nameQuery = $"SELECT CONCAT(EmployerFirstName, ' ', EmployerLastName) AS FullName FROM employer WHERE EmployerID = {refID}"
                 Case "Admin"
                     Session.LoggedInAdminID = refID
                     fullName = cmdRead("username").ToString()
@@ -65,7 +64,6 @@
 
             cmdRead.Close()
 
-            ' Fetch full name if not admin
             If userType <> "Admin" Then
                 readQuery(nameQuery)
                 If cmdRead IsNot Nothing AndAlso cmdRead.Read() Then
@@ -75,24 +73,63 @@
             End If
 
             Session.CurrentLoggedUser.fullName = fullName
-
-            ' Log the login event
             Session.Logs("User logged in.")
 
-            ' Redirect to the correct dashboard
             Select Case userType
                 Case "Admin"
                     Dim form As New dashboard()
                     form.Show()
+
                 Case "Agency"
-                    Dim form As New agcDashboard()
-                    form.Show()
+                    If refID > 0 Then
+                        readQuery($"SELECT * FROM agency WHERE AgencyID = {refID}")
+                        If cmdRead.HasRows Then
+                            cmdRead.Close()
+                            Dim form As New agcDashboard()
+                            form.Show()
+                        Else
+                            cmdRead.Close()
+                            Dim form As New addAgency()
+                            form.Show()
+                        End If
+                    Else
+                        Dim form As New addAgency()
+                        form.Show()
+                    End If
+
                 Case "Employer"
-                    Dim form As New empDashboard()
-                    form.Show()
+                    If refID > 0 Then
+                        readQuery($"SELECT * FROM employer WHERE EmployerID = {refID}")
+                        If cmdRead.HasRows Then
+                            cmdRead.Close()
+                            Dim form As New empDashboard()
+                            form.Show()
+                        Else
+                            cmdRead.Close()
+                            Dim form As New addEmployer()
+                            form.Show()
+                        End If
+                    Else
+                        Dim form As New addEmployer()
+                        form.Show()
+                    End If
+
                 Case "OFW"
-                    Dim form As New ofwProfile()
-                    form.Show()
+                    If refID > 0 Then
+                        readQuery($"SELECT * FROM ofw WHERE OFWId = {refID}")
+                        If cmdRead.HasRows Then
+                            cmdRead.Close()
+                            Dim form As New ofwProfile()
+                            form.Show()
+                        Else
+                            cmdRead.Close()
+                            Dim form As New addOfw()
+                            form.Show()
+                        End If
+                    Else
+                        Dim form As New addOfw()
+                        form.Show()
+                    End If
             End Select
 
             Me.Hide()
@@ -102,8 +139,8 @@
         End If
     End Sub
 
-    Private Sub LabelSignUp()(sender As Object, e As EventArgs) Handles Label4.Click
-         Dim RegForm As New UserRegistration()
+    Private Sub LabelSignUp_Click(sender As Object, e As EventArgs) Handles Label4.Click
+        Dim RegForm As New UserRegistration()
         RegForm.Show()
         Me.Hide()
     End Sub
