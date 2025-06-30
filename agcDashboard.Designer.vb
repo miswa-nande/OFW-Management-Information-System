@@ -25,6 +25,9 @@ Partial Class agcDashboard
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -83,10 +86,10 @@ Partial Class agcDashboard
         Me.Label13 = New System.Windows.Forms.Label()
         Me.OneMonthBTN = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.lblAccreditationStatus = New System.Windows.Forms.Label()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -110,6 +113,7 @@ Partial Class agcDashboard
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -769,7 +773,7 @@ Partial Class agcDashboard
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel7.Controls.Add(Me.Label14)
+        Me.Panel7.Controls.Add(Me.Chart1)
         Me.Panel7.Controls.Add(Me.PictureBox12)
         Me.Panel7.Controls.Add(Me.Label15)
         Me.Panel7.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -777,15 +781,6 @@ Partial Class agcDashboard
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(492, 434)
         Me.Panel7.TabIndex = 294
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(169, 235)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(161, 22)
-        Me.Label14.TabIndex = 11
-        Me.Label14.Text = "BARCHART HERE"
         '
         'PictureBox12
         '
@@ -818,6 +813,22 @@ Partial Class agcDashboard
         Me.lblAccreditationStatus.Size = New System.Drawing.Size(225, 22)
         Me.lblAccreditationStatus.TabIndex = 318
         Me.lblAccreditationStatus.Text = "AccredStatPlaceholder"
+        '
+        'Chart1
+        '
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
+        Me.Chart1.Location = New System.Drawing.Point(16, 109)
+        Me.Chart1.Name = "Chart1"
+        Series2.ChartArea = "ChartArea1"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.Chart1.Series.Add(Series2)
+        Me.Chart1.Size = New System.Drawing.Size(458, 300)
+        Me.Chart1.TabIndex = 11
+        Me.Chart1.Text = "Chart1"
         '
         'agcDashboard
         '
@@ -885,6 +896,7 @@ Partial Class agcDashboard
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -948,8 +960,8 @@ Partial Class agcDashboard
     Friend WithEvents btnEmployers As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label14 As Label
     Friend WithEvents PictureBox12 As PictureBox
     Friend WithEvents Label15 As Label
     Friend WithEvents lblAccreditationStatus As Label
+    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
 End Class
