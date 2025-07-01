@@ -227,9 +227,7 @@ Public Class ofws
 
     ' REPORT GENERATION
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-        Dim dt As DataTable = CType(DataGridView1.DataSource, DataTable)
-        Dim previewForm As New ReportPreviewForm(dt)
-        previewForm.ShowDialog()
+        ' Report preview functionality removed as ReportPreviewForm is deleted.
     End Sub
 
     ' DELETE

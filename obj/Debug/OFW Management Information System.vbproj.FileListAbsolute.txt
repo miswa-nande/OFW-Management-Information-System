@@ -521,3 +521,135 @@ C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.ApplicationDetails.resources
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.JobApplicants.resources
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.UserRegistration.resources
+D:\ofw_mis\bin\Debug\OFW Management Information System.exe.config
+D:\ofw_mis\bin\Debug\OFW Management Information System.exe
+D:\ofw_mis\bin\Debug\OFW Management Information System.pdb
+D:\ofw_mis\bin\Debug\OFW Management Information System.xml
+D:\ofw_mis\bin\Debug\BouncyCastle.Cryptography.dll
+D:\ofw_mis\bin\Debug\Google.Protobuf.dll
+D:\ofw_mis\bin\Debug\K4os.Compression.LZ4.dll
+D:\ofw_mis\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\ofw_mis\bin\Debug\K4os.Hash.xxHash.dll
+D:\ofw_mis\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\ofw_mis\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\ofw_mis\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\ofw_mis\bin\Debug\MySql.Data.dll
+D:\ofw_mis\bin\Debug\System.Buffers.dll
+D:\ofw_mis\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\ofw_mis\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\ofw_mis\bin\Debug\System.IO.Pipelines.dll
+D:\ofw_mis\bin\Debug\System.Memory.dll
+D:\ofw_mis\bin\Debug\System.Numerics.Vectors.dll
+D:\ofw_mis\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\ofw_mis\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\ofw_mis\bin\Debug\ZstdSharp.dll
+D:\ofw_mis\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\ofw_mis\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\ofw_mis\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\ofw_mis\bin\Debug\BouncyCastle.Cryptography.xml
+D:\ofw_mis\bin\Debug\Google.Protobuf.pdb
+D:\ofw_mis\bin\Debug\Google.Protobuf.xml
+D:\ofw_mis\bin\Debug\K4os.Compression.LZ4.xml
+D:\ofw_mis\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\ofw_mis\bin\Debug\K4os.Hash.xxHash.xml
+D:\ofw_mis\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\ofw_mis\bin\Debug\MySql.Data.xml
+D:\ofw_mis\bin\Debug\System.Buffers.xml
+D:\ofw_mis\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\ofw_mis\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\ofw_mis\bin\Debug\System.IO.Pipelines.xml
+D:\ofw_mis\bin\Debug\System.Memory.xml
+D:\ofw_mis\bin\Debug\System.Numerics.Vectors.xml
+D:\ofw_mis\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\ofw_mis\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\ofw_mis\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\ofw_mis\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\ofw_mis\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\ofw_mis\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\ofw_mis\obj\Debug\OFW Management Information System.vbproj.AssemblyReference.cache
+D:\ofw_mis\obj\Debug\OFW Management Information System.vbproj.SuggestedBindingRedirects.cache
+D:\ofw_mis\obj\Debug\OFW Management Information System.exe.config
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.addAgency.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.addDeployment.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.addEmployer.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.addJob.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.addOfw.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.AdminConfiguration.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agcApplications.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agcDashboard.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agcDeployment.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agcEmployers.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agcJobs.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agcOfws.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.ApplicationDetails.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.empAgencies.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.empDashboard.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agencies.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.applicationForm.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.applications.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.dashboard.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.deploymentrecords.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.deployments.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.editAgency.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.editDeployment.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.editEmployer.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.editJob.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.editOfw.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.empJobs.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.employers.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.empOfws.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.JobApplicants.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.jobdetails.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.joboffers.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.jobplacement.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.loginFields.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.loginPage.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.Resources.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.ofwProfile.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.ofws.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.UserRegistration.resources
+D:\ofw_mis\obj\Debug\OFW Management Information System.vbproj.GenerateResource.cache
+D:\ofw_mis\obj\Debug\OFW Management Information System.vbproj.CoreCompileInputs.cache
+D:\ofw_mis\obj\Debug\OFW Mana.2B6B6796.Up2Date
+D:\ofw_mis\obj\Debug\OFW Management Information System.exe
+D:\ofw_mis\obj\Debug\OFW Management Information System.xml
+D:\ofw_mis\obj\Debug\OFW Management Information System.pdb
+D:\ofw_mis\bin\Debug\x86\SqlServerSpatial160.dll
+D:\ofw_mis\bin\Debug\x64\SqlServerSpatial160.dll
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.OFWReportView.resources
