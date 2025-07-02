@@ -53,7 +53,7 @@ Public Class addAgency
             ' Insert agency
             Dim query As String = "
                 INSERT INTO agency 
-                (AgencyName, LicenseNumber, City, State, Street, ZipCode, ContactNumber, Email, WebsiteURL, Specialization, YearsOfOperation, GovtAccreditation, LicenseExpiryDate, Notes)
+                (AgencyName, AgencyLicenseNumber, City, State, Street, Zipcode, ContactNum, Email, WebsiteUrl, Specialization, YearsOfOperation, GovAccreditationStat, LicenseExpDate, Notes)
                 VALUES
                 (@name, @license, @city, @state, @street, @zip, @contact, @email, @url, @spec, @years, @govtAccred, @licenseExp, @notes)"
 

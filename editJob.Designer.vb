@@ -63,7 +63,7 @@ Partial Class editJob
         Me.dateApplicationDeadline.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dateApplicationDeadline.Location = New System.Drawing.Point(271, 527)
         Me.dateApplicationDeadline.Name = "dateApplicationDeadline"
-        Me.dateApplicationDeadline.Size = New System.Drawing.Size(212, 31)
+        Me.dateApplicationDeadline.Size = New System.Drawing.Size(212, 37)
         Me.dateApplicationDeadline.TabIndex = 214
         '
         'cbxJobStatus
@@ -72,7 +72,7 @@ Partial Class editJob
         Me.cbxJobStatus.FormattingEnabled = True
         Me.cbxJobStatus.Location = New System.Drawing.Point(504, 527)
         Me.cbxJobStatus.Name = "cbxJobStatus"
-        Me.cbxJobStatus.Size = New System.Drawing.Size(199, 30)
+        Me.cbxJobStatus.Size = New System.Drawing.Size(199, 38)
         Me.cbxJobStatus.TabIndex = 213
         '
         'Label20
@@ -82,7 +82,7 @@ Partial Class editJob
         Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label20.Location = New System.Drawing.Point(494, 500)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(104, 22)
+        Me.Label20.Size = New System.Drawing.Size(133, 30)
         Me.Label20.TabIndex = 212
         Me.Label20.Text = "Job Status"
         '
@@ -93,7 +93,7 @@ Partial Class editJob
         Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label21.Location = New System.Drawing.Point(267, 500)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(203, 22)
+        Me.Label21.Size = New System.Drawing.Size(267, 30)
         Me.Label21.TabIndex = 211
         Me.Label21.Text = "Application Deadline"
         '
@@ -102,7 +102,7 @@ Partial Class editJob
         Me.txtbxNumOfVacancies.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxNumOfVacancies.Location = New System.Drawing.Point(38, 527)
         Me.txtbxNumOfVacancies.Name = "txtbxNumOfVacancies"
-        Me.txtbxNumOfVacancies.Size = New System.Drawing.Size(212, 31)
+        Me.txtbxNumOfVacancies.Size = New System.Drawing.Size(212, 37)
         Me.txtbxNumOfVacancies.TabIndex = 210
         '
         'Label19
@@ -112,7 +112,7 @@ Partial Class editJob
         Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label19.Location = New System.Drawing.Point(34, 501)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(211, 22)
+        Me.Label19.Size = New System.Drawing.Size(275, 30)
         Me.Label19.TabIndex = 209
         Me.Label19.Text = "Number of Vacancies"
         '
@@ -132,7 +132,7 @@ Partial Class editJob
         Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label18.Location = New System.Drawing.Point(30, 567)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(116, 22)
+        Me.Label18.Size = New System.Drawing.Size(155, 30)
         Me.Label18.TabIndex = 207
         Me.Label18.Text = "Conditions :"
         '
@@ -142,7 +142,7 @@ Partial Class editJob
         Me.cbxVisaType.FormattingEnabled = True
         Me.cbxVisaType.Location = New System.Drawing.Point(504, 465)
         Me.cbxVisaType.Name = "cbxVisaType"
-        Me.cbxVisaType.Size = New System.Drawing.Size(199, 30)
+        Me.cbxVisaType.Size = New System.Drawing.Size(199, 38)
         Me.cbxVisaType.TabIndex = 206
         '
         'Label16
@@ -152,7 +152,7 @@ Partial Class editJob
         Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label16.Location = New System.Drawing.Point(494, 438)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(97, 22)
+        Me.Label16.Size = New System.Drawing.Size(125, 30)
         Me.Label16.TabIndex = 205
         Me.Label16.Text = "Visa Type"
         '
@@ -161,7 +161,7 @@ Partial Class editJob
         Me.txtbxJobType.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxJobType.Location = New System.Drawing.Point(271, 464)
         Me.txtbxJobType.Name = "txtbxJobType"
-        Me.txtbxJobType.Size = New System.Drawing.Size(212, 31)
+        Me.txtbxJobType.Size = New System.Drawing.Size(212, 37)
         Me.txtbxJobType.TabIndex = 204
         '
         'Label17
@@ -171,7 +171,7 @@ Partial Class editJob
         Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label17.Location = New System.Drawing.Point(267, 438)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(93, 22)
+        Me.Label17.Size = New System.Drawing.Size(120, 30)
         Me.Label17.TabIndex = 203
         Me.Label17.Text = "Job Type"
         '
@@ -180,7 +180,7 @@ Partial Class editJob
         Me.txtbxReqSkill.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxReqSkill.Location = New System.Drawing.Point(38, 464)
         Me.txtbxReqSkill.Name = "txtbxReqSkill"
-        Me.txtbxReqSkill.Size = New System.Drawing.Size(212, 31)
+        Me.txtbxReqSkill.Size = New System.Drawing.Size(212, 37)
         Me.txtbxReqSkill.TabIndex = 202
         '
         'Label2
@@ -190,7 +190,7 @@ Partial Class editJob
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(34, 438)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(126, 22)
+        Me.Label2.Size = New System.Drawing.Size(169, 30)
         Me.Label2.TabIndex = 201
         Me.Label2.Text = "Required Skill"
         '
@@ -210,7 +210,7 @@ Partial Class editJob
         Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label15.Location = New System.Drawing.Point(33, 675)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(90, 22)
+        Me.Label15.Size = New System.Drawing.Size(120, 30)
         Me.Label15.TabIndex = 199
         Me.Label15.Text = "Benefits :"
         '
@@ -220,7 +220,7 @@ Partial Class editJob
         Me.dateContractDuration.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dateContractDuration.Location = New System.Drawing.Point(504, 373)
         Me.dateContractDuration.Name = "dateContractDuration"
-        Me.dateContractDuration.Size = New System.Drawing.Size(199, 31)
+        Me.dateContractDuration.Size = New System.Drawing.Size(199, 37)
         Me.dateContractDuration.TabIndex = 198
         '
         'Label14
@@ -230,7 +230,7 @@ Partial Class editJob
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(500, 350)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(141, 20)
+        Me.Label14.Size = New System.Drawing.Size(178, 22)
         Me.Label14.TabIndex = 197
         Me.Label14.Text = "Contract Duration"
         '
@@ -240,7 +240,7 @@ Partial Class editJob
         Me.cbxCountryOfEmployment.FormattingEnabled = True
         Me.cbxCountryOfEmployment.Location = New System.Drawing.Point(38, 374)
         Me.cbxCountryOfEmployment.Name = "cbxCountryOfEmployment"
-        Me.cbxCountryOfEmployment.Size = New System.Drawing.Size(212, 30)
+        Me.cbxCountryOfEmployment.Size = New System.Drawing.Size(212, 38)
         Me.cbxCountryOfEmployment.TabIndex = 196
         '
         'Label13
@@ -250,7 +250,7 @@ Partial Class editJob
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(34, 348)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(227, 22)
+        Me.Label13.Size = New System.Drawing.Size(296, 30)
         Me.Label13.TabIndex = 195
         Me.Label13.Text = "Country of Employment"
         '
@@ -259,7 +259,7 @@ Partial Class editJob
         Me.txtbxSalaryRange.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxSalaryRange.Location = New System.Drawing.Point(271, 374)
         Me.txtbxSalaryRange.Name = "txtbxSalaryRange"
-        Me.txtbxSalaryRange.Size = New System.Drawing.Size(212, 31)
+        Me.txtbxSalaryRange.Size = New System.Drawing.Size(212, 37)
         Me.txtbxSalaryRange.TabIndex = 194
         '
         'Label11
@@ -269,7 +269,7 @@ Partial Class editJob
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(267, 348)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(132, 22)
+        Me.Label11.Size = New System.Drawing.Size(168, 30)
         Me.Label11.TabIndex = 193
         Me.Label11.Text = "Salary Range"
         '
@@ -278,7 +278,7 @@ Partial Class editJob
         Me.txtbxJobTitle.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxJobTitle.Location = New System.Drawing.Point(36, 174)
         Me.txtbxJobTitle.Name = "txtbxJobTitle"
-        Me.txtbxJobTitle.Size = New System.Drawing.Size(440, 31)
+        Me.txtbxJobTitle.Size = New System.Drawing.Size(440, 37)
         Me.txtbxJobTitle.TabIndex = 192
         '
         'txtbxEmployerIdNum
@@ -286,7 +286,7 @@ Partial Class editJob
         Me.txtbxEmployerIdNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxEmployerIdNum.Location = New System.Drawing.Point(504, 174)
         Me.txtbxEmployerIdNum.Name = "txtbxEmployerIdNum"
-        Me.txtbxEmployerIdNum.Size = New System.Drawing.Size(199, 31)
+        Me.txtbxEmployerIdNum.Size = New System.Drawing.Size(199, 37)
         Me.txtbxEmployerIdNum.TabIndex = 191
         '
         'Label9
@@ -296,7 +296,7 @@ Partial Class editJob
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(500, 146)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(169, 21)
+        Me.Label9.Size = New System.Drawing.Size(213, 23)
         Me.Label9.TabIndex = 190
         Me.Label9.Text = "Employer ID Number"
         '
@@ -307,7 +307,7 @@ Partial Class editJob
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label10.Location = New System.Drawing.Point(31, 148)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(82, 22)
+        Me.Label10.Size = New System.Drawing.Size(111, 30)
         Me.Label10.TabIndex = 189
         Me.Label10.Text = "Job Title"
         '
@@ -351,7 +351,7 @@ Partial Class editJob
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(30, 209)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(150, 22)
+        Me.Label5.Size = New System.Drawing.Size(198, 30)
         Me.Label5.TabIndex = 185
         Me.Label5.Text = "Job Description"
         '
@@ -362,7 +362,7 @@ Partial Class editJob
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(144, 38)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(299, 78)
+        Me.Label1.Size = New System.Drawing.Size(375, 96)
         Me.Label1.TabIndex = 184
         Me.Label1.Text = "EDIT JOB"
         '
@@ -378,7 +378,7 @@ Partial Class editJob
         '
         'editJob
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 22.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(14.0!, 30.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(732, 925)

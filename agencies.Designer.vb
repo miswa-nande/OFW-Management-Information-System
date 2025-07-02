@@ -29,6 +29,13 @@ Partial Class agencies
         Me.btnOfw = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.logo = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -55,20 +62,12 @@ Partial Class agencies
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtbxSpecialization = New System.Windows.Forms.TextBox()
         Me.dateLicExp = New System.Windows.Forms.DateTimePicker()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.logo = New System.Windows.Forms.PictureBox()
         Me.btnDelete = New System.Windows.Forms.PictureBox()
         Me.btnGenerate = New System.Windows.Forms.PictureBox()
         Me.btnEdit = New System.Windows.Forms.PictureBox()
         Me.btnAdd = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,6 +75,7 @@ Partial Class agencies
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -190,276 +190,6 @@ Partial Class agencies
         Me.Panel1.Size = New System.Drawing.Size(382, 1094)
         Me.Panel1.TabIndex = 81
         '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(1796, 879)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(64, 21)
-        Me.Label15.TabIndex = 80
-        Me.Label15.Text = "DELETE"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(1685, 879)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(94, 21)
-        Me.Label14.TabIndex = 79
-        Me.Label14.Text = "GENERATE"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(1614, 879)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(44, 21)
-        Me.Label13.TabIndex = 78
-        Me.Label13.Text = "EDIT"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(1518, 879)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(47, 21)
-        Me.Label12.TabIndex = 77
-        Me.Label12.Text = "ADD"
-        '
-        'btnClear
-        '
-        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnClear.Location = New System.Drawing.Point(1513, 730)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(345, 41)
-        Me.btnClear.TabIndex = 72
-        Me.btnClear.Text = "C L E A R"
-        Me.btnClear.UseVisualStyleBackColor = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(1509, 657)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(191, 21)
-        Me.Label11.TabIndex = 70
-        Me.Label11.Text = "License Expiration Date"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(1509, 599)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(195, 17)
-        Me.Label10.TabIndex = 68
-        Me.Label10.Text = "Number of active Job Orders"
-        '
-        'txtbxNumActiveJobs
-        '
-        Me.txtbxNumActiveJobs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxNumActiveJobs.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxNumActiveJobs.Location = New System.Drawing.Point(1513, 625)
-        Me.txtbxNumActiveJobs.Name = "txtbxNumActiveJobs"
-        Me.txtbxNumActiveJobs.Size = New System.Drawing.Size(165, 27)
-        Me.txtbxNumActiveJobs.TabIndex = 67
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(1509, 541)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(197, 17)
-        Me.Label9.TabIndex = 66
-        Me.Label9.Text = "Number of Deployed Workers"
-        '
-        'txtbxNumDepWorkers
-        '
-        Me.txtbxNumDepWorkers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxNumDepWorkers.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxNumDepWorkers.Location = New System.Drawing.Point(1513, 567)
-        Me.txtbxNumDepWorkers.Name = "txtbxNumDepWorkers"
-        Me.txtbxNumDepWorkers.Size = New System.Drawing.Size(165, 27)
-        Me.txtbxNumDepWorkers.TabIndex = 65
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(1691, 468)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(169, 17)
-        Me.Label8.TabIndex = 64
-        Me.Label8.Text = "Govt. Accreditation Status"
-        '
-        'cbxGovtAccredStat
-        '
-        Me.cbxGovtAccredStat.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxGovtAccredStat.FormattingEnabled = True
-        Me.cbxGovtAccredStat.Location = New System.Drawing.Point(1695, 492)
-        Me.cbxGovtAccredStat.Name = "cbxGovtAccredStat"
-        Me.cbxGovtAccredStat.Size = New System.Drawing.Size(165, 29)
-        Me.cbxGovtAccredStat.TabIndex = 63
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(1509, 466)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(117, 21)
-        Me.Label7.TabIndex = 62
-        Me.Label7.Text = "Specialization"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(1509, 408)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(145, 21)
-        Me.Label6.TabIndex = 60
-        Me.Label6.Text = "Contact Number"
-        '
-        'txtbxContactNum
-        '
-        Me.txtbxContactNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxContactNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxContactNum.Location = New System.Drawing.Point(1513, 434)
-        Me.txtbxContactNum.Name = "txtbxContactNum"
-        Me.txtbxContactNum.Size = New System.Drawing.Size(347, 27)
-        Me.txtbxContactNum.TabIndex = 59
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(1509, 350)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(199, 21)
-        Me.Label5.TabIndex = 58
-        Me.Label5.Text = "Agnecy License Number"
-        '
-        'txtbxAgencyLicNum
-        '
-        Me.txtbxAgencyLicNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxAgencyLicNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxAgencyLicNum.Location = New System.Drawing.Point(1513, 376)
-        Me.txtbxAgencyLicNum.Name = "txtbxAgencyLicNum"
-        Me.txtbxAgencyLicNum.Size = New System.Drawing.Size(347, 27)
-        Me.txtbxAgencyLicNum.TabIndex = 57
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(1509, 292)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(124, 21)
-        Me.Label4.TabIndex = 56
-        Me.Label4.Text = "Agency Name"
-        '
-        'txtbxAgencyName
-        '
-        Me.txtbxAgencyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxAgencyName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxAgencyName.Location = New System.Drawing.Point(1513, 318)
-        Me.txtbxAgencyName.Name = "txtbxAgencyName"
-        Me.txtbxAgencyName.Size = New System.Drawing.Size(347, 27)
-        Me.txtbxAgencyName.TabIndex = 55
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(1509, 234)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(160, 21)
-        Me.Label3.TabIndex = 54
-        Me.Label3.Text = "Agency ID Number"
-        '
-        'txtbxIdNum
-        '
-        Me.txtbxIdNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxIdNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxIdNum.Location = New System.Drawing.Point(1513, 260)
-        Me.txtbxIdNum.Name = "txtbxIdNum"
-        Me.txtbxIdNum.Size = New System.Drawing.Size(100, 27)
-        Me.txtbxIdNum.TabIndex = 53
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(1505, 183)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(237, 44)
-        Me.Label2.TabIndex = 52
-        Me.Label2.Text = "Filter Search"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(418, 172)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(1048, 831)
-        Me.DataGridView1.TabIndex = 51
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(548, 28)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(487, 112)
-        Me.Label1.TabIndex = 50
-        Me.Label1.Text = "Agencies"
-        '
-        'txtbxSpecialization
-        '
-        Me.txtbxSpecialization.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxSpecialization.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxSpecialization.Location = New System.Drawing.Point(1513, 494)
-        Me.txtbxSpecialization.Name = "txtbxSpecialization"
-        Me.txtbxSpecialization.Size = New System.Drawing.Size(165, 27)
-        Me.txtbxSpecialization.TabIndex = 82
-        '
-        'dateLicExp
-        '
-        Me.dateLicExp.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateLicExp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateLicExp.Location = New System.Drawing.Point(1513, 681)
-        Me.dateLicExp.Name = "dateLicExp"
-        Me.dateLicExp.Size = New System.Drawing.Size(165, 27)
-        Me.dateLicExp.TabIndex = 83
-        '
         'PictureBox11
         '
         Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
@@ -534,6 +264,277 @@ Partial Class agencies
         Me.logo.TabIndex = 1
         Me.logo.TabStop = False
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Red
+        Me.Label15.Location = New System.Drawing.Point(1796, 879)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(75, 23)
+        Me.Label15.TabIndex = 80
+        Me.Label15.Text = "DELETE"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label14.Location = New System.Drawing.Point(1685, 879)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(110, 23)
+        Me.Label14.TabIndex = 79
+        Me.Label14.Text = "GENERATE"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(1614, 879)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(49, 23)
+        Me.Label13.TabIndex = 78
+        Me.Label13.Text = "EDIT"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label12.Location = New System.Drawing.Point(1518, 879)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(55, 23)
+        Me.Label12.TabIndex = 77
+        Me.Label12.Text = "ADD"
+        '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnClear.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.btnClear.Location = New System.Drawing.Point(1513, 730)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(345, 41)
+        Me.btnClear.TabIndex = 72
+        Me.btnClear.Text = "C L E A R"
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label11.Location = New System.Drawing.Point(1509, 657)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(235, 23)
+        Me.Label11.TabIndex = 70
+        Me.Label11.Text = "License Expiration Date"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label10.Location = New System.Drawing.Point(1509, 599)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(253, 21)
+        Me.Label10.TabIndex = 68
+        Me.Label10.Text = "Number of active Job Orders"
+        '
+        'txtbxNumActiveJobs
+        '
+        Me.txtbxNumActiveJobs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxNumActiveJobs.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxNumActiveJobs.Location = New System.Drawing.Point(1513, 625)
+        Me.txtbxNumActiveJobs.Name = "txtbxNumActiveJobs"
+        Me.txtbxNumActiveJobs.Size = New System.Drawing.Size(165, 32)
+        Me.txtbxNumActiveJobs.TabIndex = 67
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label9.Location = New System.Drawing.Point(1509, 541)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(253, 21)
+        Me.Label9.TabIndex = 66
+        Me.Label9.Text = "Number of Deployed Workers"
+        '
+        'txtbxNumDepWorkers
+        '
+        Me.txtbxNumDepWorkers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxNumDepWorkers.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxNumDepWorkers.Location = New System.Drawing.Point(1513, 567)
+        Me.txtbxNumDepWorkers.Name = "txtbxNumDepWorkers"
+        Me.txtbxNumDepWorkers.Size = New System.Drawing.Size(165, 32)
+        Me.txtbxNumDepWorkers.TabIndex = 65
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(1691, 468)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(202, 20)
+        Me.Label8.TabIndex = 64
+        Me.Label8.Text = "Govt. Accreditation Status"
+        '
+        'cbxGovtAccredStat
+        '
+        Me.cbxGovtAccredStat.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxGovtAccredStat.FormattingEnabled = True
+        Me.cbxGovtAccredStat.Location = New System.Drawing.Point(1695, 492)
+        Me.cbxGovtAccredStat.Name = "cbxGovtAccredStat"
+        Me.cbxGovtAccredStat.Size = New System.Drawing.Size(165, 31)
+        Me.cbxGovtAccredStat.TabIndex = 63
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(1509, 466)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(143, 23)
+        Me.Label7.TabIndex = 62
+        Me.Label7.Text = "Specialization"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(1509, 408)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(177, 23)
+        Me.Label6.TabIndex = 60
+        Me.Label6.Text = "Contact Number"
+        '
+        'txtbxContactNum
+        '
+        Me.txtbxContactNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxContactNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxContactNum.Location = New System.Drawing.Point(1513, 434)
+        Me.txtbxContactNum.Name = "txtbxContactNum"
+        Me.txtbxContactNum.Size = New System.Drawing.Size(347, 32)
+        Me.txtbxContactNum.TabIndex = 59
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(1509, 350)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(249, 23)
+        Me.Label5.TabIndex = 58
+        Me.Label5.Text = "Agnecy License Number"
+        '
+        'txtbxAgencyLicNum
+        '
+        Me.txtbxAgencyLicNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxAgencyLicNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxAgencyLicNum.Location = New System.Drawing.Point(1513, 376)
+        Me.txtbxAgencyLicNum.Name = "txtbxAgencyLicNum"
+        Me.txtbxAgencyLicNum.Size = New System.Drawing.Size(347, 32)
+        Me.txtbxAgencyLicNum.TabIndex = 57
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(1509, 292)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(154, 23)
+        Me.Label4.TabIndex = 56
+        Me.Label4.Text = "Agency Name"
+        '
+        'txtbxAgencyName
+        '
+        Me.txtbxAgencyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxAgencyName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxAgencyName.Location = New System.Drawing.Point(1513, 318)
+        Me.txtbxAgencyName.Name = "txtbxAgencyName"
+        Me.txtbxAgencyName.Size = New System.Drawing.Size(347, 32)
+        Me.txtbxAgencyName.TabIndex = 55
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(1509, 234)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(198, 23)
+        Me.Label3.TabIndex = 54
+        Me.Label3.Text = "Agency ID Number"
+        '
+        'txtbxIdNum
+        '
+        Me.txtbxIdNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxIdNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxIdNum.Location = New System.Drawing.Point(1513, 260)
+        Me.txtbxIdNum.Name = "txtbxIdNum"
+        Me.txtbxIdNum.Size = New System.Drawing.Size(100, 32)
+        Me.txtbxIdNum.TabIndex = 53
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(1505, 183)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(299, 56)
+        Me.Label2.TabIndex = 52
+        Me.Label2.Text = "Filter Search"
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(418, 172)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.Size = New System.Drawing.Size(1048, 831)
+        Me.DataGridView1.TabIndex = 51
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 72.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(548, 28)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(613, 141)
+        Me.Label1.TabIndex = 50
+        Me.Label1.Text = "Agencies"
+        '
+        'txtbxSpecialization
+        '
+        Me.txtbxSpecialization.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxSpecialization.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxSpecialization.Location = New System.Drawing.Point(1513, 494)
+        Me.txtbxSpecialization.Name = "txtbxSpecialization"
+        Me.txtbxSpecialization.Size = New System.Drawing.Size(165, 32)
+        Me.txtbxSpecialization.TabIndex = 82
+        '
+        'dateLicExp
+        '
+        Me.dateLicExp.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateLicExp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dateLicExp.Location = New System.Drawing.Point(1513, 681)
+        Me.dateLicExp.Name = "dateLicExp"
+        Me.dateLicExp.Size = New System.Drawing.Size(165, 32)
+        Me.dateLicExp.TabIndex = 83
+        '
         'btnDelete
         '
         Me.btnDelete.Image = Global.OFW_Management_Information_System.My.Resources.Resources.delete_ic
@@ -589,7 +590,7 @@ Partial Class agencies
         '
         'agencies
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 22.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(14.0!, 30.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
@@ -631,7 +632,6 @@ Partial Class agencies
         Me.Text = "ADMIN | Agencies"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -639,6 +639,7 @@ Partial Class agencies
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).EndInit()

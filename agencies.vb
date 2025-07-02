@@ -1,4 +1,6 @@
-﻿Public Class agencies
+﻿Imports MySql.Data.MySqlClient
+
+Public Class agencies
 
     Private Sub agencies_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadAgenciesToDGV(DataGridView1)
@@ -93,11 +95,11 @@
         End If
 
         If txtbxAgencyLicNum.Text.Trim() <> "" Then
-            query &= " AND LicenseNumber LIKE '%" & txtbxAgencyLicNum.Text.Trim() & "%'"
+            query &= " AND AgencyLicenseNumber LIKE '%" & txtbxAgencyLicNum.Text.Trim() & "%'"
         End If
 
         If txtbxContactNum.Text.Trim() <> "" Then
-            query &= " AND ContactNumber LIKE '%" & txtbxContactNum.Text.Trim() & "%'"
+            query &= " AND ContactNum LIKE '%" & txtbxContactNum.Text.Trim() & "%'"
         End If
 
         If txtbxSpecialization.Text.Trim() <> "" Then
@@ -105,11 +107,11 @@
         End If
 
         If cbxGovtAccredStat.SelectedIndex <> -1 Then
-            query &= " AND AccreditationStatus = '" & cbxGovtAccredStat.SelectedItem.ToString() & "'"
+            query &= " AND GovAccreditationStat = '" & cbxGovtAccredStat.SelectedItem.ToString() & "'"
         End If
 
         If txtbxNumDepWorkers.Text.Trim() <> "" Then
-            query &= " AND NumDeployedWorkers LIKE '%" & txtbxNumDepWorkers.Text.Trim() & "%'"
+            query &= " AND NumOfDeployedWorkers LIKE '%" & txtbxNumDepWorkers.Text.Trim() & "%'"
         End If
 
         If txtbxNumActiveJobs.Text.Trim() <> "" Then
@@ -177,5 +179,13 @@
         Dim newForm As New AdminConfiguration()
         newForm.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
     End Sub
 End Class

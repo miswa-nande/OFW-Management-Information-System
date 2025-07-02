@@ -73,7 +73,7 @@ Partial Class editAgency
         Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label15.Location = New System.Drawing.Point(28, 660)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(72, 22)
+        Me.Label15.Size = New System.Drawing.Size(95, 30)
         Me.Label15.TabIndex = 134
         Me.Label15.Text = "Notes :"
         '
@@ -82,7 +82,7 @@ Partial Class editAgency
         Me.dateLicenseExpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dateLicenseExpDate.Location = New System.Drawing.Point(259, 606)
         Me.dateLicenseExpDate.Name = "dateLicenseExpDate"
-        Me.dateLicenseExpDate.Size = New System.Drawing.Size(212, 31)
+        Me.dateLicenseExpDate.Size = New System.Drawing.Size(212, 37)
         Me.dateLicenseExpDate.TabIndex = 133
         '
         'Label14
@@ -92,7 +92,7 @@ Partial Class editAgency
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(255, 583)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(178, 20)
+        Me.Label14.Size = New System.Drawing.Size(221, 22)
         Me.Label14.TabIndex = 132
         Me.Label14.Text = "License Expiration Date"
         '
@@ -101,7 +101,7 @@ Partial Class editAgency
         Me.cbxGovtAccredStat.FormattingEnabled = True
         Me.cbxGovtAccredStat.Location = New System.Drawing.Point(32, 606)
         Me.cbxGovtAccredStat.Name = "cbxGovtAccredStat"
-        Me.cbxGovtAccredStat.Size = New System.Drawing.Size(212, 30)
+        Me.cbxGovtAccredStat.Size = New System.Drawing.Size(212, 38)
         Me.cbxGovtAccredStat.TabIndex = 131
         '
         'Label13
@@ -111,7 +111,7 @@ Partial Class editAgency
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(28, 583)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(202, 20)
+        Me.Label13.Size = New System.Drawing.Size(256, 22)
         Me.Label13.TabIndex = 130
         Me.Label13.Text = "Govt. Accreditation Status"
         '
@@ -120,7 +120,7 @@ Partial Class editAgency
         Me.txtbxYearsOfOperation.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxYearsOfOperation.Location = New System.Drawing.Point(259, 548)
         Me.txtbxYearsOfOperation.Name = "txtbxYearsOfOperation"
-        Me.txtbxYearsOfOperation.Size = New System.Drawing.Size(212, 31)
+        Me.txtbxYearsOfOperation.Size = New System.Drawing.Size(212, 37)
         Me.txtbxYearsOfOperation.TabIndex = 129
         '
         'Label12
@@ -130,7 +130,7 @@ Partial Class editAgency
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(255, 522)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(182, 22)
+        Me.Label12.Size = New System.Drawing.Size(237, 30)
         Me.Label12.TabIndex = 128
         Me.Label12.Text = "Years of Operation"
         '
@@ -139,7 +139,7 @@ Partial Class editAgency
         Me.txtbxSpecialization.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxSpecialization.Location = New System.Drawing.Point(32, 548)
         Me.txtbxSpecialization.Name = "txtbxSpecialization"
-        Me.txtbxSpecialization.Size = New System.Drawing.Size(212, 31)
+        Me.txtbxSpecialization.Size = New System.Drawing.Size(212, 37)
         Me.txtbxSpecialization.TabIndex = 127
         '
         'Label11
@@ -149,7 +149,7 @@ Partial Class editAgency
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(28, 522)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(133, 22)
+        Me.Label11.Size = New System.Drawing.Size(178, 30)
         Me.Label11.TabIndex = 126
         Me.Label11.Text = "Specialization"
         '
@@ -158,7 +158,7 @@ Partial Class editAgency
         Me.txtbxUrl.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxUrl.Location = New System.Drawing.Point(499, 459)
         Me.txtbxUrl.Name = "txtbxUrl"
-        Me.txtbxUrl.Size = New System.Drawing.Size(199, 31)
+        Me.txtbxUrl.Size = New System.Drawing.Size(199, 37)
         Me.txtbxUrl.TabIndex = 125
         '
         'Label8
@@ -168,7 +168,7 @@ Partial Class editAgency
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(495, 433)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(123, 22)
+        Me.Label8.Size = New System.Drawing.Size(155, 30)
         Me.Label8.TabIndex = 124
         Me.Label8.Text = "Agency URL"
         '
@@ -177,7 +177,7 @@ Partial Class editAgency
         Me.txtbxEmail.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxEmail.Location = New System.Drawing.Point(259, 459)
         Me.txtbxEmail.Name = "txtbxEmail"
-        Me.txtbxEmail.Size = New System.Drawing.Size(212, 31)
+        Me.txtbxEmail.Size = New System.Drawing.Size(212, 37)
         Me.txtbxEmail.TabIndex = 123
         '
         'Label7
@@ -187,7 +187,7 @@ Partial Class editAgency
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(255, 433)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(56, 22)
+        Me.Label7.Size = New System.Drawing.Size(78, 30)
         Me.Label7.TabIndex = 122
         Me.Label7.Text = "Email"
         '
@@ -196,7 +196,7 @@ Partial Class editAgency
         Me.txtbxContactNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxContactNum.Location = New System.Drawing.Point(32, 459)
         Me.txtbxContactNum.Name = "txtbxContactNum"
-        Me.txtbxContactNum.Size = New System.Drawing.Size(212, 31)
+        Me.txtbxContactNum.Size = New System.Drawing.Size(212, 37)
         Me.txtbxContactNum.TabIndex = 121
         '
         'Label4
@@ -206,7 +206,7 @@ Partial Class editAgency
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(28, 433)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(167, 22)
+        Me.Label4.Size = New System.Drawing.Size(215, 30)
         Me.Label4.TabIndex = 120
         Me.Label4.Text = "Contact Number"
         '
@@ -215,7 +215,7 @@ Partial Class editAgency
         Me.txtbxStreet.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxStreet.Location = New System.Drawing.Point(32, 373)
         Me.txtbxStreet.Name = "txtbxStreet"
-        Me.txtbxStreet.Size = New System.Drawing.Size(439, 31)
+        Me.txtbxStreet.Size = New System.Drawing.Size(439, 37)
         Me.txtbxStreet.TabIndex = 119
         '
         'Label3
@@ -225,7 +225,7 @@ Partial Class editAgency
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(28, 347)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 22)
+        Me.Label3.Size = New System.Drawing.Size(80, 30)
         Me.Label3.TabIndex = 118
         Me.Label3.Text = "Street"
         '
@@ -234,7 +234,7 @@ Partial Class editAgency
         Me.txtbxZipcode.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxZipcode.Location = New System.Drawing.Point(499, 251)
         Me.txtbxZipcode.Name = "txtbxZipcode"
-        Me.txtbxZipcode.Size = New System.Drawing.Size(199, 31)
+        Me.txtbxZipcode.Size = New System.Drawing.Size(199, 37)
         Me.txtbxZipcode.TabIndex = 117
         '
         'Label2
@@ -244,7 +244,7 @@ Partial Class editAgency
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(495, 224)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 22)
+        Me.Label2.Size = New System.Drawing.Size(111, 30)
         Me.Label2.TabIndex = 116
         Me.Label2.Text = "Zipcode"
         '
@@ -253,7 +253,7 @@ Partial Class editAgency
         Me.txtbxAgencyName.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxAgencyName.Location = New System.Drawing.Point(31, 175)
         Me.txtbxAgencyName.Name = "txtbxAgencyName"
-        Me.txtbxAgencyName.Size = New System.Drawing.Size(440, 31)
+        Me.txtbxAgencyName.Size = New System.Drawing.Size(440, 37)
         Me.txtbxAgencyName.TabIndex = 115
         '
         'txtbxLicenseNum
@@ -261,7 +261,7 @@ Partial Class editAgency
         Me.txtbxLicenseNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxLicenseNum.Location = New System.Drawing.Point(499, 174)
         Me.txtbxLicenseNum.Name = "txtbxLicenseNum"
-        Me.txtbxLicenseNum.Size = New System.Drawing.Size(199, 31)
+        Me.txtbxLicenseNum.Size = New System.Drawing.Size(199, 37)
         Me.txtbxLicenseNum.TabIndex = 114
         '
         'Label9
@@ -271,7 +271,7 @@ Partial Class editAgency
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(495, 146)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(133, 21)
+        Me.Label9.Size = New System.Drawing.Size(166, 23)
         Me.Label9.TabIndex = 113
         Me.Label9.Text = "License Number"
         '
@@ -282,7 +282,7 @@ Partial Class editAgency
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label10.Location = New System.Drawing.Point(26, 147)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(146, 22)
+        Me.Label10.Size = New System.Drawing.Size(187, 30)
         Me.Label10.TabIndex = 112
         Me.Label10.Text = "Agency Name"
         '
@@ -313,7 +313,7 @@ Partial Class editAgency
         Me.txtbxState.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxState.Location = New System.Drawing.Point(32, 312)
         Me.txtbxState.Name = "txtbxState"
-        Me.txtbxState.Size = New System.Drawing.Size(439, 31)
+        Me.txtbxState.Size = New System.Drawing.Size(439, 37)
         Me.txtbxState.TabIndex = 109
         '
         'Label6
@@ -323,7 +323,7 @@ Partial Class editAgency
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(28, 286)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(58, 22)
+        Me.Label6.Size = New System.Drawing.Size(73, 30)
         Me.Label6.TabIndex = 108
         Me.Label6.Text = "State"
         '
@@ -332,7 +332,7 @@ Partial Class editAgency
         Me.txtbxCity.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxCity.Location = New System.Drawing.Point(32, 251)
         Me.txtbxCity.Name = "txtbxCity"
-        Me.txtbxCity.Size = New System.Drawing.Size(439, 31)
+        Me.txtbxCity.Size = New System.Drawing.Size(439, 37)
         Me.txtbxCity.TabIndex = 107
         '
         'Label5
@@ -342,7 +342,7 @@ Partial Class editAgency
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(25, 225)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(46, 22)
+        Me.Label5.Size = New System.Drawing.Size(60, 30)
         Me.Label5.TabIndex = 106
         Me.Label5.Text = "City"
         '
@@ -353,7 +353,7 @@ Partial Class editAgency
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(139, 37)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(447, 78)
+        Me.Label1.Size = New System.Drawing.Size(564, 96)
         Me.Label1.TabIndex = 105
         Me.Label1.Text = "EDIT AGENCY"
         '
@@ -369,7 +369,7 @@ Partial Class editAgency
         '
         'editAgency
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 22.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(14.0!, 30.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(722, 900)

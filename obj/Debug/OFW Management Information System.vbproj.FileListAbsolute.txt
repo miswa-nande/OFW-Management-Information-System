@@ -326,7 +326,6 @@ C:\Users\ASUS\Desktop\Desktop\ofw_mis\bin\Debug\pt\Microsoft.ReportViewer.WinFor
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.ReportPreviewForm.resources
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\bin\Debug\x86\SqlServerSpatial160.dll
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\bin\Debug\x64\SqlServerSpatial160.dll
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
@@ -652,3 +651,17 @@ D:\ofw_mis\obj\Debug\OFW Management Information System.pdb
 D:\ofw_mis\bin\Debug\x86\SqlServerSpatial160.dll
 D:\ofw_mis\bin\Debug\x64\SqlServerSpatial160.dll
 D:\ofw_mis\obj\Debug\OFW_Management_Information_System.OFWReportView.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.AdminConfiguration.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcApplications.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcDashboard.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcDeployment.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcEmployers.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcJobs.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcOfws.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.ApplicationDetails.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.empAgencies.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.empDashboard.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.empJobs.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.empOfws.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.JobApplicants.resources
+C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.UserRegistration.resources

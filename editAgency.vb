@@ -21,18 +21,18 @@ Public Class editAgency
 
             If cmdRead.Read() Then
                 txtbxAgencyName.Text = cmdRead("AgencyName").ToString()
-                txtbxLicenseNum.Text = cmdRead("LicenseNumber").ToString()
+                txtbxLicenseNum.Text = cmdRead("AgencyLicenseNumber").ToString()
                 txtbxCity.Text = cmdRead("City").ToString()
-                txtbxZipcode.Text = cmdRead("ZipCode").ToString()
+                txtbxZipcode.Text = cmdRead("Zipcode").ToString()
                 txtbxState.Text = cmdRead("State").ToString()
                 txtbxStreet.Text = cmdRead("Street").ToString()
-                txtbxContactNum.Text = cmdRead("ContactNumber").ToString()
+                txtbxContactNum.Text = cmdRead("ContactNum").ToString()
                 txtbxEmail.Text = cmdRead("Email").ToString()
-                txtbxUrl.Text = cmdRead("WebsiteURL").ToString()
+                txtbxUrl.Text = cmdRead("WebsiteUrl").ToString()
                 txtbxSpecialization.Text = cmdRead("Specialization").ToString()
                 txtbxYearsOfOperation.Text = cmdRead("YearsOfOperation").ToString()
-                cbxGovtAccredStat.SelectedItem = cmdRead("GovtAccreditation").ToString()
-                dateLicenseExpDate.Value = CDate(cmdRead("LicenseExpiryDate"))
+                cbxGovtAccredStat.SelectedItem = cmdRead("GovAccreditationStat").ToString()
+                dateLicenseExpDate.Value = CDate(cmdRead("LicenseExpDate"))
                 txtbxNotes.Text = cmdRead("Notes").ToString()
             End If
 
@@ -78,13 +78,13 @@ Public Class editAgency
         ' SQL UPDATE
         Dim updateQuery As String = $"
             UPDATE agency
-            SET AgencyName = '{name}', LicenseNumber = '{license}', City = '{city}',
-                State = '{state}', Street = '{street}', ZipCode = '{zip}',
-                ContactNumber = '{contact}', Email = '{email}', WebsiteURL = '{url}',
+            SET AgencyName = '{name}', AgencyLicenseNumber = '{license}', City = '{city}',
+                State = '{state}', Street = '{street}', Zipcode = '{zip}',
+                ContactNum = '{contact}', Email = '{email}', WebsiteUrl = '{url}',
                 Specialization = '{spec}', YearsOfOperation = '{years}',
-                GovtAccreditation = '{govtAccred}', LicenseExpiryDate = '{licenseExp:yyyy-MM-dd}',
+                GovAccreditationStat = '{govtAccred}', LicenseExpDate = '{licenseExp:yyyy-MM-dd}',
                 Notes = '{notes}'
-            WHERE agency_id = {Session.CurrentReferenceID}"
+            WHERE AgencyID = {Session.CurrentReferenceID}"
 
         Try
             readQuery(updateQuery)
@@ -110,5 +110,9 @@ Public Class editAgency
 
     Private Sub txtbxYearsOfOperation_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxYearsOfOperation.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then e.Handled = True
+    End Sub
+
+    Private Sub txtbxNotes_TextChanged(sender As Object, e As EventArgs) Handles txtbxNotes.TextChanged
+
     End Sub
 End Class
