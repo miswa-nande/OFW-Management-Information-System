@@ -22,10 +22,15 @@ Partial Class empDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Me.Deployed = New System.Windows.Forms.DataGridView()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnAgencies = New System.Windows.Forms.Button()
@@ -55,8 +60,7 @@ Partial Class empDashboard
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ChartTopAgencies = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.ChartTopJobApplications = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -77,7 +81,8 @@ Partial Class empDashboard
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.Deployed, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ApplicationsPerJob = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.DeploymentStatusChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,20 +96,13 @@ Partial Class empDashboard
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChartTopJobApplications, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ApplicationsPerJob, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DeploymentStatusChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Deployed
-        '
-        Me.Deployed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Deployed.Location = New System.Drawing.Point(18, 109)
-        Me.Deployed.Name = "Deployed"
-        Me.Deployed.Size = New System.Drawing.Size(959, 305)
-        Me.Deployed.TabIndex = 12
         '
         'Panel1
         '
@@ -349,7 +347,7 @@ Partial Class empDashboard
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel6.Controls.Add(Me.Deployed)
+        Me.Panel6.Controls.Add(Me.DeploymentStatusChart)
         Me.Panel6.Controls.Add(Me.PictureBox9)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -428,8 +426,8 @@ Partial Class empDashboard
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel5.Controls.Add(Me.DataGridView1)
-        Me.Panel5.Controls.Add(Me.ChartTopAgencies)
+        Me.Panel5.Controls.Add(Me.ApplicationsPerJob)
+        Me.Panel5.Controls.Add(Me.ChartTopJobApplications)
         Me.Panel5.Controls.Add(Me.PictureBox7)
         Me.Panel5.Controls.Add(Me.Label12)
         Me.Panel5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -438,32 +436,24 @@ Partial Class empDashboard
         Me.Panel5.Size = New System.Drawing.Size(322, 934)
         Me.Panel5.TabIndex = 59
         '
-        'DataGridView1
+        'ChartTopJobApplications
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(19, 349)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(282, 567)
-        Me.DataGridView1.TabIndex = 17
-        '
-        'ChartTopAgencies
-        '
-        Me.ChartTopAgencies.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea2.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea2.Name = "ChartArea1"
-        Me.ChartTopAgencies.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.ChartTopAgencies.Legends.Add(Legend2)
-        Me.ChartTopAgencies.Location = New System.Drawing.Point(19, 109)
-        Me.ChartTopAgencies.Name = "ChartTopAgencies"
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.ChartTopAgencies.Series.Add(Series2)
-        Me.ChartTopAgencies.Size = New System.Drawing.Size(291, 224)
-        Me.ChartTopAgencies.TabIndex = 16
-        Me.ChartTopAgencies.Text = "Chart4"
+        Me.ChartTopJobApplications.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea3.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea3.Name = "ChartArea1"
+        Me.ChartTopJobApplications.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        Me.ChartTopJobApplications.Legends.Add(Legend3)
+        Me.ChartTopJobApplications.Location = New System.Drawing.Point(19, 109)
+        Me.ChartTopJobApplications.Name = "ChartTopJobApplications"
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.ChartTopJobApplications.Series.Add(Series3)
+        Me.ChartTopJobApplications.Size = New System.Drawing.Size(291, 224)
+        Me.ChartTopJobApplications.TabIndex = 16
+        Me.ChartTopJobApplications.Text = "Chart4"
         '
         'PictureBox7
         '
@@ -686,6 +676,39 @@ Partial Class empDashboard
         Me.Button1.Text = "Edit Profile"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'ApplicationsPerJob
+        '
+        ChartArea2.Name = "ChartArea1"
+        Me.ApplicationsPerJob.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ApplicationsPerJob.Legends.Add(Legend2)
+        Me.ApplicationsPerJob.Location = New System.Drawing.Point(10, 357)
+        Me.ApplicationsPerJob.Name = "ApplicationsPerJob"
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.ApplicationsPerJob.Series.Add(Series2)
+        Me.ApplicationsPerJob.Size = New System.Drawing.Size(300, 557)
+        Me.ApplicationsPerJob.TabIndex = 17
+        Me.ApplicationsPerJob.Text = "Chart1"
+        '
+        'DeploymentStatusChart
+        '
+        ChartArea1.Name = "ChartArea1"
+        Me.DeploymentStatusChart.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.DeploymentStatusChart.Legends.Add(Legend1)
+        Me.DeploymentStatusChart.Location = New System.Drawing.Point(16, 117)
+        Me.DeploymentStatusChart.Name = "DeploymentStatusChart"
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.DeploymentStatusChart.Series.Add(Series1)
+        Me.DeploymentStatusChart.Size = New System.Drawing.Size(961, 300)
+        Me.DeploymentStatusChart.TabIndex = 11
+        Me.DeploymentStatusChart.Text = "Chart1"
+        '
         'empDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -721,7 +744,6 @@ Partial Class empDashboard
         Me.Name = "empDashboard"
         Me.Text = " EMPLOYER | Dashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.Deployed, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -739,18 +761,17 @@ Partial Class empDashboard
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChartTopJobApplications, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ApplicationsPerJob, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DeploymentStatusChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Deployed As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnAgencies As Button
@@ -780,14 +801,13 @@ Partial Class empDashboard
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents lblNumEmployers As Label
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents ChartTopAgencies As DataVisualization.Charting.Chart
+    Friend WithEvents ChartTopJobApplications As DataVisualization.Charting.Chart
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label12 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents lblNumJobPosted As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents lblContactNum As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label10 As Label
@@ -802,4 +822,6 @@ Partial Class empDashboard
     Friend WithEvents lblFullName As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents ApplicationsPerJob As DataVisualization.Charting.Chart
+    Friend WithEvents DeploymentStatusChart As DataVisualization.Charting.Chart
 End Class

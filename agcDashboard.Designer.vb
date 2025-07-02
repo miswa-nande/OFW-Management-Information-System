@@ -22,16 +22,16 @@ Partial Class agcDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea17 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend17 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series17 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea18 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend18 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series18 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ChartTopAgencies = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.DeploymentStatus = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lblNumJobPosted = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -54,7 +54,7 @@ Partial Class agcDashboard
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Deployed = New System.Windows.Forms.DataGridView()
+        Me.ApplicationsDGV = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.btnEmployers = New System.Windows.Forms.Button()
@@ -71,8 +71,8 @@ Partial Class agcDashboard
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.refreshBtn = New System.Windows.Forms.Button()
-        Me.ThreeMonthBTN = New System.Windows.Forms.Button()
-        Me.SvnDaysBTN = New System.Windows.Forms.Button()
+        Me.LastYearBTN = New System.Windows.Forms.Button()
+        Me.LastSvnDaysBTN = New System.Windows.Forms.Button()
         Me.TodayBTN = New System.Windows.Forms.Button()
         Me.CustomDate = New System.Windows.Forms.DateTimePicker()
         Me.lblNumOfw = New System.Windows.Forms.Label()
@@ -81,24 +81,27 @@ Partial Class agcDashboard
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TotalApplicationsReceived = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.OneMonthBTN = New System.Windows.Forms.Button()
+        Me.LastMonthBTN = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.DeploymentPerMonth = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.lblAccreditationStatus = New System.Windows.Forms.Label()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DeploymentStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Deployed, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ApplicationsDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,8 +115,10 @@ Partial Class agcDashboard
         Me.Panel6.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
+        CType(Me.DeploymentPerMonth, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -141,29 +146,29 @@ Partial Class agcDashboard
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(19, 349)
+        Me.DataGridView1.Location = New System.Drawing.Point(17, 115)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(282, 567)
+        Me.DataGridView1.Size = New System.Drawing.Size(282, 432)
         Me.DataGridView1.TabIndex = 17
         '
-        'ChartTopAgencies
+        'DeploymentStatus
         '
-        Me.ChartTopAgencies.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea17.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea17.Name = "ChartArea1"
-        Me.ChartTopAgencies.ChartAreas.Add(ChartArea17)
-        Legend17.Name = "Legend1"
-        Me.ChartTopAgencies.Legends.Add(Legend17)
-        Me.ChartTopAgencies.Location = New System.Drawing.Point(19, 109)
-        Me.ChartTopAgencies.Name = "ChartTopAgencies"
-        Series17.ChartArea = "ChartArea1"
-        Series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series17.Legend = "Legend1"
-        Series17.Name = "Series1"
-        Me.ChartTopAgencies.Series.Add(Series17)
-        Me.ChartTopAgencies.Size = New System.Drawing.Size(291, 224)
-        Me.ChartTopAgencies.TabIndex = 16
-        Me.ChartTopAgencies.Text = "Chart4"
+        Me.DeploymentStatus.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea3.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea3.Name = "ChartArea1"
+        Me.DeploymentStatus.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        Me.DeploymentStatus.Legends.Add(Legend3)
+        Me.DeploymentStatus.Location = New System.Drawing.Point(19, 109)
+        Me.DeploymentStatus.Name = "DeploymentStatus"
+        Series3.ChartArea = "ChartArea1"
+        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series3.Legend = "Legend1"
+        Series3.Name = "Series1"
+        Me.DeploymentStatus.Series.Add(Series3)
+        Me.DeploymentStatus.Size = New System.Drawing.Size(291, 224)
+        Me.DeploymentStatus.TabIndex = 16
+        Me.DeploymentStatus.Text = "Chart4"
         '
         'Label12
         '
@@ -390,14 +395,13 @@ Partial Class agcDashboard
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel5.Controls.Add(Me.DataGridView1)
-        Me.Panel5.Controls.Add(Me.ChartTopAgencies)
+        Me.Panel5.Controls.Add(Me.DeploymentStatus)
         Me.Panel5.Controls.Add(Me.PictureBox7)
         Me.Panel5.Controls.Add(Me.Label12)
         Me.Panel5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel5.Location = New System.Drawing.Point(1514, 73)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(322, 934)
+        Me.Panel5.Size = New System.Drawing.Size(322, 355)
         Me.Panel5.TabIndex = 295
         '
         'PictureBox7
@@ -411,13 +415,13 @@ Partial Class agcDashboard
         Me.PictureBox7.TabIndex = 10
         Me.PictureBox7.TabStop = False
         '
-        'Deployed
+        'ApplicationsDGV
         '
-        Me.Deployed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Deployed.Location = New System.Drawing.Point(18, 109)
-        Me.Deployed.Name = "Deployed"
-        Me.Deployed.Size = New System.Drawing.Size(455, 305)
-        Me.Deployed.TabIndex = 12
+        Me.ApplicationsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ApplicationsDGV.Location = New System.Drawing.Point(18, 109)
+        Me.ApplicationsDGV.Name = "ApplicationsDGV"
+        Me.ApplicationsDGV.Size = New System.Drawing.Size(455, 305)
+        Me.ApplicationsDGV.TabIndex = 12
         '
         'Panel1
         '
@@ -620,25 +624,25 @@ Partial Class agcDashboard
         Me.refreshBtn.Text = "Refresh"
         Me.refreshBtn.UseVisualStyleBackColor = True
         '
-        'ThreeMonthBTN
+        'LastYearBTN
         '
-        Me.ThreeMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ThreeMonthBTN.Location = New System.Drawing.Point(1687, 17)
-        Me.ThreeMonthBTN.Name = "ThreeMonthBTN"
-        Me.ThreeMonthBTN.Size = New System.Drawing.Size(149, 47)
-        Me.ThreeMonthBTN.TabIndex = 301
-        Me.ThreeMonthBTN.Text = "1 Year"
-        Me.ThreeMonthBTN.UseVisualStyleBackColor = True
+        Me.LastYearBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LastYearBTN.Location = New System.Drawing.Point(1687, 17)
+        Me.LastYearBTN.Name = "LastYearBTN"
+        Me.LastYearBTN.Size = New System.Drawing.Size(149, 47)
+        Me.LastYearBTN.TabIndex = 301
+        Me.LastYearBTN.Text = "Last Year"
+        Me.LastYearBTN.UseVisualStyleBackColor = True
         '
-        'SvnDaysBTN
+        'LastSvnDaysBTN
         '
-        Me.SvnDaysBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SvnDaysBTN.Location = New System.Drawing.Point(1378, 17)
-        Me.SvnDaysBTN.Name = "SvnDaysBTN"
-        Me.SvnDaysBTN.Size = New System.Drawing.Size(149, 47)
-        Me.SvnDaysBTN.TabIndex = 299
-        Me.SvnDaysBTN.Text = "7 Days"
-        Me.SvnDaysBTN.UseVisualStyleBackColor = True
+        Me.LastSvnDaysBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LastSvnDaysBTN.Location = New System.Drawing.Point(1378, 17)
+        Me.LastSvnDaysBTN.Name = "LastSvnDaysBTN"
+        Me.LastSvnDaysBTN.Size = New System.Drawing.Size(149, 47)
+        Me.LastSvnDaysBTN.TabIndex = 299
+        Me.LastSvnDaysBTN.Text = "Last 7 Days"
+        Me.LastSvnDaysBTN.UseVisualStyleBackColor = True
         '
         'TodayBTN
         '
@@ -717,8 +721,8 @@ Partial Class agcDashboard
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel6.Controls.Add(Me.Label11)
-        Me.Panel6.Controls.Add(Me.Deployed)
+        Me.Panel6.Controls.Add(Me.TotalApplicationsReceived)
+        Me.Panel6.Controls.Add(Me.ApplicationsDGV)
         Me.Panel6.Controls.Add(Me.PictureBox9)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -727,16 +731,16 @@ Partial Class agcDashboard
         Me.Panel6.Size = New System.Drawing.Size(492, 434)
         Me.Panel6.TabIndex = 293
         '
-        'Label11
+        'TotalApplicationsReceived
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.Label11.Location = New System.Drawing.Point(327, 56)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(140, 38)
-        Me.Label11.TabIndex = 13
-        Me.Label11.Text = "###,###"
+        Me.TotalApplicationsReceived.AutoSize = True
+        Me.TotalApplicationsReceived.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TotalApplicationsReceived.ForeColor = System.Drawing.SystemColors.MenuText
+        Me.TotalApplicationsReceived.Location = New System.Drawing.Point(327, 56)
+        Me.TotalApplicationsReceived.Name = "TotalApplicationsReceived"
+        Me.TotalApplicationsReceived.Size = New System.Drawing.Size(140, 38)
+        Me.TotalApplicationsReceived.TabIndex = 13
+        Me.TotalApplicationsReceived.Text = "###,###"
         '
         'PictureBox9
         '
@@ -760,20 +764,20 @@ Partial Class agcDashboard
         Me.Label13.TabIndex = 0
         Me.Label13.Text = "Applications" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Received :"
         '
-        'OneMonthBTN
+        'LastMonthBTN
         '
-        Me.OneMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OneMonthBTN.Location = New System.Drawing.Point(1533, 17)
-        Me.OneMonthBTN.Name = "OneMonthBTN"
-        Me.OneMonthBTN.Size = New System.Drawing.Size(149, 47)
-        Me.OneMonthBTN.TabIndex = 300
-        Me.OneMonthBTN.Text = "1 Month"
-        Me.OneMonthBTN.UseVisualStyleBackColor = True
+        Me.LastMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LastMonthBTN.Location = New System.Drawing.Point(1533, 17)
+        Me.LastMonthBTN.Name = "LastMonthBTN"
+        Me.LastMonthBTN.Size = New System.Drawing.Size(149, 47)
+        Me.LastMonthBTN.TabIndex = 300
+        Me.LastMonthBTN.Text = "Last Month"
+        Me.LastMonthBTN.UseVisualStyleBackColor = True
         '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel7.Controls.Add(Me.Chart1)
+        Me.Panel7.Controls.Add(Me.DeploymentPerMonth)
         Me.Panel7.Controls.Add(Me.PictureBox12)
         Me.Panel7.Controls.Add(Me.Label15)
         Me.Panel7.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -781,6 +785,22 @@ Partial Class agcDashboard
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(492, 434)
         Me.Panel7.TabIndex = 294
+        '
+        'DeploymentPerMonth
+        '
+        ChartArea4.Name = "ChartArea1"
+        Me.DeploymentPerMonth.ChartAreas.Add(ChartArea4)
+        Legend4.Name = "Legend1"
+        Me.DeploymentPerMonth.Legends.Add(Legend4)
+        Me.DeploymentPerMonth.Location = New System.Drawing.Point(16, 109)
+        Me.DeploymentPerMonth.Name = "DeploymentPerMonth"
+        Series4.ChartArea = "ChartArea1"
+        Series4.Legend = "Legend1"
+        Series4.Name = "Series1"
+        Me.DeploymentPerMonth.Series.Add(Series4)
+        Me.DeploymentPerMonth.Size = New System.Drawing.Size(458, 300)
+        Me.DeploymentPerMonth.TabIndex = 11
+        Me.DeploymentPerMonth.Text = "Chart1"
         '
         'PictureBox12
         '
@@ -814,21 +834,39 @@ Partial Class agcDashboard
         Me.lblAccreditationStatus.TabIndex = 318
         Me.lblAccreditationStatus.Text = "AccredStatPlaceholder"
         '
-        'Chart1
+        'Panel8
         '
-        ChartArea18.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea18)
-        Legend18.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend18)
-        Me.Chart1.Location = New System.Drawing.Point(16, 109)
-        Me.Chart1.Name = "Chart1"
-        Series18.ChartArea = "ChartArea1"
-        Series18.Legend = "Legend1"
-        Series18.Name = "Series1"
-        Me.Chart1.Series.Add(Series18)
-        Me.Chart1.Size = New System.Drawing.Size(458, 300)
-        Me.Chart1.TabIndex = 11
-        Me.Chart1.Text = "Chart1"
+        Me.Panel8.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.Panel8.Controls.Add(Me.PictureBox13)
+        Me.Panel8.Controls.Add(Me.DataGridView1)
+        Me.Panel8.Controls.Add(Me.Label14)
+        Me.Panel8.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel8.Location = New System.Drawing.Point(1516, 440)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(319, 567)
+        Me.Panel8.TabIndex = 297
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox13.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
+        Me.PictureBox13.Location = New System.Drawing.Point(16, 18)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox13.TabIndex = 12
+        Me.PictureBox13.TabStop = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label14.Location = New System.Drawing.Point(99, 39)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(211, 27)
+        Me.Label14.TabIndex = 0
+        Me.Label14.Text = "Partner Employers"
         '
         'agcDashboard
         '
@@ -836,6 +874,7 @@ Partial Class agcDashboard
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.lblAccreditationStatus)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Button1)
@@ -857,18 +896,18 @@ Partial Class agcDashboard
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.refreshBtn)
-        Me.Controls.Add(Me.ThreeMonthBTN)
-        Me.Controls.Add(Me.SvnDaysBTN)
+        Me.Controls.Add(Me.LastYearBTN)
+        Me.Controls.Add(Me.LastSvnDaysBTN)
         Me.Controls.Add(Me.TodayBTN)
         Me.Controls.Add(Me.CustomDate)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.OneMonthBTN)
+        Me.Controls.Add(Me.LastMonthBTN)
         Me.Name = "agcDashboard"
         Me.Text = "AGENCY | Dashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ChartTopAgencies, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DeploymentStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
@@ -878,7 +917,7 @@ Partial Class agcDashboard
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Deployed, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ApplicationsDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -895,8 +934,11 @@ Partial Class agcDashboard
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
+        CType(Me.DeploymentPerMonth, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -905,7 +947,7 @@ Partial Class agcDashboard
     Friend WithEvents Button1 As Button
     Friend WithEvents lblNumEmployers As Label
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents ChartTopAgencies As DataVisualization.Charting.Chart
+    Friend WithEvents DeploymentStatus As DataVisualization.Charting.Chart
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label12 As Label
     Friend WithEvents PictureBox6 As PictureBox
@@ -929,7 +971,7 @@ Partial Class agcDashboard
     Friend WithEvents Label6 As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Deployed As DataGridView
+    Friend WithEvents ApplicationsDGV As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnApplications As Button
     Friend WithEvents PictureBox4 As PictureBox
@@ -941,8 +983,8 @@ Partial Class agcDashboard
     Friend WithEvents logo As PictureBox
     Friend WithEvents Button2 As Button
     Friend WithEvents refreshBtn As Button
-    Friend WithEvents ThreeMonthBTN As Button
-    Friend WithEvents SvnDaysBTN As Button
+    Friend WithEvents LastYearBTN As Button
+    Friend WithEvents LastSvnDaysBTN As Button
     Friend WithEvents TodayBTN As Button
     Friend WithEvents CustomDate As DateTimePicker
     Friend WithEvents lblNumOfw As Label
@@ -953,15 +995,18 @@ Partial Class agcDashboard
     Friend WithEvents Panel6 As Panel
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents OneMonthBTN As Button
+    Friend WithEvents LastMonthBTN As Button
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents btnOfws As Button
     Friend WithEvents PictureBox11 As PictureBox
     Friend WithEvents btnEmployers As Button
-    Friend WithEvents Label11 As Label
+    Friend WithEvents TotalApplicationsReceived As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents PictureBox12 As PictureBox
     Friend WithEvents Label15 As Label
     Friend WithEvents lblAccreditationStatus As Label
-    Friend WithEvents Chart1 As DataVisualization.Charting.Chart
+    Friend WithEvents DeploymentPerMonth As DataVisualization.Charting.Chart
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents PictureBox13 As PictureBox
+    Friend WithEvents Label14 As Label
 End Class
