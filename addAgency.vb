@@ -1,4 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System
+Imports System.Reflection.Emit
+Imports Microsoft.VisualBasic
+Imports MySql.Data.MySqlClient
 
 Public Class addAgency
     Private Sub addAgency_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -7,6 +10,7 @@ Public Class addAgency
         ' Change button to "Save" if this is profile creation after registration
         If Session.CurrentLoggedUser.userType = "Agency" Then
             btnAdd.Text = "Save"
+            Label1.Text = "Agency Profile"
         End If
     End Sub
 

@@ -388,7 +388,6 @@ C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\zh-C
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW Management Information System.vbproj.SuggestedBindingRedirects.cache
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW Management Information System.exe.config
-C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.ReportPreviewForm.resources
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\x86\SqlServerSpatial160.dll
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\x64\SqlServerSpatial160.dll
 C:\Users\charl\Desktop\OFWMIS\bin\Debug\OFW Management Information System.exe.config

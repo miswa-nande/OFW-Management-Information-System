@@ -1,10 +1,13 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System
+Imports Microsoft.VisualBasic
+Imports MySql.Data.MySqlClient
 
 Public Class addEmployer
     Private Sub addEmployer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Change button to "Save" if this is after registration
         If Session.CurrentLoggedUser.userType = "Employer" Then
             btnAdd.Text = "Save"
+            Label1.Text = "Employer Profile"
         End If
     End Sub
 

@@ -1,5 +1,8 @@
-﻿Imports System.IO
+﻿Imports System
+Imports System.IO
+Imports Microsoft.VisualBasic
 Imports MySql.Data.MySqlClient
+
 
 Public Class addOfw
     Private selectedImagePath As String = ""
@@ -11,6 +14,7 @@ Public Class addOfw
 
         If Session.CurrentLoggedUser.userType = "OFW" Then
             btnAdd.Text = "Save"
+            Label1.Text = "OFW Profile"
         End If
     End Sub
 
@@ -147,5 +151,4 @@ Public Class addOfw
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         btnAddImg.PerformClick()
     End Sub
-
 End Class
