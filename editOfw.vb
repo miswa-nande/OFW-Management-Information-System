@@ -8,8 +8,18 @@ Public Class editOfw
     Private currentImageBytes() As Byte
 
     Private Sub editOfw_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label1.Text = If(Session.CurrentLoggedUser.userType = "OFW", "Edit Profile", "Edit OFW")
+        ' Update label based on user type
+        If Session.CurrentLoggedUser.userType = "OFW" Then
+            Label1.Text = "Edit Profile"
+        ElseIf Session.CurrentLoggedUser.userType = "Agency" Then
+            Label1.Text = "OFW PROFILE"
+        Else
+            MessageBox.Show("Access denied.", "Unauthorized", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.Close()
+            Return
+        End If
 
+        ' Load combo box options
         cbxSex.Items.AddRange({"Male", "Female", "Other"})
         cbxCivStat.Items.AddRange({"Single", "Married", "Widowed", "Separated"})
         cbxEducLevel.Items.AddRange({"High School", "Vocational", "College", "Postgraduate"})
@@ -138,7 +148,7 @@ Public Class editOfw
         Me.Close()
     End Sub
 
-    ' Reuse input restrictions
+    ' Input restrictions
     Private Sub txtbxZipcode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxZipcode.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then e.Handled = True
     End Sub

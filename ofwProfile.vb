@@ -60,4 +60,21 @@ Public Class ofwProfile
         newForm.Show()
         Me.Hide()
     End Sub
+
+    Private Sub EditProfile_Click(sender As Object, e As EventArgs) Handles EditProfile.Click
+        Dim editForm As New editOfw()
+        editForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub LogOut_Click(sender As Object, e As EventArgs) Handles LogOut.Click
+        ' Optional: clear session if needed
+        Session.CurrentLoggedUser = Nothing
+        Session.CurrentReferenceID = -1
+
+        Dim loginForm As New loginPage()
+        loginForm.Show()
+        Me.Close()
+    End Sub
+
 End Class

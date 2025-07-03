@@ -22,7 +22,6 @@ Partial Class addDeployment
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtbxSalary = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -52,18 +51,11 @@ Partial Class addDeployment
         Me.txtbxAgencyId = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.dateContractEnd = New System.Windows.Forms.DateTimePicker()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addDep_ic
-        Me.PictureBox1.Location = New System.Drawing.Point(29, 27)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(101, 99)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -72,7 +64,7 @@ Partial Class addDeployment
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(136, 37)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(758, 96)
+        Me.Label1.Size = New System.Drawing.Size(602, 78)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "ADD DEPLOYMENT"
         '
@@ -81,7 +73,7 @@ Partial Class addDeployment
         Me.txtbxSalary.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxSalary.Location = New System.Drawing.Point(28, 418)
         Me.txtbxSalary.Name = "txtbxSalary"
-        Me.txtbxSalary.Size = New System.Drawing.Size(224, 37)
+        Me.txtbxSalary.Size = New System.Drawing.Size(224, 31)
         Me.txtbxSalary.TabIndex = 15
         '
         'Label4
@@ -91,7 +83,7 @@ Partial Class addDeployment
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(24, 390)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(182, 30)
+        Me.Label4.Size = New System.Drawing.Size(142, 22)
         Me.Label4.TabIndex = 14
         Me.Label4.Text = "Salary Offered"
         '
@@ -102,7 +94,7 @@ Partial Class addDeployment
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(24, 326)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(293, 30)
+        Me.Label3.Size = New System.Drawing.Size(226, 22)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Country of Deployment"
         '
@@ -113,7 +105,7 @@ Partial Class addDeployment
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(24, 262)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(226, 30)
+        Me.Label2.Size = New System.Drawing.Size(174, 22)
         Me.Label2.TabIndex = 10
         Me.Label2.Text = "Deployment Date"
         '
@@ -123,7 +115,7 @@ Partial Class addDeployment
         Me.dateDepDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dateDepDate.Location = New System.Drawing.Point(28, 290)
         Me.dateDepDate.Name = "dateDepDate"
-        Me.dateDepDate.Size = New System.Drawing.Size(222, 37)
+        Me.dateDepDate.Size = New System.Drawing.Size(222, 31)
         Me.dateDepDate.TabIndex = 16
         '
         'cbxCountry
@@ -132,7 +124,7 @@ Partial Class addDeployment
         Me.cbxCountry.FormattingEnabled = True
         Me.cbxCountry.Location = New System.Drawing.Point(29, 354)
         Me.cbxCountry.Name = "cbxCountry"
-        Me.cbxCountry.Size = New System.Drawing.Size(221, 38)
+        Me.cbxCountry.Size = New System.Drawing.Size(221, 30)
         Me.cbxCountry.TabIndex = 17
         '
         'txtbxContractDuration
@@ -140,7 +132,7 @@ Partial Class addDeployment
         Me.txtbxContractDuration.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxContractDuration.Location = New System.Drawing.Point(297, 290)
         Me.txtbxContractDuration.Name = "txtbxContractDuration"
-        Me.txtbxContractDuration.Size = New System.Drawing.Size(224, 37)
+        Me.txtbxContractDuration.Size = New System.Drawing.Size(224, 31)
         Me.txtbxContractDuration.TabIndex = 19
         '
         'Label5
@@ -150,7 +142,7 @@ Partial Class addDeployment
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(290, 262)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(336, 30)
+        Me.Label5.Size = New System.Drawing.Size(258, 22)
         Me.Label5.TabIndex = 18
         Me.Label5.Text = "Contract Duration (in mos.)"
         '
@@ -159,7 +151,7 @@ Partial Class addDeployment
         Me.txtbxContractNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxContractNum.Location = New System.Drawing.Point(297, 354)
         Me.txtbxContractNum.Name = "txtbxContractNum"
-        Me.txtbxContractNum.Size = New System.Drawing.Size(224, 37)
+        Me.txtbxContractNum.Size = New System.Drawing.Size(224, 31)
         Me.txtbxContractNum.TabIndex = 21
         '
         'Label6
@@ -169,7 +161,7 @@ Partial Class addDeployment
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(293, 326)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(222, 30)
+        Me.Label6.Size = New System.Drawing.Size(173, 22)
         Me.Label6.TabIndex = 20
         Me.Label6.Text = "Contract Number"
         '
@@ -179,7 +171,7 @@ Partial Class addDeployment
         Me.cbxDepStat.FormattingEnabled = True
         Me.cbxDepStat.Location = New System.Drawing.Point(298, 418)
         Me.cbxDepStat.Name = "cbxDepStat"
-        Me.cbxDepStat.Size = New System.Drawing.Size(221, 38)
+        Me.cbxDepStat.Size = New System.Drawing.Size(221, 30)
         Me.cbxDepStat.TabIndex = 23
         '
         'Label7
@@ -189,7 +181,7 @@ Partial Class addDeployment
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(293, 390)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(237, 30)
+        Me.Label7.Size = New System.Drawing.Size(183, 22)
         Me.Label7.TabIndex = 22
         Me.Label7.Text = "Deployment Status"
         '
@@ -199,7 +191,7 @@ Partial Class addDeployment
         Me.dateContractStart.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dateContractStart.Location = New System.Drawing.Point(568, 290)
         Me.dateContractStart.Name = "dateContractStart"
-        Me.dateContractStart.Size = New System.Drawing.Size(222, 37)
+        Me.dateContractStart.Size = New System.Drawing.Size(222, 31)
         Me.dateContractStart.TabIndex = 25
         '
         'Label8
@@ -209,7 +201,7 @@ Partial Class addDeployment
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(565, 262)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(242, 30)
+        Me.Label8.Size = New System.Drawing.Size(192, 22)
         Me.Label8.TabIndex = 24
         Me.Label8.Text = "Contract Start Date"
         '
@@ -219,7 +211,7 @@ Partial Class addDeployment
         Me.cbxRepatriationStat.FormattingEnabled = True
         Me.cbxRepatriationStat.Location = New System.Drawing.Point(29, 533)
         Me.cbxRepatriationStat.Name = "cbxRepatriationStat"
-        Me.cbxRepatriationStat.Size = New System.Drawing.Size(221, 38)
+        Me.cbxRepatriationStat.Size = New System.Drawing.Size(221, 30)
         Me.cbxRepatriationStat.TabIndex = 34
         '
         'Label12
@@ -229,7 +221,7 @@ Partial Class addDeployment
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(24, 505)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(234, 30)
+        Me.Label12.Size = New System.Drawing.Size(183, 22)
         Me.Label12.TabIndex = 33
         Me.Label12.Text = "Repatriation Status"
         '
@@ -239,7 +231,7 @@ Partial Class addDeployment
         Me.cbxReason.FormattingEnabled = True
         Me.cbxReason.Location = New System.Drawing.Point(297, 533)
         Me.cbxReason.Name = "cbxReason"
-        Me.cbxReason.Size = New System.Drawing.Size(221, 38)
+        Me.cbxReason.Size = New System.Drawing.Size(221, 30)
         Me.cbxReason.TabIndex = 36
         '
         'Label13
@@ -249,7 +241,7 @@ Partial Class addDeployment
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(292, 505)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(360, 30)
+        Me.Label13.Size = New System.Drawing.Size(280, 22)
         Me.Label13.TabIndex = 35
         Me.Label13.Text = "Reason of Return (if returned)"
         '
@@ -270,7 +262,7 @@ Partial Class addDeployment
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(25, 569)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(127, 30)
+        Me.Label14.Size = New System.Drawing.Size(97, 22)
         Me.Label14.TabIndex = 37
         Me.Label14.Text = "Remarks :"
         '
@@ -303,7 +295,7 @@ Partial Class addDeployment
         Me.txtbxOfwId.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxOfwId.Location = New System.Drawing.Point(28, 175)
         Me.txtbxOfwId.Name = "txtbxOfwId"
-        Me.txtbxOfwId.Size = New System.Drawing.Size(224, 37)
+        Me.txtbxOfwId.Size = New System.Drawing.Size(224, 31)
         Me.txtbxOfwId.TabIndex = 53
         '
         'txtbxEmployerId
@@ -311,7 +303,7 @@ Partial Class addDeployment
         Me.txtbxEmployerId.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxEmployerId.Location = New System.Drawing.Point(568, 175)
         Me.txtbxEmployerId.Name = "txtbxEmployerId"
-        Me.txtbxEmployerId.Size = New System.Drawing.Size(224, 37)
+        Me.txtbxEmployerId.Size = New System.Drawing.Size(224, 31)
         Me.txtbxEmployerId.TabIndex = 52
         '
         'Label11
@@ -321,7 +313,7 @@ Partial Class addDeployment
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(564, 147)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(258, 30)
+        Me.Label11.Size = New System.Drawing.Size(197, 22)
         Me.Label11.TabIndex = 51
         Me.Label11.Text = "Employer ID Number"
         '
@@ -330,7 +322,7 @@ Partial Class addDeployment
         Me.txtbxAgencyId.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxAgencyId.Location = New System.Drawing.Point(296, 175)
         Me.txtbxAgencyId.Name = "txtbxAgencyId"
-        Me.txtbxAgencyId.Size = New System.Drawing.Size(224, 37)
+        Me.txtbxAgencyId.Size = New System.Drawing.Size(224, 31)
         Me.txtbxAgencyId.TabIndex = 50
         '
         'Label9
@@ -340,7 +332,7 @@ Partial Class addDeployment
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(292, 147)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(240, 30)
+        Me.Label9.Size = New System.Drawing.Size(188, 22)
         Me.Label9.TabIndex = 49
         Me.Label9.Text = "Agency ID Number"
         '
@@ -351,16 +343,48 @@ Partial Class addDeployment
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label10.Location = New System.Drawing.Point(23, 147)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(203, 30)
+        Me.Label10.Size = New System.Drawing.Size(156, 22)
         Me.Label10.TabIndex = 48
         Me.Label10.Text = "OFW ID Number"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addDep_ic
+        Me.PictureBox1.Location = New System.Drawing.Point(29, 27)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(101, 99)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'dateContractEnd
+        '
+        Me.dateContractEnd.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateContractEnd.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dateContractEnd.Location = New System.Drawing.Point(568, 354)
+        Me.dateContractEnd.Name = "dateContractEnd"
+        Me.dateContractEnd.Size = New System.Drawing.Size(222, 31)
+        Me.dateContractEnd.TabIndex = 87
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label15.Location = New System.Drawing.Point(565, 326)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(185, 22)
+        Me.Label15.TabIndex = 86
+        Me.Label15.Text = "Contract End Date"
+        '
         'addDeployment
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(14.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(815, 854)
+        Me.Controls.Add(Me.dateContractEnd)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtbxOfwId)
         Me.Controls.Add(Me.txtbxEmployerId)
         Me.Controls.Add(Me.Label11)
@@ -433,4 +457,6 @@ Partial Class addDeployment
     Friend WithEvents txtbxAgencyId As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents dateContractEnd As DateTimePicker
+    Friend WithEvents Label15 As Label
 End Class

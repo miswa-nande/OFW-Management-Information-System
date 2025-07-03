@@ -26,12 +26,19 @@ Partial Class jobplacement
         Me.txtbxSalaryRange = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnJobPlacements = New System.Windows.Forms.Button()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.btnConfig = New System.Windows.Forms.Button()
         Me.btnDeployments = New System.Windows.Forms.Button()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnEmployers = New System.Windows.Forms.Button()
         Me.btnAgencies = New System.Windows.Forms.Button()
         Me.btnOfw = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
+        Me.logo = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -63,20 +70,12 @@ Partial Class jobplacement
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txtbxEmployerIdNum = New System.Windows.Forms.TextBox()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.logo = New System.Windows.Forms.PictureBox()
         Me.btnDelete = New System.Windows.Forms.PictureBox()
         Me.btnGenerate = New System.Windows.Forms.PictureBox()
         Me.btnEdit = New System.Windows.Forms.PictureBox()
         Me.btnAdd = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +83,7 @@ Partial Class jobplacement
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,7 +133,7 @@ Partial Class jobplacement
         '
         'btnJobPlacements
         '
-        Me.btnJobPlacements.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.btnJobPlacements.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.btnJobPlacements.Enabled = False
         Me.btnJobPlacements.FlatAppearance.BorderSize = 0
         Me.btnJobPlacements.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -145,6 +145,28 @@ Partial Class jobplacement
         Me.btnJobPlacements.TabIndex = 51
         Me.btnJobPlacements.Text = "Job Placements"
         Me.btnJobPlacements.UseVisualStyleBackColor = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox11.Image = Global.OFW_Management_Information_System.My.Resources.Resources.config_ic
+        Me.PictureBox11.Location = New System.Drawing.Point(32, 957)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(39, 41)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 50
+        Me.PictureBox11.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
+        Me.PictureBox6.Location = New System.Drawing.Point(33, 440)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 11
+        Me.PictureBox6.TabStop = False
         '
         'btnConfig
         '
@@ -175,9 +197,52 @@ Partial Class jobplacement
         Me.btnDeployments.Text = "DEPLOYMENTS"
         Me.btnDeployments.UseVisualStyleBackColor = False
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.admin_ic
+        Me.PictureBox4.Location = New System.Drawing.Point(33, 227)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 9
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
+        Me.PictureBox3.Location = New System.Drawing.Point(34, 650)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 8
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.agency_ic
+        Me.PictureBox2.Location = New System.Drawing.Point(33, 546)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
+        Me.PictureBox1.Location = New System.Drawing.Point(33, 334)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
         'btnEmployers
         '
-        Me.btnEmployers.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnEmployers.BackColor = System.Drawing.SystemColors.ControlLight
         Me.btnEmployers.FlatAppearance.BorderSize = 0
         Me.btnEmployers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEmployers.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -230,6 +295,15 @@ Partial Class jobplacement
         Me.btnDashboard.TabIndex = 2
         Me.btnDashboard.Text = "DASHBOARD"
         Me.btnDashboard.UseVisualStyleBackColor = False
+        '
+        'logo
+        '
+        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
+        Me.logo.Location = New System.Drawing.Point(33, 28)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(307, 123)
+        Me.logo.TabIndex = 1
+        Me.logo.TabStop = False
         '
         'Label15
         '
@@ -554,80 +628,6 @@ Partial Class jobplacement
         Me.txtbxEmployerIdNum.Size = New System.Drawing.Size(100, 27)
         Me.txtbxEmployerIdNum.TabIndex = 122
         '
-        'PictureBox11
-        '
-        Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox11.Image = Global.OFW_Management_Information_System.My.Resources.Resources.config_ic
-        Me.PictureBox11.Location = New System.Drawing.Point(32, 957)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(39, 41)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox11.TabIndex = 50
-        Me.PictureBox11.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
-        Me.PictureBox6.Location = New System.Drawing.Point(33, 440)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 11
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.admin_ic
-        Me.PictureBox4.Location = New System.Drawing.Point(33, 227)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 9
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox3.Location = New System.Drawing.Point(34, 650)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 8
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.agency_ic
-        Me.PictureBox2.Location = New System.Drawing.Point(33, 546)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
-        Me.PictureBox1.Location = New System.Drawing.Point(33, 334)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
-        'logo
-        '
-        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
-        Me.logo.Location = New System.Drawing.Point(33, 28)
-        Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(307, 123)
-        Me.logo.TabIndex = 1
-        Me.logo.TabStop = False
-        '
         'btnDelete
         '
         Me.btnDelete.Image = Global.OFW_Management_Information_System.My.Resources.Resources.delete_ic
@@ -732,7 +732,6 @@ Partial Class jobplacement
         Me.Text = "ADMIN | Agencies > Job Placements"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -740,6 +739,7 @@ Partial Class jobplacement
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).EndInit()

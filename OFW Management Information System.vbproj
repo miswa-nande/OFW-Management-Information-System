@@ -191,6 +191,12 @@
     <Compile Include="agcDeployment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="agcDeploymentTracking.Designer.vb">
+      <DependentUpon>agcDeploymentTracking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="agcDeploymentTracking.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="agcEmployers.Designer.vb">
       <DependentUpon>agcEmployers.vb</DependentUpon>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="agcDeployment.resx">
       <DependentUpon>agcDeployment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="agcDeploymentTracking.resx">
+      <DependentUpon>agcDeploymentTracking.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="agcEmployers.resx">
       <DependentUpon>agcEmployers.vb</DependentUpon>

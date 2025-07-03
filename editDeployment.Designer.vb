@@ -52,6 +52,8 @@ Partial Class editDeployment
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.dateContractEnd = New System.Windows.Forms.DateTimePicker()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -353,12 +355,34 @@ Partial Class editDeployment
         Me.PictureBox1.TabIndex = 54
         Me.PictureBox1.TabStop = False
         '
+        'dateContractEnd
+        '
+        Me.dateContractEnd.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateContractEnd.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dateContractEnd.Location = New System.Drawing.Point(566, 353)
+        Me.dateContractEnd.Name = "dateContractEnd"
+        Me.dateContractEnd.Size = New System.Drawing.Size(222, 31)
+        Me.dateContractEnd.TabIndex = 85
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Label15.Location = New System.Drawing.Point(563, 325)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(185, 22)
+        Me.Label15.TabIndex = 84
+        Me.Label15.Text = "Contract End Date"
+        '
         'editDeployment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(815, 854)
+        Me.Controls.Add(Me.dateContractEnd)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtbxOfwId)
         Me.Controls.Add(Me.txtbxEmployerId)
         Me.Controls.Add(Me.Label11)
@@ -431,4 +455,6 @@ Partial Class editDeployment
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents dateContractEnd As DateTimePicker
+    Friend WithEvents Label15 As Label
 End Class

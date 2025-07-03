@@ -56,8 +56,8 @@ Partial Class ofwProfile
         Me.Label22 = New System.Windows.Forms.Label()
         Me.lblPassportNum = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.EditProfile = New System.Windows.Forms.Button()
+        Me.LogOut = New System.Windows.Forms.Button()
         Me.picProfile = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -458,29 +458,29 @@ Partial Class ofwProfile
         Me.Label24.TabIndex = 137
         Me.Label24.Text = "Passport Number : "
         '
-        'Button1
+        'EditProfile
         '
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(495, 412)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(174, 35)
-        Me.Button1.TabIndex = 139
-        Me.Button1.Text = "Edit Profile"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.EditProfile.FlatAppearance.BorderSize = 0
+        Me.EditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.EditProfile.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditProfile.Location = New System.Drawing.Point(495, 412)
+        Me.EditProfile.Name = "EditProfile"
+        Me.EditProfile.Size = New System.Drawing.Size(174, 35)
+        Me.EditProfile.TabIndex = 139
+        Me.EditProfile.Text = "Edit Profile"
+        Me.EditProfile.UseVisualStyleBackColor = True
         '
-        'Button2
+        'LogOut
         '
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(495, 465)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(174, 35)
-        Me.Button2.TabIndex = 140
-        Me.Button2.Text = "Log Out"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.LogOut.FlatAppearance.BorderSize = 0
+        Me.LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.LogOut.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOut.Location = New System.Drawing.Point(495, 465)
+        Me.LogOut.Name = "LogOut"
+        Me.LogOut.Size = New System.Drawing.Size(174, 35)
+        Me.LogOut.TabIndex = 140
+        Me.LogOut.Text = "Log Out"
+        Me.LogOut.UseVisualStyleBackColor = True
         '
         'picProfile
         '
@@ -499,8 +499,8 @@ Partial Class ofwProfile
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.LogOut)
+        Me.Controls.Add(Me.EditProfile)
         Me.Controls.Add(Me.lblPassportNum)
         Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.lblVisaNum)
@@ -576,6 +576,6 @@ Partial Class ofwProfile
     Friend WithEvents Label22 As Label
     Friend WithEvents lblPassportNum As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents EditProfile As Button
+    Friend WithEvents LogOut As Button
 End Class

@@ -155,4 +155,54 @@ Public Class agcOfws
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub
+
+    ' Add OFW
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        ' Only agencies can add OFWs
+        If Session.CurrentLoggedUser.userType = "Agency" Then
+            Session.CurrentReferenceID = 0 ' Reset or unused for adding
+            Dim dlg As New addOfw()
+            dlg.ShowDialog()
+            LoadAgencyOFWs()
+            FormatDGVUniformly(DataGridView1)
+        Else
+            MessageBox.Show("Only agencies can add OFWs.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+
+    ' Edit OFW
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim ofwId As Integer = Convert.ToInt32(selectedRow.Cells("OFWId").Value)
+            Session.CurrentReferenceID = ofwId
+
+            Dim dlg As New editOfw()
+            dlg.ShowDialog()
+
+            LoadAgencyOFWs()
+            FormatDGVUniformly(DataGridView1)
+        Else
+            MessageBox.Show("Please select an OFW to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    ' Delete OFW
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim ofwId As Integer = Convert.ToInt32(selectedRow.Cells("OFWId").Value)
+
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this OFW record? This action cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            If result = DialogResult.Yes Then
+                DeleteRecord("ofw", "OFWId", ofwId)
+                LoadAgencyOFWs()
+                FormatDGVUniformly(DataGridView1)
+            End If
+        Else
+            MessageBox.Show("Please select an OFW to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
 End Class
