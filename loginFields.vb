@@ -72,7 +72,7 @@
                 cmdRead.Close()
             End If
 
-            Session.CurrentLoggedUser.fullName = fullName
+            Session.CurrentLoggedUser.username = fullName
             Session.Logs("User logged in.")
 
             Select Case userType
