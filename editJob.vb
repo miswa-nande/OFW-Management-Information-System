@@ -3,8 +3,13 @@
 Public Class editJob
     Private jobId As Integer
 
+    Public Sub New(jobId As Integer)
+        InitializeComponent()
+        Me.jobId = jobId
+        ' You can now use Me.jobId to load job details in the form
+    End Sub
+
     Private Sub editJob_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        jobId = Session.CurrentReferenceID
         LoadJobDetails()
     End Sub
 

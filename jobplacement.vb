@@ -1,4 +1,6 @@
-﻿Public Class jobplacement
+﻿Imports System.Security.Cryptography
+
+Public Class jobplacement
 
     Private Sub jobplacement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadJobPlacementsToDGV(DataGridView1)
@@ -119,10 +121,16 @@
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        Dim dlg As New editJob()
-        dlg.ShowDialog()
-        LoadJobPlacementsToDGV(DataGridView1)
-        FormatDGVUniformly(DataGridView1)
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim jobId As Integer = Convert.ToInt32(selectedRow.Cells("JobPlacementID").Value)
+            Dim dlg As New editJob(jobId)
+            dlg.ShowDialog()
+            LoadJobPlacementsToDGV(DataGridView1)
+            FormatDGVUniformly(DataGridView1)
+        Else
+            MessageBox.Show("Please select a job placement to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click

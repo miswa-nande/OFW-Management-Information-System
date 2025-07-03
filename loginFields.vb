@@ -24,12 +24,8 @@
 
         Dim encryptedPass As String = Encrypt(password)
 
-        Dim query As String = String.Format("""
-            SELECT * FROM users 
-            WHERE (username = '{0}' OR email = '{0}') 
-            AND password = '{1}' 
-            AND user_type = '{2}' 
-            AND status = 'Active'""",
+        Dim query As String = String.Format(
+            "SELECT * FROM users WHERE (username = '{0}' OR email = '{0}') AND password = '{1}' AND user_type = '{2}' AND status = 'Active'",
             userId.Replace("'", "''"),
             encryptedPass.Replace("'", "''"),
             userType.Replace("'", "''"))

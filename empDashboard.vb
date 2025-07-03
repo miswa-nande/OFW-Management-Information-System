@@ -10,33 +10,29 @@ Public Class empDashboard
     End Sub
 
     Private Sub LoadSummary()
-        Dim query As String = $"SELECT * FROM employer WHERE employer_id = {Session.CurrentReferenceID}"
+        Dim query As String = $"SELECT * FROM employer WHERE EmployerID = {Session.CurrentReferenceID}"
         readQuery(query)
 
         If cmdRead.Read() Then
-            lblIDNUM.Text = cmdRead("employer_id").ToString()
-            lblFullName.Text = cmdRead("FullName").ToString()
+            lblIDNUM.Text = cmdRead("EmployerID").ToString()
+            lblFullName.Text = cmdRead("EmployerFirstName").ToString() & " " & cmdRead("EmployerLastName").ToString()
             lblCompanyName.Text = cmdRead("CompanyName").ToString()
             lblIndustry.Text = cmdRead("Industry").ToString()
-            lblEmail.Text = cmdRead("Email").ToString()
-            lblContactNum.Text = cmdRead("ContactNumber").ToString()
-            lblFullAddress.Text = cmdRead("Street") & ", " & cmdRead("City") & ", " & cmdRead("Province") & ", " & cmdRead("Country") & " " & cmdRead("ZipCode")
+            lblEmail.Text = cmdRead("EmployerEmail").ToString()
+            lblContactNum.Text = cmdRead("EmployerContactNum").ToString()
+            lblFullAddress.Text = cmdRead("CompanyStreet") & ", " & cmdRead("CompanyCity") & ", " & cmdRead("CompanyState") & ", " & cmdRead("CompanyCountry") & " " & cmdRead("CompanyZipcode")
         End If
         cmdRead.Close()
 
-        lblNumJobPosted.Text = LoadToDGV($"SELECT * FROM jobplacement WHERE employer_id = {Session.CurrentReferenceID}", New DataGridView())
-        lblNumOfw.Text = LoadToDGV($"SELECT * FROM ofw WHERE employerID = {Session.CurrentReferenceID}", New DataGridView())
-        lblNumEmployers.Text = LoadToDGV($"SELECT DISTINCT a.* FROM agency a JOIN agencypartners ap ON a.agency_id = ap.agency_id WHERE ap.employer_id = {Session.CurrentReferenceID}", New DataGridView())
+        lblNumJobPosted.Text = LoadToDGV($"SELECT * FROM jobplacement WHERE EmployerID = {Session.CurrentReferenceID}", New DataGridView())
+        ' There is no EmployerID in ofw table, so this query is not possible:
+        ' lblNumOfw.Text = LoadToDGV($"SELECT * FROM ofw WHERE EmployerID = {Session.CurrentReferenceID}", New DataGridView())
+        lblNumEmployers.Text = LoadToDGV($"SELECT DISTINCT a.* FROM agency a JOIN agencypartneremployer ap ON a.AgencyID = ap.AgencyID WHERE ap.EmployerID = {Session.CurrentReferenceID}", New DataGridView())
     End Sub
 
     Private Sub LoadApplicationsPerJobChart(Optional fromDate As Date = Nothing)
-        Dim filter As String = If(fromDate <> Nothing, $" AND jp.created_at >= '{fromDate:yyyy-MM-dd}'", "")
-        Dim query As String = $"
-            SELECT jp.JobTitle, COUNT(a.application_id) AS TotalApplications
-            FROM jobplacement jp
-            LEFT JOIN application a ON jp.job_id = a.job_id
-            WHERE jp.employer_id = {Session.CurrentReferenceID} {filter}
-            GROUP BY jp.JobTitle"
+        Dim filter As String = If(fromDate <> Nothing, $" AND jp.PostingDate >= '{fromDate:yyyy-MM-dd}'", "")
+        Dim query As String = $"SELECT jp.JobTitle, 0 AS TotalApplications FROM jobplacement jp WHERE jp.EmployerID = {Session.CurrentReferenceID} {filter} GROUP BY jp.JobTitle"
         readQuery(query)
 
         With ChartTopJobApplications
@@ -59,13 +55,13 @@ Public Class empDashboard
     End Sub
 
     Private Sub LoadDeploymentStatusChart(Optional fromDate As Date = Nothing, Optional toDate As Date = Nothing)
-        Dim filter As String = If(fromDate <> Nothing AndAlso toDate <> Nothing, $" AND deployment_date BETWEEN '{fromDate:yyyy-MM-dd}' AND '{toDate:yyyy-MM-dd}'", "")
+        Dim filter As String = If(fromDate <> Nothing AndAlso toDate <> Nothing, $" AND d.DeploymentDate BETWEEN '{fromDate:yyyy-MM-dd}' AND '{toDate:yyyy-MM-dd}'", "")
         Dim query As String = $"
-            SELECT status, COUNT(*) AS count
+            SELECT d.DeploymentStatus, COUNT(*) AS count
             FROM deploymentrecord d
-            JOIN jobplacement jp ON d.job_id = jp.job_id
-            WHERE jp.employer_id = {Session.CurrentReferenceID} {filter}
-            GROUP BY status"
+            JOIN jobplacement jp ON d.JobPlacementID = jp.JobPlacementID
+            WHERE jp.EmployerID = {Session.CurrentReferenceID} {filter}
+            GROUP BY d.DeploymentStatus"
         readQuery(query)
 
         With DeploymentStatusChart
@@ -80,7 +76,7 @@ Public Class empDashboard
             series.BorderColor = Color.White
 
             While cmdRead.Read()
-                series.Points.AddXY(cmdRead("status").ToString(), Convert.ToInt32(cmdRead("count")))
+                series.Points.AddXY(cmdRead("DeploymentStatus").ToString(), Convert.ToInt32(cmdRead("count")))
             End While
             .Series.Add(series)
             .ChartAreas(0).Area3DStyle.Enable3D = True

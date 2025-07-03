@@ -163,7 +163,7 @@ Public Class agcJobs
             Dim selectedRow As DataGridViewRow = DGVJobOffers.SelectedRows(0)
             Dim jobId As Integer = Convert.ToInt32(selectedRow.Cells("job_id").Value)
             Session.CurrentReferenceID = jobId
-            Dim dlg As New editJob()
+            Dim dlg As New editJob(jobId)
             dlg.ShowDialog()
             LoadAgencyJobs()
         Else
