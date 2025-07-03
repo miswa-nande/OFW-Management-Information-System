@@ -3,12 +3,100 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcapplications.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcapplications.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcapplications.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcapplications.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\adddeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:adddeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\adddeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:adddeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\editdeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editdeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\editdeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editdeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcdeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcdeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcdeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcdeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcemployers.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcemployers.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcemployers.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcemployers.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcjobs.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcjobs.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcjobs.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcjobs.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\addjob.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:addjob.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\addjob.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:addjob.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agencies.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agencies.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agencies.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agencies.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\addagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:addagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\addagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:addagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\editjob.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editjob.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\editjob.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editjob.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\editagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\editagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\agcdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -21,10 +109,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\ofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\asus\\desktop\\desktop\\ofw_mis\\addagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:addagency.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,20 +142,195 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "agcApplications.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcApplications.vb",
+              "RelativeDocumentMoniker": "agcApplications.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcApplications.vb",
+              "RelativeToolTip": "agcApplications.vb",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAAAGQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T16:04:07.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "agcApplications.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcApplications.vb",
+              "RelativeDocumentMoniker": "agcApplications.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcApplications.vb [Design]",
+              "RelativeToolTip": "agcApplications.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T16:04:04.545Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "editDeployment.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editDeployment.vb",
+              "RelativeDocumentMoniker": "editDeployment.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editDeployment.vb",
+              "RelativeToolTip": "editDeployment.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T16:02:07.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "editDeployment.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editDeployment.vb",
+              "RelativeDocumentMoniker": "editDeployment.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editDeployment.vb [Design]",
+              "RelativeToolTip": "editDeployment.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T16:02:06.37Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "addDeployment.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addDeployment.vb",
+              "RelativeDocumentMoniker": "addDeployment.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addDeployment.vb",
+              "RelativeToolTip": "addDeployment.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T15:50:52.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "addDeployment.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addDeployment.vb",
+              "RelativeDocumentMoniker": "addDeployment.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addDeployment.vb [Design]",
+              "RelativeToolTip": "addDeployment.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T15:50:46.489Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "agcJobs.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcJobs.vb",
+              "RelativeDocumentMoniker": "agcJobs.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcJobs.vb [Design]*",
+              "RelativeToolTip": "agcJobs.vb [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:10:28.99Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "agcEmployers.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcEmployers.vb",
+              "RelativeDocumentMoniker": "agcEmployers.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcEmployers.vb [Design]*",
+              "RelativeToolTip": "agcEmployers.vb [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:49:41.686Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "agcEmployers.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcEmployers.vb",
+              "RelativeDocumentMoniker": "agcEmployers.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcEmployers.vb*",
+              "RelativeToolTip": "agcEmployers.vb*",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:51:55.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "agcDeployment.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcDeployment.vb",
+              "RelativeDocumentMoniker": "agcDeployment.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcDeployment.vb [Design]",
+              "RelativeToolTip": "agcDeployment.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:52:06.158Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "addJob.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addJob.vb",
+              "RelativeDocumentMoniker": "addJob.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addJob.vb*",
+              "RelativeToolTip": "addJob.vb*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T15:29:11.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "agcDeployment.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcDeployment.vb",
+              "RelativeDocumentMoniker": "agcDeployment.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcDeployment.vb",
+              "RelativeToolTip": "agcDeployment.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:58:13.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "agcJobs.vb",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcJobs.vb",
               "RelativeDocumentMoniker": "agcJobs.vb",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcJobs.vb",
-              "RelativeToolTip": "agcJobs.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAALAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcJobs.vb*",
+              "RelativeToolTip": "agcJobs.vb*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-07-02T14:31:50.112Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
+              "Title": "addJob.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addJob.vb",
+              "RelativeDocumentMoniker": "addJob.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addJob.vb [Design]*",
+              "RelativeToolTip": "addJob.vb [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:48:57.214Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "addAgency.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addAgency.vb",
+              "RelativeDocumentMoniker": "addAgency.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addAgency.vb",
+              "RelativeToolTip": "addAgency.vb",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAiwGQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T15:13:23.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "addAgency.vb [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\addAgency.vb",
               "RelativeDocumentMoniker": "addAgency.vb",
@@ -83,19 +342,107 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "agcJobs.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcJobs.vb",
-              "RelativeDocumentMoniker": "agcJobs.vb",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcJobs.vb [Design]",
-              "RelativeToolTip": "agcJobs.vb [Design]",
+              "DocumentIndex": 15,
+              "Title": "agencies.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agencies.vb",
+              "RelativeDocumentMoniker": "agencies.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agencies.vb [Design]*",
+              "RelativeToolTip": "agencies.vb [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-02T14:10:28.99Z",
+              "WhenOpened": "2025-07-02T14:37:24.786Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
+              "Title": "agencies.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agencies.vb",
+              "RelativeDocumentMoniker": "agencies.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agencies.vb*",
+              "RelativeToolTip": "agencies.vb*",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAQwLwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:37:30.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "editJob.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editJob.vb",
+              "RelativeDocumentMoniker": "editJob.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editJob.vb",
+              "RelativeToolTip": "editJob.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T15:30:13.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "editJob.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editJob.vb",
+              "RelativeDocumentMoniker": "editJob.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editJob.vb [Design]",
+              "RelativeToolTip": "editJob.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T15:29:50.815Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "agcOfws.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcOfws.vb",
+              "RelativeDocumentMoniker": "agcOfws.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcOfws.vb [Design]*",
+              "RelativeToolTip": "agcOfws.vb [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:35:27.611Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "agcOfws.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcOfws.vb",
+              "RelativeDocumentMoniker": "agcOfws.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcOfws.vb*",
+              "RelativeToolTip": "agcOfws.vb*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T14:35:29.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "editAgency.vb",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editAgency.vb",
+              "RelativeDocumentMoniker": "editAgency.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editAgency.vb*",
+              "RelativeToolTip": "editAgency.vb*",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAcwHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T15:15:18.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "editAgency.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editAgency.vb",
+              "RelativeDocumentMoniker": "editAgency.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\editAgency.vb [Design]*",
+              "RelativeToolTip": "editAgency.vb [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-02T15:15:17.081Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
               "Title": "ofws.vb [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\ofws.vb",
               "RelativeDocumentMoniker": "ofws.vb",
@@ -107,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 25,
               "Title": "ofws.vb",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\ofws.vb",
               "RelativeDocumentMoniker": "ofws.vb",
@@ -120,12 +467,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 24,
               "Title": "agcDashboard.vb [Design]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcDashboard.vb",
               "RelativeDocumentMoniker": "agcDashboard.vb",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcDashboard.vb [Design]*",
-              "RelativeToolTip": "agcDashboard.vb [Design]*",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Desktop\\ofw_mis\\agcDashboard.vb [Design]",
+              "RelativeToolTip": "agcDashboard.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-07-02T14:09:19.655Z",
               "EditorCaption": " [Design]"
