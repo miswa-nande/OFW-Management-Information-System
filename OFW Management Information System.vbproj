@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>OFW_Management_Information_System.dashboard</StartupObject>
+    <StartupObject>OFW_Management_Information_System.loginPage</StartupObject>
     <RootNamespace>OFW_Management_Information_System</RootNamespace>
     <AssemblyName>OFW Management Information System</AssemblyName>
     <FileAlignment>512</FileAlignment>
