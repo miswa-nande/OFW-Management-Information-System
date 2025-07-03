@@ -7,38 +7,34 @@ Public Class UserRegistration
 
     Private userType As String
 
-    Public Sub New(selectedUserType As String)
-        InitializeComponent()
-        userType = selectedUserType ' e.g. "OFW", "Agency", "Employer"
-    End Sub
-
     Private Sub UserRegistration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txtbxPass.PasswordChar = "●"c ' Hide password characters
+        txtbxPass.PasswordChar = "●"c
+        userType = Session.CurrentLoggedUser.userType ' Use session variable
     End Sub
 
-    Private Sub btnCreateAccount_Click(sender As Object, e As EventArgs) Handles CreateAccBTN.Click
+    Private Sub CreateAccBTN_Click(sender As Object, e As EventArgs) Handles CreateAccBTN.Click
         Dim username As String = TxtbxUserName.Text.Trim()
         Dim email As String = TxtbxEmail.Text.Trim()
         Dim password As String = txtbxPass.Text.Trim()
 
-        ' Validate input
+        ' 1. Validate input
         If String.IsNullOrEmpty(password) Then
             MessageBox.Show("Password is required.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         If String.IsNullOrEmpty(username) AndAlso String.IsNullOrEmpty(email) Then
-            MessageBox.Show("Enter either Username or Email.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please enter either Username or Email.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(email) Then
-            MessageBox.Show("Enter only one: either Username or Email — not both.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Only one field should be filled: Username or Email, not both.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        ' Check if username or email exists
-        Dim checkQuery As String = ""
+        ' 2. Check if username or email exists
+        Dim checkQuery As String
         If Not String.IsNullOrEmpty(username) Then
             checkQuery = $"SELECT * FROM users WHERE username = '{username.Replace("'", "''")}'"
         Else
@@ -55,28 +51,28 @@ Public Class UserRegistration
         cmdRead.Close()
         conn.Close()
 
-        ' Encrypt password
+        ' 3. Encrypt password
         Dim encryptedPass As String = Encrypt(password)
 
-        ' Insert user
-        Dim insertQuery As String = $"INSERT INTO users (username, email, password, user_type, reference_id, status) VALUES (" &
-            $"'{username.Replace("'", "''")}', '{email.Replace("'", "''")}', '{encryptedPass}', '{userType}', 0, 'Active')"
+        ' 4. Insert into users
+        Dim insertQuery As String = $"
+            INSERT INTO users (username, email, password, user_type, reference_id, status)
+            VALUES ('{username.Replace("'", "''")}', '{email.Replace("'", "''")}', '{encryptedPass}', '{userType}', 0, 'Active')"
         readQuery(insertQuery)
         conn.Close()
 
-        ' Get last inserted ID
+        ' 5. Get user_id
         readQuery("SELECT LAST_INSERT_ID()")
         Dim newUserId As Integer = If(cmdRead.Read(), Convert.ToInt32(cmdRead(0)), 0)
         cmdRead.Close()
         conn.Close()
 
-        ' Set session
+        ' 6. Set session
         Session.CurrentLoggedUser.id = newUserId
         Session.CurrentLoggedUser.username = If(String.IsNullOrEmpty(username), email, username)
-        Session.CurrentLoggedUser.userType = userType
         Session.CurrentReferenceID = 0
 
-        ' Navigate to profile form
+        ' 7. Redirect to profile form
         Select Case userType
             Case "OFW"
                 Session.LoggedInOfwID = 0
@@ -91,14 +87,14 @@ Public Class UserRegistration
                 Dim f As New addEmployer()
                 f.Show()
             Case Else
-                MessageBox.Show("Invalid user type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Unknown user type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
         End Select
 
         Me.Hide()
     End Sub
 
-    Private Sub loginLink_Click(sender As Object, e As EventArgs) Handles lblLogin.Click
+    Private Sub lblLogin_Click(sender As Object, e As EventArgs) Handles lblLogin.Click
         Dim loginForm As New loginPage()
         loginForm.Show()
         Me.Hide()
