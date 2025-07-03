@@ -28,16 +28,16 @@ Partial Class agcDashboard
         Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.EditProfile = New System.Windows.Forms.Button()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvPartnerEmployers = New System.Windows.Forms.DataGridView()
         Me.DeploymentStatus = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lblNumJobPosted = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblContactNum = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblIDNum = New System.Windows.Forms.Label()
         Me.lblFullAddress = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblSpecialization = New System.Windows.Forms.Label()
@@ -69,7 +69,7 @@ Partial Class agcDashboard
         Me.btnJobs = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.logo = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Logout = New System.Windows.Forms.Button()
         Me.refreshBtn = New System.Windows.Forms.Button()
         Me.LastYearBTN = New System.Windows.Forms.Button()
         Me.LastSvnDaysBTN = New System.Windows.Forms.Button()
@@ -93,7 +93,7 @@ Partial Class agcDashboard
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvPartnerEmployers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DeploymentStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -121,39 +121,36 @@ Partial Class agcDashboard
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'EditProfile
         '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(664, 427)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(232, 43)
-        Me.Button1.TabIndex = 316
-        Me.Button1.Text = "Edit Profile"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.EditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.EditProfile.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditProfile.Location = New System.Drawing.Point(498, 347)
+        Me.EditProfile.Name = "EditProfile"
+        Me.EditProfile.Size = New System.Drawing.Size(174, 35)
+        Me.EditProfile.TabIndex = 316
+        Me.EditProfile.Text = "Edit Profile"
+        Me.EditProfile.UseVisualStyleBackColor = True
         '
         'lblNumEmployers
         '
         Me.lblNumEmployers.AutoSize = True
         Me.lblNumEmployers.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumEmployers.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.lblNumEmployers.Location = New System.Drawing.Point(151, 98)
-        Me.lblNumEmployers.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNumEmployers.Location = New System.Drawing.Point(113, 80)
         Me.lblNumEmployers.Name = "lblNumEmployers"
-        Me.lblNumEmployers.Size = New System.Drawing.Size(175, 47)
+        Me.lblNumEmployers.Size = New System.Drawing.Size(140, 38)
         Me.lblNumEmployers.TabIndex = 11
         Me.lblNumEmployers.Text = "###,###"
         '
-        'DataGridView1
+        'dgvPartnerEmployers
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(23, 142)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(376, 532)
-        Me.DataGridView1.TabIndex = 17
+        Me.dgvPartnerEmployers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPartnerEmployers.Location = New System.Drawing.Point(17, 115)
+        Me.dgvPartnerEmployers.Name = "dgvPartnerEmployers"
+        Me.dgvPartnerEmployers.RowHeadersWidth = 51
+        Me.dgvPartnerEmployers.Size = New System.Drawing.Size(282, 432)
+        Me.dgvPartnerEmployers.TabIndex = 17
         '
         'DeploymentStatus
         '
@@ -163,15 +160,14 @@ Partial Class agcDashboard
         Me.DeploymentStatus.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.DeploymentStatus.Legends.Add(Legend1)
-        Me.DeploymentStatus.Location = New System.Drawing.Point(25, 134)
-        Me.DeploymentStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DeploymentStatus.Location = New System.Drawing.Point(19, 109)
         Me.DeploymentStatus.Name = "DeploymentStatus"
         Series1.ChartArea = "ChartArea1"
         Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
         Series1.Legend = "Legend1"
         Series1.Name = "Series1"
         Me.DeploymentStatus.Series.Add(Series1)
-        Me.DeploymentStatus.Size = New System.Drawing.Size(388, 276)
+        Me.DeploymentStatus.Size = New System.Drawing.Size(291, 224)
         Me.DeploymentStatus.TabIndex = 16
         Me.DeploymentStatus.Text = "Chart4"
         '
@@ -180,10 +176,9 @@ Partial Class agcDashboard
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label12.Location = New System.Drawing.Point(140, 22)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Location = New System.Drawing.Point(105, 18)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(187, 66)
+        Me.Label12.Size = New System.Drawing.Size(145, 48)
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "Deployment " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Status:"
         '
@@ -192,10 +187,9 @@ Partial Class agcDashboard
         Me.lblNumJobPosted.AutoSize = True
         Me.lblNumJobPosted.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumJobPosted.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.lblNumJobPosted.Location = New System.Drawing.Point(151, 98)
-        Me.lblNumJobPosted.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNumJobPosted.Location = New System.Drawing.Point(113, 80)
         Me.lblNumJobPosted.Name = "lblNumJobPosted"
-        Me.lblNumJobPosted.Size = New System.Drawing.Size(175, 47)
+        Me.lblNumJobPosted.Size = New System.Drawing.Size(140, 38)
         Me.lblNumJobPosted.TabIndex = 11
         Me.lblNumJobPosted.Text = "###,###"
         '
@@ -204,10 +198,9 @@ Partial Class agcDashboard
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label3.Location = New System.Drawing.Point(136, 22)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(102, 18)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(219, 66)
+        Me.Label3.Size = New System.Drawing.Size(169, 48)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Total number " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of Jobs Posted :"
         '
@@ -215,10 +208,9 @@ Partial Class agcDashboard
         '
         Me.lblContactNum.AutoSize = True
         Me.lblContactNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContactNum.Location = New System.Drawing.Point(1621, 292)
-        Me.lblContactNum.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblContactNum.Location = New System.Drawing.Point(1216, 237)
         Me.lblContactNum.Name = "lblContactNum"
-        Me.lblContactNum.Size = New System.Drawing.Size(313, 30)
+        Me.lblContactNum.Size = New System.Drawing.Size(240, 22)
         Me.lblContactNum.TabIndex = 315
         Me.lblContactNum.Text = "ContactNumPlaceholder"
         '
@@ -228,34 +220,31 @@ Partial Class agcDashboard
         Me.Label2.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label2.Location = New System.Drawing.Point(1621, 256)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(1216, 208)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(229, 30)
+        Me.Label2.Size = New System.Drawing.Size(177, 22)
         Me.Label2.TabIndex = 314
         Me.Label2.Text = "Contact Number :"
         '
-        'Label10
+        'lblIDNum
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label10.Location = New System.Drawing.Point(667, 98)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(159, 40)
-        Me.Label10.TabIndex = 313
-        Me.Label10.Text = "lblIdNum"
+        Me.lblIDNum.AutoSize = True
+        Me.lblIDNum.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblIDNum.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIDNum.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblIDNum.Location = New System.Drawing.Point(500, 80)
+        Me.lblIDNum.Name = "lblIDNum"
+        Me.lblIDNum.Size = New System.Drawing.Size(132, 33)
+        Me.lblIDNum.TabIndex = 313
+        Me.lblIDNum.Text = "lblIdNum"
         '
         'lblFullAddress
         '
         Me.lblFullAddress.AutoSize = True
         Me.lblFullAddress.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFullAddress.Location = New System.Drawing.Point(669, 379)
-        Me.lblFullAddress.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblFullAddress.Location = New System.Drawing.Point(502, 308)
         Me.lblFullAddress.Name = "lblFullAddress"
-        Me.lblFullAddress.Size = New System.Drawing.Size(261, 30)
+        Me.lblFullAddress.Size = New System.Drawing.Size(200, 22)
         Me.lblFullAddress.TabIndex = 312
         Me.lblFullAddress.Text = "concat'd full address"
         '
@@ -265,10 +254,9 @@ Partial Class agcDashboard
         Me.Label9.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label9.Location = New System.Drawing.Point(669, 343)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(502, 279)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(126, 30)
+        Me.Label9.Size = New System.Drawing.Size(98, 22)
         Me.Label9.TabIndex = 311
         Me.Label9.Text = "Address : "
         '
@@ -276,10 +264,9 @@ Partial Class agcDashboard
         '
         Me.lblSpecialization.AutoSize = True
         Me.lblSpecialization.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSpecialization.Location = New System.Drawing.Point(991, 292)
-        Me.lblSpecialization.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSpecialization.Location = New System.Drawing.Point(743, 237)
         Me.lblSpecialization.Name = "lblSpecialization"
-        Me.lblSpecialization.Size = New System.Drawing.Size(322, 30)
+        Me.lblSpecialization.Size = New System.Drawing.Size(242, 22)
         Me.lblSpecialization.TabIndex = 310
         Me.lblSpecialization.Text = "SpecializationPlaceholder"
         '
@@ -289,10 +276,9 @@ Partial Class agcDashboard
         Me.Label4.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label4.Location = New System.Drawing.Point(991, 256)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(743, 208)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(199, 30)
+        Me.Label4.Size = New System.Drawing.Size(148, 22)
         Me.Label4.TabIndex = 309
         Me.Label4.Text = "Specialization : "
         '
@@ -300,10 +286,9 @@ Partial Class agcDashboard
         '
         Me.lblEmail.AutoSize = True
         Me.lblEmail.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmail.Location = New System.Drawing.Point(1348, 292)
-        Me.lblEmail.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblEmail.Location = New System.Drawing.Point(1011, 237)
         Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(222, 30)
+        Me.lblEmail.Size = New System.Drawing.Size(165, 22)
         Me.lblEmail.TabIndex = 308
         Me.lblEmail.Text = "EmailPlaceholder"
         '
@@ -313,10 +298,9 @@ Partial Class agcDashboard
         Me.Label5.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label5.Location = New System.Drawing.Point(1348, 256)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(1011, 208)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(92, 30)
+        Me.Label5.Size = New System.Drawing.Size(66, 22)
         Me.Label5.TabIndex = 307
         Me.Label5.Text = "Email :"
         '
@@ -324,10 +308,9 @@ Partial Class agcDashboard
         '
         Me.lblLicenseNum.AutoSize = True
         Me.lblLicenseNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLicenseNum.Location = New System.Drawing.Point(669, 292)
-        Me.lblLicenseNum.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblLicenseNum.Location = New System.Drawing.Point(502, 237)
         Me.lblLicenseNum.Name = "lblLicenseNum"
-        Me.lblLicenseNum.Size = New System.Drawing.Size(199, 30)
+        Me.lblLicenseNum.Size = New System.Drawing.Size(151, 22)
         Me.lblLicenseNum.TabIndex = 306
         Me.lblLicenseNum.Text = "LicenseNumber"
         '
@@ -337,10 +320,9 @@ Partial Class agcDashboard
         Me.Label8.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label8.Location = New System.Drawing.Point(669, 256)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(502, 208)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(227, 30)
+        Me.Label8.Size = New System.Drawing.Size(171, 22)
         Me.Label8.TabIndex = 305
         Me.Label8.Text = "License Number : "
         '
@@ -348,10 +330,9 @@ Partial Class agcDashboard
         '
         Me.lblAgencyName.AutoSize = True
         Me.lblAgencyName.Font = New System.Drawing.Font("Century Gothic", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAgencyName.Location = New System.Drawing.Point(661, 154)
-        Me.lblAgencyName.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblAgencyName.Location = New System.Drawing.Point(496, 125)
         Me.lblAgencyName.Name = "lblAgencyName"
-        Me.lblAgencyName.Size = New System.Drawing.Size(799, 74)
+        Me.lblAgencyName.Size = New System.Drawing.Size(636, 58)
         Me.lblAgencyName.TabIndex = 304
         Me.lblAgencyName.Text = "AgencyNamePlaceholder"
         '
@@ -362,20 +343,18 @@ Partial Class agcDashboard
         Me.Panel3.Controls.Add(Me.lblNumJobPosted)
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(1561, 507)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Location = New System.Drawing.Point(1171, 412)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(425, 181)
+        Me.Panel3.Size = New System.Drawing.Size(319, 147)
         Me.Panel3.TabIndex = 296
         '
         'PictureBox6
         '
         Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
-        Me.PictureBox6.Location = New System.Drawing.Point(21, 22)
-        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox6.Location = New System.Drawing.Point(16, 18)
         Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(107, 94)
+        Me.PictureBox6.Size = New System.Drawing.Size(80, 76)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox6.TabIndex = 10
         Me.PictureBox6.TabStop = False
@@ -387,20 +366,18 @@ Partial Class agcDashboard
         Me.Panel4.Controls.Add(Me.lblNumEmployers)
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel4.Location = New System.Drawing.Point(1109, 507)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Location = New System.Drawing.Point(832, 412)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(417, 181)
+        Me.Panel4.Size = New System.Drawing.Size(313, 147)
         Me.Panel4.TabIndex = 294
         '
         'PictureBox8
         '
         Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox8.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox8.Location = New System.Drawing.Point(21, 22)
-        Me.PictureBox8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox8.Location = New System.Drawing.Point(16, 18)
         Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(107, 94)
+        Me.PictureBox8.Size = New System.Drawing.Size(80, 76)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox8.TabIndex = 10
         Me.PictureBox8.TabStop = False
@@ -410,10 +387,9 @@ Partial Class agcDashboard
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label6.Location = New System.Drawing.Point(136, 22)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(102, 18)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(210, 66)
+        Me.Label6.Size = New System.Drawing.Size(160, 48)
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Active Partner " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Employers :"
         '
@@ -424,20 +400,18 @@ Partial Class agcDashboard
         Me.Panel5.Controls.Add(Me.PictureBox7)
         Me.Panel5.Controls.Add(Me.Label12)
         Me.Panel5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel5.Location = New System.Drawing.Point(2019, 90)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Location = New System.Drawing.Point(1514, 73)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(429, 437)
+        Me.Panel5.Size = New System.Drawing.Size(322, 355)
         Me.Panel5.TabIndex = 295
         '
         'PictureBox7
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox7.Image = Global.OFW_Management_Information_System.My.Resources.Resources.joblist_ic
-        Me.PictureBox7.Location = New System.Drawing.Point(25, 22)
-        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox7.Location = New System.Drawing.Point(19, 18)
         Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(107, 94)
+        Me.PictureBox7.Size = New System.Drawing.Size(80, 76)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox7.TabIndex = 10
         Me.PictureBox7.TabStop = False
@@ -445,11 +419,10 @@ Partial Class agcDashboard
         'ApplicationsDGV
         '
         Me.ApplicationsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ApplicationsDGV.Location = New System.Drawing.Point(24, 134)
-        Me.ApplicationsDGV.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ApplicationsDGV.Location = New System.Drawing.Point(18, 109)
         Me.ApplicationsDGV.Name = "ApplicationsDGV"
         Me.ApplicationsDGV.RowHeadersWidth = 51
-        Me.ApplicationsDGV.Size = New System.Drawing.Size(607, 375)
+        Me.ApplicationsDGV.Size = New System.Drawing.Size(455, 305)
         Me.ApplicationsDGV.TabIndex = 12
         '
         'Panel1
@@ -469,19 +442,17 @@ Partial Class agcDashboard
         Me.Panel1.Controls.Add(Me.btnDashboard)
         Me.Panel1.Controls.Add(Me.logo)
         Me.Panel1.Location = New System.Drawing.Point(-1, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(509, 1346)
+        Me.Panel1.Size = New System.Drawing.Size(382, 1094)
         Me.Panel1.TabIndex = 297
         '
         'PictureBox11
         '
         Me.PictureBox11.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox11.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox11.Location = New System.Drawing.Point(43, 933)
-        Me.PictureBox11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox11.Location = New System.Drawing.Point(32, 758)
         Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox11.Size = New System.Drawing.Size(51, 48)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox11.TabIndex = 15
         Me.PictureBox11.TabStop = False
@@ -493,10 +464,9 @@ Partial Class agcDashboard
         Me.btnEmployers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEmployers.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEmployers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnEmployers.Location = New System.Drawing.Point(17, 898)
-        Me.btnEmployers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEmployers.Location = New System.Drawing.Point(13, 730)
         Me.btnEmployers.Name = "btnEmployers"
-        Me.btnEmployers.Size = New System.Drawing.Size(509, 123)
+        Me.btnEmployers.Size = New System.Drawing.Size(382, 100)
         Me.btnEmployers.TabIndex = 14
         Me.btnEmployers.Text = "EMPLOYERS"
         Me.btnEmployers.UseVisualStyleBackColor = False
@@ -505,10 +475,9 @@ Partial Class agcDashboard
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
-        Me.PictureBox3.Location = New System.Drawing.Point(43, 802)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox3.Location = New System.Drawing.Point(32, 652)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox3.Size = New System.Drawing.Size(51, 48)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 13
         Me.PictureBox3.TabStop = False
@@ -520,10 +489,9 @@ Partial Class agcDashboard
         Me.btnOfws.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnOfws.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOfws.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnOfws.Location = New System.Drawing.Point(17, 768)
-        Me.btnOfws.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnOfws.Location = New System.Drawing.Point(13, 624)
         Me.btnOfws.Name = "btnOfws"
-        Me.btnOfws.Size = New System.Drawing.Size(509, 123)
+        Me.btnOfws.Size = New System.Drawing.Size(382, 100)
         Me.btnOfws.TabIndex = 12
         Me.btnOfws.Text = "OFWs"
         Me.btnOfws.UseVisualStyleBackColor = False
@@ -532,10 +500,9 @@ Partial Class agcDashboard
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox1.Location = New System.Drawing.Point(43, 542)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(32, 440)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 11
         Me.PictureBox1.TabStop = False
@@ -547,10 +514,9 @@ Partial Class agcDashboard
         Me.btnApplications.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnApplications.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnApplications.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnApplications.Location = New System.Drawing.Point(17, 507)
-        Me.btnApplications.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnApplications.Location = New System.Drawing.Point(13, 412)
         Me.btnApplications.Name = "btnApplications"
-        Me.btnApplications.Size = New System.Drawing.Size(549, 123)
+        Me.btnApplications.Size = New System.Drawing.Size(412, 100)
         Me.btnApplications.TabIndex = 10
         Me.btnApplications.Text = "APPLICATIONS"
         Me.btnApplications.UseVisualStyleBackColor = False
@@ -558,10 +524,9 @@ Partial Class agcDashboard
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.admin_ic
-        Me.PictureBox4.Location = New System.Drawing.Point(43, 279)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 9
         Me.PictureBox4.TabStop = False
@@ -570,10 +535,9 @@ Partial Class agcDashboard
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deployment_ic
-        Me.PictureBox2.Location = New System.Drawing.Point(43, 672)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox2.Location = New System.Drawing.Point(32, 546)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 7
         Me.PictureBox2.TabStop = False
@@ -582,10 +546,9 @@ Partial Class agcDashboard
         '
         Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox10.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
-        Me.PictureBox10.Location = New System.Drawing.Point(43, 411)
-        Me.PictureBox10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox10.Location = New System.Drawing.Point(32, 334)
         Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(68, 59)
+        Me.PictureBox10.Size = New System.Drawing.Size(51, 48)
         Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox10.TabIndex = 6
         Me.PictureBox10.TabStop = False
@@ -597,10 +560,9 @@ Partial Class agcDashboard
         Me.btnDeployments.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDeployments.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDeployments.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnDeployments.Location = New System.Drawing.Point(17, 638)
-        Me.btnDeployments.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDeployments.Location = New System.Drawing.Point(13, 518)
         Me.btnDeployments.Name = "btnDeployments"
-        Me.btnDeployments.Size = New System.Drawing.Size(509, 123)
+        Me.btnDeployments.Size = New System.Drawing.Size(382, 100)
         Me.btnDeployments.TabIndex = 4
         Me.btnDeployments.Text = "DEPLOYMENTS"
         Me.btnDeployments.UseVisualStyleBackColor = False
@@ -612,10 +574,9 @@ Partial Class agcDashboard
         Me.btnJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnJobs.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnJobs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnJobs.Location = New System.Drawing.Point(17, 377)
-        Me.btnJobs.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnJobs.Location = New System.Drawing.Point(13, 306)
         Me.btnJobs.Name = "btnJobs"
-        Me.btnJobs.Size = New System.Drawing.Size(509, 123)
+        Me.btnJobs.Size = New System.Drawing.Size(382, 100)
         Me.btnJobs.TabIndex = 3
         Me.btnJobs.Text = "JOBS"
         Me.btnJobs.UseVisualStyleBackColor = False
@@ -628,10 +589,9 @@ Partial Class agcDashboard
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnDashboard.Location = New System.Drawing.Point(17, 245)
-        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDashboard.Location = New System.Drawing.Point(13, 199)
         Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Size = New System.Drawing.Size(509, 123)
+        Me.btnDashboard.Size = New System.Drawing.Size(382, 100)
         Me.btnDashboard.TabIndex = 2
         Me.btnDashboard.Text = "DASHBOARD"
         Me.btnDashboard.UseVisualStyleBackColor = False
@@ -639,32 +599,29 @@ Partial Class agcDashboard
         'logo
         '
         Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
-        Me.logo.Location = New System.Drawing.Point(43, 34)
-        Me.logo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.logo.Location = New System.Drawing.Point(32, 28)
         Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(409, 151)
+        Me.logo.Size = New System.Drawing.Size(307, 123)
         Me.logo.TabIndex = 1
         Me.logo.TabStop = False
         '
-        'Button2
+        'Logout
         '
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(1755, 427)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(232, 43)
-        Me.Button2.TabIndex = 317
-        Me.Button2.Text = "Log Out"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Logout.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Logout.Location = New System.Drawing.Point(1316, 347)
+        Me.Logout.Name = "Logout"
+        Me.Logout.Size = New System.Drawing.Size(174, 35)
+        Me.Logout.TabIndex = 317
+        Me.Logout.Text = "Log Out"
+        Me.Logout.UseVisualStyleBackColor = True
         '
         'refreshBtn
         '
         Me.refreshBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.refreshBtn.Location = New System.Drawing.Point(675, 21)
-        Me.refreshBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.refreshBtn.Location = New System.Drawing.Point(506, 17)
         Me.refreshBtn.Name = "refreshBtn"
-        Me.refreshBtn.Size = New System.Drawing.Size(199, 58)
+        Me.refreshBtn.Size = New System.Drawing.Size(149, 47)
         Me.refreshBtn.TabIndex = 302
         Me.refreshBtn.Text = "Refresh"
         Me.refreshBtn.UseVisualStyleBackColor = True
@@ -672,10 +629,9 @@ Partial Class agcDashboard
         'LastYearBTN
         '
         Me.LastYearBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LastYearBTN.Location = New System.Drawing.Point(2249, 21)
-        Me.LastYearBTN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LastYearBTN.Location = New System.Drawing.Point(1687, 17)
         Me.LastYearBTN.Name = "LastYearBTN"
-        Me.LastYearBTN.Size = New System.Drawing.Size(199, 58)
+        Me.LastYearBTN.Size = New System.Drawing.Size(149, 47)
         Me.LastYearBTN.TabIndex = 301
         Me.LastYearBTN.Text = "Last Year"
         Me.LastYearBTN.UseVisualStyleBackColor = True
@@ -683,10 +639,9 @@ Partial Class agcDashboard
         'LastSvnDaysBTN
         '
         Me.LastSvnDaysBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LastSvnDaysBTN.Location = New System.Drawing.Point(1837, 21)
-        Me.LastSvnDaysBTN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LastSvnDaysBTN.Location = New System.Drawing.Point(1378, 17)
         Me.LastSvnDaysBTN.Name = "LastSvnDaysBTN"
-        Me.LastSvnDaysBTN.Size = New System.Drawing.Size(199, 58)
+        Me.LastSvnDaysBTN.Size = New System.Drawing.Size(149, 47)
         Me.LastSvnDaysBTN.TabIndex = 299
         Me.LastSvnDaysBTN.Text = "Last 7 Days"
         Me.LastSvnDaysBTN.UseVisualStyleBackColor = True
@@ -694,10 +649,9 @@ Partial Class agcDashboard
         'TodayBTN
         '
         Me.TodayBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TodayBTN.Location = New System.Drawing.Point(1631, 21)
-        Me.TodayBTN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TodayBTN.Location = New System.Drawing.Point(1223, 17)
         Me.TodayBTN.Name = "TodayBTN"
-        Me.TodayBTN.Size = New System.Drawing.Size(199, 58)
+        Me.TodayBTN.Size = New System.Drawing.Size(149, 47)
         Me.TodayBTN.TabIndex = 298
         Me.TodayBTN.Text = "Today"
         Me.TodayBTN.UseVisualStyleBackColor = True
@@ -705,10 +659,9 @@ Partial Class agcDashboard
         'CustomDate
         '
         Me.CustomDate.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CustomDate.Location = New System.Drawing.Point(1201, 32)
-        Me.CustomDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CustomDate.Location = New System.Drawing.Point(901, 26)
         Me.CustomDate.Name = "CustomDate"
-        Me.CustomDate.Size = New System.Drawing.Size(412, 30)
+        Me.CustomDate.Size = New System.Drawing.Size(310, 26)
         Me.CustomDate.TabIndex = 303
         '
         'lblNumOfw
@@ -716,10 +669,9 @@ Partial Class agcDashboard
         Me.lblNumOfw.AutoSize = True
         Me.lblNumOfw.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumOfw.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.lblNumOfw.Location = New System.Drawing.Point(151, 108)
-        Me.lblNumOfw.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNumOfw.Location = New System.Drawing.Point(113, 88)
         Me.lblNumOfw.Name = "lblNumOfw"
-        Me.lblNumOfw.Size = New System.Drawing.Size(175, 47)
+        Me.lblNumOfw.Size = New System.Drawing.Size(140, 38)
         Me.lblNumOfw.TabIndex = 11
         Me.lblNumOfw.Text = "###,###"
         '
@@ -728,10 +680,9 @@ Partial Class agcDashboard
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label1.Location = New System.Drawing.Point(136, 22)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(102, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(246, 66)
+        Me.Label1.Size = New System.Drawing.Size(190, 48)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Total number of" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Deployed OFWs :"
         '
@@ -743,10 +694,9 @@ Partial Class agcDashboard
         Me.Panel2.Controls.Add(Me.PictureBox5)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(664, 507)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(498, 412)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(417, 181)
+        Me.Panel2.Size = New System.Drawing.Size(313, 147)
         Me.Panel2.TabIndex = 292
         '
         'Label7
@@ -754,20 +704,18 @@ Partial Class agcDashboard
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label7.Location = New System.Drawing.Point(161, 276)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(121, 224)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(0, 47)
+        Me.Label7.Size = New System.Drawing.Size(0, 38)
         Me.Label7.TabIndex = 12
         '
         'PictureBox5
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox5.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofw_ic
-        Me.PictureBox5.Location = New System.Drawing.Point(21, 22)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox5.Location = New System.Drawing.Point(16, 18)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(107, 94)
+        Me.PictureBox5.Size = New System.Drawing.Size(80, 76)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 10
         Me.PictureBox5.TabStop = False
@@ -780,10 +728,9 @@ Partial Class agcDashboard
         Me.Panel6.Controls.Add(Me.PictureBox9)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel6.Location = New System.Drawing.Point(664, 705)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Location = New System.Drawing.Point(498, 573)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(656, 534)
+        Me.Panel6.Size = New System.Drawing.Size(492, 434)
         Me.Panel6.TabIndex = 293
         '
         'TotalApplicationsReceived
@@ -791,10 +738,9 @@ Partial Class agcDashboard
         Me.TotalApplicationsReceived.AutoSize = True
         Me.TotalApplicationsReceived.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TotalApplicationsReceived.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.TotalApplicationsReceived.Location = New System.Drawing.Point(436, 69)
-        Me.TotalApplicationsReceived.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.TotalApplicationsReceived.Location = New System.Drawing.Point(327, 56)
         Me.TotalApplicationsReceived.Name = "TotalApplicationsReceived"
-        Me.TotalApplicationsReceived.Size = New System.Drawing.Size(175, 47)
+        Me.TotalApplicationsReceived.Size = New System.Drawing.Size(140, 38)
         Me.TotalApplicationsReceived.TabIndex = 13
         Me.TotalApplicationsReceived.Text = "###,###"
         '
@@ -802,10 +748,9 @@ Partial Class agcDashboard
         '
         Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox9.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deployment_ic
-        Me.PictureBox9.Location = New System.Drawing.Point(21, 22)
-        Me.PictureBox9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox9.Location = New System.Drawing.Point(16, 18)
         Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(107, 94)
+        Me.PictureBox9.Size = New System.Drawing.Size(80, 76)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox9.TabIndex = 10
         Me.PictureBox9.TabStop = False
@@ -815,20 +760,18 @@ Partial Class agcDashboard
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label13.Location = New System.Drawing.Point(136, 22)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Location = New System.Drawing.Point(102, 18)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(177, 66)
+        Me.Label13.Size = New System.Drawing.Size(134, 48)
         Me.Label13.TabIndex = 0
         Me.Label13.Text = "Applications" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Received :"
         '
         'LastMonthBTN
         '
         Me.LastMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LastMonthBTN.Location = New System.Drawing.Point(2044, 21)
-        Me.LastMonthBTN.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LastMonthBTN.Location = New System.Drawing.Point(1533, 17)
         Me.LastMonthBTN.Name = "LastMonthBTN"
-        Me.LastMonthBTN.Size = New System.Drawing.Size(199, 58)
+        Me.LastMonthBTN.Size = New System.Drawing.Size(149, 47)
         Me.LastMonthBTN.TabIndex = 300
         Me.LastMonthBTN.Text = "Last Month"
         Me.LastMonthBTN.UseVisualStyleBackColor = True
@@ -840,10 +783,9 @@ Partial Class agcDashboard
         Me.Panel7.Controls.Add(Me.PictureBox12)
         Me.Panel7.Controls.Add(Me.Label15)
         Me.Panel7.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel7.Location = New System.Drawing.Point(1331, 705)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel7.Location = New System.Drawing.Point(998, 573)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(656, 534)
+        Me.Panel7.Size = New System.Drawing.Size(492, 434)
         Me.Panel7.TabIndex = 294
         '
         'DeploymentPerMonth
@@ -852,14 +794,13 @@ Partial Class agcDashboard
         Me.DeploymentPerMonth.ChartAreas.Add(ChartArea2)
         Legend2.Name = "Legend1"
         Me.DeploymentPerMonth.Legends.Add(Legend2)
-        Me.DeploymentPerMonth.Location = New System.Drawing.Point(21, 134)
-        Me.DeploymentPerMonth.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DeploymentPerMonth.Location = New System.Drawing.Point(16, 109)
         Me.DeploymentPerMonth.Name = "DeploymentPerMonth"
         Series2.ChartArea = "ChartArea1"
         Series2.Legend = "Legend1"
         Series2.Name = "Series1"
         Me.DeploymentPerMonth.Series.Add(Series2)
-        Me.DeploymentPerMonth.Size = New System.Drawing.Size(611, 369)
+        Me.DeploymentPerMonth.Size = New System.Drawing.Size(458, 300)
         Me.DeploymentPerMonth.TabIndex = 11
         Me.DeploymentPerMonth.Text = "Chart1"
         '
@@ -867,10 +808,9 @@ Partial Class agcDashboard
         '
         Me.PictureBox12.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox12.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deployment_ic
-        Me.PictureBox12.Location = New System.Drawing.Point(21, 22)
-        Me.PictureBox12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox12.Location = New System.Drawing.Point(16, 18)
         Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(107, 94)
+        Me.PictureBox12.Size = New System.Drawing.Size(80, 76)
         Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox12.TabIndex = 10
         Me.PictureBox12.TabStop = False
@@ -880,10 +820,9 @@ Partial Class agcDashboard
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label15.Location = New System.Drawing.Point(136, 22)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Location = New System.Drawing.Point(102, 18)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(241, 66)
+        Me.Label15.Size = New System.Drawing.Size(187, 48)
         Me.Label15.TabIndex = 0
         Me.Label15.Text = "Deployments per" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Month :"
         '
@@ -891,10 +830,9 @@ Partial Class agcDashboard
         '
         Me.lblAccreditationStatus.AutoSize = True
         Me.lblAccreditationStatus.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAccreditationStatus.Location = New System.Drawing.Point(1687, 114)
-        Me.lblAccreditationStatus.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblAccreditationStatus.Location = New System.Drawing.Point(1265, 93)
         Me.lblAccreditationStatus.Name = "lblAccreditationStatus"
-        Me.lblAccreditationStatus.Size = New System.Drawing.Size(289, 30)
+        Me.lblAccreditationStatus.Size = New System.Drawing.Size(225, 22)
         Me.lblAccreditationStatus.TabIndex = 318
         Me.lblAccreditationStatus.Text = "AccredStatPlaceholder"
         '
@@ -902,23 +840,21 @@ Partial Class agcDashboard
         '
         Me.Panel8.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Panel8.Controls.Add(Me.PictureBox13)
-        Me.Panel8.Controls.Add(Me.DataGridView1)
+        Me.Panel8.Controls.Add(Me.dgvPartnerEmployers)
         Me.Panel8.Controls.Add(Me.Label14)
         Me.Panel8.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel8.Location = New System.Drawing.Point(2021, 542)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Location = New System.Drawing.Point(1516, 440)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(425, 698)
+        Me.Panel8.Size = New System.Drawing.Size(319, 567)
         Me.Panel8.TabIndex = 297
         '
         'PictureBox13
         '
         Me.PictureBox13.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox13.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox13.Location = New System.Drawing.Point(21, 22)
-        Me.PictureBox13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox13.Location = New System.Drawing.Point(16, 18)
         Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(107, 94)
+        Me.PictureBox13.Size = New System.Drawing.Size(80, 76)
         Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox13.TabIndex = 12
         Me.PictureBox13.TabStop = False
@@ -928,26 +864,25 @@ Partial Class agcDashboard
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Century Gothic", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label14.Location = New System.Drawing.Point(132, 48)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Location = New System.Drawing.Point(99, 39)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(266, 36)
+        Me.Label14.Size = New System.Drawing.Size(211, 27)
         Me.Label14.TabIndex = 0
         Me.Label14.Text = "Partner Employers"
         '
         'agcDashboard
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(2539, 1281)
+        Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.lblAccreditationStatus)
         Me.Controls.Add(Me.Panel7)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.EditProfile)
         Me.Controls.Add(Me.lblContactNum)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lblIDNum)
         Me.Controls.Add(Me.lblFullAddress)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.lblSpecialization)
@@ -961,7 +896,7 @@ Partial Class agcDashboard
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Logout)
         Me.Controls.Add(Me.refreshBtn)
         Me.Controls.Add(Me.LastYearBTN)
         Me.Controls.Add(Me.LastSvnDaysBTN)
@@ -970,11 +905,10 @@ Partial Class agcDashboard
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.LastMonthBTN)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "agcDashboard"
         Me.Text = "AGENCY | Dashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvPartnerEmployers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DeploymentStatus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -1012,9 +946,9 @@ Partial Class agcDashboard
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents EditProfile As Button
     Friend WithEvents lblNumEmployers As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvPartnerEmployers As DataGridView
     Friend WithEvents DeploymentStatus As DataVisualization.Charting.Chart
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents Label12 As Label
@@ -1024,7 +958,7 @@ Partial Class agcDashboard
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents lblContactNum As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblIDNum As Label
     Friend WithEvents lblFullAddress As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents lblSpecialization As Label
@@ -1049,7 +983,7 @@ Partial Class agcDashboard
     Friend WithEvents btnJobs As Button
     Friend WithEvents btnDashboard As Button
     Friend WithEvents logo As PictureBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Logout As Button
     Friend WithEvents refreshBtn As Button
     Friend WithEvents LastYearBTN As Button
     Friend WithEvents LastSvnDaysBTN As Button

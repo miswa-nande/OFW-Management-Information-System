@@ -22,15 +22,15 @@ Partial Class empDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea31 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend31 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series31 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea32 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend32 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series32 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea33 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend33 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series33 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnAgencies = New System.Windows.Forms.Button()
@@ -42,9 +42,9 @@ Partial Class empDashboard
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.refreshBtn = New System.Windows.Forms.Button()
-        Me.ThreeMonthBTN = New System.Windows.Forms.Button()
-        Me.OneMonthBTN = New System.Windows.Forms.Button()
-        Me.SvnDaysBTN = New System.Windows.Forms.Button()
+        Me.LastYearButton = New System.Windows.Forms.Button()
+        Me.LastMonthBTN = New System.Windows.Forms.Button()
+        Me.LastSvnDaysBTN = New System.Windows.Forms.Button()
         Me.TodayBTN = New System.Windows.Forms.Button()
         Me.CustomDate = New System.Windows.Forms.DateTimePicker()
         Me.lblNumOfw = New System.Windows.Forms.Label()
@@ -53,6 +53,7 @@ Partial Class empDashboard
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.DeploymentStatusChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -60,6 +61,7 @@ Partial Class empDashboard
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.ApplicationsPerJob = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.ChartTopJobApplications = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -69,7 +71,7 @@ Partial Class empDashboard
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lblContactNum = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.lblIDNUM = New System.Windows.Forms.Label()
         Me.lblFullAddress = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblIndustry = New System.Windows.Forms.Label()
@@ -79,10 +81,8 @@ Partial Class empDashboard
         Me.lblCompanyName = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblFullName = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ApplicationsPerJob = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.DeploymentStatusChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.Logout = New System.Windows.Forms.Button()
+        Me.EditProfile = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,16 +92,16 @@ Partial Class empDashboard
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
+        CType(Me.DeploymentStatusChart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        CType(Me.ApplicationsPerJob, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartTopJobApplications, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ApplicationsPerJob, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DeploymentStatusChart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -240,35 +240,35 @@ Partial Class empDashboard
         Me.refreshBtn.Text = "Refresh"
         Me.refreshBtn.UseVisualStyleBackColor = True
         '
-        'ThreeMonthBTN
+        'LastYearButton
         '
-        Me.ThreeMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ThreeMonthBTN.Location = New System.Drawing.Point(1687, 17)
-        Me.ThreeMonthBTN.Name = "ThreeMonthBTN"
-        Me.ThreeMonthBTN.Size = New System.Drawing.Size(149, 47)
-        Me.ThreeMonthBTN.TabIndex = 64
-        Me.ThreeMonthBTN.Text = "1 Year"
-        Me.ThreeMonthBTN.UseVisualStyleBackColor = True
+        Me.LastYearButton.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LastYearButton.Location = New System.Drawing.Point(1687, 17)
+        Me.LastYearButton.Name = "LastYearButton"
+        Me.LastYearButton.Size = New System.Drawing.Size(149, 47)
+        Me.LastYearButton.TabIndex = 64
+        Me.LastYearButton.Text = "Last Year"
+        Me.LastYearButton.UseVisualStyleBackColor = True
         '
-        'OneMonthBTN
+        'LastMonthBTN
         '
-        Me.OneMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.OneMonthBTN.Location = New System.Drawing.Point(1533, 17)
-        Me.OneMonthBTN.Name = "OneMonthBTN"
-        Me.OneMonthBTN.Size = New System.Drawing.Size(149, 47)
-        Me.OneMonthBTN.TabIndex = 63
-        Me.OneMonthBTN.Text = "1 Month"
-        Me.OneMonthBTN.UseVisualStyleBackColor = True
+        Me.LastMonthBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LastMonthBTN.Location = New System.Drawing.Point(1533, 17)
+        Me.LastMonthBTN.Name = "LastMonthBTN"
+        Me.LastMonthBTN.Size = New System.Drawing.Size(149, 47)
+        Me.LastMonthBTN.TabIndex = 63
+        Me.LastMonthBTN.Text = "Last Month"
+        Me.LastMonthBTN.UseVisualStyleBackColor = True
         '
-        'SvnDaysBTN
+        'LastSvnDaysBTN
         '
-        Me.SvnDaysBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SvnDaysBTN.Location = New System.Drawing.Point(1378, 17)
-        Me.SvnDaysBTN.Name = "SvnDaysBTN"
-        Me.SvnDaysBTN.Size = New System.Drawing.Size(149, 47)
-        Me.SvnDaysBTN.TabIndex = 62
-        Me.SvnDaysBTN.Text = "7 Days"
-        Me.SvnDaysBTN.UseVisualStyleBackColor = True
+        Me.LastSvnDaysBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LastSvnDaysBTN.Location = New System.Drawing.Point(1378, 17)
+        Me.LastSvnDaysBTN.Name = "LastSvnDaysBTN"
+        Me.LastSvnDaysBTN.Size = New System.Drawing.Size(149, 47)
+        Me.LastSvnDaysBTN.TabIndex = 62
+        Me.LastSvnDaysBTN.Text = "Last 7 Days"
+        Me.LastSvnDaysBTN.UseVisualStyleBackColor = True
         '
         'TodayBTN
         '
@@ -356,6 +356,22 @@ Partial Class empDashboard
         Me.Panel6.Size = New System.Drawing.Size(992, 434)
         Me.Panel6.TabIndex = 57
         '
+        'DeploymentStatusChart
+        '
+        ChartArea31.Name = "ChartArea1"
+        Me.DeploymentStatusChart.ChartAreas.Add(ChartArea31)
+        Legend31.Name = "Legend1"
+        Me.DeploymentStatusChart.Legends.Add(Legend31)
+        Me.DeploymentStatusChart.Location = New System.Drawing.Point(16, 117)
+        Me.DeploymentStatusChart.Name = "DeploymentStatusChart"
+        Series31.ChartArea = "ChartArea1"
+        Series31.Legend = "Legend1"
+        Series31.Name = "Series1"
+        Me.DeploymentStatusChart.Series.Add(Series31)
+        Me.DeploymentStatusChart.Size = New System.Drawing.Size(961, 300)
+        Me.DeploymentStatusChart.TabIndex = 11
+        Me.DeploymentStatusChart.Text = "Chart1"
+        '
         'PictureBox9
         '
         Me.PictureBox9.BackColor = System.Drawing.Color.Transparent
@@ -436,21 +452,38 @@ Partial Class empDashboard
         Me.Panel5.Size = New System.Drawing.Size(322, 934)
         Me.Panel5.TabIndex = 59
         '
+        'ApplicationsPerJob
+        '
+        ChartArea32.Name = "ChartArea1"
+        Me.ApplicationsPerJob.ChartAreas.Add(ChartArea32)
+        Legend32.Name = "Legend1"
+        Me.ApplicationsPerJob.Legends.Add(Legend32)
+        Me.ApplicationsPerJob.Location = New System.Drawing.Point(10, 357)
+        Me.ApplicationsPerJob.Name = "ApplicationsPerJob"
+        Series32.ChartArea = "ChartArea1"
+        Series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar
+        Series32.Legend = "Legend1"
+        Series32.Name = "Series1"
+        Me.ApplicationsPerJob.Series.Add(Series32)
+        Me.ApplicationsPerJob.Size = New System.Drawing.Size(300, 557)
+        Me.ApplicationsPerJob.TabIndex = 17
+        Me.ApplicationsPerJob.Text = "Chart1"
+        '
         'ChartTopJobApplications
         '
         Me.ChartTopJobApplications.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea3.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea3.Name = "ChartArea1"
-        Me.ChartTopJobApplications.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.ChartTopJobApplications.Legends.Add(Legend3)
+        ChartArea33.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea33.Name = "ChartArea1"
+        Me.ChartTopJobApplications.ChartAreas.Add(ChartArea33)
+        Legend33.Name = "Legend1"
+        Me.ChartTopJobApplications.Legends.Add(Legend33)
         Me.ChartTopJobApplications.Location = New System.Drawing.Point(19, 109)
         Me.ChartTopJobApplications.Name = "ChartTopJobApplications"
-        Series3.ChartArea = "ChartArea1"
-        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.ChartTopJobApplications.Series.Add(Series3)
+        Series33.ChartArea = "ChartArea1"
+        Series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series33.Legend = "Legend1"
+        Series33.Name = "Series1"
+        Me.ChartTopJobApplications.Series.Add(Series33)
         Me.ChartTopJobApplications.Size = New System.Drawing.Size(291, 224)
         Me.ChartTopJobApplications.TabIndex = 16
         Me.ChartTopJobApplications.Text = "Chart4"
@@ -544,17 +577,17 @@ Partial Class empDashboard
         Me.Label2.TabIndex = 288
         Me.Label2.Text = "Contact Number :"
         '
-        'Label10
+        'lblIDNUM
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label10.Location = New System.Drawing.Point(500, 80)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(132, 33)
-        Me.Label10.TabIndex = 287
-        Me.Label10.Text = "lblIdNum"
+        Me.lblIDNUM.AutoSize = True
+        Me.lblIDNUM.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.lblIDNUM.Font = New System.Drawing.Font("Century Gothic", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIDNUM.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblIDNUM.Location = New System.Drawing.Point(500, 80)
+        Me.lblIDNUM.Name = "lblIDNUM"
+        Me.lblIDNUM.Size = New System.Drawing.Size(132, 33)
+        Me.lblIDNUM.TabIndex = 287
+        Me.lblIDNUM.Text = "lblIdNum"
         '
         'lblFullAddress
         '
@@ -654,60 +687,27 @@ Partial Class empDashboard
         Me.lblFullName.TabIndex = 278
         Me.lblFullName.Text = "FullNamePlaceholder"
         '
-        'Button2
+        'Logout
         '
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(1316, 347)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(174, 35)
-        Me.Button2.TabIndex = 291
-        Me.Button2.Text = "Log Out"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Logout.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Logout.Location = New System.Drawing.Point(1316, 347)
+        Me.Logout.Name = "Logout"
+        Me.Logout.Size = New System.Drawing.Size(174, 35)
+        Me.Logout.TabIndex = 291
+        Me.Logout.Text = "Log Out"
+        Me.Logout.UseVisualStyleBackColor = True
         '
-        'Button1
+        'EditProfile
         '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(498, 347)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(174, 35)
-        Me.Button1.TabIndex = 290
-        Me.Button1.Text = "Edit Profile"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'ApplicationsPerJob
-        '
-        ChartArea2.Name = "ChartArea1"
-        Me.ApplicationsPerJob.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.ApplicationsPerJob.Legends.Add(Legend2)
-        Me.ApplicationsPerJob.Location = New System.Drawing.Point(10, 357)
-        Me.ApplicationsPerJob.Name = "ApplicationsPerJob"
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.ApplicationsPerJob.Series.Add(Series2)
-        Me.ApplicationsPerJob.Size = New System.Drawing.Size(300, 557)
-        Me.ApplicationsPerJob.TabIndex = 17
-        Me.ApplicationsPerJob.Text = "Chart1"
-        '
-        'DeploymentStatusChart
-        '
-        ChartArea1.Name = "ChartArea1"
-        Me.DeploymentStatusChart.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.DeploymentStatusChart.Legends.Add(Legend1)
-        Me.DeploymentStatusChart.Location = New System.Drawing.Point(16, 117)
-        Me.DeploymentStatusChart.Name = "DeploymentStatusChart"
-        Series1.ChartArea = "ChartArea1"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.DeploymentStatusChart.Series.Add(Series1)
-        Me.DeploymentStatusChart.Size = New System.Drawing.Size(961, 300)
-        Me.DeploymentStatusChart.TabIndex = 11
-        Me.DeploymentStatusChart.Text = "Chart1"
+        Me.EditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.EditProfile.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EditProfile.Location = New System.Drawing.Point(498, 347)
+        Me.EditProfile.Name = "EditProfile"
+        Me.EditProfile.Size = New System.Drawing.Size(174, 35)
+        Me.EditProfile.TabIndex = 290
+        Me.EditProfile.Text = "Edit Profile"
+        Me.EditProfile.UseVisualStyleBackColor = True
         '
         'empDashboard
         '
@@ -715,11 +715,11 @@ Partial Class empDashboard
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Logout)
+        Me.Controls.Add(Me.EditProfile)
         Me.Controls.Add(Me.lblContactNum)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lblIDNUM)
         Me.Controls.Add(Me.lblFullAddress)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.lblIndustry)
@@ -732,9 +732,9 @@ Partial Class empDashboard
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.refreshBtn)
-        Me.Controls.Add(Me.ThreeMonthBTN)
-        Me.Controls.Add(Me.OneMonthBTN)
-        Me.Controls.Add(Me.SvnDaysBTN)
+        Me.Controls.Add(Me.LastYearButton)
+        Me.Controls.Add(Me.LastMonthBTN)
+        Me.Controls.Add(Me.LastSvnDaysBTN)
         Me.Controls.Add(Me.TodayBTN)
         Me.Controls.Add(Me.CustomDate)
         Me.Controls.Add(Me.Panel2)
@@ -755,19 +755,19 @@ Partial Class empDashboard
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
+        CType(Me.DeploymentStatusChart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.ApplicationsPerJob, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartTopJobApplications, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ApplicationsPerJob, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DeploymentStatusChart, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -783,9 +783,9 @@ Partial Class empDashboard
     Friend WithEvents btnDashboard As Button
     Friend WithEvents logo As PictureBox
     Friend WithEvents refreshBtn As Button
-    Friend WithEvents ThreeMonthBTN As Button
-    Friend WithEvents OneMonthBTN As Button
-    Friend WithEvents SvnDaysBTN As Button
+    Friend WithEvents LastYearButton As Button
+    Friend WithEvents LastMonthBTN As Button
+    Friend WithEvents LastSvnDaysBTN As Button
     Friend WithEvents TodayBTN As Button
     Friend WithEvents CustomDate As DateTimePicker
     Friend WithEvents lblNumOfw As Label
@@ -810,7 +810,7 @@ Partial Class empDashboard
     Friend WithEvents Label3 As Label
     Friend WithEvents lblContactNum As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents lblIDNUM As Label
     Friend WithEvents lblFullAddress As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents lblIndustry As Label
@@ -820,8 +820,8 @@ Partial Class empDashboard
     Friend WithEvents lblCompanyName As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents lblFullName As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Logout As Button
+    Friend WithEvents EditProfile As Button
     Friend WithEvents ApplicationsPerJob As DataVisualization.Charting.Chart
     Friend WithEvents DeploymentStatusChart As DataVisualization.Charting.Chart
 End Class
