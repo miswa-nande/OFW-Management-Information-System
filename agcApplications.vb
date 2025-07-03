@@ -8,7 +8,7 @@ Public Class agcApplications
 
     Private Sub LoadAgencyApplications()
         Dim agencyId As Integer = Session.CurrentReferenceID
-        Dim query As String = $"SELECT * FROM application WHERE agency_id = {agencyId}"
+        Dim query As String = $"SELECT * FROM application WHERE AgencyID = {agencyId}"
         readQuery(query)
         Dim dt As New DataTable()
         dt.Load(cmdRead)
@@ -31,9 +31,9 @@ Public Class agcApplications
             Return
         End If
 
-        Dim query As String = $"SELECT * FROM application WHERE agency_id = {agencyId}"
+        Dim query As String = $"SELECT * FROM application WHERE AgencyID = {agencyId}"
         If txtbxIdNum.Text.Trim() <> "" Then
-            query &= " AND application_id LIKE '%" & txtbxIdNum.Text.Trim() & "%'"
+            query &= " AND ApplicationID LIKE '%" & txtbxIdNum.Text.Trim() & "%'"
         End If
         If txtbxJobTitle.Text.Trim() <> "" Then
             query &= " AND job_title LIKE '%" & txtbxJobTitle.Text.Trim() & "%'"
@@ -47,6 +47,7 @@ Public Class agcApplications
         If dateContractStart.Checked Then
             query &= " AND contract_start >= '" & dateContractStart.Value.ToString("yyyy-MM-dd") & "'"
         End If
+
         readQuery(query)
         Dim dt As New DataTable()
         dt.Load(cmdRead)
@@ -99,4 +100,39 @@ Public Class agcApplications
         Me.Hide()
     End Sub
 
+    Private Sub ViewApplication_Click(sender As Object, e As EventArgs) Handles ViewApplication.Click
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim applicationId As Integer = Convert.ToInt32(selectedRow.Cells("ApplicationID").Value)
+            Dim agencyId As Integer = Session.CurrentReferenceID
+
+            ' Validate ownership
+            Dim query As String = $"SELECT * FROM application WHERE ApplicationID = {applicationId} AND AgencyID = {agencyId}"
+            readQuery(query)
+
+            If cmdRead.HasRows Then
+                cmdRead.Close()
+                Session.CurrentReferenceID = applicationId ' Pass ApplicationID to detail form
+                Dim viewForm As New ApplicationDetails()
+                viewForm.ShowDialog()
+            Else
+                cmdRead.Close()
+                MessageBox.Show("Unauthorized access or invalid selection.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Else
+            MessageBox.Show("Please select an application from the list.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Sub ClearBTN_Click(sender As Object, e As EventArgs) Handles ClearBTN.Click
+        txtbxIdNum.Clear()
+        txtbxJobTitle.Clear()
+        txtbxContractNum.Clear()
+        cbxContractStat.SelectedIndex = -1
+        dateContractStart.Checked = False
+        dateContractStart.Value = Date.Today
+
+        LoadAgencyApplications()
+        FormatDGVUniformly(DataGridView1)
+    End Sub
 End Class

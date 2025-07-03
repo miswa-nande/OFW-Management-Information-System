@@ -197,7 +197,24 @@ Public Class agcJobs
         End If
     End Sub
 
-    Private Sub DGVJobOffers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVJobOffers.CellContentClick
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        ' Clear all filter inputs
+        txtbxJobIdNum.Clear()
+        txtbxJobTitle.Clear()
+        txtbxJobType.Clear()
+        txtbxReqSkill.Clear()
+        txtbxSalaryRange.Clear()
+        cbxCountry.SelectedIndex = -1
+        cbxVisaType.SelectedIndex = -1
+        dateApplicationDeadline.Value = Date.Today
+        dateApplicationDeadline.Checked = False
+
+        ' Reload all jobs
+        LoadAgencyJobs()
+        FormatDGVUniformly(DGVJobOffers)
+    End Sub
+
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
 
     End Sub
 End Class
