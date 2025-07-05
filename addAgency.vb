@@ -82,7 +82,7 @@ Public Class addAgency
                     MsgBox("Profile saved. Redirecting to agency dashboard...", MsgBoxStyle.Information)
 
                     ' Optionally redirect to agency profile
-                    Dim agencyForm As New agcDashboard() ' ← Replace with your actual agency profile form
+                    Dim agencyForm As New agcDashboard() ' 
                     agencyForm.Show()
                     Me.Close()
                 Else

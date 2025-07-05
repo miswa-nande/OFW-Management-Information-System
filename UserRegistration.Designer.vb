@@ -147,10 +147,10 @@ Partial Class UserRegistration
         Me.logo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.logo.Image = CType(resources.GetObject("logo.Image"), System.Drawing.Image)
-        Me.logo.Location = New System.Drawing.Point(993, 107)
-        Me.logo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.logo.Location = New System.Drawing.Point(930, 72)
+        Me.logo.Margin = New System.Windows.Forms.Padding(4)
         Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(710, 474)
+        Me.logo.Size = New System.Drawing.Size(667, 445)
         Me.logo.TabIndex = 12
         Me.logo.TabStop = False
         '
@@ -159,6 +159,7 @@ Partial Class UserRegistration
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(2382, 1303)
+        Me.Controls.Add(Me.logo)
         Me.Controls.Add(Me.lblLogin)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblPassword)
@@ -169,7 +170,6 @@ Partial Class UserRegistration
         Me.Controls.Add(Me.UsernameLBL)
         Me.Controls.Add(Me.CreateAccBTN)
         Me.Controls.Add(Me.TxtbxUserName)
-        Me.Controls.Add(Me.logo)
         Me.ForeColor = System.Drawing.Color.Black
         Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "UserRegistration"

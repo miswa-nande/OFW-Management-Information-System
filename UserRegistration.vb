@@ -54,23 +54,23 @@ Public Class UserRegistration
         ' 3. Encrypt password
         Dim encryptedPass As String = Encrypt(password)
 
-        ' 4. Insert into users
+        ' 4. Prepare username/email values (insert NULL if empty)
+        Dim usernameValue As String = If(String.IsNullOrEmpty(username), "NULL", $"'{username.Replace("'", "''")}'")
+        Dim emailValue As String = If(String.IsNullOrEmpty(email), "NULL", $"'{email.Replace("'", "''")}'")
+
+        ' 5. Insert into users
         Dim insertQuery As String = $"
-            INSERT INTO users (username, email, password, user_type, reference_id, status)
-            VALUES ('{username.Replace("'", "''")}', '{email.Replace("'", "''")}', '{encryptedPass}', '{userType}', 0, 'Active')"
+    INSERT INTO users (username, email, password, user_type, reference_id, status)
+    VALUES ({usernameValue}, {emailValue}, '{encryptedPass}', '{userType}', 0, 'Active')"
         readQuery(insertQuery)
         conn.Close()
 
-        ' 5. Get user_id
+        ' 6. Get user_id
         readQuery("SELECT LAST_INSERT_ID()")
         Dim newUserId As Integer = If(cmdRead.Read(), Convert.ToInt32(cmdRead(0)), 0)
         cmdRead.Close()
         conn.Close()
 
-        ' 6. Set session
-        Session.CurrentLoggedUser.id = newUserId
-        Session.CurrentLoggedUser.username = If(String.IsNullOrEmpty(username), email, username)
-        Session.CurrentReferenceID = 0
 
         ' 7. Redirect to profile form
         Select Case userType

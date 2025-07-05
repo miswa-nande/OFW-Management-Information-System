@@ -128,7 +128,7 @@
                     End If
             End Select
 
-            Me.Hide()
+            Me.Close()
         Else
             cmdRead?.Close()
             MsgBox("Invalid ID or password for " & userType & ".", MsgBoxStyle.Critical)
