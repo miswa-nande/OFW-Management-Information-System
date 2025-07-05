@@ -158,10 +158,15 @@ Public Class editOfw
                 cmd.ExecuteNonQuery()
                 MsgBox("Profile updated successfully!", MsgBoxStyle.Information)
 
-                If Session.CurrentLoggedUser.userType = "OFW" Then
+                If ofwProfile.Instance IsNot Nothing AndAlso Not ofwProfile.Instance.IsDisposed Then
+                    ofwProfile.Instance.BringToFront()
+                    ofwProfile.Instance.Focus()
+                    ofwProfile.Instance.LoadOFWProfile() ' Optional: Refresh the data
+                Else
                     Dim profileForm As New ofwProfile()
                     profileForm.Show()
                 End If
+
 
                 Me.Close()
             End Using
@@ -173,7 +178,11 @@ Public Class editOfw
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        If Session.CurrentLoggedUser.userType = "OFW" Then
+        If ofwProfile.Instance IsNot Nothing AndAlso Not ofwProfile.Instance.IsDisposed Then
+            ofwProfile.Instance.BringToFront()
+            ofwProfile.Instance.Focus()
+            ofwProfile.Instance.LoadOFWProfile() ' Optional: Refresh the data
+        Else
             Dim profileForm As New ofwProfile()
             profileForm.Show()
         End If

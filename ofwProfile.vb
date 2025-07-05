@@ -2,11 +2,14 @@
 Imports System.IO
 
 Public Class ofwProfile
+    Public Shared Instance As ofwProfile
+
     Private Sub ofwProfile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Instance = Me
         LoadOFWProfile()
     End Sub
 
-    Private Sub LoadOFWProfile()
+    Public Sub LoadOFWProfile()
         Dim query As String = $"SELECT * FROM ofw WHERE OFWId = {Session.CurrentReferenceID}"
         readQuery(query)
 

@@ -4,7 +4,7 @@ Public Class applicationForm
     Private jobID As Integer
     Private isViewMode As Boolean = False
 
-    ' Updated constructor with view mode support
+    ' Constructor with optional View Mode
     Public Sub New(jobId As Integer, Optional viewMode As Boolean = False)
         InitializeComponent()
         Me.jobID = jobId
@@ -17,6 +17,7 @@ Public Class applicationForm
 
         If isViewMode Then
             btnApply.Visible = False
+            btnCancel.Text = "Close"
 
             ' Make fields read-only
             txtbxJobTitle.ReadOnly = True
@@ -32,30 +33,32 @@ Public Class applicationForm
         End If
     End Sub
 
-    ' ✅ Load job placement details
+    ' ✅ Load job details from jobplacement table
     Private Sub LoadJobDetails()
         Try
-            Dim query As String = $"
-                SELECT jp.job_title, jp.job_description, jp.salary, jp.location,
-                       jp.contract_duration, jp.job_type, jp.visa_type,
-                       jp.conditions, jp.benefits, s.skill_name
-                FROM jobplacement jp
-                LEFT JOIN skill s ON jp.skill_id = s.skill_id
-                WHERE jp.job_id = {jobID}"
+            Dim query As String = "SELECT JobTitle, JobDescription, SalaryRange, CountryOfEmployment, " &
+                                  "EmploymentContractDuration, JobType, VisaType, Conditions, Benefits, RequiredSkills, ApplicationDeadline " &
+                                  "FROM jobplacement WHERE JobPlacementID = " & jobID
 
             readQuery(query)
 
             If cmdRead.Read() Then
-                txtbxJobTitle.Text = cmdRead("job_title").ToString()
-                txtbxJobDescription.Text = cmdRead("job_description").ToString()
-                txtbxSalaryRange.Text = cmdRead("salary").ToString()
-                txtbxCountry.Text = cmdRead("location").ToString()
-                txtbxContractDuration.Text = cmdRead("contract_duration").ToString()
-                txtbxJobType.Text = cmdRead("job_type").ToString()
-                txtbxVisaType.Text = cmdRead("visa_type").ToString()
-                txtbxConditions.Text = cmdRead("conditions").ToString()
-                txtbxBenefits.Text = cmdRead("benefits").ToString()
-                txtbxReqSkill.Text = cmdRead("skill_name").ToString()
+                txtbxJobTitle.Text = cmdRead("JobTitle").ToString()
+                txtbxJobDescription.Text = cmdRead("JobDescription").ToString()
+                txtbxSalaryRange.Text = cmdRead("SalaryRange").ToString()
+                txtbxCountry.Text = cmdRead("CountryOfEmployment").ToString()
+                txtbxContractDuration.Text = cmdRead("EmploymentContractDuration").ToString()
+                txtbxJobType.Text = cmdRead("JobType").ToString()
+                txtbxVisaType.Text = cmdRead("VisaType").ToString()
+                txtbxConditions.Text = cmdRead("Conditions").ToString()
+                txtbxBenefits.Text = cmdRead("Benefits").ToString()
+                txtbxReqSkill.Text = cmdRead("RequiredSkills").ToString()
+
+                If Not IsDBNull(cmdRead("ApplicationDeadline")) Then
+                    TextBox5.Text = Convert.ToDateTime(cmdRead("ApplicationDeadline")).ToString("yyyy-MM-dd")
+                Else
+                    TextBox5.Text = "N/A"
+                End If
             End If
 
             cmdRead.Close()
@@ -64,15 +67,12 @@ Public Class applicationForm
         End Try
     End Sub
 
-    ' ✅ Load OFW's own profile using Session
+    ' ✅ Load OFW profile using Session.CurrentReferenceID
     Private Sub LoadOfwProfile()
         Try
-            Dim query As String = $"
-                SELECT CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS full_name, 
-                       DOB, CivilStatus, Sex, ContactNum,
-                       EducationalLevel, PassportNum, VISANum, OECNum
-                FROM ofw
-                WHERE ofw_id = {Session.CurrentReferenceID}"
+            Dim query As String = "SELECT CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS full_name, " &
+                                  "DOB, CivilStatus, Sex, ContactNum, EducationalLevel, PassportNum, VISANum, OECNum " &
+                                  "FROM ofw WHERE OFWID = " & Session.CurrentReferenceID
 
             readQuery(query)
 
@@ -94,30 +94,42 @@ Public Class applicationForm
         End Try
     End Sub
 
-    ' ✅ Apply to job
+    ' ✅ Handle job application submission
     Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnApply.Click
         Try
-            ' Check if already applied
-            Dim checkQuery As String = $"
-                SELECT COUNT(*) FROM application 
-                WHERE job_id = {jobID} AND ofw_id = {Session.CurrentReferenceID}"
+            ' Check if already applied to this specific job
+            Dim checkQuery As String = "SELECT 1 FROM application " &
+                                   "WHERE OFWId = " & Session.CurrentReferenceID & " " &
+                                   "AND JobPlacementID = " & jobID
 
             readQuery(checkQuery)
 
-            If cmdRead.Read() AndAlso Convert.ToInt32(cmdRead(0)) > 0 Then
+            If cmdRead.HasRows Then
                 cmdRead.Close()
-                MsgBox("You have already applied to this job.", MsgBoxStyle.Exclamation)
+                MsgBox("You have already applied to this job.", MsgBoxStyle.Information)
                 Exit Sub
             End If
             cmdRead.Close()
 
-            ' Insert application
-            Dim insertQuery As String = $"
-                INSERT INTO application (job_id, ofw_id, status, date_applied)
-                VALUES ({jobID}, {Session.CurrentReferenceID}, 'Pending', NOW())"
+            ' Get the agency ID from the jobplacement table
+            Dim getAgencyQuery As String = "SELECT AgencyID FROM jobplacement WHERE JobPlacementID = " & jobID
+            readQuery(getAgencyQuery)
+
+            Dim agencyID As Integer = -1
+            If cmdRead.Read() Then
+                agencyID = Convert.ToInt32(cmdRead("AgencyID"))
+            Else
+                cmdRead.Close()
+                MsgBox("Agency not found for this job.", MsgBoxStyle.Critical)
+                Exit Sub
+            End If
+            cmdRead.Close()
+
+            ' Insert new application
+            Dim insertQuery As String = "INSERT INTO application (OFWId, AgencyID, JobPlacementID, ApplicationStatus) " &
+                                    "VALUES (" & Session.CurrentReferenceID & ", " & agencyID & ", " & jobID & ", 'Pending')"
 
             readQuery(insertQuery)
-
             MsgBox("Application submitted successfully!", MsgBoxStyle.Information)
             Me.Close()
         Catch ex As Exception
@@ -125,7 +137,9 @@ Public Class applicationForm
         End Try
     End Sub
 
-    ' Cancel
+
+
+    ' Cancel and close form
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
     End Sub
