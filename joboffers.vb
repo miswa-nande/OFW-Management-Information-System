@@ -9,21 +9,24 @@ Public Class joboffers
             Exit Sub
         End If
 
+        ' Clear all filter controls before loading
+        txtbxJobTitle.Clear()
+        txtbxJobType.Clear()
+        txtbxReqSkill.Clear()
+        txtbxSalaryRange.Clear()
+        cbxCountry.SelectedIndex = -1
+        cbxVisaType.SelectedIndex = -1
+        dateApplicationDeadline.Value = Date.Today
+        dateApplicationDeadline.Checked = False
+
+        ' Load data
         LoadMatchingJobOffers()
     End Sub
 
+
     Private Sub LoadMatchingJobOffers()
-        Dim query As String = "
-        SELECT jp.JobPlacementID, jp.JobTitle, jp.SalaryRange, jp.CountryOfEmployment, 
-               jp.JobType, jp.VisaType, jp.ApplicationDeadline, jp.RequiredSkills, e.CompanyName
-        FROM jobplacement jp
-        JOIN employer e ON jp.EmployerID = e.EmployerID
-        JOIN agencypartneremployer ae ON ae.EmployerID = e.EmployerID
-        JOIN ofw o ON ae.AgencyID = o.AgencyID
-        JOIN ofwskill os ON o.OFWID = os.OFWID
-        JOIN skill s ON os.SkillID = s.SkillID
-        WHERE jp.RequiredSkills LIKE CONCAT('%', s.SkillName, '%')
-          AND o.OFWID = " & Session.CurrentReferenceID
+        Dim query As String = "SELECT DISTINCT jp.JobPlacementID, jp.JobTitle, jp.SalaryRange, jp.CountryOfEmployment, jp.JobType, jp.VisaType, jp.ApplicationDeadline, jp.RequiredSkills, e.CompanyName FROM jobplacement jp JOIN employer e ON jp.EmployerID = e.EmployerID JOIN ofw o ON jp.AgencyID = o.AgencyID WHERE o.OFWID = " & Session.CurrentReferenceID & " AND jp.JobStatus = 'Open' AND EXISTS (SELECT 1 FROM ofwskill os JOIN skill s ON os.SkillID = s.SkillID WHERE os.OFWID = o.OFWID AND jp.RequiredSkills LIKE CONCAT('%', s.SkillName, '%'))"
+
 
         ' Append filters
         If Not String.IsNullOrWhiteSpace(txtbxJobTitle.Text) Then
@@ -52,7 +55,7 @@ Public Class joboffers
         End If
 
         If dateApplicationDeadline.Checked Then
-            query &= $" AND jp.ApplicationDeadline = '{dateApplicationDeadline.Value.ToString("yyyy-MM-dd")}'"
+            query &= $" AND jp.ApplicationDeadline >= '{dateApplicationDeadline.Value.ToString("yyyy-MM-dd")}'"
         End If
 
         Try
@@ -77,11 +80,15 @@ Public Class joboffers
             .EnableHeadersVisualStyles = False
             .BackgroundColor = Color.White
 
+            ' Explicitly set default cell colors
+            .DefaultCellStyle.BackColor = Color.White
+            .DefaultCellStyle.ForeColor = Color.Black
+
             ' Set font sizes
             .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
             .DefaultCellStyle.Font = New Font("Segoe UI", 10, FontStyle.Regular)
 
-            ' Header styling with new color
+            ' Header styling
             .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 155)
             .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
             .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
@@ -104,6 +111,7 @@ Public Class joboffers
             If .Columns.Contains("CompanyName") Then .Columns("CompanyName").HeaderText = "Employer"
         End With
     End Sub
+
 
     ' Filtering triggers
     Private Sub txtbxJobTitle_TextChanged(sender As Object, e As EventArgs) Handles txtbxJobTitle.TextChanged
@@ -167,13 +175,6 @@ Public Class joboffers
 
     Private Sub btnViewDetails_Click(sender As Object, e As EventArgs) Handles btnViewDetails.Click
         OpenSelectedJobDetails()
-    End Sub
-
-    Private Sub DGVJobOffers_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVJobOffers.CellContentClick
-        If e.RowIndex >= 0 Then
-            DGVJobOffers.Rows(e.RowIndex).Selected = True
-            OpenSelectedJobDetails()
-        End If
     End Sub
 
     Private Sub OpenSelectedJobDetails()

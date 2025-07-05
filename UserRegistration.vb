@@ -77,15 +77,15 @@ Public Class UserRegistration
             Case "OFW"
                 Session.LoggedInOfwID = 0
                 Dim f As New addOfw()
-                f.Show()
+                f.ShowDialog()
             Case "Agency"
                 Session.LoggedInAgencyID = 0
                 Dim f As New addAgency()
-                f.Show()
+                f.ShowDialog()
             Case "Employer"
                 Session.LoggedInEmployerID = 0
                 Dim f As New addEmployer()
-                f.Show()
+                f.ShowDialog()
             Case Else
                 MessageBox.Show("Unknown user type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return

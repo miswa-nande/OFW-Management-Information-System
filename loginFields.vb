@@ -86,11 +86,11 @@
                         Else
                             cmdRead.Close()
                             Dim form As New addAgency()
-                            form.Show()
+                            form.ShowDialog()
                         End If
                     Else
                         Dim form As New addAgency()
-                        form.Show()
+                        form.ShowDialog()
                     End If
 
                 Case "Employer"
@@ -103,11 +103,11 @@
                         Else
                             cmdRead.Close()
                             Dim form As New addEmployer()
-                            form.Show()
+                            form.ShowDialog()
                         End If
                     Else
                         Dim form As New addEmployer()
-                        form.Show()
+                        form.ShowDialog()
                     End If
 
                 Case "OFW"
@@ -120,11 +120,11 @@
                         Else
                             cmdRead.Close()
                             Dim form As New addOfw()
-                            form.Show()
+                            form.ShowDialog()
                         End If
                     Else
                         Dim form As New addOfw()
-                        form.Show()
+                        form.ShowDialog()
                     End If
             End Select
 

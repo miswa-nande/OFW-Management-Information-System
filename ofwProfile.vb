@@ -63,8 +63,8 @@ Public Class ofwProfile
 
     Private Sub EditProfile_Click(sender As Object, e As EventArgs) Handles EditProfile.Click
         Dim editForm As New editOfw()
-        editForm.Show()
-        Me.Hide()
+        editForm.ShowDialog()
+
     End Sub
 
     Private Sub LogOut_Click(sender As Object, e As EventArgs) Handles LogOut.Click
