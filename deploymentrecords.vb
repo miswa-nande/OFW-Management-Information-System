@@ -16,12 +16,14 @@
     Private Sub LoadDeploymentRecords()
         Try
             Dim query As String = $"
-                SELECT d.deployment_id, d.contract_number, jp.job_title, d.country_of_deployment,
-                       d.salary, d.contract_status, d.contract_start, d.contract_end,
-                       d.repatriation_status, d.reason_for_return
-                FROM deploymentrecord d
-                JOIN jobplacement jp ON d.job_id = jp.job_id
-                WHERE d.ofw_id = {Session.CurrentReferenceID}"
+            SELECT d.DeploymentID, d.ContractNumber, jp.JobTitle, d.CountryOfDeployment,
+                   d.Salary, d.DeploymentStatus, d.ContractStartDate, d.ContractEndDate,
+                   d.RepatriationStatus, d.ReasonForReturn
+            FROM deploymentrecord d
+            JOIN jobplacement jp ON d.JobPlacementID = jp.JobPlacementID
+            WHERE d.ApplicationID IN (
+                SELECT a.ApplicationID FROM application a WHERE a.OFWID = {Session.CurrentReferenceID}
+            )"
 
             LoadToDGV(query, DataGridView1)
 
@@ -30,20 +32,46 @@
         End Try
     End Sub
 
+
     Private Sub FormatDGV()
         With DataGridView1
-            If .Columns.Contains("deployment_id") Then .Columns("deployment_id").Visible = False
-            If .Columns.Contains("contract_number") Then .Columns("contract_number").HeaderText = "Contract #"
-            If .Columns.Contains("job_title") Then .Columns("job_title").HeaderText = "Job Title"
-            If .Columns.Contains("country_of_deployment") Then .Columns("country_of_deployment").HeaderText = "Country"
-            If .Columns.Contains("salary") Then .Columns("salary").HeaderText = "Salary"
-            If .Columns.Contains("contract_status") Then .Columns("contract_status").HeaderText = "Contract Status"
-            If .Columns.Contains("contract_start") Then .Columns("contract_start").HeaderText = "Start Date"
-            If .Columns.Contains("contract_end") Then .Columns("contract_end").HeaderText = "End Date"
-            If .Columns.Contains("repatriation_status") Then .Columns("repatriation_status").HeaderText = "Repatriated?"
-            If .Columns.Contains("reason_for_return") Then .Columns("reason_for_return").HeaderText = "Reason for Return"
+            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+            .ReadOnly = True
+            .AllowUserToAddRows = False
+            .AllowUserToDeleteRows = False
+            .AllowUserToResizeRows = False
+            .RowHeadersVisible = False
+            .BorderStyle = BorderStyle.None
+            .EnableHeadersVisualStyles = False
+            .BackgroundColor = Color.White
+
+            ' Header style
+            .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 155)
+            .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
+            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            ' Row style
+            .DefaultCellStyle.Font = New Font("Segoe UI", 10)
+            .DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200)
+            .DefaultCellStyle.SelectionForeColor = Color.Black
+
+            ' Column headers
+            If .Columns.Contains("DeploymentID") Then .Columns("DeploymentID").Visible = False
+            If .Columns.Contains("ContractNumber") Then .Columns("ContractNumber").HeaderText = "Contract #"
+            If .Columns.Contains("JobTitle") Then .Columns("JobTitle").HeaderText = "Job Title"
+            If .Columns.Contains("CountryOfDeployment") Then .Columns("CountryOfDeployment").HeaderText = "Country"
+            If .Columns.Contains("Salary") Then .Columns("Salary").HeaderText = "Salary"
+            If .Columns.Contains("DeploymentStatus") Then .Columns("DeploymentStatus").HeaderText = "Status"
+            If .Columns.Contains("ContractStartDate") Then .Columns("ContractStartDate").HeaderText = "Start Date"
+            If .Columns.Contains("ContractEndDate") Then .Columns("ContractEndDate").HeaderText = "End Date"
+            If .Columns.Contains("RepatriationStatus") Then .Columns("RepatriationStatus").HeaderText = "Repatriated?"
+            If .Columns.Contains("ReasonForReturn") Then .Columns("ReasonForReturn").HeaderText = "Reason for Return"
         End With
     End Sub
+
 
     ' Navigation buttons
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
@@ -64,7 +92,6 @@
         Me.Hide()
     End Sub
 
-    ' Optional: If you want to allow clearing or refreshing
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         LoadDeploymentRecords()
     End Sub

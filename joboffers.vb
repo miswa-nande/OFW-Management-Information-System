@@ -10,48 +10,49 @@ Public Class joboffers
         End If
 
         LoadMatchingJobOffers()
-        FormatDGV()
     End Sub
 
     Private Sub LoadMatchingJobOffers()
         Dim query As String = "
-            SELECT jp.job_id, jp.job_title, jp.salary, jp.location, jp.job_type, 
-                   jp.visa_type, jp.application_deadline, s.skill_name, e.employer_name
-            FROM jobplacement jp
-            JOIN employer e ON jp.employer_id = e.employer_id
-            JOIN agencyemployer ae ON ae.employer_id = e.employer_id
-            JOIN ofw o ON ae.agency_id = o.agency_id
-            JOIN ofwskills os ON o.ofw_id = os.ofw_id
-            LEFT JOIN skill s ON jp.skill_id = s.skill_id
-            WHERE os.skill_id = jp.skill_id AND o.ofw_id = " & Session.CurrentReferenceID
+        SELECT jp.JobPlacementID, jp.JobTitle, jp.SalaryRange, jp.CountryOfEmployment, 
+               jp.JobType, jp.VisaType, jp.ApplicationDeadline, jp.RequiredSkills, e.CompanyName
+        FROM jobplacement jp
+        JOIN employer e ON jp.EmployerID = e.EmployerID
+        JOIN agencypartneremployer ae ON ae.EmployerID = e.EmployerID
+        JOIN ofw o ON ae.AgencyID = o.AgencyID
+        JOIN ofwskill os ON o.OFWID = os.OFWID
+        JOIN skill s ON os.SkillID = s.SkillID
+        WHERE jp.RequiredSkills LIKE CONCAT('%', s.SkillName, '%')
+          AND o.OFWID = " & Session.CurrentReferenceID
 
-        ' Append filters from input controls
+        ' Append filters
         If Not String.IsNullOrWhiteSpace(txtbxJobTitle.Text) Then
-            query &= $" AND jp.job_title LIKE '%{txtbxJobTitle.Text.Trim()}%'"
+            query &= $" AND jp.JobTitle LIKE '%{txtbxJobTitle.Text.Trim()}%'"
         End If
 
         If Not String.IsNullOrWhiteSpace(txtbxJobType.Text) Then
-            query &= $" AND jp.job_type LIKE '%{txtbxJobType.Text.Trim()}%'"
+            query &= $" AND jp.JobType LIKE '%{txtbxJobType.Text.Trim()}%'"
         End If
 
         If Not String.IsNullOrWhiteSpace(txtbxReqSkill.Text) Then
-            query &= $" AND s.skill_name LIKE '%{txtbxReqSkill.Text.Trim()}%'"
+            query &= $" AND jp.RequiredSkills LIKE '%{txtbxReqSkill.Text.Trim()}%'"
         End If
 
-        If Not String.IsNullOrWhiteSpace(txtbxSalaryRange.Text) Then
-            query &= $" AND jp.salary LIKE '%{txtbxSalaryRange.Text.Trim()}%'"
+        Dim salary As Integer
+        If Integer.TryParse(txtbxSalaryRange.Text.Trim(), salary) Then
+            query &= $" AND jp.SalaryRange >= {salary}"
         End If
 
         If cbxCountry.SelectedIndex >= 0 Then
-            query &= $" AND jp.location = '{cbxCountry.SelectedItem.ToString()}'"
+            query &= $" AND jp.CountryOfEmployment = '{cbxCountry.SelectedItem.ToString()}'"
         End If
 
         If cbxVisaType.SelectedIndex >= 0 Then
-            query &= $" AND jp.visa_type = '{cbxVisaType.SelectedItem.ToString()}'"
+            query &= $" AND jp.VisaType = '{cbxVisaType.SelectedItem.ToString()}'"
         End If
 
         If dateApplicationDeadline.Checked Then
-            query &= $" AND jp.application_deadline = '{dateApplicationDeadline.Value.ToString("yyyy-MM-dd")}'"
+            query &= $" AND jp.ApplicationDeadline = '{dateApplicationDeadline.Value.ToString("yyyy-MM-dd")}'"
         End If
 
         Try
@@ -64,15 +65,43 @@ Public Class joboffers
 
     Private Sub FormatDGV()
         With DGVJobOffers
-            If .Columns.Contains("job_id") Then .Columns("job_id").Visible = False
-            If .Columns.Contains("job_title") Then .Columns("job_title").HeaderText = "Job Title"
-            If .Columns.Contains("salary") Then .Columns("salary").HeaderText = "Salary"
-            If .Columns.Contains("location") Then .Columns("location").HeaderText = "Location"
-            If .Columns.Contains("employer_name") Then .Columns("employer_name").HeaderText = "Employer"
-            If .Columns.Contains("job_type") Then .Columns("job_type").HeaderText = "Job Type"
-            If .Columns.Contains("visa_type") Then .Columns("visa_type").HeaderText = "Visa Type"
-            If .Columns.Contains("application_deadline") Then .Columns("application_deadline").HeaderText = "Deadline"
-            If .Columns.Contains("skill_name") Then .Columns("skill_name").HeaderText = "Skill Required"
+            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+            .ReadOnly = True
+            .AllowUserToAddRows = False
+            .AllowUserToDeleteRows = False
+            .AllowUserToResizeRows = False
+            .RowHeadersVisible = False
+            .BorderStyle = BorderStyle.None
+            .EnableHeadersVisualStyles = False
+            .BackgroundColor = Color.White
+
+            ' Set font sizes
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
+            .DefaultCellStyle.Font = New Font("Segoe UI", 10, FontStyle.Regular)
+
+            ' Header styling with new color
+            .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 155)
+            .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            ' Cell selection styling
+            .DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200)
+            .DefaultCellStyle.SelectionForeColor = Color.Black
+
+            ' Hide internal ID
+            If .Columns.Contains("JobPlacementID") Then .Columns("JobPlacementID").Visible = False
+
+            ' Rename headers
+            If .Columns.Contains("JobTitle") Then .Columns("JobTitle").HeaderText = "Job Title"
+            If .Columns.Contains("SalaryRange") Then .Columns("SalaryRange").HeaderText = "Salary"
+            If .Columns.Contains("CountryOfEmployment") Then .Columns("CountryOfEmployment").HeaderText = "Country"
+            If .Columns.Contains("JobType") Then .Columns("JobType").HeaderText = "Job Type"
+            If .Columns.Contains("VisaType") Then .Columns("VisaType").HeaderText = "Visa Type"
+            If .Columns.Contains("ApplicationDeadline") Then .Columns("ApplicationDeadline").HeaderText = "Deadline"
+            If .Columns.Contains("RequiredSkills") Then .Columns("RequiredSkills").HeaderText = "Required Skills"
+            If .Columns.Contains("CompanyName") Then .Columns("CompanyName").HeaderText = "Employer"
         End With
     End Sub
 
@@ -154,7 +183,7 @@ Public Class joboffers
         End If
 
         Try
-            Dim jobID As Integer = Convert.ToInt32(DGVJobOffers.SelectedRows(0).Cells("job_id").Value)
+            Dim jobID As Integer = Convert.ToInt32(DGVJobOffers.SelectedRows(0).Cells("JobPlacementID").Value)
             Dim dlg As New jobdetails(jobID)
             dlg.ShowDialog()
         Catch ex As Exception

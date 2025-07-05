@@ -92,8 +92,14 @@ Public Class addOfw
 
                 If Session.CurrentLoggedUser.userType = "OFW" Then
                     Dim insertedId As Integer = CInt(cmd.LastInsertedId)
+
+                    ' Update the user table with reference ID
                     Dim updateQuery As String = $"UPDATE users SET reference_id = {insertedId} WHERE user_id = {Session.CurrentLoggedUser.id}"
                     readQuery(updateQuery)
+
+                    ' Update session
+                    Session.CurrentReferenceID = insertedId
+
                     MsgBox("Profile saved. Redirecting to OFW profile...", MsgBoxStyle.Information)
                     Dim profileForm As New ofwProfile()
                     profileForm.Show()
@@ -110,6 +116,35 @@ Public Class addOfw
                 conn.Close()
             End If
         End Try
+
+        ' Validate required fields
+        If String.IsNullOrWhiteSpace(txtbxFName.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxMName.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxLName.Text) OrElse
+           cbxSex.SelectedItem Is Nothing OrElse
+           cbxCivStat.SelectedItem Is Nothing OrElse
+           String.IsNullOrWhiteSpace(txtbxStreet.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxBrgy.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxCity.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxProv.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxZipcode.Text) OrElse
+           cbxEducLevel.SelectedItem Is Nothing OrElse
+           String.IsNullOrWhiteSpace(txtbxSkills.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxContactNum.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxEContactNum.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxPassport.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxVisa.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxOec.Text) Then
+
+            MsgBox("Please fill in all fields before saving.", MsgBoxStyle.Exclamation)
+            Return
+        End If
+
+        If String.IsNullOrEmpty(selectedImagePath) OrElse Not File.Exists(selectedImagePath) Then
+            MsgBox("Please upload a profile picture.", MsgBoxStyle.Exclamation)
+            Return
+        End If
+
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click

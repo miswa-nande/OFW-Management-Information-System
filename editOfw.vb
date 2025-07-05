@@ -8,7 +8,6 @@ Public Class editOfw
     Private currentImageBytes() As Byte
 
     Private Sub editOfw_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Update label based on user type
         If Session.CurrentLoggedUser.userType = "OFW" Then
             Label1.Text = "Edit Profile"
         ElseIf Session.CurrentLoggedUser.userType = "Agency" Then
@@ -19,7 +18,6 @@ Public Class editOfw
             Return
         End If
 
-        ' Load combo box options
         cbxSex.Items.AddRange({"Male", "Female", "Other"})
         cbxCivStat.Items.AddRange({"Single", "Married", "Widowed", "Separated"})
         cbxEducLevel.Items.AddRange({"High School", "Vocational", "College", "Postgraduate"})
@@ -70,19 +68,43 @@ Public Class editOfw
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        ' Input validation
-        If Not IsNumeric(txtbxZipcode.Text.Trim()) OrElse Not IsNumeric(txtbxContactNum.Text.Trim()) OrElse Not IsNumeric(txtbxEContactNum.Text.Trim()) Then
-            MsgBox("Zip Code and contact numbers must be numeric.", MsgBoxStyle.Exclamation)
+        ' Field validation
+        If Not IsNumeric(txtbxZipcode.Text.Trim()) OrElse
+           Not IsNumeric(txtbxContactNum.Text.Trim()) OrElse
+           Not IsNumeric(txtbxEContactNum.Text.Trim()) Then
+            MsgBox("Zip code and contact numbers must be numeric.", MsgBoxStyle.Exclamation)
             Return
         End If
 
-        ' Collect updated values
+        ' Ensure all required fields are filled
+        If String.IsNullOrWhiteSpace(txtbxFName.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxMName.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxLName.Text) OrElse
+           cbxSex.SelectedItem Is Nothing OrElse
+           cbxCivStat.SelectedItem Is Nothing OrElse
+           String.IsNullOrWhiteSpace(txtbxStreet.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxBrgy.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxCity.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxProv.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxZipcode.Text) OrElse
+           cbxEducLevel.SelectedItem Is Nothing OrElse
+           String.IsNullOrWhiteSpace(txtbxSkills.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxContactNum.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxEContactNum.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxPassport.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxVisa.Text) OrElse
+           String.IsNullOrWhiteSpace(txtbxOec.Text) Then
+            MsgBox("Please complete all required fields.", MsgBoxStyle.Exclamation)
+            Return
+        End If
+
+        ' Save changes
         Dim fName As String = txtbxFName.Text.Trim()
         Dim mName As String = txtbxMName.Text.Trim()
         Dim lName As String = txtbxLName.Text.Trim()
         Dim dob As Date = dateDOB.Value
-        Dim sex As String = cbxSex.Text
-        Dim civilStat As String = cbxCivStat.Text
+        Dim sex As String = cbxSex.SelectedItem.ToString()
+        Dim civilStat As String = cbxCivStat.SelectedItem.ToString()
         Dim street As String = txtbxStreet.Text.Trim()
         Dim brgy As String = txtbxBrgy.Text.Trim()
         Dim city As String = txtbxCity.Text.Trim()
@@ -91,7 +113,7 @@ Public Class editOfw
         Dim contact As String = txtbxContactNum.Text.Trim()
         Dim eContact As String = txtbxEContactNum.Text.Trim()
         Dim passport As String = txtbxPassport.Text.Trim()
-        Dim educ As String = cbxEducLevel.Text
+        Dim educ As String = cbxEducLevel.SelectedItem.ToString()
         Dim skills As String = txtbxSkills.Text.Trim()
         Dim visa As String = txtbxVisa.Text.Trim()
         Dim oec As String = txtbxOec.Text.Trim()
@@ -109,7 +131,7 @@ Public Class editOfw
                     CivilStatus = @civilStat, Street = @street, Barangay = @brgy, City = @city, Province = @prov, 
                     Zipcode = @zip, ContactNum = @contact, EmergencyContactNum = @eContact, PassportNum = @passport, 
                     EducationalLevel = @educ, Skills = @skills, VISANum = @visa, OECNum = @oec, PictureFace = @pic 
-                WHERE ofw_id = @ofwId"
+                WHERE OFWId = @ofwId"
 
             Using cmd As New MySqlCommand(query, conn)
                 cmd.Parameters.AddWithValue("@fName", fName)
@@ -135,6 +157,12 @@ Public Class editOfw
 
                 cmd.ExecuteNonQuery()
                 MsgBox("Profile updated successfully!", MsgBoxStyle.Information)
+
+                If Session.CurrentLoggedUser.userType = "OFW" Then
+                    Dim profileForm As New ofwProfile()
+                    profileForm.Show()
+                End If
+
                 Me.Close()
             End Using
         Catch ex As Exception
@@ -145,10 +173,14 @@ Public Class editOfw
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        If Session.CurrentLoggedUser.userType = "OFW" Then
+            Dim profileForm As New ofwProfile()
+            profileForm.Show()
+        End If
         Me.Close()
     End Sub
 
-    ' Input restrictions
+    ' Restrictions
     Private Sub txtbxZipcode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxZipcode.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then e.Handled = True
     End Sub
@@ -161,6 +193,7 @@ Public Class editOfw
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then e.Handled = True
     End Sub
 
+    ' Image
     Private Sub btnAddImg_Click(sender As Object, e As EventArgs) Handles btnAddImg.Click
         Dim ofd As New OpenFileDialog()
         ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
