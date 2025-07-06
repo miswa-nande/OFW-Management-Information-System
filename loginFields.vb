@@ -10,7 +10,27 @@
     Private Sub loginFields_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Session.CurrentLoggedUser.userType = selectedUserType
         txtbxId.Focus()
+
+        ' Only check for admin signup visibility if Admin is selected
+        If selectedUserType = "Admin" Then
+            Dim query As String = "SELECT COUNT(*) FROM users WHERE user_type = 'Admin'"
+            readQuery(query)
+
+            If cmdRead IsNot Nothing AndAlso cmdRead.Read() Then
+                Dim adminCount As Integer = CInt(cmdRead(0))
+                If adminCount > 0 Then
+                    Label4.Visible = False ' Sign Up
+                    Label3.Visible = False ' Any other admin-only label
+                Else
+                    Label4.Visible = True
+                    Label3.Visible = True
+                End If
+            End If
+
+            cmdRead?.Close()
+        End If
     End Sub
+
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim userId As String = txtbxId.Text.Trim()

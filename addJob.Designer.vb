@@ -24,7 +24,6 @@ Partial Class addJob
     Private Sub InitializeComponent()
         Me.txtbxBenefits = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.dateContractDuration = New System.Windows.Forms.DateTimePicker()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.cbxCountryOfEmployment = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -54,6 +53,7 @@ Partial Class addJob
         Me.Label21 = New System.Windows.Forms.Label()
         Me.dateApplicationDeadline = New System.Windows.Forms.DateTimePicker()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txtbxContractDuration = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -76,15 +76,6 @@ Partial Class addJob
         Me.Label15.Size = New System.Drawing.Size(90, 22)
         Me.Label15.TabIndex = 166
         Me.Label15.Text = "Benefits :"
-        '
-        'dateContractDuration
-        '
-        Me.dateContractDuration.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateContractDuration.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateContractDuration.Location = New System.Drawing.Point(499, 372)
-        Me.dateContractDuration.Name = "dateContractDuration"
-        Me.dateContractDuration.Size = New System.Drawing.Size(199, 31)
-        Me.dateContractDuration.TabIndex = 165
         '
         'Label14
         '
@@ -376,12 +367,21 @@ Partial Class addJob
         Me.PictureBox1.TabIndex = 136
         Me.PictureBox1.TabStop = False
         '
+        'txtbxContractDuration
+        '
+        Me.txtbxContractDuration.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxContractDuration.Location = New System.Drawing.Point(499, 373)
+        Me.txtbxContractDuration.Name = "txtbxContractDuration"
+        Me.txtbxContractDuration.Size = New System.Drawing.Size(199, 31)
+        Me.txtbxContractDuration.TabIndex = 205
+        '
         'addJob
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(732, 925)
+        Me.Controls.Add(Me.txtbxContractDuration)
         Me.Controls.Add(Me.dateApplicationDeadline)
         Me.Controls.Add(Me.cbxJobStatus)
         Me.Controls.Add(Me.Label20)
@@ -398,7 +398,6 @@ Partial Class addJob
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtbxBenefits)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.dateContractDuration)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.cbxCountryOfEmployment)
         Me.Controls.Add(Me.Label13)
@@ -426,7 +425,6 @@ Partial Class addJob
 
     Friend WithEvents txtbxBenefits As TextBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents dateContractDuration As DateTimePicker
     Friend WithEvents Label14 As Label
     Friend WithEvents cbxCountryOfEmployment As ComboBox
     Friend WithEvents Label13 As Label
@@ -456,4 +454,5 @@ Partial Class addJob
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents dateApplicationDeadline As DateTimePicker
+    Friend WithEvents txtbxContractDuration As TextBox
 End Class

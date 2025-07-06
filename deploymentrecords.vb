@@ -1,18 +1,40 @@
 ﻿Public Class deploymentrecords
+    Private selectedOfwId As Integer
+
+    ' Constructor for OFW (no argument)
+    Public Sub New()
+        InitializeComponent()
+        selectedOfwId = Session.CurrentReferenceID
+    End Sub
+
+    ' Constructor for Employer/Agency viewing a specific OFW
+    Public Sub New(ofwId As Integer)
+        InitializeComponent()
+        selectedOfwId = ofwId
+    End Sub
 
     Private Sub deploymentrecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Restrict to OFW users only
-        If Session.CurrentLoggedUser.userType <> "OFW" Then
-            MsgBox("Access denied. This section is for OFWs only.", MsgBoxStyle.Critical)
-            Me.Close()
-            Exit Sub
+        ' Only OFWs can view their own deployment record directly
+        If Session.CurrentLoggedUser.userType = "OFW" Then
+            If selectedOfwId <> Session.CurrentReferenceID Then
+                MsgBox("Access denied. You can only view your own records.", MsgBoxStyle.Critical)
+                Me.Close()
+                Exit Sub
+            End If
+        End If
+
+        If Session.CurrentLoggedUser.userType = "Employer" Then
+            ' Disable navigation for employer
+            btnProfile.Enabled = False
+            btnApplications.Enabled = False
+            btnJobOffers.Enabled = False
         End If
 
         LoadDeploymentRecords()
         FormatDGV()
     End Sub
 
-    ' Load all deployment records for the currently logged-in OFW
+    ' Load all deployment records for the selected OFW
     Private Sub LoadDeploymentRecords()
         Try
             Dim query As String = $"
@@ -22,7 +44,7 @@
             FROM deploymentrecord d
             JOIN jobplacement jp ON d.JobPlacementID = jp.JobPlacementID
             WHERE d.ApplicationID IN (
-                SELECT a.ApplicationID FROM application a WHERE a.OFWID = {Session.CurrentReferenceID}
+                SELECT a.ApplicationID FROM application a WHERE a.OFWID = {selectedOfwId}
             )"
 
             LoadToDGV(query, DataGridView1)
@@ -31,7 +53,6 @@
             MsgBox("Error loading deployment records: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
 
     Private Sub FormatDGV()
         With DataGridView1
@@ -47,18 +68,15 @@
             .EnableHeadersVisualStyles = False
             .BackgroundColor = Color.White
 
-            ' Header style
             .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 155)
             .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
             .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
             .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-            ' Row style
             .DefaultCellStyle.Font = New Font("Segoe UI", 10)
             .DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200)
             .DefaultCellStyle.SelectionForeColor = Color.Black
 
-            ' Column headers
             If .Columns.Contains("DeploymentID") Then .Columns("DeploymentID").Visible = False
             If .Columns.Contains("ContractNumber") Then .Columns("ContractNumber").HeaderText = "Contract #"
             If .Columns.Contains("JobTitle") Then .Columns("JobTitle").HeaderText = "Job Title"
@@ -71,7 +89,6 @@
             If .Columns.Contains("ReasonForReturn") Then .Columns("ReasonForReturn").HeaderText = "Reason for Return"
         End With
     End Sub
-
 
     ' Navigation buttons
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
@@ -95,5 +112,4 @@
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         LoadDeploymentRecords()
     End Sub
-
 End Class

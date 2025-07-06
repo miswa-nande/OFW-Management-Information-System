@@ -8,10 +8,11 @@
     End Sub
 
     Private Sub jobdetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Allow everyone to view, but only OFW can apply
         If Session.CurrentLoggedUser.userType <> "OFW" Then
-            MsgBox("Only OFWs can view job details and apply.", MsgBoxStyle.Critical)
-            Me.Close()
-            Exit Sub
+            btnApply.Visible = False
+            btnClose.Text = "Close"
+            SetReadOnlyMode()
         End If
 
         LoadJobDetails()
@@ -38,7 +39,6 @@
                 txtbxConditions.Text = cmdRead("Conditions").ToString()
                 txtbxBenefits.Text = cmdRead("Benefits").ToString()
 
-                ' Application Deadline
                 If Not IsDBNull(cmdRead("ApplicationDeadline")) Then
                     TextBox5.Text = Convert.ToDateTime(cmdRead("ApplicationDeadline")).ToString("yyyy-MM-dd")
                 Else
@@ -50,7 +50,6 @@
             End If
 
             cmdRead.Close()
-
         Catch ex As Exception
             MsgBox("Error loading job details: " & ex.Message, MsgBoxStyle.Critical)
         End Try
@@ -58,11 +57,9 @@
 
     Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnApply.Click
         Try
-            ' Check if already applied to this job
             Dim checkQuery As String = "SELECT 1 FROM application " &
                                        "WHERE OFWId = " & Session.CurrentReferenceID & " " &
                                        "AND JobPlacementID = " & jobID
-
             readQuery(checkQuery)
 
             If cmdRead.HasRows Then
@@ -72,21 +69,33 @@
             End If
             cmdRead.Close()
 
-            ' Open application form
             Dim dlg As New applicationForm(jobID)
             dlg.Text = "Apply to Job"
             dlg.ShowDialog()
             Me.Close()
-            ' Recheck after dialog
+
             readQuery(checkQuery)
             If cmdRead.HasRows Then
                 MsgBox("Application successfully submitted!", MsgBoxStyle.Information)
             End If
             cmdRead.Close()
-
         Catch ex As Exception
             MsgBox("Error preparing application: " & ex.Message, MsgBoxStyle.Critical)
         End Try
+    End Sub
+
+    Private Sub SetReadOnlyMode()
+        txtbxJobTitle.ReadOnly = True
+        txtbxJobDescription.ReadOnly = True
+        txtbxSalaryRange.ReadOnly = True
+        txtbxCountry.ReadOnly = True
+        txtbxContractDuration.ReadOnly = True
+        txtbxReqSkill.ReadOnly = True
+        txtbxJobType.ReadOnly = True
+        txtbxVisaType.ReadOnly = True
+        txtbxConditions.ReadOnly = True
+        txtbxBenefits.ReadOnly = True
+        TextBox5.ReadOnly = True
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click

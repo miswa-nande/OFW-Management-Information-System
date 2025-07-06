@@ -23,33 +23,29 @@ Public Class UserRegistration
             Return
         End If
 
-        If String.IsNullOrEmpty(username) AndAlso String.IsNullOrEmpty(email) Then
-            MessageBox.Show("Please enter either Username or Email.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If String.IsNullOrEmpty(username) OrElse String.IsNullOrEmpty(email) Then
+            MessageBox.Show("Both Username and Email are required.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
-        If Not String.IsNullOrEmpty(username) AndAlso Not String.IsNullOrEmpty(email) Then
-            MessageBox.Show("Only one field should be filled: Username or Email, not both.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
-
-        ' 2. Check if username or email exists
-        Dim checkQuery As String
-        If Not String.IsNullOrEmpty(username) Then
-            checkQuery = $"SELECT * FROM users WHERE username = '{username.Replace("'", "''")}'"
-        Else
-            checkQuery = $"SELECT * FROM users WHERE email = '{email.Replace("'", "''")}'"
-        End If
-
+        ' 2. Check if username OR email already exists
+        Dim checkQuery As String = $"
+            SELECT * FROM users 
+            WHERE username = '{username.Replace("'", "''")}' 
+               OR email = '{email.Replace("'", "''")}'"
         readQuery(checkQuery)
+
         If cmdRead.HasRows Then
             MessageBox.Show("Username or Email already exists.", "Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Error)
             cmdRead.Close()
             conn.Close()
             Return
         End If
+
         cmdRead.Close()
         conn.Close()
+
+
 
         ' 3. Encrypt password
         Dim encryptedPass As String = Encrypt(password)
@@ -73,6 +69,7 @@ Public Class UserRegistration
 
 
         ' 7. Redirect to profile form
+        ' 7. Redirect to profile form or dashboard
         Select Case userType
             Case "OFW"
                 Session.LoggedInOfwID = 0
@@ -86,10 +83,21 @@ Public Class UserRegistration
                 Session.LoggedInEmployerID = 0
                 Dim f As New addEmployer()
                 f.ShowDialog()
+            Case "Admin"
+                Session.LoggedInAdminID = newUserId
+                Session.CurrentLoggedUser.id = newUserId
+                Session.CurrentLoggedUser.username = If(Not String.IsNullOrEmpty(username), username, email)
+                Session.CurrentLoggedUser.userType = "Admin"
+                Session.CurrentReferenceID = 0
+                Dim f As New dashboard()
+                f.Show()
             Case Else
                 MessageBox.Show("Unknown user type.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
         End Select
+
+        Me.Hide()
+
 
         Me.Hide()
     End Sub

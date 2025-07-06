@@ -15,6 +15,7 @@ Public Class ofwProfile
 
         If cmdRead IsNot Nothing AndAlso cmdRead.Read() Then
             ' Load text labels
+            Label10.Text = cmdRead("OFWId").ToString()
             lblFullName.Text = $"{cmdRead("FirstName")} {cmdRead("LastName")}"
             lblDOB.Text = Convert.ToDateTime(cmdRead("DOB")).ToString("MMMM dd, yyyy")
             lblCivStat.Text = cmdRead("CivilStatus").ToString()
@@ -79,5 +80,4 @@ Public Class ofwProfile
         loginForm.Show()
         Me.Close()
     End Sub
-
 End Class

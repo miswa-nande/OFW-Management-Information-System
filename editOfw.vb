@@ -6,29 +6,64 @@ Imports MySql.Data.MySqlClient
 Public Class editOfw
     Private selectedImagePath As String = ""
     Private currentImageBytes() As Byte
+    Private loadedOFWId As Integer
+
+    ' Constructor for logged-in OFW
+    Public Sub New()
+        InitializeComponent()
+        loadedOFWId = Session.CurrentReferenceID
+    End Sub
+
+    ' Constructor for Employer/Agency viewing a selected OFW
+    Public Sub New(ofwId As Integer)
+        InitializeComponent()
+        loadedOFWId = ofwId
+    End Sub
 
     Private Sub editOfw_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Session.CurrentLoggedUser.userType = "OFW" Then
-            Label1.Text = "Edit Profile"
-        ElseIf Session.CurrentLoggedUser.userType = "Agency" Then
-            Label1.Text = "OFW PROFILE"
-        Else
-            MessageBox.Show("Access denied.", "Unauthorized", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Me.Close()
-            Return
-        End If
+        Select Case Session.CurrentLoggedUser.userType
+            Case "OFW"
+                Label1.Text = "Edit Profile"
+                btnSave.Visible = True
+                btnCancel.Text = "Cancel"
+            Case "Agency"
+                Label1.Text = "OFW PROFILE"
+                btnSave.Visible = False
+                btnCancel.Text = "Close"
+            Case "Employer"
+                Label1.Text = "OFW PROFILE (View Only)"
+                btnSave.Visible = False
+                btnCancel.Text = "Close"
+                SetControlsReadOnly()
+            Case Else
+                MessageBox.Show("Access denied.", "Unauthorized", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Me.Close()
+                Return
+        End Select
 
-        cbxSex.Items.AddRange({"Male", "Female", "Other"})
-        cbxCivStat.Items.AddRange({"Single", "Married", "Widowed", "Separated"})
-        cbxEducLevel.Items.AddRange({"High School", "Vocational", "College", "Postgraduate"})
+        If cbxSex.Items.Count = 0 Then cbxSex.Items.AddRange({"Male", "Female", "Other"})
+        If cbxCivStat.Items.Count = 0 Then cbxCivStat.Items.AddRange({"Single", "Married", "Widowed", "Separated"})
+        If cbxEducLevel.Items.Count = 0 Then cbxEducLevel.Items.AddRange({"High School", "Vocational", "College", "Postgraduate"})
 
         LoadOFWData()
+    End Sub
+
+    Private Sub SetControlsReadOnly()
+        For Each ctrl As Control In Me.Controls
+            If TypeOf ctrl Is TextBox Then CType(ctrl, TextBox).ReadOnly = True
+        Next
+        cbxSex.Enabled = False
+        cbxCivStat.Enabled = False
+        cbxEducLevel.Enabled = False
+        dateDOB.Enabled = False
+        btnAddImg.Enabled = False
+        PictureBox2.Enabled = False
     End Sub
 
     Private Sub LoadOFWData()
         Try
             openConn(db_name)
-            Dim query As String = $"SELECT * FROM ofw WHERE OFWId = {Session.CurrentReferenceID}"
+            Dim query As String = $"SELECT * FROM ofw WHERE OFWId = {loadedOFWId}"
             Using cmd As New MySqlCommand(query, conn)
                 Using reader As MySqlDataReader = cmd.ExecuteReader()
                     If reader.Read() Then
@@ -68,7 +103,6 @@ Public Class editOfw
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        ' Field validation
         If Not IsNumeric(txtbxZipcode.Text.Trim()) OrElse
            Not IsNumeric(txtbxContactNum.Text.Trim()) OrElse
            Not IsNumeric(txtbxEContactNum.Text.Trim()) Then
@@ -76,7 +110,6 @@ Public Class editOfw
             Return
         End If
 
-        ' Ensure all required fields are filled
         If String.IsNullOrWhiteSpace(txtbxFName.Text) OrElse
            String.IsNullOrWhiteSpace(txtbxMName.Text) OrElse
            String.IsNullOrWhiteSpace(txtbxLName.Text) OrElse
@@ -98,7 +131,6 @@ Public Class editOfw
             Return
         End If
 
-        ' Save changes
         Dim fName As String = txtbxFName.Text.Trim()
         Dim mName As String = txtbxMName.Text.Trim()
         Dim lName As String = txtbxLName.Text.Trim()
@@ -153,21 +185,18 @@ Public Class editOfw
                 cmd.Parameters.AddWithValue("@visa", visa)
                 cmd.Parameters.AddWithValue("@oec", oec)
                 cmd.Parameters.AddWithValue("@pic", If(newImgBytes IsNot Nothing, newImgBytes, DBNull.Value))
-                cmd.Parameters.AddWithValue("@ofwId", Session.CurrentReferenceID)
+                cmd.Parameters.AddWithValue("@ofwId", loadedOFWId)
 
                 cmd.ExecuteNonQuery()
                 MsgBox("Profile updated successfully!", MsgBoxStyle.Information)
 
                 If ofwProfile.Instance IsNot Nothing AndAlso Not ofwProfile.Instance.IsDisposed Then
                     ofwProfile.Instance.BringToFront()
-                    ofwProfile.Instance.Focus()
-                    ofwProfile.Instance.LoadOFWProfile() ' Optional: Refresh the data
+                    ofwProfile.Instance.LoadOFWProfile()
                 Else
                     Dim profileForm As New ofwProfile()
                     profileForm.Show()
                 End If
-
-
                 Me.Close()
             End Using
         Catch ex As Exception
@@ -178,18 +207,9 @@ Public Class editOfw
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        If ofwProfile.Instance IsNot Nothing AndAlso Not ofwProfile.Instance.IsDisposed Then
-            ofwProfile.Instance.BringToFront()
-            ofwProfile.Instance.Focus()
-            ofwProfile.Instance.LoadOFWProfile() ' Optional: Refresh the data
-        Else
-            Dim profileForm As New ofwProfile()
-            profileForm.Show()
-        End If
         Me.Close()
     End Sub
 
-    ' Restrictions
     Private Sub txtbxZipcode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxZipcode.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then e.Handled = True
     End Sub
@@ -202,7 +222,6 @@ Public Class editOfw
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then e.Handled = True
     End Sub
 
-    ' Image
     Private Sub btnAddImg_Click(sender As Object, e As EventArgs) Handles btnAddImg.Click
         Dim ofd As New OpenFileDialog()
         ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
@@ -213,6 +232,6 @@ Public Class editOfw
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        btnAddImg.PerformClick()
+        If btnAddImg.Enabled Then btnAddImg.PerformClick()
     End Sub
 End Class

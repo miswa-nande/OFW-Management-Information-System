@@ -22,15 +22,12 @@ Partial Class empDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea31 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend31 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series31 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea32 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend32 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series32 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea33 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend33 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series33 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnAgencies = New System.Windows.Forms.Button()
@@ -56,12 +53,11 @@ Partial Class empDashboard
         Me.DeploymentStatusChart = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TtlNumAgencies = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.lblNumEmployers = New System.Windows.Forms.Label()
+        Me.lblNumAgencies = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.ApplicationsPerJob = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.ChartTopJobApplications = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -83,6 +79,9 @@ Partial Class empDashboard
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.Logout = New System.Windows.Forms.Button()
         Me.EditProfile = New System.Windows.Forms.Button()
+        Me.PartneredAgencies = New System.Windows.Forms.DataGridView()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,11 +96,12 @@ Partial Class empDashboard
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
-        CType(Me.ApplicationsPerJob, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartTopJobApplications, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PartneredAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -358,16 +358,16 @@ Partial Class empDashboard
         '
         'DeploymentStatusChart
         '
-        ChartArea31.Name = "ChartArea1"
-        Me.DeploymentStatusChart.ChartAreas.Add(ChartArea31)
-        Legend31.Name = "Legend1"
-        Me.DeploymentStatusChart.Legends.Add(Legend31)
+        ChartArea1.Name = "ChartArea1"
+        Me.DeploymentStatusChart.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.DeploymentStatusChart.Legends.Add(Legend1)
         Me.DeploymentStatusChart.Location = New System.Drawing.Point(16, 117)
         Me.DeploymentStatusChart.Name = "DeploymentStatusChart"
-        Series31.ChartArea = "ChartArea1"
-        Series31.Legend = "Legend1"
-        Series31.Name = "Series1"
-        Me.DeploymentStatusChart.Series.Add(Series31)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.DeploymentStatusChart.Series.Add(Series1)
         Me.DeploymentStatusChart.Size = New System.Drawing.Size(961, 300)
         Me.DeploymentStatusChart.TabIndex = 11
         Me.DeploymentStatusChart.Text = "Chart1"
@@ -394,23 +394,23 @@ Partial Class empDashboard
         Me.Label13.TabIndex = 0
         Me.Label13.Text = "Deployment" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Status :"
         '
-        'Label6
+        'TtlNumAgencies
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label6.Location = New System.Drawing.Point(102, 18)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(152, 48)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Total number " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of Employers :"
+        Me.TtlNumAgencies.AutoSize = True
+        Me.TtlNumAgencies.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TtlNumAgencies.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.TtlNumAgencies.Location = New System.Drawing.Point(102, 18)
+        Me.TtlNumAgencies.Name = "TtlNumAgencies"
+        Me.TtlNumAgencies.Size = New System.Drawing.Size(151, 48)
+        Me.TtlNumAgencies.TabIndex = 0
+        Me.TtlNumAgencies.Text = "Total number " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "of Agencies :"
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Panel4.Controls.Add(Me.PictureBox8)
-        Me.Panel4.Controls.Add(Me.lblNumEmployers)
-        Me.Panel4.Controls.Add(Me.Label6)
+        Me.Panel4.Controls.Add(Me.lblNumAgencies)
+        Me.Panel4.Controls.Add(Me.TtlNumAgencies)
         Me.Panel4.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel4.Location = New System.Drawing.Point(832, 412)
         Me.Panel4.Name = "Panel4"
@@ -428,21 +428,23 @@ Partial Class empDashboard
         Me.PictureBox8.TabIndex = 10
         Me.PictureBox8.TabStop = False
         '
-        'lblNumEmployers
+        'lblNumAgencies
         '
-        Me.lblNumEmployers.AutoSize = True
-        Me.lblNumEmployers.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumEmployers.ForeColor = System.Drawing.SystemColors.MenuText
-        Me.lblNumEmployers.Location = New System.Drawing.Point(113, 80)
-        Me.lblNumEmployers.Name = "lblNumEmployers"
-        Me.lblNumEmployers.Size = New System.Drawing.Size(140, 38)
-        Me.lblNumEmployers.TabIndex = 11
-        Me.lblNumEmployers.Text = "###,###"
+        Me.lblNumAgencies.AutoSize = True
+        Me.lblNumAgencies.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumAgencies.ForeColor = System.Drawing.SystemColors.MenuText
+        Me.lblNumAgencies.Location = New System.Drawing.Point(113, 80)
+        Me.lblNumAgencies.Name = "lblNumAgencies"
+        Me.lblNumAgencies.Size = New System.Drawing.Size(140, 38)
+        Me.lblNumAgencies.TabIndex = 11
+        Me.lblNumAgencies.Text = "###,###"
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.Panel5.Controls.Add(Me.ApplicationsPerJob)
+        Me.Panel5.Controls.Add(Me.PictureBox3)
+        Me.Panel5.Controls.Add(Me.PartneredAgencies)
+        Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Controls.Add(Me.ChartTopJobApplications)
         Me.Panel5.Controls.Add(Me.PictureBox7)
         Me.Panel5.Controls.Add(Me.Label12)
@@ -452,38 +454,21 @@ Partial Class empDashboard
         Me.Panel5.Size = New System.Drawing.Size(322, 934)
         Me.Panel5.TabIndex = 59
         '
-        'ApplicationsPerJob
-        '
-        ChartArea32.Name = "ChartArea1"
-        Me.ApplicationsPerJob.ChartAreas.Add(ChartArea32)
-        Legend32.Name = "Legend1"
-        Me.ApplicationsPerJob.Legends.Add(Legend32)
-        Me.ApplicationsPerJob.Location = New System.Drawing.Point(10, 357)
-        Me.ApplicationsPerJob.Name = "ApplicationsPerJob"
-        Series32.ChartArea = "ChartArea1"
-        Series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar
-        Series32.Legend = "Legend1"
-        Series32.Name = "Series1"
-        Me.ApplicationsPerJob.Series.Add(Series32)
-        Me.ApplicationsPerJob.Size = New System.Drawing.Size(300, 557)
-        Me.ApplicationsPerJob.TabIndex = 17
-        Me.ApplicationsPerJob.Text = "Chart1"
-        '
         'ChartTopJobApplications
         '
         Me.ChartTopJobApplications.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea33.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea33.Name = "ChartArea1"
-        Me.ChartTopJobApplications.ChartAreas.Add(ChartArea33)
-        Legend33.Name = "Legend1"
-        Me.ChartTopJobApplications.Legends.Add(Legend33)
+        ChartArea2.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea2.Name = "ChartArea1"
+        Me.ChartTopJobApplications.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.ChartTopJobApplications.Legends.Add(Legend2)
         Me.ChartTopJobApplications.Location = New System.Drawing.Point(19, 109)
         Me.ChartTopJobApplications.Name = "ChartTopJobApplications"
-        Series33.ChartArea = "ChartArea1"
-        Series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series33.Legend = "Legend1"
-        Series33.Name = "Series1"
-        Me.ChartTopJobApplications.Series.Add(Series33)
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.ChartTopJobApplications.Series.Add(Series2)
         Me.ChartTopJobApplications.Size = New System.Drawing.Size(291, 224)
         Me.ChartTopJobApplications.TabIndex = 16
         Me.ChartTopJobApplications.Text = "Chart4"
@@ -502,11 +487,11 @@ Partial Class empDashboard
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.Label12.Location = New System.Drawing.Point(105, 18)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(174, 48)
+        Me.Label12.Size = New System.Drawing.Size(179, 50)
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "Applications per" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Job Post :"
         '
@@ -637,7 +622,7 @@ Partial Class empDashboard
         '
         Me.lblEmail.AutoSize = True
         Me.lblEmail.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmail.Location = New System.Drawing.Point(1011, 237)
+        Me.lblEmail.Location = New System.Drawing.Point(963, 237)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(165, 22)
         Me.lblEmail.TabIndex = 282
@@ -649,7 +634,7 @@ Partial Class empDashboard
         Me.Label5.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label5.Location = New System.Drawing.Point(1011, 208)
+        Me.Label5.Location = New System.Drawing.Point(963, 208)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(66, 22)
         Me.Label5.TabIndex = 281
@@ -709,6 +694,36 @@ Partial Class empDashboard
         Me.EditProfile.Text = "Edit Profile"
         Me.EditProfile.UseVisualStyleBackColor = True
         '
+        'PartneredAgencies
+        '
+        Me.PartneredAgencies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.PartneredAgencies.Location = New System.Drawing.Point(12, 427)
+        Me.PartneredAgencies.Name = "PartneredAgencies"
+        Me.PartneredAgencies.Size = New System.Drawing.Size(298, 490)
+        Me.PartneredAgencies.TabIndex = 17
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
+        Me.PictureBox3.Location = New System.Drawing.Point(15, 339)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 13
+        Me.PictureBox3.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label6.Location = New System.Drawing.Point(94, 365)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(213, 25)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Partnered Agencies"
+        '
         'empDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -762,12 +777,13 @@ Partial Class empDashboard
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.ApplicationsPerJob, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartTopJobApplications, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PartneredAgencies, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -796,10 +812,10 @@ Partial Class empDashboard
     Friend WithEvents Panel6 As Panel
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label6 As Label
+    Friend WithEvents TtlNumAgencies As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents lblNumEmployers As Label
+    Friend WithEvents lblNumAgencies As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents ChartTopJobApplications As DataVisualization.Charting.Chart
     Friend WithEvents PictureBox7 As PictureBox
@@ -822,6 +838,8 @@ Partial Class empDashboard
     Friend WithEvents lblFullName As Label
     Friend WithEvents Logout As Button
     Friend WithEvents EditProfile As Button
-    Friend WithEvents ApplicationsPerJob As DataVisualization.Charting.Chart
     Friend WithEvents DeploymentStatusChart As DataVisualization.Charting.Chart
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PartneredAgencies As DataGridView
+    Friend WithEvents Label6 As Label
 End Class

@@ -211,21 +211,34 @@ Module modDB
     ' Formats a DataGridView for uniform appearance and text visibility
     Public Sub FormatDGVUniformly(dgv As DataGridView)
         With dgv
-            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-            .DefaultCellStyle.Font = New Font("Segoe UI", 12)
-            .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 12, FontStyle.Bold)
-            .RowTemplate.Height = 30
-            .DefaultCellStyle.WrapMode = DataGridViewTriState.False
-            .AllowUserToResizeRows = False
-            .AllowUserToResizeColumns = True
+            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells ' <-- Fit to content + header
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect
             .MultiSelect = False
             .ReadOnly = True
-            For Each col As DataGridViewColumn In .Columns
-                col.MinimumWidth = 100
-            Next
+            .AllowUserToAddRows = False
+            .AllowUserToDeleteRows = False
+            .AllowUserToResizeRows = False
+            .RowHeadersVisible = False
+            .BorderStyle = BorderStyle.None
+            .EnableHeadersVisualStyles = False
+            .BackgroundColor = Color.White
+
+            ' Header style
+            .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 155)
+            .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
+            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            ' Row style
+            .DefaultCellStyle.Font = New Font("Segoe UI", 10)
+            .DefaultCellStyle.BackColor = Color.White
+            .DefaultCellStyle.ForeColor = Color.Black
+            .DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200)
+            .DefaultCellStyle.SelectionForeColor = Color.Black
         End With
     End Sub
+
+
 
     Public Sub DeleteRecord(tableName As String, primaryKeyColumn As String, id As Integer)
         Try

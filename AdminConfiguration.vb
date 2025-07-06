@@ -260,38 +260,34 @@ Public Class AdminConfiguration
 
     ' Navigation
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-        Me.Hide()
         Dim newForm As New dashboard()
-        newForm.ShowDialog()
-        Me.Show()
+        newForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnOfw_Click(sender As Object, e As EventArgs) Handles btnOfw.Click
-        Me.Hide()
         Dim newForm As New ofws()
-        newForm.ShowDialog()
-        Me.Show()
+        newForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
-        Me.Hide()
         Dim newForm As New deployments()
-        newForm.ShowDialog()
-        Me.Show()
+        newForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnAgencies_Click(sender As Object, e As EventArgs) Handles btnAgencies.Click
         Me.Hide()
         Dim newForm As New agencies()
-        newForm.ShowDialog()
-        Me.Show()
+        newForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnEmployers_Click(sender As Object, e As EventArgs) Handles btnEmployers.Click
-        Me.Hide()
         Dim newForm As New employers()
-        newForm.ShowDialog()
-        Me.Show()
+        newForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnConfig_Click(sender As Object, e As EventArgs) Handles btnConfig.Click
