@@ -96,7 +96,7 @@ Public Class editAgency
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Me.Close()
+        Me.Hide()
     End Sub
 
     ' Input Restrictions
@@ -110,9 +110,5 @@ Public Class editAgency
 
     Private Sub txtbxYearsOfOperation_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxYearsOfOperation.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then e.Handled = True
-    End Sub
-
-    Private Sub txtbxNotes_TextChanged(sender As Object, e As EventArgs) Handles txtbxNotes.TextChanged
-
     End Sub
 End Class
