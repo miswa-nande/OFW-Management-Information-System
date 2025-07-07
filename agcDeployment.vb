@@ -1,10 +1,19 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class agcDeployment
+    Public Shared CurrentDeploymentID As Integer
     Private Sub agcDeployment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadDeployments()
         FormatDGVUniformly(DataGridView1)
         PopulateAllComboboxes()
+
+        ' Set blank and unchecked dates
+        dateContractStart.Format = DateTimePickerFormat.Custom
+        dateContractStart.CustomFormat = " "
+        dateContractStart.Checked = False
+        dateContractEnd.Format = DateTimePickerFormat.Custom
+        dateContractEnd.CustomFormat = " "
+        dateContractEnd.Checked = False
     End Sub
 
     Private Sub LoadDeployments()
@@ -25,7 +34,6 @@ Public Class agcDeployment
     Private Sub PopulateAllComboboxes()
         Dim agencyId As Integer = Session.CurrentReferenceID
 
-        ' Salary
         cbxSalary.Items.Clear()
         readQuery($"SELECT DISTINCT Salary FROM deploymentrecord WHERE AgencyID = {agencyId} AND Salary IS NOT NULL ORDER BY Salary")
         While cmdRead.Read()
@@ -33,7 +41,6 @@ Public Class agcDeployment
         End While
         cmdRead.Close()
 
-        ' Deployment Status
         cbxDeploymentStatus.Items.Clear()
         readQuery($"SELECT DISTINCT DeploymentStatus FROM deploymentrecord WHERE AgencyID = {agencyId} AND DeploymentStatus IS NOT NULL")
         While cmdRead.Read()
@@ -41,7 +48,6 @@ Public Class agcDeployment
         End While
         cmdRead.Close()
 
-        ' Repatriation Status
         cbxRepatriationStat.Items.Clear()
         readQuery($"SELECT DISTINCT RepatriationStatus FROM deploymentrecord WHERE AgencyID = {agencyId} AND RepatriationStatus IS NOT NULL")
         While cmdRead.Read()
@@ -49,7 +55,6 @@ Public Class agcDeployment
         End While
         cmdRead.Close()
 
-        ' Reason for Return
         cbxReasonforReturn.Items.Clear()
         readQuery($"SELECT DISTINCT ReasonForReturn FROM deploymentrecord WHERE AgencyID = {agencyId} AND ReasonForReturn IS NOT NULL")
         While cmdRead.Read()
@@ -57,7 +62,6 @@ Public Class agcDeployment
         End While
         cmdRead.Close()
 
-        ' Reset
         cbxSalary.SelectedIndex = -1
         cbxDeploymentStatus.SelectedIndex = -1
         cbxRepatriationStat.SelectedIndex = -1
@@ -67,34 +71,39 @@ Public Class agcDeployment
     Private Sub ApplyDeploymentFilters()
         Dim agencyId As Integer = Session.CurrentReferenceID
         Dim allCleared As Boolean =
-            txtbxIdNum.Text.Trim() = "" AndAlso
-            txtbxJobTitle.Text.Trim() = "" AndAlso
-            txtbxCountryOfDep.Text.Trim() = "" AndAlso
-            txtbxContractNum.Text.Trim() = "" AndAlso
-            cbxSalary.SelectedIndex = -1 AndAlso
-            cbxDeploymentStatus.SelectedIndex = -1 AndAlso
-            cbxRepatriationStat.SelectedIndex = -1 AndAlso
-            cbxReasonforReturn.SelectedIndex = -1 AndAlso
-            Not dateContractStart.Checked AndAlso
-            Not dateContractEnd.Checked
+        txtbxIdNum.Text.Trim() = "" AndAlso
+        txtbxJobTitle.Text.Trim() = "" AndAlso
+        txtbxCountryOfDep.Text.Trim() = "" AndAlso
+        txtbxContractNum.Text.Trim() = "" AndAlso
+        cbxSalary.SelectedIndex = -1 AndAlso
+        cbxDeploymentStatus.SelectedIndex = -1 AndAlso
+        cbxRepatriationStat.SelectedIndex = -1 AndAlso
+        cbxReasonforReturn.SelectedIndex = -1 AndAlso
+        Not dateContractStart.Checked AndAlso
+        Not dateContractEnd.Checked
 
         If allCleared Then
             LoadDeployments()
-            FormatDGVUniformly(DataGridView1)
             Return
         End If
 
-        Dim query As String = "
-            SELECT dr.*, CONCAT(o.FirstName, ' ', o.LastName) AS OFWName
-            FROM deploymentrecord dr
-            LEFT JOIN ofw o ON dr.ApplicationID = o.OFWID
-            WHERE dr.AgencyID = " & agencyId
+        Dim query As String = ""
+        query &= "SELECT dr.DeploymentID, dr.ApplicationID, dr.JobPlacementID, dr.AgencyID, "
+        query &= "dr.CountryOfDeployment, dr.Salary, dr.ContractNumber, dr.ContractDuration, "
+        query &= "dr.DeploymentStatus, dr.ContractStartDate, dr.ContractEndDate, "
+        query &= "dr.RepatriationStatus, dr.ReasonForReturn, dr.DeploymentRemarks, "
+        query &= "CONCAT(o.FirstName, ' ', o.LastName) AS OFWName, jp.JobTitle, e.EmployerName AS Employer "
+        query &= "FROM deploymentrecord dr "
+        query &= "LEFT JOIN ofw o ON dr.ApplicationID = o.OFWID "
+        query &= "LEFT JOIN jobplacement jp ON dr.JobPlacementID = jp.JobPlacementID "
+        query &= "LEFT JOIN employer e ON jp.EmployerID = e.EmployerID "
+        query &= "WHERE dr.AgencyID = " & agencyId
 
         If txtbxIdNum.Text.Trim() <> "" Then
             query &= " AND dr.DeploymentID LIKE '%" & txtbxIdNum.Text.Trim() & "%'"
         End If
         If txtbxJobTitle.Text.Trim() <> "" Then
-            query &= " AND dr.JobPlacementID IN (SELECT JobPlacementID FROM jobplacement WHERE JobTitle LIKE '%" & txtbxJobTitle.Text.Trim() & "%')"
+            query &= " AND jp.JobTitle LIKE '%" & txtbxJobTitle.Text.Trim() & "%'"
         End If
         If txtbxCountryOfDep.Text.Trim() <> "" Then
             query &= " AND dr.CountryOfDeployment LIKE '%" & txtbxCountryOfDep.Text.Trim() & "%'"
@@ -126,10 +135,12 @@ Public Class agcDeployment
         dt.Load(cmdRead)
         cmdRead.Close()
         DataGridView1.DataSource = dt
+
         FormatDGVUniformly(DataGridView1)
     End Sub
 
-    ' Filter Events
+
+    ' === Event Handlers for Filters ===
     Private Sub txtbxIdNum_TextChanged(sender As Object, e As EventArgs) Handles txtbxIdNum.TextChanged
         ApplyDeploymentFilters()
     End Sub
@@ -155,13 +166,25 @@ Public Class agcDeployment
         ApplyDeploymentFilters()
     End Sub
     Private Sub dateContractStart_ValueChanged(sender As Object, e As EventArgs) Handles dateContractStart.ValueChanged
+        If dateContractStart.Checked Then
+            dateContractStart.Format = DateTimePickerFormat.Short
+        Else
+            dateContractStart.Format = DateTimePickerFormat.Custom
+            dateContractStart.CustomFormat = " "
+        End If
         ApplyDeploymentFilters()
     End Sub
     Private Sub dateContractEnd_ValueChanged(sender As Object, e As EventArgs) Handles dateContractEnd.ValueChanged
+        If dateContractEnd.Checked Then
+            dateContractEnd.Format = DateTimePickerFormat.Short
+        Else
+            dateContractEnd.Format = DateTimePickerFormat.Custom
+            dateContractEnd.CustomFormat = " "
+        End If
         ApplyDeploymentFilters()
     End Sub
 
-    ' Navigation
+    ' === Navigation Buttons ===
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         Dim dash As New agcDashboard()
         dash.Show()
@@ -188,7 +211,6 @@ Public Class agcDeployment
         Me.Hide()
     End Sub
 
-    ' Add Deployment
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim dlg As New addDeployment()
         dlg.ShowDialog()
@@ -197,13 +219,11 @@ Public Class agcDeployment
         PopulateAllComboboxes()
     End Sub
 
-    ' Edit Deployment
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim deploymentId As Integer = Convert.ToInt32(selectedRow.Cells("DeploymentID").Value)
-            Session.CurrentReferenceID = deploymentId
-            Dim dlg As New editDeployment()
+            Dim dlg As New editDeployment(deploymentId)
             dlg.ShowDialog()
             LoadDeployments()
             FormatDGVUniformly(DataGridView1)
@@ -213,7 +233,6 @@ Public Class agcDeployment
         End If
     End Sub
 
-    ' Clear Filters
     Private Sub ClearBTN_Click(sender As Object, e As EventArgs) Handles ClearBTN.Click
         txtbxIdNum.Clear()
         txtbxJobTitle.Clear()
@@ -223,17 +242,20 @@ Public Class agcDeployment
         cbxDeploymentStatus.SelectedIndex = -1
         cbxRepatriationStat.SelectedIndex = -1
         cbxReasonforReturn.SelectedIndex = -1
+
         dateContractStart.Checked = False
+        dateContractStart.CustomFormat = " "
+        dateContractStart.Format = DateTimePickerFormat.Custom
+
         dateContractEnd.Checked = False
-        dateContractStart.Value = Date.Today
-        dateContractEnd.Value = Date.Today
+        dateContractEnd.CustomFormat = " "
+        dateContractEnd.Format = DateTimePickerFormat.Custom
 
         LoadDeployments()
         FormatDGVUniformly(DataGridView1)
         PopulateAllComboboxes()
     End Sub
 
-    ' Deployment Tracking Form
     Private Sub OFWDeploymentTarcking_Click(sender As Object, e As EventArgs) Handles OFWDeploymentTarcking.Click
         Dim trackingForm As New agcDeploymentTracking()
         trackingForm.Show()
@@ -262,7 +284,6 @@ Public Class agcDeployment
 
                     MessageBox.Show("Deployment record deleted successfully!", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                    ' Refresh the data
                     LoadDeployments()
                     FormatDGVUniformly(DataGridView1)
                     PopulateAllComboboxes()
@@ -274,5 +295,4 @@ Public Class agcDeployment
             MessageBox.Show("Please select a deployment record to delete.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
 End Class

@@ -33,7 +33,7 @@ Public Class applicationForm
         End If
     End Sub
 
-    ' ✅ Load job details from jobplacement table
+    'Load job details from jobplacement table
     Private Sub LoadJobDetails()
         Try
             Dim query As String = "SELECT JobTitle, JobDescription, SalaryRange, CountryOfEmployment, " &
@@ -67,7 +67,7 @@ Public Class applicationForm
         End Try
     End Sub
 
-    ' ✅ Load OFW profile using Session.CurrentReferenceID
+    'Load OFW profile using Session.CurrentReferenceID
     Private Sub LoadOfwProfile()
         Try
             Dim query As String = "SELECT CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS full_name, " &

@@ -865,6 +865,7 @@ Partial Class agcDeploymentTracking
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.cbxDeploymentStatus)
         Me.Controls.Add(Me.Panel4)
@@ -881,7 +882,6 @@ Partial Class agcDeploymentTracking
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label10)
@@ -894,7 +894,9 @@ Partial Class agcDeploymentTracking
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Name = "agcDeploymentTracking"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "agcDeploymentTracking"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).EndInit()

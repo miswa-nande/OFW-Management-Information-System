@@ -27,9 +27,10 @@ Public Class agcOfws
 
     Private Sub FormatDGVUniformly(dgv As DataGridView)
         With dgv
-            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
-            .DefaultCellStyle.Font = New Font("Segoe UI", 12)
-            .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 12, FontStyle.Bold)
+            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
+            .DefaultCellStyle.Font = New Font("Segoe UI", 10)
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
             .RowTemplate.Height = 30
             .DefaultCellStyle.WrapMode = DataGridViewTriState.False
             .AllowUserToResizeRows = False
@@ -37,11 +38,45 @@ Public Class agcOfws
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect
             .MultiSelect = False
             .ReadOnly = True
+            .AllowUserToAddRows = False
+            .AllowUserToDeleteRows = False
+            .RowHeadersVisible = False
+            .BorderStyle = BorderStyle.None
+            .EnableHeadersVisualStyles = False
+            .BackgroundColor = Color.White
+
+            ' Header style
+            .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 125)
+            .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+            ' Row style
+            .DefaultCellStyle.ForeColor = Color.Black
+            .DefaultCellStyle.SelectionBackColor = Color.FromArgb(173, 216, 230)
+            .DefaultCellStyle.SelectionForeColor = Color.Black
+
+            .AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 248, 255)
+            .AlternatingRowsDefaultCellStyle.ForeColor = Color.Black
+
+
+            ' Adjust all column minimum widths
             For Each col As DataGridViewColumn In .Columns
                 col.MinimumWidth = 100
             Next
         End With
+
+        ' Optional: Rename important headers for clarity
+        If dgv.Columns.Contains("OFWId") Then dgv.Columns("OFWId").HeaderText = "OFW ID"
+        If dgv.Columns.Contains("FirstName") Then dgv.Columns("FirstName").HeaderText = "First Name"
+        If dgv.Columns.Contains("MiddleName") Then dgv.Columns("MiddleName").HeaderText = "Middle Name"
+        If dgv.Columns.Contains("LastName") Then dgv.Columns("LastName").HeaderText = "Last Name"
+        If dgv.Columns.Contains("Sex") Then dgv.Columns("Sex").HeaderText = "Gender"
+        If dgv.Columns.Contains("CivilStatus") Then dgv.Columns("CivilStatus").HeaderText = "Civil Status"
+        If dgv.Columns.Contains("Zipcode") Then dgv.Columns("Zipcode").HeaderText = "ZIP Code"
+        If dgv.Columns.Contains("VISANum") Then dgv.Columns("VISANum").HeaderText = "Visa Number"
+        If dgv.Columns.Contains("OECNum") Then dgv.Columns("OECNum").HeaderText = "OEC Number"
     End Sub
+
 
     Private Sub ApplyOFWFilters()
         Dim agencyId As Integer = Session.CurrentReferenceID

@@ -514,7 +514,7 @@ Partial Class agcDeployment
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(1048, 831)
+        Me.DataGridView1.Size = New System.Drawing.Size(1048, 794)
         Me.DataGridView1.TabIndex = 159
         '
         'Label1

@@ -5,7 +5,26 @@ Public Class agcDeploymentTracking
 
     Private Sub agcDeploymentTracking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DisableAllFields()
+        PopulateComboBoxes()
         LoadDeployments()
+    End Sub
+
+    Private Sub PopulateComboBoxes()
+        ' Populate Yes/No combo boxes
+        cbxMedical.Items.Clear()
+        cbxVisa.Items.Clear()
+        cbxPOEA.Items.Clear()
+        cbxPDOS.Items.Clear()
+
+        Dim yesNoOptions = {"Yes", "No"}
+        cbxMedical.Items.AddRange(yesNoOptions)
+        cbxVisa.Items.AddRange(yesNoOptions)
+        cbxPOEA.Items.AddRange(yesNoOptions)
+        cbxPDOS.Items.AddRange(yesNoOptions)
+
+        ' Deployment status options
+        cbxDepStat.Items.Clear()
+        cbxDepStat.Items.AddRange({"Scheduled", "Deployed", "Completed", "Returned"})
     End Sub
 
     Private Sub DisableAllFields()
@@ -83,8 +102,23 @@ Public Class agcDeploymentTracking
 
     Private Sub UpdateRequirementsBTN_Click(sender As Object, e As EventArgs) Handles UpdateRequirementsBTN.Click
         If DataGridView1.SelectedRows.Count > 0 Then
-            selectedDeploymentId = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("DeploymentID").Value)
+            Dim row As DataGridViewRow = DataGridView1.SelectedRows(0)
+            selectedDeploymentId = Convert.ToInt32(row.Cells("DeploymentID").Value)
+
+            ' Enable editing
             EnableRequirementFields()
+
+            ' Pre-fill fields from selected row
+            cbxMedical.SelectedItem = If(Convert.ToBoolean(row.Cells("MedicalCleared").Value), "Yes", "No")
+            cbxVisa.SelectedItem = If(Convert.ToBoolean(row.Cells("VisaIssued").Value), "Yes", "No")
+            cbxPOEA.SelectedItem = If(Convert.ToBoolean(row.Cells("POEACleared").Value), "Yes", "No")
+            cbxPDOS.SelectedItem = If(Convert.ToBoolean(row.Cells("PDOSCompleted").Value), "Yes", "No")
+            txtbxFlightNumber.Text = row.Cells("FlightNumber").Value.ToString()
+            txtbxAirport.Text = row.Cells("Airport").Value.ToString()
+            cbxDepStat.SelectedItem = row.Cells("DeploymentStatus").Value.ToString()
+            txtbxRemarks.Text = row.Cells("DeploymentRemarks").Value.ToString()
+
+            CheckFlightCompletion()
         Else
             MessageBox.Show("Please select a deployment record first.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
@@ -106,53 +140,6 @@ Public Class agcDeploymentTracking
         Catch ex As Exception
             MessageBox.Show("Database error: " & ex.Message)
         End Try
-    End Sub
-
-    ' Navigation buttons
-    Private Sub btnEmployers_Click(sender As Object, e As EventArgs) Handles btnEmployers.Click
-        Dim f As New agcEmployers()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnOfws_Click(sender As Object, e As EventArgs) Handles btnOfws.Click
-        Dim f As New agcOfws()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub OFWDeploymentTarcking_Click(sender As Object, e As EventArgs) Handles OFWDeploymentTarcking.Click
-        Dim f As New agcDeploymentTracking()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
-        Dim f As New agcDeployment()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnApplications_Click(sender As Object, e As EventArgs) Handles btnApplications.Click
-        Dim f As New agcApplications()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnJobs_Click(sender As Object, e As EventArgs) Handles btnJobs.Click
-        Dim f As New agcJobs()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-        Dim f As New agcDashboard()
-        f.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub SaveBTN_Click(sender As Object, e As EventArgs) Handles SaveBTN.Click
-        MessageBox.Show("All changes are saved automatically when you make updates.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub LoadDeployments()
@@ -220,7 +207,51 @@ Public Class agcDeploymentTracking
         LoadDeployments()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    ' Navigation buttons
+    Private Sub btnEmployers_Click(sender As Object, e As EventArgs) Handles btnEmployers.Click
+        Dim f As New agcEmployers()
+        f.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnOfws_Click(sender As Object, e As EventArgs) Handles btnOfws.Click
+        Dim f As New agcOfws()
+        f.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub OFWDeploymentTarcking_Click(sender As Object, e As EventArgs) Handles OFWDeploymentTarcking.Click
+        Dim f As New agcDeploymentTracking()
+        f.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
+        Dim f As New agcDeployment()
+        f.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnApplications_Click(sender As Object, e As EventArgs) Handles btnApplications.Click
+        Dim f As New agcApplications()
+        f.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnJobs_Click(sender As Object, e As EventArgs) Handles btnJobs.Click
+        Dim f As New agcJobs()
+        f.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        Dim f As New agcDashboard()
+        f.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub SaveBTN_Click(sender As Object, e As EventArgs) Handles SaveBTN.Click
+        MessageBox.Show("All changes are saved automatically when you make updates.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -238,11 +269,9 @@ Public Class agcDeploymentTracking
         Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
         Dim deploymentId As Integer = Convert.ToInt32(selectedRow.Cells("DeploymentID").Value)
 
-        ' Temporarily store it in CurrentReferenceID
-        Session.CurrentReferenceID = deploymentId
-
-        Dim editForm As New editDeployment()
+        Dim editForm As New editDeployment(deploymentId)
         editForm.ShowDialog()
+
         LoadDeployments()
     End Sub
 
@@ -270,5 +299,4 @@ Public Class agcDeploymentTracking
             End Try
         End If
     End Sub
-
 End Class

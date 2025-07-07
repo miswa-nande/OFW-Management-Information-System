@@ -211,32 +211,46 @@ Module modDB
     ' Formats a DataGridView for uniform appearance and text visibility
     Public Sub FormatDGVUniformly(dgv As DataGridView)
         With dgv
-            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells ' <-- Fit to content + header
+            ' Display Settings
+            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
+            .AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None
+            .DefaultCellStyle.WrapMode = DataGridViewTriState.False
+            .ScrollBars = ScrollBars.Both
+            .RowHeadersVisible = False
+
+            ' Read-only and layout behavior
+            .ReadOnly = True
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect
             .MultiSelect = False
-            .ReadOnly = True
             .AllowUserToAddRows = False
             .AllowUserToDeleteRows = False
             .AllowUserToResizeRows = False
-            .RowHeadersVisible = False
-            .BorderStyle = BorderStyle.None
-            .EnableHeadersVisualStyles = False
+            .AllowUserToResizeColumns = True
+            .BorderStyle = BorderStyle.FixedSingle
             .BackgroundColor = Color.White
+            .EnableHeadersVisualStyles = False
 
-            ' Header style
+            ' Header styling
             .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 155)
             .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
             .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
             .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
-            ' Row style
+            ' Cell styling
             .DefaultCellStyle.Font = New Font("Segoe UI", 10)
             .DefaultCellStyle.BackColor = Color.White
             .DefaultCellStyle.ForeColor = Color.Black
             .DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200)
             .DefaultCellStyle.SelectionForeColor = Color.Black
+            .RowTemplate.Height = 30
+
+            ' Minimum column width (optional)
+            For Each col As DataGridViewColumn In .Columns
+                col.MinimumWidth = 100
+            Next
         End With
     End Sub
+
 
 
 

@@ -38,15 +38,15 @@ Partial Class agcApplications
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtbxJobTitle = New System.Windows.Forms.TextBox()
-        Me.cbxContractStat = New System.Windows.Forms.ComboBox()
+        Me.cbxApplicationStatus = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.dateContractStart = New System.Windows.Forms.DateTimePicker()
+        Me.dateDateSubmitted = New System.Windows.Forms.DateTimePicker()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.ClearBTN = New System.Windows.Forms.Button()
-        Me.txtbxContractNum = New System.Windows.Forms.TextBox()
+        Me.txtbxAgencyName = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtbxIdNum = New System.Windows.Forms.TextBox()
+        Me.txtbxJobIdNum = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -264,14 +264,14 @@ Partial Class agcApplications
         Me.txtbxJobTitle.Size = New System.Drawing.Size(194, 27)
         Me.txtbxJobTitle.TabIndex = 196
         '
-        'cbxContractStat
+        'cbxApplicationStatus
         '
-        Me.cbxContractStat.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxContractStat.FormattingEnabled = True
-        Me.cbxContractStat.Location = New System.Drawing.Point(1673, 312)
-        Me.cbxContractStat.Name = "cbxContractStat"
-        Me.cbxContractStat.Size = New System.Drawing.Size(165, 29)
-        Me.cbxContractStat.TabIndex = 195
+        Me.cbxApplicationStatus.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxApplicationStatus.FormattingEnabled = True
+        Me.cbxApplicationStatus.Location = New System.Drawing.Point(1673, 312)
+        Me.cbxApplicationStatus.Name = "cbxApplicationStatus"
+        Me.cbxApplicationStatus.Size = New System.Drawing.Size(165, 29)
+        Me.cbxApplicationStatus.TabIndex = 195
         '
         'Label4
         '
@@ -284,14 +284,14 @@ Partial Class agcApplications
         Me.Label4.TabIndex = 194
         Me.Label4.Text = "Application Status"
         '
-        'dateContractStart
+        'dateDateSubmitted
         '
-        Me.dateContractStart.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateContractStart.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateContractStart.Location = New System.Drawing.Point(1495, 314)
-        Me.dateContractStart.Name = "dateContractStart"
-        Me.dateContractStart.Size = New System.Drawing.Size(165, 27)
-        Me.dateContractStart.TabIndex = 193
+        Me.dateDateSubmitted.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateDateSubmitted.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dateDateSubmitted.Location = New System.Drawing.Point(1495, 314)
+        Me.dateDateSubmitted.Name = "dateDateSubmitted"
+        Me.dateDateSubmitted.Size = New System.Drawing.Size(165, 27)
+        Me.dateDateSubmitted.TabIndex = 193
         '
         'Label17
         '
@@ -317,14 +317,14 @@ Partial Class agcApplications
         Me.ClearBTN.Text = "C L E A R"
         Me.ClearBTN.UseVisualStyleBackColor = False
         '
-        'txtbxContractNum
+        'txtbxAgencyName
         '
-        Me.txtbxContractNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxContractNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxContractNum.Location = New System.Drawing.Point(1495, 372)
-        Me.txtbxContractNum.Name = "txtbxContractNum"
-        Me.txtbxContractNum.Size = New System.Drawing.Size(343, 27)
-        Me.txtbxContractNum.TabIndex = 190
+        Me.txtbxAgencyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxAgencyName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxAgencyName.Location = New System.Drawing.Point(1495, 372)
+        Me.txtbxAgencyName.Name = "txtbxAgencyName"
+        Me.txtbxAgencyName.Size = New System.Drawing.Size(343, 27)
+        Me.txtbxAgencyName.TabIndex = 190
         '
         'Label7
         '
@@ -348,14 +348,14 @@ Partial Class agcApplications
         Me.Label3.TabIndex = 188
         Me.Label3.Text = "Job ID Number"
         '
-        'txtbxIdNum
+        'txtbxJobIdNum
         '
-        Me.txtbxIdNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxIdNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxIdNum.Location = New System.Drawing.Point(1495, 253)
-        Me.txtbxIdNum.Name = "txtbxIdNum"
-        Me.txtbxIdNum.Size = New System.Drawing.Size(100, 27)
-        Me.txtbxIdNum.TabIndex = 187
+        Me.txtbxJobIdNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxJobIdNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxJobIdNum.Location = New System.Drawing.Point(1495, 253)
+        Me.txtbxJobIdNum.Name = "txtbxJobIdNum"
+        Me.txtbxJobIdNum.Size = New System.Drawing.Size(100, 27)
+        Me.txtbxJobIdNum.TabIndex = 187
         '
         'Label2
         '
@@ -427,17 +427,17 @@ Partial Class agcApplications
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtbxJobTitle)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.cbxContractStat)
+        Me.Controls.Add(Me.cbxApplicationStatus)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.dateContractStart)
+        Me.Controls.Add(Me.dateDateSubmitted)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.txtbxIdNum)
+        Me.Controls.Add(Me.txtbxJobIdNum)
         Me.Controls.Add(Me.ClearBTN)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtbxContractNum)
+        Me.Controls.Add(Me.txtbxAgencyName)
         Me.Controls.Add(Me.Label7)
         Me.Name = "agcApplications"
         Me.Text = "AGENCY | Applications"
@@ -471,15 +471,15 @@ Partial Class agcApplications
     Friend WithEvents btnDashboard As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents txtbxJobTitle As TextBox
-    Friend WithEvents cbxContractStat As ComboBox
+    Friend WithEvents cbxApplicationStatus As ComboBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents dateContractStart As DateTimePicker
+    Friend WithEvents dateDateSubmitted As DateTimePicker
     Friend WithEvents Label17 As Label
     Friend WithEvents ClearBTN As Button
-    Friend WithEvents txtbxContractNum As TextBox
+    Friend WithEvents txtbxAgencyName As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtbxIdNum As TextBox
+    Friend WithEvents txtbxJobIdNum As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label1 As Label

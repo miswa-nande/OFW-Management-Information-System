@@ -1,76 +1,94 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ApplicationDetails
-    Private applicationId As Integer
+    Private ReadOnly applicationId As Integer
+
+    ' Constructor that accepts ApplicationID
+    Public Sub New(appId As Integer)
+        InitializeComponent()
+        applicationId = appId
+    End Sub
 
     Private Sub ApplicationDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        applicationId = Session.CurrentReferenceID
         LoadApplicationDetails()
     End Sub
 
     Private Sub LoadApplicationDetails()
         Dim query As String = "
-            SELECT a.status, a.date_applied,
-                   jp.job_title, jp.job_description, jp.location, jp.salary, jp.contract_duration,
-                   jp.job_type, jp.visa_type, jp.conditions, jp.benefits,
-                   o.firstname, o.lastname, o.dob, o.sex, o.civil_status, o.contact_number, o.address,
-                   o.educ_level, o.passport_no, o.visa_no, o.oec_no,
-                   GROUP_CONCAT(s.skill_name SEPARATOR ', ') AS skills,
-                   o.profile_image
-            FROM application a
-            JOIN jobplacement jp ON a.job_id = jp.job_id
-            JOIN ofw o ON a.ofw_id = o.ofw_id
-            LEFT JOIN ofwskills os ON o.ofw_id = os.ofw_id
-            LEFT JOIN skill s ON os.skill_id = s.skill_id
-            WHERE a.application_id = @appId
-            GROUP BY a.application_id
-        "
+    SELECT 
+        a.ApplicationStatus, a.ApplicationDate,
+        jp.JobTitle, jp.JobDescription, jp.CountryOfEmployment, jp.SalaryRange, 
+        jp.EmploymentContractDuration, jp.JobType, jp.VisaType, jp.Conditions, jp.Benefits,
+        o.OFWID, o.FirstName, o.MiddleName, o.LastName, o.DOB, o.Sex, o.CivilStatus, 
+        o.ContactNum, CONCAT(o.Street, ', ', o.City, ', ', o.Province, ' ', o.Zipcode) AS address,
+        o.EducationalLevel, o.PassportNum, o.VISANum, o.OECNum, o.PictureFace,
+        GROUP_CONCAT(s.SkillName SEPARATOR ', ') AS skills
+    FROM application a
+    LEFT JOIN jobplacement jp ON a.JobPlacementID = jp.JobPlacementID
+    LEFT JOIN ofw o ON a.OFWID = o.OFWID
+    LEFT JOIN ofwskill os ON o.OFWID = os.OFWId
+    LEFT JOIN skill s ON os.SkillID = s.SkillID
+    WHERE a.ApplicationID = " & applicationId & "
+    GROUP BY a.ApplicationID
+"
 
-        Using conn As New MySqlConnection(strConnection)
-            conn.Open()
-            Using cmd As New MySqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@appId", applicationId)
-                Using reader As MySqlDataReader = cmd.ExecuteReader()
-                    If reader.Read() Then
-                        ' JOB DETAILS
-                        txtbxJobTitle.Text = reader("job_title").ToString()
-                        txtbxJobDescription.Text = reader("job_description").ToString()
-                        txtbxCountry.Text = reader("location").ToString()
-                        txtbxSalaryRange.Text = reader("salary").ToString()
-                        txtbxContractDuration.Text = reader("contract_duration").ToString()
-                        txtbxJobType.Text = reader("job_type").ToString()
-                        txtbxVisaType.Text = reader("visa_type").ToString()
-                        txtbxConditions.Text = reader("conditions").ToString()
-                        txtbxBenefits.Text = reader("benefits").ToString()
 
-                        ' OFW DETAILS
-                        lblFullName.Text = reader("firstname") & " " & reader("lastname")
-                        lblDOB.Text = Convert.ToDateTime(reader("dob")).ToString("yyyy-MM-dd")
-                        lblSex.Text = reader("sex").ToString()
-                        lblCivilStat.Text = reader("civil_status").ToString()
-                        lblContactNum.Text = reader("contact_number").ToString()
-                        lblFullAddress.Text = reader("address").ToString()
-                        lblEducLevel.Text = reader("educ_level").ToString()
-                        lblPassportNum.Text = reader("passport_no").ToString()
-                        lblVisaNum.Text = reader("visa_no").ToString()
-                        lblOecNum.Text = reader("oec_no").ToString()
-                        lblSkills.Text = reader("skills").ToString()
+        Try
+            readQuery(query)
 
-                        ' Image (if stored as Base64 in DB)
-                        If Not IsDBNull(reader("profile_image")) Then
-                            Dim base64Str As String = reader("profile_image").ToString()
-                            Dim bytes As Byte() = Convert.FromBase64String(base64Str)
-                            Using ms As New IO.MemoryStream(bytes)
+            If cmdRead.Read() Then
+                ' Job Info
+                txtbxJobTitle.Text = cmdRead("JobTitle").ToString()
+                txtbxJobDescription.Text = cmdRead("JobDescription").ToString()
+                txtbxCountry.Text = cmdRead("CountryOfEmployment").ToString()
+                txtbxSalaryRange.Text = cmdRead("SalaryRange").ToString()
+                txtbxContractDuration.Text = cmdRead("EmploymentContractDuration").ToString()
+                txtbxJobType.Text = cmdRead("JobType").ToString()
+                txtbxVisaType.Text = cmdRead("VisaType").ToString()
+                txtbxConditions.Text = cmdRead("Conditions").ToString()
+                txtbxBenefits.Text = cmdRead("Benefits").ToString()
+
+                ' OFW Info
+                Label4.Text = cmdRead("OFWID").ToString()
+                lblFullName.Text = $"{cmdRead("FirstName")} {cmdRead("MiddleName")} {cmdRead("LastName")}"
+                lblDOB.Text = If(IsDBNull(cmdRead("DOB")), "", Convert.ToDateTime(cmdRead("DOB")).ToString("yyyy-MM-dd"))
+                lblSex.Text = cmdRead("Sex").ToString()
+                lblCivilStat.Text = cmdRead("CivilStatus").ToString()
+                lblContactNum.Text = cmdRead("ContactNum").ToString()
+                lblFullAddress.Text = cmdRead("address").ToString()
+                lblEducLevel.Text = cmdRead("EducationalLevel").ToString()
+                lblPassportNum.Text = cmdRead("PassportNum").ToString()
+                lblVisaNum.Text = cmdRead("VISANum").ToString()
+                lblOecNum.Text = cmdRead("OECNum").ToString()
+                lblSkills.Text = cmdRead("skills").ToString()
+
+                ' Profile image (if base64 string is valid)
+                If Not IsDBNull(cmdRead("PictureFace")) Then
+                    If Not IsDBNull(cmdRead("PictureFace")) Then
+                        Dim imgBytes As Byte() = CType(cmdRead("PictureFace"), Byte())
+                        If imgBytes IsNot Nothing AndAlso imgBytes.Length > 0 Then
+                            Using ms As New IO.MemoryStream(imgBytes)
                                 picProfile.Image = Image.FromStream(ms)
                             End Using
+                        Else
+                            picProfile.Image = Nothing
                         End If
                     Else
-                        MessageBox.Show("No application details found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        Me.Close()
+                        picProfile.Image = Nothing
                     End If
-                End Using
-            End Using
-        End Using
+
+                Else
+                    picProfile.Image = Nothing
+                End If
+            Else
+                MessageBox.Show("Application not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Me.Close()
+            End If
+
+            cmdRead.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error loading details: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnApprove_Click(sender As Object, e As EventArgs) Handles btnApprove.Click
@@ -82,23 +100,15 @@ Public Class ApplicationDetails
     End Sub
 
     Private Sub UpdateApplicationStatus(status As String)
-        Dim result As DialogResult = MessageBox.Show($"Are you sure you want to mark this application as {status}?",
-                                                     "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.Yes Then
+        Dim confirm = MessageBox.Show("Mark this application as " & status & "?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If confirm = DialogResult.Yes Then
             Try
-                Using conn As New MySqlConnection(strConnection)
-                    conn.Open()
-                    Dim query As String = "UPDATE application SET status = @status WHERE application_id = @id"
-                    Using cmd As New MySqlCommand(query, conn)
-                        cmd.Parameters.AddWithValue("@status", status)
-                        cmd.Parameters.AddWithValue("@id", applicationId)
-                        cmd.ExecuteNonQuery()
-                    End Using
-                End Using
-                MessageBox.Show("Application status updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Dim updateQuery As String = "UPDATE application SET ApplicationStatus = '" & status & "' WHERE ApplicationID = " & applicationId
+                readQuery(updateQuery)
+                MessageBox.Show("Application marked as " & status, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Me.Close()
             Catch ex As Exception
-                MessageBox.Show("Failed to update status: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Failed to update application: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
     End Sub

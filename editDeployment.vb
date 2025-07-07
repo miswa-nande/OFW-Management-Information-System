@@ -3,22 +3,21 @@ Imports MySql.Data.MySqlClient
 
 Public Class editDeployment
     Private deploymentId As Integer
+    Private jobPlacementId As Integer
+
+    Public Sub New(depId As Integer)
+        InitializeComponent()
+        deploymentId = depId
+    End Sub
 
     Private Sub editDeployment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Only agencies can access this form
         If Session.CurrentLoggedUser.userType <> "Agency" Then
             MessageBox.Show("Access denied. Only agencies can edit deployments.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
             Return
         End If
 
-        ' Use the existing session reference ID as DeploymentID
-        deploymentId = Session.CurrentReferenceID
-
-        ' Populate dropdowns
         PopulateComboBoxes()
-
-        ' Load data for editing
         LoadDeploymentDetails()
     End Sub
 
@@ -36,44 +35,54 @@ Public Class editDeployment
         countryList.Sort()
         cbxCountry.Items.AddRange(countryList.ToArray())
 
-        ' Static lists
+        ' Static values
         cbxDepStat.Items.AddRange({"Scheduled", "Deployed", "Completed", "Returned"})
         cbxRepatriationStat.Items.AddRange({"Yes", "No"})
         cbxReason.Items.AddRange({"Completed", "Terminated", "Emergency"})
     End Sub
 
     Private Sub LoadDeploymentDetails()
+        Dim query As String = "
+            SELECT dr.*, jp.EmployerID 
+            FROM deploymentrecord dr
+            LEFT JOIN jobplacement jp ON dr.JobPlacementID = jp.JobPlacementID
+            WHERE dr.DeploymentID = " & deploymentId
+
         Try
-            Using conn As New MySqlConnection(strConnection)
-                conn.Open()
-                Dim query As String = "SELECT * FROM deploymentrecord WHERE DeploymentID = @id"
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@id", deploymentId)
-                    Using reader As MySqlDataReader = cmd.ExecuteReader()
-                        If reader.Read() Then
-                            txtbxOfwId.Text = reader("ofw_id").ToString()
-                            txtbxEmployerId.Text = reader("employer_id").ToString()
-                            txtbxAgencyId.Text = reader("agency_id").ToString()
-                            cbxCountry.SelectedItem = reader("CountryOfDeployment").ToString()
-                            txtbxSalary.Text = reader("Salary").ToString()
-                            txtbxContractNum.Text = reader("ContractNumber").ToString()
-                            txtbxContractDuration.Text = reader("ContractDuration").ToString()
-                            cbxDepStat.SelectedItem = reader("DeploymentStatus").ToString()
+            readQuery(query)
 
-                            If Not IsDBNull(reader("ContractStartDate")) Then
-                                dateContractStart.Value = Convert.ToDateTime(reader("ContractStartDate"))
-                            End If
-                            If Not IsDBNull(reader("ContractEndDate")) Then
-                                dateContractEnd.Value = Convert.ToDateTime(reader("ContractEndDate"))
-                            End If
+            If cmdRead.Read() Then
+                txtbxOfwId.Text = cmdRead("ApplicationID").ToString()
+                txtbxAgencyId.Text = cmdRead("AgencyID").ToString()
+                txtbxEmployerId.Text = cmdRead("EmployerID").ToString() ' From join
+                jobPlacementId = Convert.ToInt32(cmdRead("JobPlacementID"))
 
-                            cbxRepatriationStat.SelectedItem = reader("RepatriationStatus").ToString()
-                            cbxReason.SelectedItem = reader("ReasonForReturn").ToString()
-                            txtbxRemarks.Text = reader("DeploymentRemarks").ToString()
-                        End If
-                    End Using
-                End Using
-            End Using
+                cbxCountry.SelectedItem = cmdRead("CountryOfDeployment").ToString()
+                txtbxSalary.Text = cmdRead("Salary").ToString()
+                txtbxContractNum.Text = cmdRead("ContractNumber").ToString()
+                txtbxContractDuration.Text = cmdRead("ContractDuration").ToString()
+                cbxDepStat.SelectedItem = cmdRead("DeploymentStatus").ToString()
+
+                If Not IsDBNull(cmdRead("ContractStartDate")) Then
+                    dateContractStart.Value = Convert.ToDateTime(cmdRead("ContractStartDate"))
+                    dateContractStart.Checked = True
+                Else
+                    dateContractStart.Checked = False
+                End If
+
+                If Not IsDBNull(cmdRead("ContractEndDate")) Then
+                    dateContractEnd.Value = Convert.ToDateTime(cmdRead("ContractEndDate"))
+                    dateContractEnd.Checked = True
+                Else
+                    dateContractEnd.Checked = False
+                End If
+
+                cbxRepatriationStat.SelectedItem = cmdRead("RepatriationStatus").ToString()
+                cbxReason.SelectedItem = cmdRead("ReasonForReturn").ToString()
+                txtbxRemarks.Text = cmdRead("DeploymentRemarks").ToString()
+            End If
+
+            cmdRead.Close()
         Catch ex As Exception
             MessageBox.Show("Error loading deployment details: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -81,43 +90,42 @@ Public Class editDeployment
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         ' Validation
-        If txtbxOfwId.Text.Trim() = "" OrElse txtbxEmployerId.Text.Trim() = "" OrElse
-           txtbxAgencyId.Text.Trim() = "" OrElse cbxCountry.SelectedIndex = -1 OrElse
+        If txtbxOfwId.Text.Trim() = "" OrElse txtbxAgencyId.Text.Trim() = "" OrElse
+           txtbxEmployerId.Text.Trim() = "" OrElse cbxCountry.SelectedIndex = -1 OrElse
            txtbxSalary.Text.Trim() = "" OrElse txtbxContractNum.Text.Trim() = "" Then
             MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
+        ' Safe values
+        Dim startDate As String = If(dateContractStart.Checked, $"'{dateContractStart.Value:yyyy-MM-dd}'", "NULL")
+        Dim endDate As String = If(dateContractEnd.Checked, $"'{dateContractEnd.Value:yyyy-MM-dd}'", "NULL")
+        Dim depStat As String = If(cbxDepStat.SelectedItem IsNot Nothing, $"'{cbxDepStat.SelectedItem}'", "NULL")
+        Dim repatriation As String = If(cbxRepatriationStat.SelectedItem IsNot Nothing, $"'{cbxRepatriationStat.SelectedItem}'", "NULL")
+        Dim reason As String = If(cbxReason.SelectedItem IsNot Nothing, $"'{cbxReason.SelectedItem}'", "NULL")
+        Dim remarks As String = If(String.IsNullOrWhiteSpace(txtbxRemarks.Text), "NULL", $"'{txtbxRemarks.Text.Replace("'", "''")}'")
+
+        ' Update query
+        Dim updateQuery As String = $"
+            UPDATE deploymentrecord SET
+                ApplicationID = {txtbxOfwId.Text.Trim()},
+                JobPlacementID = {jobPlacementId},
+                AgencyID = {txtbxAgencyId.Text.Trim()},
+                CountryOfDeployment = '{cbxCountry.SelectedItem.ToString().Replace("'", "''")}',
+                Salary = '{txtbxSalary.Text.Trim().Replace("'", "''")}',
+                ContractNumber = '{txtbxContractNum.Text.Trim().Replace("'", "''")}',
+                ContractDuration = '{txtbxContractDuration.Text.Trim().Replace("'", "''")}',
+                DeploymentStatus = {depStat},
+                ContractStartDate = {startDate},
+                ContractEndDate = {endDate},
+                RepatriationStatus = {repatriation},
+                ReasonForReturn = {reason},
+                DeploymentRemarks = {remarks}
+            WHERE DeploymentID = {deploymentId}
+        "
+
         Try
-            Using conn As New MySqlConnection(strConnection)
-                conn.Open()
-                Dim query As String = "UPDATE deploymentrecord SET " &
-                    "ofw_id=@ofw, employer_id=@employer, agency_id=@agency, CountryOfDeployment=@country, " &
-                    "Salary=@salary, ContractNumber=@contractNum, ContractDuration=@contractDuration, " &
-                    "DeploymentStatus=@status, ContractStartDate=@start, ContractEndDate=@end, " &
-                    "RepatriationStatus=@repatriation, ReasonForReturn=@reason, DeploymentRemarks=@remarks " &
-                    "WHERE DeploymentID=@id"
-
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@ofw", txtbxOfwId.Text.Trim())
-                    cmd.Parameters.AddWithValue("@employer", txtbxEmployerId.Text.Trim())
-                    cmd.Parameters.AddWithValue("@agency", txtbxAgencyId.Text.Trim())
-                    cmd.Parameters.AddWithValue("@country", cbxCountry.SelectedItem.ToString())
-                    cmd.Parameters.AddWithValue("@salary", txtbxSalary.Text.Trim())
-                    cmd.Parameters.AddWithValue("@contractNum", txtbxContractNum.Text.Trim())
-                    cmd.Parameters.AddWithValue("@contractDuration", txtbxContractDuration.Text.Trim())
-                    cmd.Parameters.AddWithValue("@status", If(cbxDepStat.SelectedItem IsNot Nothing, cbxDepStat.SelectedItem.ToString(), DBNull.Value))
-                    cmd.Parameters.AddWithValue("@start", If(dateContractStart.Checked, dateContractStart.Value.ToString("yyyy-MM-dd"), DBNull.Value))
-                    cmd.Parameters.AddWithValue("@end", If(dateContractEnd.Checked, dateContractEnd.Value.ToString("yyyy-MM-dd"), DBNull.Value))
-                    cmd.Parameters.AddWithValue("@repatriation", If(cbxRepatriationStat.SelectedItem IsNot Nothing, cbxRepatriationStat.SelectedItem.ToString(), DBNull.Value))
-                    cmd.Parameters.AddWithValue("@reason", If(cbxReason.SelectedItem IsNot Nothing, cbxReason.SelectedItem.ToString(), DBNull.Value))
-                    cmd.Parameters.AddWithValue("@remarks", If(String.IsNullOrWhiteSpace(txtbxRemarks.Text), DBNull.Value, txtbxRemarks.Text.Trim()))
-                    cmd.Parameters.AddWithValue("@id", deploymentId)
-
-                    cmd.ExecuteNonQuery()
-                End Using
-            End Using
-
+            readQuery(updateQuery)
             MessageBox.Show("Deployment record updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
         Catch ex As Exception

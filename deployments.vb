@@ -209,11 +209,20 @@
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        Dim dlg As New editDeployment()
-        dlg.ShowDialog()
-        LoadCustomDeploymentsQuery()
-        FormatDGVUniformly(DataGridView1)
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim deploymentId As Integer = Convert.ToInt32(selectedRow.Cells("DeploymentID").Value)
+
+            Dim dlg As New editDeployment(deploymentId)
+            dlg.ShowDialog()
+
+            LoadCustomDeploymentsQuery()
+            FormatDGVUniformly(DataGridView1)
+        Else
+            MessageBox.Show("Please select a deployment record to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
+
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If DataGridView1.SelectedRows.Count > 0 Then
