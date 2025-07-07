@@ -3,18 +3,19 @@
 Public Class agcJobs
     Private Sub agcJobs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadAgencyJobs()
-        FormatDGVUniformly(DGVJobOffers)
         PopulateFilterComboboxes()
     End Sub
 
     Private Sub LoadAgencyJobs()
         Dim agencyId As Integer = Session.CurrentReferenceID
         Dim query As String = "
-            SELECT jp.job_id, jp.job_title, e.employer_name AS employer, 
-                   jp.location AS country, jp.status, jp.vacancies, jp.application_deadline
+            SELECT jp.JobPlacementID, jp.JobTitle, e.CompanyName AS Employer,
+                   jp.CountryOfEmployment AS Country, jp.JobStatus AS Status,
+                   jp.NumOfVacancies AS Vacancies, jp.ApplicationDeadline
             FROM jobplacement jp
-            JOIN employer e ON jp.employer_id = e.employer_id
-            WHERE jp.agency_id = " & agencyId
+            JOIN employer e ON jp.EmployerID = e.EmployerID
+            JOIN agencypartneremployer ape ON ape.EmployerID = e.EmployerID
+            WHERE jp.AgencyID = " & agencyId & " AND ape.AgencyID = " & agencyId
 
         readQuery(query)
         Dim dt As New DataTable()
@@ -42,35 +43,37 @@ Public Class agcJobs
         End If
 
         Dim query As String = "
-            SELECT jp.job_id, jp.job_title, e.employer_name AS employer, 
-                   jp.location AS country, jp.status, jp.vacancies, jp.application_deadline
+            SELECT jp.JobPlacementID, jp.JobTitle, e.CompanyName AS Employer,
+                   jp.CountryOfEmployment AS Country, jp.JobStatus AS Status,
+                   jp.NumOfVacancies AS Vacancies, jp.ApplicationDeadline
             FROM jobplacement jp
-            JOIN employer e ON jp.employer_id = e.employer_id
-            WHERE jp.agency_id = " & agencyId
+            JOIN employer e ON jp.EmployerID = e.EmployerID
+            JOIN agencypartneremployer ape ON ape.EmployerID = e.EmployerID
+            WHERE jp.AgencyID = " & agencyId & " AND ape.AgencyID = " & agencyId
 
         If txtbxJobIdNum.Text.Trim() <> "" Then
-            query &= " AND jp.job_id LIKE '%" & txtbxJobIdNum.Text.Trim() & "%'"
+            query &= " AND jp.JobPlacementID LIKE '%" & txtbxJobIdNum.Text.Trim().Replace("'", "''") & "%'"
         End If
         If txtbxJobTitle.Text.Trim() <> "" Then
-            query &= " AND jp.job_title LIKE '%" & txtbxJobTitle.Text.Trim() & "%'"
+            query &= " AND jp.JobTitle LIKE '%" & txtbxJobTitle.Text.Trim().Replace("'", "''") & "%'"
         End If
         If txtbxJobType.Text.Trim() <> "" Then
-            query &= " AND jp.job_type LIKE '%" & txtbxJobType.Text.Trim() & "%'"
+            query &= " AND jp.JobType LIKE '%" & txtbxJobType.Text.Trim().Replace("'", "''") & "%'"
         End If
         If txtbxReqSkill.Text.Trim() <> "" Then
-            query &= " AND jp.skill_id IN (SELECT skill_id FROM skill WHERE skill_name LIKE '%" & txtbxReqSkill.Text.Trim() & "%')"
+            query &= " AND jp.RequiredSkills LIKE '%" & txtbxReqSkill.Text.Trim().Replace("'", "''") & "%'"
         End If
         If txtbxSalaryRange.Text.Trim() <> "" Then
-            query &= " AND jp.salary LIKE '%" & txtbxSalaryRange.Text.Trim() & "%'"
+            query &= " AND jp.SalaryRange LIKE '%" & txtbxSalaryRange.Text.Trim().Replace("'", "''") & "%'"
         End If
         If cbxCountry.SelectedIndex <> -1 Then
-            query &= " AND jp.location = '" & cbxCountry.SelectedItem.ToString() & "'"
+            query &= " AND jp.CountryOfEmployment = '" & cbxCountry.SelectedItem.ToString().Replace("'", "''") & "'"
         End If
         If cbxVisaType.SelectedIndex <> -1 Then
-            query &= " AND jp.visa_type = '" & cbxVisaType.SelectedItem.ToString() & "'"
+            query &= " AND jp.VisaType = '" & cbxVisaType.SelectedItem.ToString().Replace("'", "''") & "'"
         End If
         If dateApplicationDeadline.Checked Then
-            query &= " AND jp.application_deadline = '" & dateApplicationDeadline.Value.ToString("yyyy-MM-dd") & "'"
+            query &= " AND jp.ApplicationDeadline = '" & dateApplicationDeadline.Value.ToString("yyyy-MM-dd") & "'"
         End If
 
         readQuery(query)
@@ -81,19 +84,32 @@ Public Class agcJobs
         FormatDGVUniformly(DGVJobOffers)
     End Sub
 
+    Private Sub FormatDGVUniformly(dgv As DataGridView)
+        With dgv
+            .Columns("JobTitle").HeaderText = "Job Title"
+            .Columns("Employer").HeaderText = "Employer"
+            .Columns("Country").HeaderText = "Country"
+            .Columns("Status").HeaderText = "Status"
+            .Columns("Vacancies").HeaderText = "Vacancies"
+            .Columns("ApplicationDeadline").HeaderText = "Deadline"
+            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            .DefaultCellStyle.Font = New Font("Segoe UI", 10)
+        End With
+    End Sub
+
     Private Sub PopulateFilterComboboxes()
         cbxCountry.Items.Clear()
         Dim agencyId As Integer = Session.CurrentReferenceID
-        Dim query As String = $"SELECT DISTINCT location FROM jobplacement WHERE agency_id = {agencyId} AND location IS NOT NULL AND location <> '' ORDER BY location ASC"
+        Dim query As String = $"SELECT DISTINCT CountryOfEmployment FROM jobplacement WHERE AgencyID = {agencyId} AND CountryOfEmployment IS NOT NULL ORDER BY CountryOfEmployment"
         readQuery(query)
         While cmdRead.Read()
-            cbxCountry.Items.Add(cmdRead("location").ToString())
+            cbxCountry.Items.Add(cmdRead("CountryOfEmployment").ToString())
         End While
         cmdRead.Close()
         cbxCountry.SelectedIndex = -1
 
         cbxVisaType.Items.Clear()
-        cbxVisaType.Items.AddRange(New String() {"Work Visa", "Tourist Visa", "Permanent Residency"})
+        cbxVisaType.Items.AddRange(New String() {"Tourist", "Work", "Student"})
         cbxVisaType.SelectedIndex = -1
     End Sub
 
@@ -124,34 +140,29 @@ Public Class agcJobs
         ApplyJobFilters()
     End Sub
 
-    ' Navigation button handlers
+    ' Navigation
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-        Dim dash As New agcDashboard()
-        dash.Show()
+        agcDashboard.Show()
         Me.Hide()
     End Sub
     Private Sub btnOfws_Click(sender As Object, e As EventArgs) Handles btnOfws.Click
-        Dim ofwForm As New agcOfws()
-        ofwForm.Show()
+        agcOFWList.Show()
         Me.Hide()
     End Sub
     Private Sub btnEmployers_Click(sender As Object, e As EventArgs) Handles btnEmployers.Click
-        Dim empForm As New agcEmployers()
-        empForm.Show()
+        agcEmployers.Show()
         Me.Hide()
     End Sub
     Private Sub btnApplications_Click(sender As Object, e As EventArgs) Handles btnApplications.Click
-        Dim appForm As New agcApplications()
-        appForm.Show()
+        agcApplications.Show()
         Me.Hide()
     End Sub
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
-        Dim depForm As New agcDeployment()
-        depForm.Show()
+        agcDeploymentTracking.Show()
         Me.Hide()
     End Sub
 
-    ' Add and Edit buttons
+    ' Add/Edit/Close
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         Dim dlg As New addJob()
         dlg.ShowDialog()
@@ -160,9 +171,7 @@ Public Class agcJobs
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If DGVJobOffers.SelectedRows.Count > 0 Then
-            Dim selectedRow As DataGridViewRow = DGVJobOffers.SelectedRows(0)
-            Dim jobId As Integer = Convert.ToInt32(selectedRow.Cells("job_id").Value)
-            Session.CurrentReferenceID = jobId
+            Dim jobId As Integer = CInt(DGVJobOffers.SelectedRows(0).Cells("JobPlacementID").Value)
             Dim dlg As New editJob(jobId)
             dlg.ShowDialog()
             LoadAgencyJobs()
@@ -171,37 +180,30 @@ Public Class agcJobs
         End If
     End Sub
 
-    ' Close Job button (replaces delete)
-    Private Sub btnCloseJob_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If DGVJobOffers.SelectedRows.Count > 0 Then
-            Dim selectedRow As DataGridViewRow = DGVJobOffers.SelectedRows(0)
-            Dim jobId As Integer = Convert.ToInt32(selectedRow.Cells("job_id").Value)
-            Dim status As String = selectedRow.Cells("status").Value.ToString()
+            Dim jobId As Integer = CInt(DGVJobOffers.SelectedRows(0).Cells("JobPlacementID").Value)
+            Dim status As String = DGVJobOffers.SelectedRows(0).Cells("Status").Value.ToString()
 
             If status = "Closed" Then
                 MessageBox.Show("This job is already closed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Return
             End If
 
-            Dim result As DialogResult = MessageBox.Show("Are you sure you want to close this job?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If result = DialogResult.Yes Then
-                Try
-                    Using conn As New MySqlConnection(strConnection)
-                        conn.Open()
-                        Dim query As String = "UPDATE jobplacement SET status = 'Closed' WHERE job_id = @jobId"
-                        Using cmd As New MySqlCommand(query, conn)
-                            cmd.Parameters.AddWithValue("@jobId", jobId)
-                            cmd.ExecuteNonQuery()
-                        End Using
+            If MessageBox.Show("Are you sure you want to close this job?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Dim query As String = "UPDATE jobplacement SET JobStatus = 'Closed' WHERE JobPlacementID = @jobId"
+                Using conn As New MySqlConnection(strConnection)
+                    conn.Open()
+                    Using cmd As New MySqlCommand(query, conn)
+                        cmd.Parameters.AddWithValue("@jobId", jobId)
+                        cmd.ExecuteNonQuery()
                     End Using
-                    MessageBox.Show("Job successfully closed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    LoadAgencyJobs()
-                Catch ex As Exception
-                    MessageBox.Show("Error closing job: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
+                End Using
+                MessageBox.Show("Job successfully closed.", "Closed", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                LoadAgencyJobs()
             End If
         Else
-            MessageBox.Show("Please select a job to close.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Please select a job to close.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 
@@ -216,28 +218,5 @@ Public Class agcJobs
         dateApplicationDeadline.Value = Date.Today
         dateApplicationDeadline.Checked = False
         LoadAgencyJobs()
-    End Sub
-
-    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-        ' Future report generation logic here
-    End Sub
-
-    Private Sub btnViewApplicants_Click(sender As Object, e As EventArgs) Handles btnViewApplicants.Click
-        ' Open applicants form here
-    End Sub
-
-    Private Sub btnJobDetatils_Click(sender As Object, e As EventArgs) Handles btnJobDetatils.Click
-        ' Open job details window
-    End Sub
-
-    Private Sub FormatDGVUniformly(dgv As DataGridView)
-        With dgv
-            .Columns("job_title").HeaderText = "Job Title"
-            .Columns("employer").HeaderText = "Employer"
-            .Columns("country").HeaderText = "Country"
-            .Columns("status").HeaderText = "Status"
-            .Columns("vacancies").HeaderText = "Vacancies"
-            .Columns("application_deadline").HeaderText = "Deadline"
-        End With
     End Sub
 End Class

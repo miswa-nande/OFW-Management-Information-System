@@ -19,18 +19,18 @@ Public Class editEmployer
             Using cmd As New MySqlCommand(query, conn)
                 Using reader As MySqlDataReader = cmd.ExecuteReader()
                     If reader.Read() Then
-                        txtbxFName.Text = reader("FirstName").ToString()
-                        txtbxMName.Text = reader("MiddleName").ToString()
-                        txtbxLName.Text = reader("LastName").ToString()
-                        txtbxContactNum.Text = reader("ContactNumber").ToString()
-                        txtbxEmail.Text = reader("Email").ToString()
+                        txtbxFName.Text = reader("EmployerFirstName").ToString()
+                        txtbxMName.Text = reader("EmployerMiddleName").ToString()
+                        txtbxLName.Text = reader("EmployerLastName").ToString()
+                        txtbxContactNum.Text = reader("EmployerContactNum").ToString()
+                        txtbxEmail.Text = reader("EmployerEmail").ToString()
                         txtbxCompanyName.Text = reader("CompanyName").ToString()
                         txtbxIndustry.Text = reader("Industry").ToString()
-                        txtbxStreet.Text = reader("Street").ToString()
-                        txtbxCity.Text = reader("City").ToString()
-                        txtbxState.Text = reader("State").ToString()
-                        txtbxCountry.Text = reader("Country").ToString()
-                        txtbxZipcode.Text = reader("ZipCode").ToString()
+                        txtbxStreet.Text = reader("CompanyStreet").ToString()
+                        txtbxCity.Text = reader("CompanyCity").ToString()
+                        txtbxState.Text = reader("CompanyState").ToString()
+                        txtbxCountry.Text = reader("CompanyCountry").ToString()
+                        txtbxZipcode.Text = reader("CompanyZipcode").ToString()
                     End If
                 End Using
             End Using
@@ -40,6 +40,7 @@ Public Class editEmployer
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
     End Sub
+
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not IsNumeric(txtbxContactNum.Text.Trim()) Then
@@ -52,20 +53,21 @@ Public Class editEmployer
         End If
 
         Dim query As String = "
-            UPDATE employer SET
-                FirstName = @fName,
-                MiddleName = @mName,
-                LastName = @lName,
-                ContactNumber = @contact,
-                Email = @email,
-                CompanyName = @company,
-                Industry = @industry,
-                Street = @street,
-                City = @city,
-                State = @state,
-                Country = @country,
-                ZipCode = @zip
-            WHERE employer_id = @id"
+    UPDATE employer SET
+        EmployerFirstName = @fName,
+        EmployerMiddleName = @mName,
+        EmployerLastName = @lName,
+        EmployerContactNum = @contact,
+        EmployerEmail = @email,
+        CompanyName = @company,
+        Industry = @industry,
+        CompanyStreet = @street,
+        CompanyCity = @city,
+        CompanyState = @state,
+        CompanyCountry = @country,
+        CompanyZipcode = @zip
+    WHERE EmployerID = @id"
+
 
         Try
             openConn(db_name)

@@ -183,7 +183,6 @@ Public Class agcDashboard
     Private Sub EditProfile_Click(sender As Object, e As EventArgs) Handles EditProfile.Click
         Dim form As New editAgency()
         form.ShowDialog()
-        Me.Hide()
     End Sub
 
     Private Sub Logout_Click(sender As Object, e As EventArgs) Handles Logout.Click
@@ -201,7 +200,6 @@ Public Class agcDashboard
     Private Sub btnJobs_Click(sender As Object, e As EventArgs) Handles btnJobs.Click
         Dim form As New agcJobs()
         form.Show()
-        Me.Hide()
     End Sub
 
     Private Sub btnApplications_Click(sender As Object, e As EventArgs) Handles btnApplications.Click

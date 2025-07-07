@@ -1,70 +1,93 @@
 ﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class loginPage
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
-        OpenLogin("Admin")
+        Session.CurrentLoggedUser.userType = "Admin"
+        CheckConnectionAndOpenLogin()
     End Sub
 
     Private Sub btnAgency_Click(sender As Object, e As EventArgs) Handles btnAgency.Click
-        OpenLogin("Agency")
+        Session.CurrentLoggedUser.userType = "Agency"
+        CheckConnectionAndOpenLogin()
     End Sub
 
     Private Sub btnOfw_Click(sender As Object, e As EventArgs) Handles btnOfw.Click
-        OpenLogin("OFW")
+        Session.CurrentLoggedUser.userType = "OFW"
+        CheckConnectionAndOpenLogin()
     End Sub
 
     Private Sub btnEmployer_Click(sender As Object, e As EventArgs) Handles btnEmployer.Click
-        OpenLogin("Employer")
+        Session.CurrentLoggedUser.userType = "Employer"
+        CheckConnectionAndOpenLogin()
     End Sub
 
-    Private Sub OpenLogin(userType As String)
-        ' Set the current user type for session tracking
-        Session.CurrentLoggedUser.userType = userType
-
-        ' Pass the userType to the login form
-        Dim login As New loginFields(userType)
-        login.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub CheckSQLConnection()
+    Private Sub CheckConnectionAndOpenLogin()
         Try
-            ' Load SQL config from the txt file
-            Dim configPath As String = Path.Combine(Application.StartupPath, "config", "sql_config.txt")
+            EnsureSQLConfigExists()
+            UpdateConnectionString()
+            TestDatabaseConnection()
 
-            If Not File.Exists(configPath) Then
-                MsgBox("SQL configuration file not found.", MsgBoxStyle.Critical)
-                Exit Sub
-            End If
+            MsgBox("Connected to the database. Welcome!", MsgBoxStyle.Information)
 
-            Dim host As String = "", user As String = "", pass As String = "", dbname As String = ""
-            Dim lines = File.ReadAllLines(configPath)
-
-            For Each line In lines
-                If line.StartsWith("Localhost:") Then host = line.Substring("Localhost:".Length).Trim()
-                If line.StartsWith("Root:") Then user = line.Substring("Root:".Length).Trim()
-                If line.StartsWith("Password:") Then pass = line.Substring("Password:".Length).Trim()
-                If line.StartsWith("DB_Name:") Then dbname = line.Substring("DB_Name:".Length).Trim()
-            Next
-
-            ' Create a connection string from config
-            Dim connectionString As String = $"server={host};user id={user};password={pass};database={dbname};"
-
-            ' Try to open connection
-            Using testConn As New MySql.Data.MySqlClient.MySqlConnection(connectionString)
-                testConn.Open()
-                MsgBox("Connected to the database. Welcome!", MsgBoxStyle.Information)
-            End Using
+            ' If successful, open login form
+            Dim login As New loginFields(Session.CurrentLoggedUser.userType)
+            login.Show()
+            Me.Hide()
 
         Catch ex As Exception
-            MsgBox("Unable to connect to the database. Please check the configuration." & vbCrLf & ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Cannot connect to the database. Please contact the administrator." & vbCrLf & ex.Message,
+                   MsgBoxStyle.Critical)
+            Application.Exit()
         End Try
     End Sub
 
-    Private Sub loginPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CheckSQLConnection()
+    Private Sub EnsureSQLConfigExists()
+        Dim configDir As String = Path.Combine(Application.StartupPath, "config")
+        Dim configPath As String = Path.Combine(configDir, "sql_config.txt")
+
+        If Not Directory.Exists(configDir) Then
+            Directory.CreateDirectory(configDir)
+        End If
+
+        If Not File.Exists(configPath) Then
+            Dim defaultConfig As String() = {
+                "Localhost=localhost",
+                "Root=root",
+                "Password=",
+                "DB_Name=ofw_mis"
+            }
+            File.WriteAllLines(configPath, defaultConfig)
+            MsgBox("SQL configuration file created with default values." & vbCrLf &
+                   "Please edit the file before restarting." & vbCrLf & configPath,
+                   MsgBoxStyle.Information)
+            Application.Exit()
+        End If
     End Sub
 
+    Private Sub TestDatabaseConnection()
+        Using testConn As New MySqlConnection(strConnection)
+            testConn.Open()
+        End Using
+    End Sub
+
+    ' === SHIFT+C to Open Config File ===
+    Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
+        If keyData = (Keys.Shift Or Keys.C) Then
+            Dim configPath As String = Path.Combine(Application.StartupPath, "config", "sql_config.txt")
+            Try
+                If File.Exists(configPath) Then
+                    Process.Start(New ProcessStartInfo("notepad.exe", $"""{configPath}""") With {.UseShellExecute = True})
+                Else
+                    MsgBox("Config file not found: " & configPath, MsgBoxStyle.Exclamation)
+                End If
+            Catch ex As Exception
+                MsgBox("Failed to open config file: " & ex.Message, MsgBoxStyle.Critical)
+            End Try
+            Return True
+        End If
+        Return MyBase.ProcessCmdKey(msg, keyData)
+    End Function
 
 End Class

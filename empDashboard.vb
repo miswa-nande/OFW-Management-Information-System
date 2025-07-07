@@ -239,8 +239,7 @@ Public Class empDashboard
     ' === Navigation ===
     Private Sub EditProfile_Click(sender As Object, e As EventArgs) Handles EditProfile.Click
         Dim form As New editEmployer()
-        form.Show()
-        Me.Hide()
+        form.ShowDialog()
     End Sub
 
     Private Sub Logout_Click(sender As Object, e As EventArgs) Handles Logout.Click

@@ -64,6 +64,8 @@ Partial Class agcEmployers
         Me.SendPartnershipReqBTN = New System.Windows.Forms.Button()
         Me.CancelReqBTN = New System.Windows.Forms.Button()
         Me.RemovePartnershipBTN = New System.Windows.Forms.Button()
+        Me.ACCEPT = New System.Windows.Forms.Button()
+        Me.REJECT = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -529,10 +531,10 @@ Partial Class agcEmployers
         '
         'CancelReqBTN
         '
-        Me.CancelReqBTN.BackColor = System.Drawing.SystemColors.Highlight
+        Me.CancelReqBTN.BackColor = System.Drawing.SystemColors.ControlDark
         Me.CancelReqBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.CancelReqBTN.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CancelReqBTN.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.CancelReqBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.CancelReqBTN.Location = New System.Drawing.Point(1506, 921)
         Me.CancelReqBTN.Name = "CancelReqBTN"
         Me.CancelReqBTN.Size = New System.Drawing.Size(345, 41)
@@ -542,7 +544,7 @@ Partial Class agcEmployers
         '
         'RemovePartnershipBTN
         '
-        Me.RemovePartnershipBTN.BackColor = System.Drawing.SystemColors.Highlight
+        Me.RemovePartnershipBTN.BackColor = System.Drawing.SystemColors.ControlText
         Me.RemovePartnershipBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.RemovePartnershipBTN.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RemovePartnershipBTN.ForeColor = System.Drawing.SystemColors.ControlLightLight
@@ -553,12 +555,40 @@ Partial Class agcEmployers
         Me.RemovePartnershipBTN.Text = "REMOVE PARTNERSHIP"
         Me.RemovePartnershipBTN.UseVisualStyleBackColor = False
         '
+        'ACCEPT
+        '
+        Me.ACCEPT.BackColor = System.Drawing.Color.DarkGreen
+        Me.ACCEPT.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ACCEPT.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ACCEPT.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ACCEPT.Location = New System.Drawing.Point(1506, 781)
+        Me.ACCEPT.Name = "ACCEPT"
+        Me.ACCEPT.Size = New System.Drawing.Size(345, 41)
+        Me.ACCEPT.TabIndex = 473
+        Me.ACCEPT.Text = "ACCEPT PARTNERSHIP"
+        Me.ACCEPT.UseVisualStyleBackColor = False
+        '
+        'REJECT
+        '
+        Me.REJECT.BackColor = System.Drawing.Color.Firebrick
+        Me.REJECT.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.REJECT.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.REJECT.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.REJECT.Location = New System.Drawing.Point(1506, 827)
+        Me.REJECT.Name = "REJECT"
+        Me.REJECT.Size = New System.Drawing.Size(345, 41)
+        Me.REJECT.TabIndex = 472
+        Me.REJECT.Text = "REJECT PARTNERSHIP"
+        Me.REJECT.UseVisualStyleBackColor = False
+        '
         'agcEmployers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.ACCEPT)
+        Me.Controls.Add(Me.REJECT)
         Me.Controls.Add(Me.SendPartnershipReqBTN)
         Me.Controls.Add(Me.CancelReqBTN)
         Me.Controls.Add(Me.RemovePartnershipBTN)
@@ -647,4 +677,6 @@ Partial Class agcEmployers
     Friend WithEvents SendPartnershipReqBTN As Button
     Friend WithEvents CancelReqBTN As Button
     Friend WithEvents RemovePartnershipBTN As Button
+    Friend WithEvents ACCEPT As Button
+    Friend WithEvents REJECT As Button
 End Class
