@@ -39,11 +39,9 @@ Partial Class agcJobs
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.PictureBox()
         Me.btnGenerate = New System.Windows.Forms.PictureBox()
         Me.btnEdit = New System.Windows.Forms.PictureBox()
-        Me.btnAdd = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtbxAgencyIdNum = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -78,7 +76,6 @@ Partial Class agcJobs
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGVJobOffers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -268,7 +265,7 @@ Partial Class agcJobs
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(1802, 766)
+        Me.Label15.Location = New System.Drawing.Point(1741, 766)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(61, 21)
         Me.Label15.TabIndex = 356
@@ -279,7 +276,7 @@ Partial Class agcJobs
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(1691, 766)
+        Me.Label14.Location = New System.Drawing.Point(1630, 766)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(94, 21)
         Me.Label14.TabIndex = 355
@@ -290,27 +287,16 @@ Partial Class agcJobs
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(1620, 766)
+        Me.Label13.Location = New System.Drawing.Point(1559, 766)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(44, 21)
         Me.Label13.TabIndex = 354
         Me.Label13.Text = "EDIT"
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(1524, 766)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(47, 21)
-        Me.Label12.TabIndex = 353
-        Me.Label12.Text = "ADD"
-        '
         'btnDelete
         '
         Me.btnDelete.Image = Global.OFW_Management_Information_System.My.Resources.Resources.delete_ic
-        Me.btnDelete.Location = New System.Drawing.Point(1801, 702)
+        Me.btnDelete.Location = New System.Drawing.Point(1740, 702)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(61, 61)
         Me.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -320,7 +306,7 @@ Partial Class agcJobs
         'btnGenerate
         '
         Me.btnGenerate.Image = Global.OFW_Management_Information_System.My.Resources.Resources.report_ic
-        Me.btnGenerate.Location = New System.Drawing.Point(1707, 702)
+        Me.btnGenerate.Location = New System.Drawing.Point(1646, 702)
         Me.btnGenerate.Name = "btnGenerate"
         Me.btnGenerate.Size = New System.Drawing.Size(61, 61)
         Me.btnGenerate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -331,23 +317,12 @@ Partial Class agcJobs
         '
         Me.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEdit.Image = Global.OFW_Management_Information_System.My.Resources.Resources.edit_ic
-        Me.btnEdit.Location = New System.Drawing.Point(1613, 702)
+        Me.btnEdit.Location = New System.Drawing.Point(1552, 702)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(61, 61)
         Me.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnEdit.TabIndex = 350
         Me.btnEdit.TabStop = False
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnAdd.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addjob_ic
-        Me.btnAdd.Location = New System.Drawing.Point(1519, 702)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(61, 61)
-        Me.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btnAdd.TabIndex = 349
-        Me.btnAdd.TabStop = False
         '
         'Label9
         '
@@ -542,7 +517,7 @@ Partial Class agcJobs
         Me.DGVJobOffers.Name = "DGVJobOffers"
         Me.DGVJobOffers.ReadOnly = True
         Me.DGVJobOffers.RowHeadersWidth = 51
-        Me.DGVJobOffers.Size = New System.Drawing.Size(1048, 831)
+        Me.DGVJobOffers.Size = New System.Drawing.Size(1048, 814)
         Me.DGVJobOffers.TabIndex = 328
         '
         'Label1
@@ -573,7 +548,7 @@ Partial Class agcJobs
         Me.btnViewApplicants.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnViewApplicants.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnViewApplicants.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnViewApplicants.Location = New System.Drawing.Point(1509, 973)
+        Me.btnViewApplicants.Location = New System.Drawing.Point(1509, 953)
         Me.btnViewApplicants.Name = "btnViewApplicants"
         Me.btnViewApplicants.Size = New System.Drawing.Size(345, 41)
         Me.btnViewApplicants.TabIndex = 357
@@ -586,7 +561,7 @@ Partial Class agcJobs
         Me.btnJobDetatils.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnJobDetatils.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnJobDetatils.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.btnJobDetatils.Location = New System.Drawing.Point(1509, 916)
+        Me.btnJobDetatils.Location = New System.Drawing.Point(1509, 896)
         Me.btnJobDetatils.Name = "btnJobDetatils"
         Me.btnJobDetatils.Size = New System.Drawing.Size(345, 41)
         Me.btnJobDetatils.TabIndex = 358
@@ -604,11 +579,9 @@ Partial Class agcJobs
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtbxAgencyIdNum)
         Me.Controls.Add(Me.Label17)
@@ -645,7 +618,6 @@ Partial Class agcJobs
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnAdd, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGVJobOffers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -670,11 +642,9 @@ Partial Class agcJobs
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
     Friend WithEvents btnDelete As PictureBox
     Friend WithEvents btnGenerate As PictureBox
     Friend WithEvents btnEdit As PictureBox
-    Friend WithEvents btnAdd As PictureBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtbxAgencyIdNum As TextBox
     Friend WithEvents Label17 As Label

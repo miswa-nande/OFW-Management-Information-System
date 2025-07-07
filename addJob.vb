@@ -22,40 +22,47 @@ Public Class addJob
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         ' Validate required fields
         If txtbxJobTitle.Text.Trim() = "" OrElse txtbxJobDescription.Text.Trim() = "" OrElse
-            cbxCountryOfEmployment.SelectedIndex = -1 OrElse txtbxSalaryRange.Text.Trim() = "" OrElse
-            txtbxJobType.Text.Trim() = "" OrElse cbxVisaType.SelectedIndex = -1 OrElse
-            txtbxContractDuration.Text.Trim() = "" OrElse Not Integer.TryParse(txtbxContractDuration.Text.Trim(), Nothing) Then
+           cbxCountryOfEmployment.SelectedIndex = -1 OrElse txtbxSalaryRange.Text.Trim() = "" OrElse
+           txtbxJobType.Text.Trim() = "" OrElse cbxVisaType.SelectedIndex = -1 OrElse
+           txtbxContractDuration.Text.Trim() = "" OrElse txtbxEmployerIdNum.Text.Trim() = "" OrElse
+           txtbxNumOfVacancies.Text.Trim() = "" OrElse
+           Not Integer.TryParse(txtbxSalaryRange.Text.Trim(), Nothing) OrElse
+           Not Integer.TryParse(txtbxContractDuration.Text.Trim(), Nothing) OrElse
+           Not Integer.TryParse(txtbxEmployerIdNum.Text.Trim(), Nothing) OrElse
+           Not Integer.TryParse(txtbxNumOfVacancies.Text.Trim(), Nothing) Then
 
             MessageBox.Show("Please fill in all required fields correctly.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
+        ' Prepare values
+        Dim title = txtbxJobTitle.Text.Trim().Replace("'", "''")
+        Dim desc = txtbxJobDescription.Text.Trim().Replace("'", "''")
+        Dim country = cbxCountryOfEmployment.SelectedItem.ToString().Replace("'", "''")
+        Dim salary = Convert.ToInt32(txtbxSalaryRange.Text.Trim())
+        Dim contract = Convert.ToInt32(txtbxContractDuration.Text.Trim())
+        Dim jobType = txtbxJobType.Text.Trim().Replace("'", "''")
+        Dim visa = cbxVisaType.SelectedItem.ToString().Replace("'", "''")
+        Dim deadline = dateApplicationDeadline.Value.ToString("yyyy-MM-dd")
+        Dim employerId = Convert.ToInt32(txtbxEmployerIdNum.Text.Trim())
+        Dim agencyId = Session.CurrentReferenceID
+        Dim vacancies = Convert.ToInt32(txtbxNumOfVacancies.Text.Trim())
+        Dim conditions = txtbxConditions.Text.Trim().Replace("'", "''")
+        Dim benefits = txtbxBenefits.Text.Trim().Replace("'", "''")
+        Dim skills = txtbxReqSkill.Text.Trim().Replace("'", "''")
+
+        ' SQL Insert using readQuery
+        Dim insertQuery As String = $"
+            INSERT INTO jobplacement 
+            (JobTitle, JobDescription, CountryOfEmployment, SalaryRange, EmploymentContractDuration, JobType, VisaType, 
+             ApplicationDeadline, EmployerID, AgencyID, NumOfVacancies, Conditions, Benefits, RequiredSkills) 
+            VALUES 
+            ('{title}', '{desc}', '{country}', {salary}, {contract}, '{jobType}', '{visa}', 
+             '{deadline}', {employerId}, {agencyId}, {vacancies}, '{conditions}', '{benefits}', '{skills}');
+        "
+
         Try
-            Dim query As String = "INSERT INTO jobplacement (JobTitle, JobDescription, CountryOfEmployment, SalaryRange, EmploymentContractDuration, JobType, VisaType, ApplicationDeadline, EmployerID, AgencyID, NumOfVacancies, Conditions, Benefits, RequiredSkills) " &
-                                  "VALUES (@title, @desc, @loc, @salary, @contract, @type, @visa, @deadline, @employer, @agency, @vacancies, @conditions, @benefits, @skills)"
-
-            Using conn As New MySqlConnection(strConnection)
-                conn.Open()
-
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@title", txtbxJobTitle.Text.Trim())
-                    cmd.Parameters.AddWithValue("@desc", txtbxJobDescription.Text.Trim())
-                    cmd.Parameters.AddWithValue("@loc", cbxCountryOfEmployment.SelectedItem.ToString())
-                    cmd.Parameters.AddWithValue("@salary", Convert.ToInt32(txtbxSalaryRange.Text.Trim()))
-                    cmd.Parameters.AddWithValue("@contract", Convert.ToInt32(txtbxContractDuration.Text.Trim()))
-                    cmd.Parameters.AddWithValue("@type", txtbxJobType.Text.Trim())
-                    cmd.Parameters.AddWithValue("@visa", cbxVisaType.SelectedItem.ToString())
-                    cmd.Parameters.AddWithValue("@deadline", dateApplicationDeadline.Value.ToString("yyyy-MM-dd"))
-                    cmd.Parameters.AddWithValue("@employer", Convert.ToInt32(txtbxEmployerIdNum.Text.Trim()))
-                    cmd.Parameters.AddWithValue("@agency", Session.CurrentReferenceID)
-                    cmd.Parameters.AddWithValue("@vacancies", Convert.ToInt32(txtbxNumOfVacancies.Text.Trim()))
-                    cmd.Parameters.AddWithValue("@conditions", txtbxConditions.Text.Trim())
-                    cmd.Parameters.AddWithValue("@benefits", txtbxBenefits.Text.Trim())
-                    cmd.Parameters.AddWithValue("@skills", txtbxReqSkill.Text.Trim())
-                    cmd.ExecuteNonQuery()
-                End Using
-            End Using
-
+            readQuery(insertQuery)
             MessageBox.Show("Job added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
         Catch ex As Exception
@@ -65,8 +72,5 @@ Public Class addJob
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
-    End Sub
-
-    Private Sub cbxVisaType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxVisaType.SelectedIndexChanged
     End Sub
 End Class

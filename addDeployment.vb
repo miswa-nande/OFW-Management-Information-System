@@ -33,57 +33,56 @@ Public Class addDeployment
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         ' Validate required fields
-        If txtbxOfwId.Text.Trim() = "" OrElse txtbxEmployerId.Text.Trim() = "" OrElse
-           txtbxAgencyId.Text.Trim() = "" OrElse cbxCountry.SelectedIndex = -1 OrElse
-           txtbxSalary.Text.Trim() = "" OrElse txtbxContractNum.Text.Trim() = "" Then
+        If txtbxOfwId.Text.Trim() = "" OrElse
+           txtbxEmployerId.Text.Trim() = "" OrElse
+           txtbxAgencyId.Text.Trim() = "" OrElse
+           cbxCountry.SelectedIndex = -1 OrElse
+           txtbxSalary.Text.Trim() = "" OrElse
+           txtbxContractNum.Text.Trim() = "" Then
+
             MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
+        ' Build INSERT query manually
+        Dim query As String = "
+            INSERT INTO deploymentrecord (
+                ApplicationID, EmployerID, AgencyID, CountryOfDeployment, Salary,
+                ContractNumber, ContractDuration, DeploymentStatus, ContractStartDate,
+                ContractEndDate, RepatriationStatus, ReasonForReturn, DeploymentRemarks,
+                FlightNumber, Airport
+            ) VALUES (
+                {0}, {1}, {2}, '{3}', '{4}',
+                '{5}', '{6}', {7}, {8},
+                {9}, {10}, {11}, {12},
+                {13}, {14}
+            )"
+
+        ' Sanitize and inject values
+        Dim ofwId = txtbxOfwId.Text.Trim()
+        Dim employerId = txtbxEmployerId.Text.Trim()
+        Dim agencyId = txtbxAgencyId.Text.Trim()
+        Dim country = cbxCountry.SelectedItem.ToString().Replace("'", "''")
+        Dim salary = txtbxSalary.Text.Trim().Replace("'", "''")
+        Dim contractNum = txtbxContractNum.Text.Trim().Replace("'", "''")
+        Dim contractDuration = txtbxContractDuration.Text.Trim().Replace("'", "''")
+        Dim depStatus = If(cbxDepStat.SelectedItem IsNot Nothing, $"'{cbxDepStat.SelectedItem.ToString().Replace("'", "''")}'", "NULL")
+        Dim repatriation = If(cbxRepatriationStat.SelectedItem IsNot Nothing, $"'{cbxRepatriationStat.SelectedItem.ToString().Replace("'", "''")}'", "NULL")
+        Dim reason = If(cbxReason.SelectedItem IsNot Nothing, $"'{cbxReason.SelectedItem.ToString().Replace("'", "''")}'", "NULL")
+        Dim remarks = If(String.IsNullOrWhiteSpace(txtbxRemarks.Text), "NULL", $"'{txtbxRemarks.Text.Trim().Replace("'", "''")}'")
+        Dim startDate = If(dateContractStart.Checked, $"'{dateContractStart.Value.ToString("yyyy-MM-dd")}'", "NULL")
+        Dim endDate = If(dateContractEnd.Checked, $"'{dateContractEnd.Value.ToString("yyyy-MM-dd")}'", "NULL")
+
+        ' Final formatted query
+        Dim finalQuery = String.Format(query,
+                                       ofwId, employerId, agencyId, country, salary,
+                                       contractNum, contractDuration, depStatus, startDate,
+                                       endDate, repatriation, reason, remarks)
+
         Try
-            Using conn As New MySqlConnection(strConnection)
-                conn.Open()
-
-                Dim query As String = "INSERT INTO deploymentrecord (ofw_id, employer_id, agency_id, CountryOfDeployment, Salary, ContractNumber, ContractDuration, DeploymentStatus, ContractStartDate, ContractEndDate, RepatriationStatus, ReasonForReturn, DeploymentRemarks, FlightNumber, Airport) " &
-                                      "VALUES (@ofw, @employer, @agency, @country, @salary, @contractNum, @contractDuration, @depStatus, @start, @end, @repatriation, @reason, @remarks, @flight, @airport)"
-
-                Using cmd As New MySqlCommand(query, conn)
-                    ' Required fields
-                    cmd.Parameters.AddWithValue("@ofw", txtbxOfwId.Text.Trim())
-                    cmd.Parameters.AddWithValue("@employer", txtbxEmployerId.Text.Trim())
-                    cmd.Parameters.AddWithValue("@agency", txtbxAgencyId.Text.Trim())
-                    cmd.Parameters.AddWithValue("@country", cbxCountry.SelectedItem.ToString())
-                    cmd.Parameters.AddWithValue("@salary", txtbxSalary.Text.Trim())
-                    cmd.Parameters.AddWithValue("@contractNum", txtbxContractNum.Text.Trim())
-                    cmd.Parameters.AddWithValue("@contractDuration", txtbxContractDuration.Text.Trim())
-
-                    ' Optional ComboBoxes
-                    cmd.Parameters.AddWithValue("@depStatus", If(cbxDepStat.SelectedItem IsNot Nothing, cbxDepStat.SelectedItem.ToString(), DBNull.Value))
-                    cmd.Parameters.AddWithValue("@repatriation", If(cbxRepatriationStat.SelectedItem IsNot Nothing, cbxRepatriationStat.SelectedItem.ToString(), DBNull.Value))
-                    cmd.Parameters.AddWithValue("@reason", If(cbxReason.SelectedItem IsNot Nothing, cbxReason.SelectedItem.ToString(), DBNull.Value))
-
-                    ' Optional Dates
-                    If dateContractStart.Checked Then
-                        cmd.Parameters.AddWithValue("@start", dateContractStart.Value.ToString("yyyy-MM-dd"))
-                    Else
-                        cmd.Parameters.AddWithValue("@start", DBNull.Value)
-                    End If
-                    If dateContractEnd.Checked Then
-                        cmd.Parameters.AddWithValue("@end", dateContractEnd.Value.ToString("yyyy-MM-dd"))
-                    Else
-                        cmd.Parameters.AddWithValue("@end", DBNull.Value)
-                    End If
-
-                    ' Optional Remarks, Flight Number, Airport
-                    cmd.Parameters.AddWithValue("@remarks", If(String.IsNullOrWhiteSpace(txtbxRemarks.Text), DBNull.Value, txtbxRemarks.Text.Trim()))
-
-                    cmd.ExecuteNonQuery()
-                End Using
-            End Using
-
+            readQuery(finalQuery)
             MessageBox.Show("Deployment record added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()
-
         Catch ex As Exception
             MessageBox.Show("Error adding deployment record: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -91,9 +90,5 @@ Public Class addDeployment
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
-    End Sub
-
-    Private Sub dateContractEnd_ValueChanged(sender As Object, e As EventArgs) Handles dateContractEnd.ValueChanged
-
     End Sub
 End Class

@@ -171,12 +171,12 @@ Public Class agcJobs
         Me.Hide()
     End Sub
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
-        agcDeploymentTracking.Show()
+        agcDeployment.Show()
         Me.Hide()
     End Sub
 
     ' Add/Edit/Close
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs)
         Dim dlg As New addJob()
         dlg.ShowDialog()
         LoadAgencyJobs()

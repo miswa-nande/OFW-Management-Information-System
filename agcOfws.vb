@@ -193,35 +193,45 @@ Public Class agcOfws
 
     ' Add OFW
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        ' Only agencies can add OFWs
         If Session.CurrentLoggedUser.userType = "Agency" Then
-            Session.CurrentReferenceID = 0 ' Reset or unused for adding
+            ' Count rows before showing the form
+            Dim rowCountBefore As Integer = DataGridView1.Rows.Count
+
             Dim dlg As New addOfw()
             dlg.ShowDialog()
+
+            ' Reload if number of rows increased (meaning a new OFW was added)
             LoadAgencyOFWs()
-            FormatDGVUniformly(DataGridView1)
+
+            Dim rowCountAfter As Integer = DataGridView1.Rows.Count
+            If rowCountAfter > rowCountBefore Then
+                FormatDGVUniformly(DataGridView1)
+            End If
         Else
             MessageBox.Show("Only agencies can add OFWs.", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
-
 
     ' Edit OFW
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim ofwId As Integer = Convert.ToInt32(selectedRow.Cells("OFWId").Value)
-            Session.CurrentReferenceID = ofwId
 
-            Dim dlg As New editOfw()
-            dlg.ShowDialog()
+            Dim dlg As New editOfw(ofwId)
+            Dim result As DialogResult = dlg.ShowDialog()
 
-            LoadAgencyOFWs()
-            FormatDGVUniformly(DataGridView1)
+            If result = DialogResult.OK Then
+                ' Reload only if Save was clicked (DialogResult.OK)
+                LoadAgencyOFWs()
+                FormatDGVUniformly(DataGridView1)
+            End If
         Else
             MessageBox.Show("Please select an OFW to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+
 
     ' Delete OFW
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click

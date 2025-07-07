@@ -148,12 +148,9 @@ Public Class addOfw
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        If Session.CurrentLoggedUser.userType = "OFW" Then
-            Dim loginForm As New loginPage()
-            loginForm.Show()
-        End If
         Me.Close()
     End Sub
+
 
     Private Sub txtbxZipcode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxZipcode.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
