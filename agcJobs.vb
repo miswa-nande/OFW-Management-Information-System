@@ -146,7 +146,7 @@ Public Class agcJobs
         Me.Hide()
     End Sub
     Private Sub btnOfws_Click(sender As Object, e As EventArgs) Handles btnOfws.Click
-        agcOFWList.Show()
+        agcOfws.Show()
         Me.Hide()
     End Sub
     Private Sub btnEmployers_Click(sender As Object, e As EventArgs) Handles btnEmployers.Click
