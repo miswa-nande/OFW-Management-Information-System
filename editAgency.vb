@@ -4,11 +4,27 @@ Imports MySql.Data.MySqlClient
 
 Public Class editAgency
 
+    Private loadedAgencyId As Integer
+
+    ' Constructor for agency self-editing
+    Public Sub New()
+        InitializeComponent()
+        loadedAgencyId = Session.CurrentReferenceID
+    End Sub
+
+    ' Constructor for admin editing a selected agency
+    Public Sub New(agencyId As Integer)
+        InitializeComponent()
+        loadedAgencyId = agencyId
+    End Sub
+
     Private Sub editAgency_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbxGovtAccredStat.Items.AddRange({"Accredited", "Not Accredited", "Pending"})
 
-        If Session.CurrentLoggedUser.userType = "Agency" Then
+        If Session.CurrentLoggedUser.userType = "Agency" AndAlso loadedAgencyId = Session.CurrentReferenceID Then
             Label1.Text = "Edit Profile"
+        Else
+            Label1.Text = "Edit Agency"
         End If
 
         LoadAgencyDetails()
@@ -16,7 +32,7 @@ Public Class editAgency
 
     Private Sub LoadAgencyDetails()
         Try
-            Dim query As String = $"SELECT * FROM agency WHERE AgencyID = {Session.CurrentReferenceID}"
+            Dim query As String = $"SELECT * FROM agency WHERE AgencyID = {loadedAgencyId}"
             readQuery(query)
 
             If cmdRead.Read() Then
@@ -59,32 +75,44 @@ Public Class editAgency
             Return
         End If
 
+        ' Escape single quotes
+        Dim EscapeStr As Func(Of String, String) = Function(s) s.Replace("'", "''")
+
         ' Collect inputs
-        Dim name As String = txtbxAgencyName.Text.Trim()
-        Dim license As String = txtbxLicenseNum.Text.Trim()
-        Dim city As String = txtbxCity.Text.Trim()
-        Dim state As String = txtbxState.Text.Trim()
-        Dim street As String = txtbxStreet.Text.Trim()
+        Dim name As String = EscapeStr(txtbxAgencyName.Text.Trim())
+        Dim license As String = EscapeStr(txtbxLicenseNum.Text.Trim())
+        Dim city As String = EscapeStr(txtbxCity.Text.Trim())
+        Dim state As String = EscapeStr(txtbxState.Text.Trim())
+        Dim street As String = EscapeStr(txtbxStreet.Text.Trim())
         Dim zip As String = txtbxZipcode.Text.Trim()
         Dim contact As String = txtbxContactNum.Text.Trim()
-        Dim email As String = txtbxEmail.Text.Trim()
-        Dim url As String = txtbxUrl.Text.Trim()
-        Dim spec As String = txtbxSpecialization.Text.Trim()
+        Dim email As String = EscapeStr(txtbxEmail.Text.Trim())
+        Dim url As String = EscapeStr(txtbxUrl.Text.Trim())
+        Dim spec As String = EscapeStr(txtbxSpecialization.Text.Trim())
         Dim years As String = txtbxYearsOfOperation.Text.Trim()
         Dim govtAccred As String = cbxGovtAccredStat.Text
         Dim licenseExp As Date = dateLicenseExpDate.Value
-        Dim notes As String = txtbxNotes.Text.Trim()
+        Dim notes As String = EscapeStr(txtbxNotes.Text.Trim())
 
         ' SQL UPDATE
         Dim updateQuery As String = $"
             UPDATE agency
-            SET AgencyName = '{name}', AgencyLicenseNumber = '{license}', City = '{city}',
-                State = '{state}', Street = '{street}', Zipcode = '{zip}',
-                ContactNum = '{contact}', Email = '{email}', WebsiteUrl = '{url}',
-                Specialization = '{spec}', YearsOfOperation = '{years}',
-                GovAccreditationStat = '{govtAccred}', LicenseExpDate = '{licenseExp:yyyy-MM-dd}',
+            SET AgencyName = '{name}', 
+                AgencyLicenseNumber = '{license}', 
+                City = '{city}', 
+                State = '{state}', 
+                Street = '{street}', 
+                Zipcode = '{zip}', 
+                ContactNum = '{contact}', 
+                Email = '{email}', 
+                WebsiteUrl = '{url}', 
+                Specialization = '{spec}', 
+                YearsOfOperation = '{years}', 
+                GovAccreditationStat = '{govtAccred}', 
+                LicenseExpDate = '{licenseExp:yyyy-MM-dd}', 
                 Notes = '{notes}'
-            WHERE AgencyID = {Session.CurrentReferenceID}"
+            WHERE AgencyID = {loadedAgencyId}
+        "
 
         Try
             readQuery(updateQuery)
@@ -99,7 +127,7 @@ Public Class editAgency
         Me.Close()
     End Sub
 
-    ' Input Restrictions
+    ' Input restrictions
     Private Sub txtbxZipcode_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxZipcode.KeyPress
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then e.Handled = True
     End Sub

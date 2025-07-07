@@ -39,17 +39,17 @@ Public Class jobplacement
 
     Private Sub ApplyJobFilters()
         Dim allCleared As Boolean =
-            txtbxJobIdNum.Text.Trim() = "" AndAlso
-            txtbxEmployerIdNum.Text.Trim() = "" AndAlso
-            txtbxJobTitle.Text.Trim() = "" AndAlso
-            txtbxJobType.Text.Trim() = "" AndAlso
-            txtbxReqSkill.Text.Trim() = "" AndAlso
-            txtbxSalaryRange.Text.Trim() = "" AndAlso
-            cbxCountry.SelectedIndex = -1 AndAlso
-            txtbxNuOfVacancies.Text.Trim() = "" AndAlso
-            cbxVisaType.SelectedIndex = -1 AndAlso
-            Not datePostingDate.Checked AndAlso
-            Not dateApplicationDeadline.Checked
+        txtbxJobIdNum.Text.Trim() = "" AndAlso
+        txtbxEmployerIdNum.Text.Trim() = "" AndAlso
+        txtbxJobTitle.Text.Trim() = "" AndAlso
+        txtbxJobType.Text.Trim() = "" AndAlso
+        txtbxReqSkill.Text.Trim() = "" AndAlso
+        txtbxSalaryRange.Text.Trim() = "" AndAlso
+        cbxCountry.SelectedIndex = -1 AndAlso
+        txtbxNuOfVacancies.Text.Trim() = "" AndAlso
+        cbxVisaType.SelectedIndex = -1 AndAlso
+        Not datePostingDate.Checked AndAlso
+        Not dateApplicationDeadline.Checked
 
         If allCleared Then
             LoadJobPlacementsToDGV(DataGridView1)
@@ -57,70 +57,81 @@ Public Class jobplacement
             Return
         End If
 
-        Dim query As String = "SELECT * FROM jobplacement WHERE 1=1"
+        Dim query As String = "
+        SELECT jp.JobPlacementID, jp.JobTitle, jp.SalaryRange, jp.CountryOfEmployment, 
+               jp.JobType, jp.VisaType, jp.ApplicationDeadline, 
+               jp.RequiredSkills, e.CompanyName
+        FROM jobplacement jp
+        JOIN employer e ON jp.EmployerID = e.EmployerID
+        WHERE 1=1
+    "
 
         If txtbxJobIdNum.Text.Trim() <> "" Then
-            query &= " AND JobID LIKE '%" & txtbxJobIdNum.Text.Trim() & "%'"
+            query &= " AND jp.JobPlacementID LIKE '%" & txtbxJobIdNum.Text.Trim() & "%'"
         End If
 
         If txtbxEmployerIdNum.Text.Trim() <> "" Then
-            query &= " AND EmployerID LIKE '%" & txtbxEmployerIdNum.Text.Trim() & "%'"
+            query &= " AND jp.EmployerID LIKE '%" & txtbxEmployerIdNum.Text.Trim() & "%'"
         End If
 
         If txtbxJobTitle.Text.Trim() <> "" Then
-            query &= " AND JobTitle LIKE '%" & txtbxJobTitle.Text.Trim() & "%'"
+            query &= " AND jp.JobTitle LIKE '%" & txtbxJobTitle.Text.Trim() & "%'"
         End If
 
         If txtbxJobType.Text.Trim() <> "" Then
-            query &= " AND JobType LIKE '%" & txtbxJobType.Text.Trim() & "%'"
+            query &= " AND jp.JobType LIKE '%" & txtbxJobType.Text.Trim() & "%'"
         End If
 
         If txtbxReqSkill.Text.Trim() <> "" Then
-            query &= " AND RequiredSkill LIKE '%" & txtbxReqSkill.Text.Trim() & "%'"
+            query &= " AND jp.RequiredSkills LIKE '%" & txtbxReqSkill.Text.Trim() & "%'"
         End If
 
         If txtbxSalaryRange.Text.Trim() <> "" Then
-            query &= " AND SalaryRange LIKE '%" & txtbxSalaryRange.Text.Trim() & "%'"
+            query &= " AND jp.SalaryRange LIKE '%" & txtbxSalaryRange.Text.Trim() & "%'"
         End If
 
         If cbxCountry.SelectedIndex <> -1 Then
-            query &= " AND CountryOfEmployment = '" & cbxCountry.SelectedItem.ToString() & "'"
+            query &= " AND jp.CountryOfEmployment = '" & cbxCountry.SelectedItem.ToString() & "'"
         End If
 
         If txtbxNuOfVacancies.Text.Trim() <> "" Then
-            query &= " AND NumVacancies LIKE '%" & txtbxNuOfVacancies.Text.Trim() & "%'"
+            query &= " AND jp.NumVacancies LIKE '%" & txtbxNuOfVacancies.Text.Trim() & "%'"
         End If
 
         If cbxVisaType.SelectedIndex <> -1 Then
-            query &= " AND VisaType = '" & cbxVisaType.SelectedItem.ToString() & "'"
+            query &= " AND jp.VisaType = '" & cbxVisaType.SelectedItem.ToString() & "'"
         End If
 
         If datePostingDate.Checked Then
-            query &= " AND PostingDate = '" & datePostingDate.Value.ToString("yyyy-MM-dd") & "'"
+            query &= " AND jp.PostingDate = '" & datePostingDate.Value.ToString("yyyy-MM-dd") & "'"
         End If
 
         If dateApplicationDeadline.Checked Then
-            query &= " AND ApplicationDeadline = '" & dateApplicationDeadline.Value.ToString("yyyy-MM-dd") & "'"
+            query &= " AND jp.ApplicationDeadline = '" & dateApplicationDeadline.Value.ToString("yyyy-MM-dd") & "'"
         End If
 
-        readQuery(query)
-        Dim dt As New DataTable()
-        dt.Load(cmdRead)
-        cmdRead.Close()
+        Try
+            readQuery(query)
+            Dim dt As New DataTable()
+            dt.Load(cmdRead)
+            cmdRead.Close()
 
-        DataGridView1.DataSource = dt
-        FormatDGVUniformly(DataGridView1)
+            DataGridView1.DataSource = dt
+            FormatDGVUniformly(DataGridView1)
+        Catch ex As Exception
+            MsgBox("Error applying filters: " & ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 
     ' CRUD
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs)
         Dim dlg As New addJob()
         dlg.ShowDialog()
         LoadJobPlacementsToDGV(DataGridView1)
         FormatDGVUniformly(DataGridView1)
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs)
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim jobId As Integer = Convert.ToInt32(selectedRow.Cells("JobPlacementID").Value)

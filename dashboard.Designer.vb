@@ -22,18 +22,18 @@ Partial Class dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea7 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend7 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series7 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea8 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend8 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series8 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea13 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend13 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series13 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea14 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend14 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series14 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea15 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend15 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series15 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea16 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend16 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series16 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblNumOfw = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -79,6 +79,7 @@ Partial Class dashboard
         Me.OneYearBTN = New System.Windows.Forms.Button()
         Me.refreshBtn = New System.Windows.Forms.Button()
         Me.CustomDate = New System.Windows.Forms.DateTimePicker()
+        Me.Logout = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         CType(Me.ChartOFW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,17 +143,17 @@ Partial Class dashboard
         '
         'ChartOFW
         '
-        ChartArea5.Name = "ChartArea1"
-        Me.ChartOFW.ChartAreas.Add(ChartArea5)
-        Legend5.Name = "Legend1"
-        Me.ChartOFW.Legends.Add(Legend5)
+        ChartArea13.Name = "ChartArea1"
+        Me.ChartOFW.ChartAreas.Add(ChartArea13)
+        Legend13.Name = "Legend1"
+        Me.ChartOFW.Legends.Add(Legend13)
         Me.ChartOFW.Location = New System.Drawing.Point(18, 115)
         Me.ChartOFW.Name = "ChartOFW"
-        Series5.ChartArea = "ChartArea1"
-        Series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea
-        Series5.Legend = "Legend1"
-        Series5.Name = "Series1"
-        Me.ChartOFW.Series.Add(Series5)
+        Series13.ChartArea = "ChartArea1"
+        Series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea
+        Series13.Legend = "Legend1"
+        Series13.Name = "Series1"
+        Me.ChartOFW.Series.Add(Series13)
         Me.ChartOFW.Size = New System.Drawing.Size(404, 239)
         Me.ChartOFW.TabIndex = 13
         Me.ChartOFW.Text = "Chart1"
@@ -215,16 +216,16 @@ Partial Class dashboard
         '
         'ChartAgencies
         '
-        ChartArea6.Name = "ChartArea1"
-        Me.ChartAgencies.ChartAreas.Add(ChartArea6)
-        Legend6.Name = "Legend1"
-        Me.ChartAgencies.Legends.Add(Legend6)
+        ChartArea14.Name = "ChartArea1"
+        Me.ChartAgencies.ChartAreas.Add(ChartArea14)
+        Legend14.Name = "Legend1"
+        Me.ChartAgencies.Legends.Add(Legend14)
         Me.ChartAgencies.Location = New System.Drawing.Point(18, 116)
         Me.ChartAgencies.Name = "ChartAgencies"
-        Series6.ChartArea = "ChartArea1"
-        Series6.Legend = "Legend1"
-        Series6.Name = "Series1"
-        Me.ChartAgencies.Series.Add(Series6)
+        Series14.ChartArea = "ChartArea1"
+        Series14.Legend = "Legend1"
+        Series14.Name = "Series1"
+        Me.ChartAgencies.Series.Add(Series14)
         Me.ChartAgencies.Size = New System.Drawing.Size(404, 239)
         Me.ChartAgencies.TabIndex = 14
         Me.ChartAgencies.Text = "Chart2"
@@ -277,16 +278,16 @@ Partial Class dashboard
         '
         'ChartEmployers
         '
-        ChartArea7.Name = "ChartArea1"
-        Me.ChartEmployers.ChartAreas.Add(ChartArea7)
-        Legend7.Name = "Legend1"
-        Me.ChartEmployers.Legends.Add(Legend7)
+        ChartArea15.Name = "ChartArea1"
+        Me.ChartEmployers.ChartAreas.Add(ChartArea15)
+        Legend15.Name = "Legend1"
+        Me.ChartEmployers.Legends.Add(Legend15)
         Me.ChartEmployers.Location = New System.Drawing.Point(16, 116)
         Me.ChartEmployers.Name = "ChartEmployers"
-        Series7.ChartArea = "ChartArea1"
-        Series7.Legend = "Legend1"
-        Series7.Name = "Series1"
-        Me.ChartEmployers.Series.Add(Series7)
+        Series15.ChartArea = "ChartArea1"
+        Series15.Legend = "Legend1"
+        Series15.Name = "Series1"
+        Me.ChartEmployers.Series.Add(Series15)
         Me.ChartEmployers.Size = New System.Drawing.Size(404, 239)
         Me.ChartEmployers.TabIndex = 15
         Me.ChartEmployers.Text = "Chart3"
@@ -317,18 +318,18 @@ Partial Class dashboard
         'ChartTopAgencies
         '
         Me.ChartTopAgencies.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea8.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
-        ChartArea8.Name = "ChartArea1"
-        Me.ChartTopAgencies.ChartAreas.Add(ChartArea8)
-        Legend8.Name = "Legend1"
-        Me.ChartTopAgencies.Legends.Add(Legend8)
+        ChartArea16.BackSecondaryColor = System.Drawing.SystemColors.GradientActiveCaption
+        ChartArea16.Name = "ChartArea1"
+        Me.ChartTopAgencies.ChartAreas.Add(ChartArea16)
+        Legend16.Name = "Legend1"
+        Me.ChartTopAgencies.Legends.Add(Legend16)
         Me.ChartTopAgencies.Location = New System.Drawing.Point(16, 109)
         Me.ChartTopAgencies.Name = "ChartTopAgencies"
-        Series8.ChartArea = "ChartArea1"
-        Series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series8.Legend = "Legend1"
-        Series8.Name = "Series1"
-        Me.ChartTopAgencies.Series.Add(Series8)
+        Series16.ChartArea = "ChartArea1"
+        Series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series16.Legend = "Legend1"
+        Series16.Name = "Series1"
+        Me.ChartTopAgencies.Series.Add(Series16)
         Me.ChartTopAgencies.Size = New System.Drawing.Size(852, 411)
         Me.ChartTopAgencies.TabIndex = 16
         Me.ChartTopAgencies.Text = "Chart4"
@@ -633,7 +634,7 @@ Partial Class dashboard
         'refreshBtn
         '
         Me.refreshBtn.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.refreshBtn.Location = New System.Drawing.Point(506, 17)
+        Me.refreshBtn.Location = New System.Drawing.Point(667, 17)
         Me.refreshBtn.Name = "refreshBtn"
         Me.refreshBtn.Size = New System.Drawing.Size(149, 47)
         Me.refreshBtn.TabIndex = 53
@@ -648,12 +649,26 @@ Partial Class dashboard
         Me.CustomDate.Size = New System.Drawing.Size(310, 26)
         Me.CustomDate.TabIndex = 54
         '
+        'Logout
+        '
+        Me.Logout.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Logout.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Logout.Location = New System.Drawing.Point(401, 12)
+        Me.Logout.Name = "Logout"
+        Me.Logout.Size = New System.Drawing.Size(119, 40)
+        Me.Logout.TabIndex = 292
+        Me.Logout.Text = "Log Out"
+        Me.Logout.UseVisualStyleBackColor = False
+        '
         'dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.Logout)
         Me.Controls.Add(Me.CustomDate)
         Me.Controls.Add(Me.refreshBtn)
         Me.Controls.Add(Me.OneYearBTN)
@@ -746,4 +761,5 @@ Partial Class dashboard
     Friend WithEvents OneYearBTN As Button
     Friend WithEvents refreshBtn As Button
     Friend WithEvents CustomDate As DateTimePicker
+    Friend WithEvents Logout As Button
 End Class

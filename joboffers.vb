@@ -10,6 +10,7 @@ Public Class joboffers
         End If
 
         ' Clear all filter controls before loading
+        txtbxJobIdNum.Clear()
         txtbxJobTitle.Clear()
         txtbxJobType.Clear()
         txtbxReqSkill.Clear()
@@ -19,16 +20,60 @@ Public Class joboffers
         dateApplicationDeadline.Value = Date.Today
         dateApplicationDeadline.Checked = False
 
+        ' Populate combo boxes from database
+        PopulateComboBoxes()
+
         ' Load data
         LoadMatchingJobOffers()
     End Sub
 
+    Private Sub PopulateComboBoxes()
+        Dim countryQuery As String = "SELECT DISTINCT CountryOfEmployment FROM jobplacement WHERE JobStatus = 'Open'"
+        Dim visaQuery As String = "SELECT DISTINCT VisaType FROM jobplacement WHERE JobStatus = 'Open'"
+
+        ' Populate Country ComboBox
+        cbxCountry.Items.Clear()
+        readQuery(countryQuery)
+        While cmdRead.Read()
+            If Not IsDBNull(cmdRead("CountryOfEmployment")) Then
+                cbxCountry.Items.Add(cmdRead("CountryOfEmployment").ToString())
+            End If
+        End While
+        cmdRead.Close()
+
+        ' Populate Visa Type ComboBox
+        cbxVisaType.Items.Clear()
+        readQuery(visaQuery)
+        While cmdRead.Read()
+            If Not IsDBNull(cmdRead("VisaType")) Then
+                cbxVisaType.Items.Add(cmdRead("VisaType").ToString())
+            End If
+        End While
+        cmdRead.Close()
+    End Sub
 
     Private Sub LoadMatchingJobOffers()
-        Dim query As String = "SELECT DISTINCT jp.JobPlacementID, jp.JobTitle, jp.SalaryRange, jp.CountryOfEmployment, jp.JobType, jp.VisaType, jp.ApplicationDeadline, jp.RequiredSkills, e.CompanyName FROM jobplacement jp JOIN employer e ON jp.EmployerID = e.EmployerID JOIN ofw o ON jp.AgencyID = o.AgencyID WHERE o.OFWID = " & Session.CurrentReferenceID & " AND jp.JobStatus = 'Open' AND EXISTS (SELECT 1 FROM ofwskill os JOIN skill s ON os.SkillID = s.SkillID WHERE os.OFWID = o.OFWID AND jp.RequiredSkills LIKE CONCAT('%', s.SkillName, '%'))"
+        Dim query As String = "
+            SELECT DISTINCT jp.JobPlacementID, jp.JobTitle, jp.SalaryRange, jp.CountryOfEmployment, 
+                            jp.JobType, jp.VisaType, jp.ApplicationDeadline, jp.RequiredSkills, e.CompanyName 
+            FROM jobplacement jp 
+            JOIN employer e ON jp.EmployerID = e.EmployerID 
+            JOIN ofw o ON jp.AgencyID = o.AgencyID 
+            WHERE o.OFWID = " & Session.CurrentReferenceID & " 
+            AND jp.JobStatus = 'Open' 
+            AND EXISTS (
+                SELECT 1 FROM ofwskill os 
+                JOIN skill s ON os.SkillID = s.SkillID 
+                WHERE os.OFWID = o.OFWID 
+                AND jp.RequiredSkills LIKE CONCAT('%', s.SkillName, '%')
+            )
+        "
 
+        ' Apply filters
+        If Not String.IsNullOrWhiteSpace(txtbxJobIdNum.Text) Then
+            query &= $" AND jp.JobPlacementID = {txtbxJobIdNum.Text.Trim()}"
+        End If
 
-        ' Append filters
         If Not String.IsNullOrWhiteSpace(txtbxJobTitle.Text) Then
             query &= $" AND jp.JobTitle LIKE '%{txtbxJobTitle.Text.Trim()}%'"
         End If
@@ -58,6 +103,7 @@ Public Class joboffers
             query &= $" AND jp.ApplicationDeadline >= '{dateApplicationDeadline.Value.ToString("yyyy-MM-dd")}'"
         End If
 
+        ' Load into DataGridView
         Try
             LoadToDGV(query, DGVJobOffers)
             FormatDGV()
@@ -80,22 +126,17 @@ Public Class joboffers
             .EnableHeadersVisualStyles = False
             .BackgroundColor = Color.White
 
-            ' Explicitly set default cell colors
+            ' Style
             .DefaultCellStyle.BackColor = Color.White
             .DefaultCellStyle.ForeColor = Color.Black
+            .DefaultCellStyle.Font = New Font("Segoe UI", 10)
+            .DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200)
+            .DefaultCellStyle.SelectionForeColor = Color.Black
 
-            ' Set font sizes
             .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
-            .DefaultCellStyle.Font = New Font("Segoe UI", 10, FontStyle.Regular)
-
-            ' Header styling
             .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 155)
             .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
             .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
-            ' Cell selection styling
-            .DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200)
-            .DefaultCellStyle.SelectionForeColor = Color.Black
 
             ' Hide internal ID
             If .Columns.Contains("JobPlacementID") Then .Columns("JobPlacementID").Visible = False
@@ -112,8 +153,11 @@ Public Class joboffers
         End With
     End Sub
 
+    ' === Filter Events ===
+    Private Sub txtbxJobIdNum_TextChanged(sender As Object, e As EventArgs) Handles txtbxJobIdNum.TextChanged
+        LoadMatchingJobOffers()
+    End Sub
 
-    ' Filtering triggers
     Private Sub txtbxJobTitle_TextChanged(sender As Object, e As EventArgs) Handles txtbxJobTitle.TextChanged
         LoadMatchingJobOffers()
     End Sub
@@ -142,7 +186,9 @@ Public Class joboffers
         LoadMatchingJobOffers()
     End Sub
 
+    ' === Clear Filters ===
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtbxJobIdNum.Clear()
         txtbxJobTitle.Clear()
         txtbxJobType.Clear()
         txtbxReqSkill.Clear()
@@ -154,7 +200,7 @@ Public Class joboffers
         LoadMatchingJobOffers()
     End Sub
 
-    ' Navigation
+    ' === Navigation ===
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
         Dim newForm As New ofwProfile()
         newForm.Show()
@@ -191,5 +237,4 @@ Public Class joboffers
             MsgBox("Error opening job details: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
-
 End Class

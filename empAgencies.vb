@@ -23,17 +23,13 @@ Public Class empAgencies
             a.ContactNum AS 'Contact Number',
             CASE WHEN a.GovAccreditationStat = 'Accredited' THEN 'Active' ELSE 'Inactive' END AS 'Status',
             a.Specialization,
-            CASE 
-                WHEN ape.EmployerID IS NOT NULL THEN 'Yes'
-                ELSE 'No'
-            END AS 'Partnered',
-            CASE 
-                WHEN pr.EmployerID IS NOT NULL THEN 'Yes'
-                ELSE 'No'
-            END AS 'SentRequest'
+            CASE WHEN ape.EmployerID IS NOT NULL THEN 'Yes' ELSE 'No' END AS 'Partnered',
+            CASE WHEN pr.EmployerID IS NOT NULL THEN 'Yes' ELSE 'No' END AS 'SentRequest',
+            COUNT(DISTINCT dr.DeploymentID) AS 'DeployedWorkers'
         FROM agency a
         LEFT JOIN agencypartneremployer ape ON a.AgencyID = ape.AgencyID AND ape.EmployerID = {empId}
         LEFT JOIN partnershiprequest pr ON a.AgencyID = pr.AgencyID AND pr.EmployerID = {empId}
+        LEFT JOIN deploymentrecord dr ON a.AgencyID = dr.AgencyID
         WHERE 1=1
         "
 
@@ -58,6 +54,23 @@ Public Class empAgencies
         End If
         If txtbxSpecialization.Text.Trim() <> "" Then
             query &= " AND a.Specialization LIKE '%" & txtbxSpecialization.Text.Trim().Replace("'", "''") & "%'"
+        End If
+
+        query &= " GROUP BY a.AgencyID"
+
+        Dim havingConditions As New List(Of String)
+
+        If txtbxNumDepWorkers.Text.Trim() <> "" Then
+            If IsNumeric(txtbxNumDepWorkers.Text.Trim()) Then
+                havingConditions.Add("DeployedWorkers = " & txtbxNumDepWorkers.Text.Trim())
+            Else
+                MsgBox("Please enter a valid number for Deployed Workers.", MsgBoxStyle.Exclamation)
+                Return
+            End If
+        End If
+
+        If havingConditions.Count > 0 Then
+            query &= " HAVING " & String.Join(" AND ", havingConditions)
         End If
 
         readQuery(query)
@@ -140,7 +153,10 @@ Public Class empAgencies
         ApplyAgencyFilters()
     End Sub
 
-    ' === Clear Filters ===
+    Private Sub txtbxNumDepWorkers_TextChanged(sender As Object, e As EventArgs) Handles txtbxNumDepWorkers.TextChanged
+        ApplyAgencyFilters()
+    End Sub
+
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         txtbxAgencyID.Clear()
         txtbxAgencyName.Clear()
@@ -148,6 +164,7 @@ Public Class empAgencies
         txtbxContact.Clear()
         cbxGovtAccredStat.SelectedIndex = -1
         txtbxSpecialization.Clear()
+        txtbxNumDepWorkers.Clear()
         LoadAgencyList()
     End Sub
 

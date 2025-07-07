@@ -36,8 +36,6 @@ Partial Class empAgencies
         Me.txtbxSpecialization = New System.Windows.Forms.TextBox()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtbxNumActiveJobs = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtbxNumDepWorkers = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -237,26 +235,6 @@ Partial Class empAgencies
         Me.Label11.Size = New System.Drawing.Size(191, 21)
         Me.Label11.TabIndex = 103
         Me.Label11.Text = "License Expiration Date"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(1507, 610)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(195, 17)
-        Me.Label10.TabIndex = 102
-        Me.Label10.Text = "Number of active Job Orders"
-        '
-        'txtbxNumActiveJobs
-        '
-        Me.txtbxNumActiveJobs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbxNumActiveJobs.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxNumActiveJobs.Location = New System.Drawing.Point(1511, 636)
-        Me.txtbxNumActiveJobs.Name = "txtbxNumActiveJobs"
-        Me.txtbxNumActiveJobs.Size = New System.Drawing.Size(165, 27)
-        Me.txtbxNumActiveJobs.TabIndex = 101
         '
         'Label9
         '
@@ -526,9 +504,7 @@ Partial Class empAgencies
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtbxContact)
-        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtbxNumActiveJobs)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.cbxGovtAccredStat)
@@ -565,8 +541,6 @@ Partial Class empAgencies
     Friend WithEvents txtbxSpecialization As TextBox
     Friend WithEvents btnClear As Button
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents txtbxNumActiveJobs As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtbxNumDepWorkers As TextBox
     Friend WithEvents Label8 As Label

@@ -39,11 +39,19 @@
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        Dim dlg As New editEmployer()
-        dlg.ShowDialog()
-        LoadEmployersToDGV(DataGridView1)
-        FormatDGVUniformly(DataGridView1)
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim employerId As Integer = Convert.ToInt32(selectedRow.Cells("EmployerID").Value)
+
+            Dim dlg As New editEmployer(employerId) ' Pass ID to constructor
+            dlg.ShowDialog()
+            LoadEmployersToDGV(DataGridView1)
+            FormatDGVUniformly(DataGridView1)
+        Else
+            MsgBox("Please select an employer to edit.", MsgBoxStyle.Information)
+        End If
     End Sub
+
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If DataGridView1.SelectedRows.Count > 0 Then

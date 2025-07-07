@@ -202,9 +202,14 @@ Public Class empOfws
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim ofwId As Integer = Convert.ToInt32(DataGridView1.SelectedRows(0).Cells("OFWId").Value)
             Dim viewDepForm As New deploymentrecords(ofwId)
+
+            ' Set minimum size
+            viewDepForm.MinimumSize = New Size(1000, 1000)
+
             viewDepForm.ShowDialog()
         Else
             MsgBox("Please select an OFW from the list first.", MsgBoxStyle.Exclamation)
         End If
     End Sub
+
 End Class

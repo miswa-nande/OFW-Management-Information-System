@@ -26,20 +26,29 @@ Public Class editOfw
                 Label1.Text = "Edit Profile"
                 btnSave.Visible = True
                 btnCancel.Text = "Cancel"
+
             Case "Agency"
                 Label1.Text = "OFW PROFILE"
                 btnSave.Visible = False
                 btnCancel.Text = "Close"
+
             Case "Employer"
                 Label1.Text = "OFW PROFILE (View Only)"
                 btnSave.Visible = False
                 btnCancel.Text = "Close"
                 SetControlsReadOnly()
+
+            Case "Admin"
+                Label1.Text = "Edit OFW Profile"
+                btnSave.Visible = True
+                btnCancel.Text = "Close" ' or "Cancel" depending on your preference
+
             Case Else
                 MessageBox.Show("Access denied.", "Unauthorized", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Me.Close()
                 Return
         End Select
+
 
         If cbxSex.Items.Count = 0 Then cbxSex.Items.AddRange({"Male", "Female", "Other"})
         If cbxCivStat.Items.Count = 0 Then cbxCivStat.Items.AddRange({"Single", "Married", "Widowed", "Separated"})

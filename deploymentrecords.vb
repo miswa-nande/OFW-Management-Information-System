@@ -1,4 +1,6 @@
-﻿Public Class deploymentrecords
+﻿Imports MySql.Data.MySqlClient
+
+Public Class deploymentrecords
     Private selectedOfwId As Integer
 
     ' Constructor for OFW (no argument)
@@ -14,7 +16,6 @@
     End Sub
 
     Private Sub deploymentrecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Only OFWs can view their own deployment record directly
         If Session.CurrentLoggedUser.userType = "OFW" Then
             If selectedOfwId <> Session.CurrentReferenceID Then
                 MsgBox("Access denied. You can only view your own records.", MsgBoxStyle.Critical)
@@ -24,28 +25,89 @@
         End If
 
         If Session.CurrentLoggedUser.userType = "Employer" Then
-            ' Disable navigation for employer
             btnProfile.Enabled = False
             btnApplications.Enabled = False
             btnJobOffers.Enabled = False
         End If
 
+        PopulateFilters()
         LoadDeploymentRecords()
         FormatDGV()
     End Sub
 
-    ' Load all deployment records for the selected OFW
+    Private Sub PopulateFilters()
+        cbxContractStat.Items.Clear()
+        cbxRepatriationStat.Items.Clear()
+        cbxReasonforReturn.Items.Clear()
+
+        Dim fields As String() = {
+            "DeploymentStatus",
+            "RepatriationStatus",
+            "ReasonForReturn"
+        }
+
+        For Each field In fields
+            Dim query = $"SELECT DISTINCT {field} FROM deploymentrecord WHERE {field} IS NOT NULL AND {field} <> ''"
+            readQuery(query)
+            While cmdRead.Read()
+                Dim value = cmdRead(0).ToString()
+                If field = "DeploymentStatus" Then cbxContractStat.Items.Add(value)
+                If field = "RepatriationStatus" Then cbxRepatriationStat.Items.Add(value)
+                If field = "ReasonForReturn" Then cbxReasonforReturn.Items.Add(value)
+            End While
+            cmdRead.Close()
+        Next
+    End Sub
+
     Private Sub LoadDeploymentRecords()
         Try
             Dim query As String = $"
-            SELECT d.DeploymentID, d.ContractNumber, jp.JobTitle, d.CountryOfDeployment,
-                   d.Salary, d.DeploymentStatus, d.ContractStartDate, d.ContractEndDate,
-                   d.RepatriationStatus, d.ReasonForReturn
-            FROM deploymentrecord d
-            JOIN jobplacement jp ON d.JobPlacementID = jp.JobPlacementID
-            WHERE d.ApplicationID IN (
-                SELECT a.ApplicationID FROM application a WHERE a.OFWID = {selectedOfwId}
-            )"
+                SELECT d.DeploymentID, d.ContractNumber, jp.JobTitle, d.CountryOfDeployment,
+                       d.Salary, d.DeploymentStatus, d.ContractStartDate, d.ContractEndDate,
+                       d.RepatriationStatus, d.ReasonForReturn
+                FROM deploymentrecord d
+                JOIN jobplacement jp ON d.JobPlacementID = jp.JobPlacementID
+                WHERE d.ApplicationID IN (
+                    SELECT a.ApplicationID FROM application a WHERE a.OFWID = {selectedOfwId}
+                )
+            "
+
+            ' === Apply filters ===
+            If txtbxIdNum.Text.Trim() <> "" AndAlso IsNumeric(txtbxIdNum.Text.Trim()) Then
+                query &= $" AND d.DeploymentID = {txtbxIdNum.Text.Trim()}"
+            End If
+
+            If txtbxJobTitle.Text.Trim() <> "" Then
+                query &= $" AND jp.JobTitle LIKE '%{txtbxJobTitle.Text.Trim().Replace("'", "''")}%'"
+            End If
+
+            If txtbxCountryOfDep.Text.Trim() <> "" Then
+                query &= $" AND d.CountryOfDeployment LIKE '%{txtbxCountryOfDep.Text.Trim().Replace("'", "''")}%'"
+            End If
+
+            If txtbxSalary.Text.Trim() <> "" AndAlso IsNumeric(txtbxSalary.Text.Trim()) Then
+                query &= $" AND d.Salary >= {txtbxSalary.Text.Trim()}"
+            End If
+
+            If cbxContractStat.SelectedIndex <> -1 Then
+                query &= $" AND d.DeploymentStatus = '{cbxContractStat.Text.Replace("'", "''")}'"
+            End If
+
+            If cbxRepatriationStat.SelectedIndex <> -1 Then
+                query &= $" AND d.RepatriationStatus = '{cbxRepatriationStat.Text.Replace("'", "''")}'"
+            End If
+
+            If cbxReasonforReturn.SelectedIndex <> -1 Then
+                query &= $" AND d.ReasonForReturn = '{cbxReasonforReturn.Text.Replace("'", "''")}'"
+            End If
+
+            If dateContractStart.Checked Then
+                query &= $" AND d.ContractStartDate >= '{dateContractStart.Value:yyyy-MM-dd}'"
+            End If
+
+            If dateContractEnd.Checked Then
+                query &= $" AND d.ContractEndDate <= '{dateContractEnd.Value:yyyy-MM-dd}'"
+            End If
 
             LoadToDGV(query, DataGridView1)
 
@@ -90,7 +152,59 @@
         End With
     End Sub
 
-    ' Navigation buttons
+    ' === Filter Events ===
+    Private Sub txtbxIdNum_TextChanged(sender As Object, e As EventArgs) Handles txtbxIdNum.TextChanged
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub txtbxJobTitle_TextChanged(sender As Object, e As EventArgs) Handles txtbxJobTitle.TextChanged
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub txtbxCountryOfDep_TextChanged(sender As Object, e As EventArgs) Handles txtbxCountryOfDep.TextChanged
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub txtbxSalary_TextChanged(sender As Object, e As EventArgs)
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub cbxContractStat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxContractStat.SelectedIndexChanged
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub cbxRepatriationStat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxRepatriationStat.SelectedIndexChanged
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub cbxReasonforReturn_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxReasonforReturn.SelectedIndexChanged
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub dateContractStart_ValueChanged(sender As Object, e As EventArgs) Handles dateContractStart.ValueChanged
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub dateContractEnd_ValueChanged(sender As Object, e As EventArgs) Handles dateContractEnd.ValueChanged
+        LoadDeploymentRecords()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtbxIdNum.Clear()
+        txtbxJobTitle.Clear()
+        txtbxCountryOfDep.Clear()
+        txtbxSalary.Clear()
+        cbxContractStat.SelectedIndex = -1
+        cbxRepatriationStat.SelectedIndex = -1
+        cbxReasonforReturn.SelectedIndex = -1
+        dateContractStart.Value = Date.Today
+        dateContractStart.Checked = False
+        dateContractEnd.Value = Date.Today
+        dateContractEnd.Checked = False
+        LoadDeploymentRecords()
+    End Sub
+
+    ' === Navigation ===
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
         Dim newForm As New ofwProfile()
         newForm.Show()
@@ -107,9 +221,5 @@
         Dim newForm As New applications()
         newForm.Show()
         Me.Hide()
-    End Sub
-
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        LoadDeploymentRecords()
     End Sub
 End Class

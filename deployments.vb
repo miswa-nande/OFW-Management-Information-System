@@ -201,14 +201,14 @@
     End Sub
 
     ' CRUD Buttons
-    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs)
         Dim dlg As New addDeployment()
         dlg.ShowDialog()
         LoadCustomDeploymentsQuery()
         FormatDGVUniformly(DataGridView1)
     End Sub
 
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs)
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
             Dim deploymentId As Integer = Convert.ToInt32(selectedRow.Cells("DeploymentID").Value)

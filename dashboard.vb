@@ -268,4 +268,9 @@ Public Class dashboard
         Me.Hide()
     End Sub
 
+    Private Sub Logout_Click(sender As Object, e As EventArgs) Handles Logout.Click
+        Dim loginForm As New loginPage()
+        loginForm.Show()
+        Me.Close()
+    End Sub
 End Class

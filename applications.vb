@@ -9,9 +9,24 @@ Public Class applications
             Exit Sub
         End If
 
+        ' === Populate application status filter ===
+        cbxContractStat.Items.Clear()
+        cbxContractStat.Items.AddRange(New String() {"All", "Pending", "Accepted", "Rejected"})
+        cbxContractStat.SelectedIndex = 0 ' Default to "All"
+
+        ' === Clear all filters ===
+        txtbxJobTitle.Clear()
+        txtbxIdNum.Clear()
+        txtbxContractNum.Clear()
+        dateContractStart.Value = Date.Today
+        dateContractStart.Checked = False
+
+        ' === Load applications ===
         LoadApplications()
         FormatDGV()
     End Sub
+
+
 
     ' Load all applications for logged-in OFW with filters
     Private Sub LoadApplications()

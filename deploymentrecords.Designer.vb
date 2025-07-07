@@ -42,7 +42,6 @@ Partial Class deploymentrecords
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbxRepatriationStat = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtbxSalary = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtbxIdNum = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -57,6 +56,7 @@ Partial Class deploymentrecords
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtbxJobTitle = New System.Windows.Forms.TextBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.txtbxSalary = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -297,15 +297,6 @@ Partial Class deploymentrecords
         Me.Label7.TabIndex = 128
         Me.Label7.Text = "Salary"
         '
-        'txtbxSalary
-        '
-        Me.txtbxSalary.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtbxSalary.FormattingEnabled = True
-        Me.txtbxSalary.Location = New System.Drawing.Point(1504, 377)
-        Me.txtbxSalary.Name = "txtbxSalary"
-        Me.txtbxSalary.Size = New System.Drawing.Size(347, 29)
-        Me.txtbxSalary.TabIndex = 127
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -450,12 +441,22 @@ Partial Class deploymentrecords
         Me.PictureBox5.TabIndex = 115
         Me.PictureBox5.TabStop = False
         '
+        'txtbxSalary
+        '
+        Me.txtbxSalary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbxSalary.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxSalary.Location = New System.Drawing.Point(1504, 378)
+        Me.txtbxSalary.Name = "txtbxSalary"
+        Me.txtbxSalary.Size = New System.Drawing.Size(343, 27)
+        Me.txtbxSalary.TabIndex = 157
+        '
         'deploymentrecords
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.txtbxSalary)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtbxJobTitle)
         Me.Controls.Add(Me.Label6)
@@ -474,7 +475,6 @@ Partial Class deploymentrecords
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.cbxRepatriationStat)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.txtbxSalary)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtbxIdNum)
         Me.Controls.Add(Me.Label2)
@@ -519,7 +519,6 @@ Partial Class deploymentrecords
     Friend WithEvents Label8 As Label
     Friend WithEvents cbxRepatriationStat As ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents txtbxSalary As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtbxIdNum As TextBox
     Friend WithEvents Label2 As Label
@@ -534,4 +533,5 @@ Partial Class deploymentrecords
     Friend WithEvents cbxReasonforReturn As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents txtbxJobTitle As TextBox
+    Friend WithEvents txtbxSalary As TextBox
 End Class

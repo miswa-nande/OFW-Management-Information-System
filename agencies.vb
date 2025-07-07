@@ -37,11 +37,19 @@ Public Class agencies
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        Dim dlg As New editAgency()
-        dlg.ShowDialog()
-        LoadAgenciesToDGV(DataGridView1)
-        FormatDGVUniformly(DataGridView1)
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            Dim agencyId As Integer = Convert.ToInt32(selectedRow.Cells("AgencyID").Value)
+
+            Dim dlg As New editAgency(agencyId) ' Use constructor with ID
+            dlg.ShowDialog()
+            LoadAgenciesToDGV(DataGridView1)
+            FormatDGVUniformly(DataGridView1)
+        Else
+            MsgBox("Please select an agency to edit.", MsgBoxStyle.Information)
+        End If
     End Sub
+
 
     Private Sub btnEmployers_Click(sender As Object, e As EventArgs) Handles btnEmployers.Click
         Dim newForm As New employers()
