@@ -2,6 +2,16 @@
 Imports MySql.Data.MySqlClient
 
 Public Class loginPage
+    Private configInitialized As Boolean = False
+
+    Private Sub loginPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Automatically create config file if missing
+        If Not configInitialized Then
+            EnsureSQLConfigExists()
+            configInitialized = True
+        End If
+    End Sub
+
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         Session.CurrentLoggedUser.userType = "Admin"
