@@ -46,8 +46,6 @@ Partial Class agcJobs
         Me.btnAdd = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtbxAgencyIdNum = New System.Windows.Forms.TextBox()
-        Me.dateApplicationDeadline = New System.Windows.Forms.DateTimePicker()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.cbxVisaType = New System.Windows.Forms.ComboBox()
         Me.txtbxSalaryRange = New System.Windows.Forms.TextBox()
@@ -371,32 +369,12 @@ Partial Class agcJobs
         Me.txtbxAgencyIdNum.Size = New System.Drawing.Size(100, 27)
         Me.txtbxAgencyIdNum.TabIndex = 347
         '
-        'dateApplicationDeadline
-        '
-        Me.dateApplicationDeadline.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateApplicationDeadline.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateApplicationDeadline.Location = New System.Drawing.Point(1509, 567)
-        Me.dateApplicationDeadline.Name = "dateApplicationDeadline"
-        Me.dateApplicationDeadline.Size = New System.Drawing.Size(165, 27)
-        Me.dateApplicationDeadline.TabIndex = 346
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label18.Location = New System.Drawing.Point(1505, 543)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(176, 21)
-        Me.Label18.TabIndex = 345
-        Me.Label18.Text = "Application Deadline"
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(1687, 541)
+        Me.Label17.Location = New System.Drawing.Point(1506, 541)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(82, 21)
         Me.Label17.TabIndex = 344
@@ -406,7 +384,7 @@ Partial Class agcJobs
         '
         Me.cbxVisaType.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxVisaType.FormattingEnabled = True
-        Me.cbxVisaType.Location = New System.Drawing.Point(1691, 565)
+        Me.cbxVisaType.Location = New System.Drawing.Point(1510, 565)
         Me.cbxVisaType.Name = "cbxVisaType"
         Me.cbxVisaType.Size = New System.Drawing.Size(165, 29)
         Me.cbxVisaType.TabIndex = 343
@@ -633,8 +611,6 @@ Partial Class agcJobs
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtbxAgencyIdNum)
-        Me.Controls.Add(Me.dateApplicationDeadline)
-        Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.cbxVisaType)
         Me.Controls.Add(Me.txtbxSalaryRange)
@@ -701,8 +677,6 @@ Partial Class agcJobs
     Friend WithEvents btnAdd As PictureBox
     Friend WithEvents Label9 As Label
     Friend WithEvents txtbxAgencyIdNum As TextBox
-    Friend WithEvents dateApplicationDeadline As DateTimePicker
-    Friend WithEvents Label18 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents cbxVisaType As ComboBox
     Friend WithEvents txtbxSalaryRange As TextBox

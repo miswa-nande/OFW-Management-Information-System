@@ -200,6 +200,7 @@ Public Class agcDashboard
     Private Sub btnJobs_Click(sender As Object, e As EventArgs) Handles btnJobs.Click
         Dim form As New agcJobs()
         form.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnApplications_Click(sender As Object, e As EventArgs) Handles btnApplications.Click

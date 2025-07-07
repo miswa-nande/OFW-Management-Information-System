@@ -15,7 +15,7 @@ Public Class agcJobs
             FROM jobplacement jp
             JOIN employer e ON jp.EmployerID = e.EmployerID
             JOIN agencypartneremployer ape ON ape.EmployerID = e.EmployerID
-            WHERE jp.AgencyID = " & agencyId & " AND ape.AgencyID = " & agencyId
+            WHERE ape.AgencyID = " & agencyId
 
         readQuery(query)
         Dim dt As New DataTable()
@@ -34,8 +34,7 @@ Public Class agcJobs
             txtbxReqSkill.Text.Trim() = "" AndAlso
             txtbxSalaryRange.Text.Trim() = "" AndAlso
             cbxCountry.SelectedIndex = -1 AndAlso
-            cbxVisaType.SelectedIndex = -1 AndAlso
-            Not dateApplicationDeadline.Checked
+            cbxVisaType.SelectedIndex = -1
 
         If allCleared Then
             LoadAgencyJobs()
@@ -49,7 +48,7 @@ Public Class agcJobs
             FROM jobplacement jp
             JOIN employer e ON jp.EmployerID = e.EmployerID
             JOIN agencypartneremployer ape ON ape.EmployerID = e.EmployerID
-            WHERE jp.AgencyID = " & agencyId & " AND ape.AgencyID = " & agencyId
+            WHERE ape.AgencyID = " & agencyId
 
         If txtbxJobIdNum.Text.Trim() <> "" Then
             query &= " AND jp.JobPlacementID LIKE '%" & txtbxJobIdNum.Text.Trim().Replace("'", "''") & "%'"
@@ -72,9 +71,6 @@ Public Class agcJobs
         If cbxVisaType.SelectedIndex <> -1 Then
             query &= " AND jp.VisaType = '" & cbxVisaType.SelectedItem.ToString().Replace("'", "''") & "'"
         End If
-        If dateApplicationDeadline.Checked Then
-            query &= " AND jp.ApplicationDeadline = '" & dateApplicationDeadline.Value.ToString("yyyy-MM-dd") & "'"
-        End If
 
         readQuery(query)
         Dim dt As New DataTable()
@@ -86,21 +82,42 @@ Public Class agcJobs
 
     Private Sub FormatDGVUniformly(dgv As DataGridView)
         With dgv
-            .Columns("JobTitle").HeaderText = "Job Title"
-            .Columns("Employer").HeaderText = "Employer"
-            .Columns("Country").HeaderText = "Country"
-            .Columns("Status").HeaderText = "Status"
-            .Columns("Vacancies").HeaderText = "Vacancies"
-            .Columns("ApplicationDeadline").HeaderText = "Deadline"
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+            .ReadOnly = True
+            .AllowUserToAddRows = False
+            .AllowUserToDeleteRows = False
+            .AllowUserToResizeRows = False
+            .RowHeadersVisible = False
+            .BorderStyle = BorderStyle.None
+            .EnableHeadersVisualStyles = False
+            .BackgroundColor = Color.White
+
+            .ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 66, 155)
+            .ColumnHeadersDefaultCellStyle.ForeColor = Color.White
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Segoe UI", 11, FontStyle.Bold)
+            .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
             .DefaultCellStyle.Font = New Font("Segoe UI", 10)
+            .DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 150, 200)
+            .DefaultCellStyle.SelectionForeColor = Color.Black
+
+            .AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 248, 255)
         End With
+
+        If dgv.Columns.Contains("JobTitle") Then dgv.Columns("JobTitle").HeaderText = "Job Title"
+        If dgv.Columns.Contains("Employer") Then dgv.Columns("Employer").HeaderText = "Employer"
+        If dgv.Columns.Contains("Country") Then dgv.Columns("Country").HeaderText = "Country"
+        If dgv.Columns.Contains("Status") Then dgv.Columns("Status").HeaderText = "Status"
+        If dgv.Columns.Contains("Vacancies") Then dgv.Columns("Vacancies").HeaderText = "Vacancies"
+        If dgv.Columns.Contains("ApplicationDeadline") Then dgv.Columns("ApplicationDeadline").HeaderText = "Deadline"
     End Sub
 
     Private Sub PopulateFilterComboboxes()
         cbxCountry.Items.Clear()
         Dim agencyId As Integer = Session.CurrentReferenceID
-        Dim query As String = $"SELECT DISTINCT CountryOfEmployment FROM jobplacement WHERE AgencyID = {agencyId} AND CountryOfEmployment IS NOT NULL ORDER BY CountryOfEmployment"
+        Dim query As String = $"SELECT DISTINCT CountryOfEmployment FROM jobplacement jp JOIN employer e ON jp.EmployerID = e.EmployerID JOIN agencypartneremployer ape ON ape.EmployerID = e.EmployerID WHERE ape.AgencyID = {agencyId} AND CountryOfEmployment IS NOT NULL ORDER BY CountryOfEmployment"
         readQuery(query)
         While cmdRead.Read()
             cbxCountry.Items.Add(cmdRead("CountryOfEmployment").ToString())
@@ -113,7 +130,7 @@ Public Class agcJobs
         cbxVisaType.SelectedIndex = -1
     End Sub
 
-    ' Live filter events
+    ' Filter Events
     Private Sub txtbxJobIdNum_TextChanged(sender As Object, e As EventArgs) Handles txtbxJobIdNum.TextChanged
         ApplyJobFilters()
     End Sub
@@ -133,10 +150,6 @@ Public Class agcJobs
         ApplyJobFilters()
     End Sub
     Private Sub cbxVisaType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxVisaType.SelectedIndexChanged
-        ApplyJobFilters()
-    End Sub
-    Private Sub dateApplicationDeadline_ValueChanged(sender As Object, e As EventArgs) Handles dateApplicationDeadline.ValueChanged
-        dateApplicationDeadline.CustomFormat = "yyyy-MM-dd"
         ApplyJobFilters()
     End Sub
 
@@ -215,8 +228,6 @@ Public Class agcJobs
         txtbxSalaryRange.Clear()
         cbxCountry.SelectedIndex = -1
         cbxVisaType.SelectedIndex = -1
-        dateApplicationDeadline.Value = Date.Today
-        dateApplicationDeadline.Checked = False
         LoadAgencyJobs()
     End Sub
 End Class
