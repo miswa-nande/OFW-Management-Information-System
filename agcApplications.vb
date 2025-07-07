@@ -1,6 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class agcApplications
+    Private jobFilterId As Integer = -1 ' Private field, not publicly accessible
+
+    Public Sub New(Optional jobId As Integer = -1)
+        InitializeComponent()
+        jobFilterId = jobId
+    End Sub
+
     Private Sub agcApplications_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Initialize the DateTimePicker to be cleared
         dateDateSubmitted.Format = DateTimePickerFormat.Custom
@@ -14,11 +21,16 @@ Public Class agcApplications
     Private Sub LoadAgencyApplications()
         Dim agencyId As Integer = Session.CurrentReferenceID
         Dim query As String = $"
-            SELECT a.ApplicationID, ag.AgencyName, a.ApplicationStatus, a.ApplicationDate, a.LastUpdate, a.Remarks
-            FROM application a
-            JOIN agency ag ON a.AgencyID = ag.AgencyID
-            WHERE a.AgencyID = {agencyId}
-        "
+    SELECT a.ApplicationID, ag.AgencyName, a.ApplicationStatus, a.ApplicationDate, a.LastUpdate, a.Remarks
+    FROM application a
+    JOIN agency ag ON a.AgencyID = ag.AgencyID
+    WHERE a.AgencyID = {agencyId}
+"
+
+        If jobFilterId <> -1 Then
+            query &= " AND a.JobPlacementID = " & jobFilterId
+        End If
+
         readQuery(query)
         Dim dt As New DataTable()
         dt.Load(cmdRead)

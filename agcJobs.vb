@@ -167,9 +167,11 @@ Public Class agcJobs
         Me.Hide()
     End Sub
     Private Sub btnApplications_Click(sender As Object, e As EventArgs) Handles btnApplications.Click
-        agcApplications.Show()
+        Dim appForm As New agcApplications() ' Uses default optional parameter
+        appForm.Show()
         Me.Hide()
     End Sub
+
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
         agcDeployment.Show()
         Me.Hide()
@@ -230,4 +232,27 @@ Public Class agcJobs
         cbxVisaType.SelectedIndex = -1
         LoadAgencyJobs()
     End Sub
+
+    Private Sub btnJobDetatils_Click(sender As Object, e As EventArgs) Handles btnJobDetatils.Click
+        If DGVJobOffers.SelectedRows.Count > 0 Then
+            Dim jobId As Integer = CInt(DGVJobOffers.SelectedRows(0).Cells("JobPlacementID").Value)
+            Dim detailsForm As New jobdetails(jobId)
+            detailsForm.ShowDialog()
+        Else
+            MessageBox.Show("Please select a job to view details.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+
+    Private Sub btnViewApplicants_Click(sender As Object, e As EventArgs) Handles btnViewApplicants.Click
+        If DGVJobOffers.SelectedRows.Count > 0 Then
+            Dim jobId As Integer = CInt(DGVJobOffers.SelectedRows(0).Cells("JobPlacementID").Value)
+            Dim applicantsForm As New agcApplications(jobId) 'Use overloaded constructor
+            applicantsForm.Show()
+        Else
+            MessageBox.Show("Please select a job to view applicants.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+
 End Class

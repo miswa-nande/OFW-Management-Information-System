@@ -151,9 +151,11 @@ Public Class agcEmployers
     End Sub
 
     Private Sub btnApplications_Click(sender As Object, e As EventArgs) Handles btnApplications.Click
-        agcApplications.Show()
+        Dim appForm As New agcApplications() ' Uses default optional parameter
+        appForm.Show()
         Me.Hide()
     End Sub
+
 
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
         agcDeploymentTracking.Show()
