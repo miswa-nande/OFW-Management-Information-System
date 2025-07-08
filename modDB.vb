@@ -26,25 +26,40 @@ Module modDB
     Public Sub UpdateConnectionString()
         Try
             Dim configPath As String = Path.Combine(Application.StartupPath, "config", "sql_config.txt")
-            Dim lines() As String = File.ReadAllLines(configPath)
 
-            Dim db_server As String = ""
-            Dim db_uid As String = ""
-            Dim db_pwd As String = ""
-            Dim db_name As String = ""
+            If Not File.Exists(configPath) Then
+                Throw New Exception("SQL config file not found at: " & configPath)
+            End If
+
+            Dim lines() As String = File.ReadAllLines(configPath)
+            Dim configDict As New Dictionary(Of String, String)(StringComparer.OrdinalIgnoreCase)
 
             For Each line As String In lines
-                If line.StartsWith("Localhost=") Then db_server = line.Substring("Localhost=".Length).Trim()
-                If line.StartsWith("Root=") Then db_uid = line.Substring("Root=".Length).Trim()
-                If line.StartsWith("Password=") Then db_pwd = line.Substring("Password=".Length).Trim()
-                If line.StartsWith("DB_Name=") Then db_name = line.Substring("DB_Name=".Length).Trim()
+                If line.Contains("=") Then
+                    Dim parts() As String = line.Split(New String() {"="}, 2, StringSplitOptions.None)
+                    Dim key As String = parts(0).Trim()
+                    Dim value As String = parts(1).Trim()
+                    configDict(key) = value
+                End If
             Next
 
-            strConnection = $"server={db_server};uid={db_uid};password={db_pwd};database={db_name};allowuservariables=True;"
+            ' Validate required keys
+            Dim requiredKeys() As String = {"Localhost", "Root", "Password", "DB_Name"}
+            For Each key As String In requiredKeys
+                If Not configDict.ContainsKey(key) OrElse String.IsNullOrWhiteSpace(configDict(key)) Then
+                    Throw New Exception($"Missing or empty config key: {key}")
+                End If
+            Next
+
+            ' Build the connection string
+            strConnection = $"server={configDict("Localhost")};uid={configDict("Root")};password={configDict("Password")};database={configDict("DB_Name")};allowuservariables=True;"
+
         Catch ex As Exception
-            MsgBox("Error reading config: " & ex.Message, MsgBoxStyle.Critical)
+            MsgBox("Error reading or parsing SQL config file:" & vbCrLf & ex.Message, MsgBoxStyle.Critical)
+            Application.Exit()
         End Try
     End Sub
+
 
 
     Public CurrentLoggedUser As LoggedUser = Nothing

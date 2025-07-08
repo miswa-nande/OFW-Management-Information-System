@@ -63,18 +63,27 @@ Public Class loginPage
 
         If Not File.Exists(configPath) Then
             Dim defaultConfig As String() = {
-                "Localhost=localhost",
-                "Root=root",
-                "Password=",
-                "DB_Name=ofw_mis"
-            }
+            "Localhost=127.0.0.1    ",
+            "Root=root",
+            "Password=",
+            "DB_Name=ofw_mis"
+        }
             File.WriteAllLines(configPath, defaultConfig)
             MsgBox("SQL configuration file created with default values." & vbCrLf &
-                   "Please edit the file before restarting." & vbCrLf & configPath,
-                   MsgBoxStyle.Information)
+               "Please edit the file before restarting." & vbCrLf & configPath,
+               MsgBoxStyle.Information)
             Application.Exit()
+        Else
+            ' Validate values are not empty
+            Dim configLines = File.ReadAllLines(configPath)
+            If configLines.Length < 4 OrElse configLines.Any(Function(l) l.Trim() = "" OrElse Not l.Contains("=")) Then
+                MsgBox("SQL config file is incomplete or invalid. Please fix it at:" & vbCrLf & configPath,
+                   MsgBoxStyle.Critical)
+                Application.Exit()
+            End If
         End If
     End Sub
+
 
     Private Sub TestDatabaseConnection()
         Using testConn As New MySqlConnection(strConnection)
