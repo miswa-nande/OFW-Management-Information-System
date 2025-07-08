@@ -40,7 +40,6 @@ Partial Class jobplacement
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -69,7 +68,6 @@ Partial Class jobplacement
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txtbxEmployerIdNum = New System.Windows.Forms.TextBox()
         Me.btnDelete = New System.Windows.Forms.PictureBox()
-        Me.btnGenerate = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,7 +79,6 @@ Partial Class jobplacement
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -304,22 +301,11 @@ Partial Class jobplacement
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(1705, 878)
+        Me.Label15.Location = New System.Drawing.Point(1659, 878)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(64, 21)
         Me.Label15.TabIndex = 112
         Me.Label15.Text = "DELETE"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(1594, 878)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(94, 21)
-        Me.Label14.TabIndex = 111
-        Me.Label14.Text = "GENERATE"
         '
         'btnClear
         '
@@ -585,7 +571,7 @@ Partial Class jobplacement
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(1660, 234)
+        Me.Label19.Location = New System.Drawing.Point(1614, 234)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(169, 21)
         Me.Label19.TabIndex = 123
@@ -603,22 +589,12 @@ Partial Class jobplacement
         'btnDelete
         '
         Me.btnDelete.Image = Global.OFW_Management_Information_System.My.Resources.Resources.delete_ic
-        Me.btnDelete.Location = New System.Drawing.Point(1704, 814)
+        Me.btnDelete.Location = New System.Drawing.Point(1658, 814)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(61, 61)
         Me.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnDelete.TabIndex = 108
         Me.btnDelete.TabStop = False
-        '
-        'btnGenerate
-        '
-        Me.btnGenerate.Image = Global.OFW_Management_Information_System.My.Resources.Resources.report_ic
-        Me.btnGenerate.Location = New System.Drawing.Point(1610, 814)
-        Me.btnGenerate.Name = "btnGenerate"
-        Me.btnGenerate.Size = New System.Drawing.Size(61, 61)
-        Me.btnGenerate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btnGenerate.TabIndex = 107
-        Me.btnGenerate.TabStop = False
         '
         'PictureBox5
         '
@@ -649,9 +625,7 @@ Partial Class jobplacement
         Me.Controls.Add(Me.txtbxSalaryRange)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.btnClear)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
@@ -687,7 +661,6 @@ Partial Class jobplacement
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -712,9 +685,7 @@ Partial Class jobplacement
     Friend WithEvents btnDashboard As Button
     Friend WithEvents logo As PictureBox
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label14 As Label
     Friend WithEvents btnDelete As PictureBox
-    Friend WithEvents btnGenerate As PictureBox
     Friend WithEvents btnClear As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label

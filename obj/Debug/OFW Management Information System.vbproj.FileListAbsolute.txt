@@ -648,9 +648,6 @@ D:\ofw_mis\obj\Debug\OFW Mana.2B6B6796.Up2Date
 D:\ofw_mis\obj\Debug\OFW Management Information System.exe
 D:\ofw_mis\obj\Debug\OFW Management Information System.xml
 D:\ofw_mis\obj\Debug\OFW Management Information System.pdb
-D:\ofw_mis\bin\Debug\x86\SqlServerSpatial160.dll
-D:\ofw_mis\bin\Debug\x64\SqlServerSpatial160.dll
-D:\ofw_mis\obj\Debug\OFW_Management_Information_System.OFWReportView.resources
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.AdminConfiguration.resources
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcApplications.resources
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcDashboard.resources
@@ -667,3 +664,4 @@ C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_Syste
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.UserRegistration.resources
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.agcDeploymentTracking.resources
 C:\Users\ASUS\Desktop\Desktop\ofw_mis\obj\Debug\OFW_Management_Information_System.agcDeploymentTracking.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agcDeploymentTracking.resources

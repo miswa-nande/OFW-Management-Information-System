@@ -23,11 +23,9 @@ Partial Class agcDeploymentTracking
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.btnDelete = New System.Windows.Forms.PictureBox()
-        Me.btnGenerate = New System.Windows.Forms.PictureBox()
         Me.btnEdit = New System.Windows.Forms.PictureBox()
         Me.btnAdd = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -90,7 +88,6 @@ Partial Class agcDeploymentTracking
         Me.Label22 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnAdd, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -114,29 +111,18 @@ Partial Class agcDeploymentTracking
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(1817, 944)
+        Me.Label15.Location = New System.Drawing.Point(1789, 944)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(64, 21)
         Me.Label15.TabIndex = 418
         Me.Label15.Text = "DELETE"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(1706, 944)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(94, 21)
-        Me.Label14.TabIndex = 417
-        Me.Label14.Text = "GENERATE"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(1635, 944)
+        Me.Label13.Location = New System.Drawing.Point(1696, 944)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(44, 21)
         Me.Label13.TabIndex = 416
@@ -147,7 +133,7 @@ Partial Class agcDeploymentTracking
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(1539, 944)
+        Me.Label12.Location = New System.Drawing.Point(1591, 944)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(47, 21)
         Me.Label12.TabIndex = 415
@@ -156,28 +142,18 @@ Partial Class agcDeploymentTracking
         'btnDelete
         '
         Me.btnDelete.Image = Global.OFW_Management_Information_System.My.Resources.Resources.delete_ic
-        Me.btnDelete.Location = New System.Drawing.Point(1816, 889)
+        Me.btnDelete.Location = New System.Drawing.Point(1788, 889)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(61, 61)
         Me.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.btnDelete.TabIndex = 414
         Me.btnDelete.TabStop = False
         '
-        'btnGenerate
-        '
-        Me.btnGenerate.Image = Global.OFW_Management_Information_System.My.Resources.Resources.report_ic
-        Me.btnGenerate.Location = New System.Drawing.Point(1722, 889)
-        Me.btnGenerate.Name = "btnGenerate"
-        Me.btnGenerate.Size = New System.Drawing.Size(61, 61)
-        Me.btnGenerate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.btnGenerate.TabIndex = 413
-        Me.btnGenerate.TabStop = False
-        '
         'btnEdit
         '
         Me.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEdit.Image = Global.OFW_Management_Information_System.My.Resources.Resources.edit_ic
-        Me.btnEdit.Location = New System.Drawing.Point(1628, 889)
+        Me.btnEdit.Location = New System.Drawing.Point(1689, 889)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(61, 61)
         Me.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -188,7 +164,7 @@ Partial Class agcDeploymentTracking
         '
         Me.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnAdd.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addDep_ic
-        Me.btnAdd.Location = New System.Drawing.Point(1534, 889)
+        Me.btnAdd.Location = New System.Drawing.Point(1586, 889)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(61, 61)
         Me.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -875,7 +851,6 @@ Partial Class agcDeploymentTracking
         Me.Controls.Add(Me.txtbxApplicationID)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Panel1)
@@ -890,7 +865,6 @@ Partial Class agcDeploymentTracking
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.ClearBTN)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Name = "agcDeploymentTracking"
@@ -898,7 +872,6 @@ Partial Class agcDeploymentTracking
         Me.Text = "agcDeploymentTracking"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.btnDelete, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnGenerate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnAdd, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -925,11 +898,9 @@ Partial Class agcDeploymentTracking
     End Sub
 
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label14 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents btnDelete As PictureBox
-    Friend WithEvents btnGenerate As PictureBox
     Friend WithEvents btnEdit As PictureBox
     Friend WithEvents btnAdd As PictureBox
     Friend WithEvents Panel1 As Panel
