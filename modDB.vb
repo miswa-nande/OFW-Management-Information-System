@@ -34,18 +34,18 @@ Module modDB
             Dim db_name As String = ""
 
             For Each line As String In lines
-                If line.StartsWith("Localhost:") Then db_server = line.Substring("Localhost:".Length).Trim()
-                If line.StartsWith("Root:") Then db_uid = line.Substring("Root:".Length).Trim()
-                If line.StartsWith("Password:") Then db_pwd = line.Substring("Password:".Length).Trim()
-                If line.StartsWith("DB_Name:") Then db_name = line.Substring("DB_Name:".Length).Trim()
+                If line.StartsWith("Localhost=") Then db_server = line.Substring("Localhost=".Length).Trim()
+                If line.StartsWith("Root=") Then db_uid = line.Substring("Root=".Length).Trim()
+                If line.StartsWith("Password=") Then db_pwd = line.Substring("Password=".Length).Trim()
+                If line.StartsWith("DB_Name=") Then db_name = line.Substring("DB_Name=".Length).Trim()
             Next
 
-            strConnection = $"server={db_server};uid={db_uid};password={db_pwd};database={db_name};allowuservariables='True';"
-
+            strConnection = $"server={db_server};uid={db_uid};password={db_pwd};database={db_name};allowuservariables=True;"
         Catch ex As Exception
             MsgBox("Error reading config: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
+
 
     Public CurrentLoggedUser As LoggedUser = Nothing
     Public Sub openConn(ByVal db_name As String)
