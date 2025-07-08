@@ -221,6 +221,12 @@
     <Compile Include="ApplicationDetails.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ApplicationLetter.Designer.vb">
+      <DependentUpon>ApplicationLetter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationLetter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="empAgencies.Designer.vb">
       <DependentUpon>empAgencies.vb</DependentUpon>
     </Compile>
@@ -429,6 +435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationDetails.resx">
       <DependentUpon>ApplicationDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationLetter.resx">
+      <DependentUpon>ApplicationLetter.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="empAgencies.resx">
       <DependentUpon>empAgencies.vb</DependentUpon>

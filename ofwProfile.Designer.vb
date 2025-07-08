@@ -59,6 +59,7 @@ Partial Class ofwProfile
         Me.EditProfile = New System.Windows.Forms.Button()
         Me.LogOut = New System.Windows.Forms.Button()
         Me.picProfile = New System.Windows.Forms.PictureBox()
+        Me.ApplicationLetter = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +72,7 @@ Partial Class ofwProfile
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.LogOut)
         Me.Panel1.Controls.Add(Me.PictureBox6)
         Me.Panel1.Controls.Add(Me.btnDeployment)
         Me.Panel1.Controls.Add(Me.PictureBox4)
@@ -274,7 +276,7 @@ Partial Class ofwProfile
         '
         Me.lblFullAddress.AutoSize = True
         Me.lblFullAddress.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFullAddress.Location = New System.Drawing.Point(776, 335)
+        Me.lblFullAddress.Location = New System.Drawing.Point(776, 309)
         Me.lblFullAddress.Name = "lblFullAddress"
         Me.lblFullAddress.Size = New System.Drawing.Size(200, 22)
         Me.lblFullAddress.TabIndex = 123
@@ -286,7 +288,7 @@ Partial Class ofwProfile
         Me.Label9.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label9.Location = New System.Drawing.Point(776, 306)
+        Me.Label9.Location = New System.Drawing.Point(776, 280)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(98, 22)
         Me.Label9.TabIndex = 122
@@ -330,7 +332,7 @@ Partial Class ofwProfile
         '
         Me.lblEmploymentStat.AutoSize = True
         Me.lblEmploymentStat.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmploymentStat.Location = New System.Drawing.Point(776, 721)
+        Me.lblEmploymentStat.Location = New System.Drawing.Point(776, 632)
         Me.lblEmploymentStat.Name = "lblEmploymentStat"
         Me.lblEmploymentStat.Size = New System.Drawing.Size(174, 22)
         Me.lblEmploymentStat.TabIndex = 128
@@ -342,7 +344,7 @@ Partial Class ofwProfile
         Me.Label14.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label14.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label14.Location = New System.Drawing.Point(776, 692)
+        Me.Label14.Location = New System.Drawing.Point(776, 603)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(199, 22)
         Me.Label14.TabIndex = 127
@@ -352,7 +354,7 @@ Partial Class ofwProfile
         '
         Me.lblEducLvl.AutoSize = True
         Me.lblEducLvl.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEducLvl.Location = New System.Drawing.Point(776, 469)
+        Me.lblEducLvl.Location = New System.Drawing.Point(776, 403)
         Me.lblEducLvl.Name = "lblEducLvl"
         Me.lblEducLvl.Size = New System.Drawing.Size(191, 22)
         Me.lblEducLvl.TabIndex = 130
@@ -364,7 +366,7 @@ Partial Class ofwProfile
         Me.Label16.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label16.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label16.Location = New System.Drawing.Point(776, 440)
+        Me.Label16.Location = New System.Drawing.Point(776, 374)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(189, 22)
         Me.Label16.TabIndex = 129
@@ -374,7 +376,7 @@ Partial Class ofwProfile
         '
         Me.lblSkills.AutoSize = True
         Me.lblSkills.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSkills.Location = New System.Drawing.Point(776, 601)
+        Me.lblSkills.Location = New System.Drawing.Point(776, 512)
         Me.lblSkills.Name = "lblSkills"
         Me.lblSkills.Size = New System.Drawing.Size(154, 22)
         Me.lblSkills.TabIndex = 132
@@ -386,7 +388,7 @@ Partial Class ofwProfile
         Me.Label18.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label18.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label18.Location = New System.Drawing.Point(776, 572)
+        Me.Label18.Location = New System.Drawing.Point(776, 483)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(60, 22)
         Me.Label18.TabIndex = 131
@@ -396,7 +398,7 @@ Partial Class ofwProfile
         '
         Me.lblOemNum.AutoSize = True
         Me.lblOemNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOemNum.Location = New System.Drawing.Point(1242, 721)
+        Me.lblOemNum.Location = New System.Drawing.Point(1242, 632)
         Me.lblOemNum.Name = "lblOemNum"
         Me.lblOemNum.Size = New System.Drawing.Size(203, 22)
         Me.lblOemNum.TabIndex = 134
@@ -408,7 +410,7 @@ Partial Class ofwProfile
         Me.Label20.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label20.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label20.Location = New System.Drawing.Point(1242, 692)
+        Me.Label20.Location = New System.Drawing.Point(1242, 603)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(146, 22)
         Me.Label20.TabIndex = 133
@@ -418,7 +420,7 @@ Partial Class ofwProfile
         '
         Me.lblVisaNum.AutoSize = True
         Me.lblVisaNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVisaNum.Location = New System.Drawing.Point(1242, 601)
+        Me.lblVisaNum.Location = New System.Drawing.Point(1242, 512)
         Me.lblVisaNum.Name = "lblVisaNum"
         Me.lblVisaNum.Size = New System.Drawing.Size(200, 22)
         Me.lblVisaNum.TabIndex = 136
@@ -430,7 +432,7 @@ Partial Class ofwProfile
         Me.Label22.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label22.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label22.Location = New System.Drawing.Point(1242, 572)
+        Me.Label22.Location = New System.Drawing.Point(1242, 483)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(148, 22)
         Me.Label22.TabIndex = 135
@@ -440,7 +442,7 @@ Partial Class ofwProfile
         '
         Me.lblPassportNum.AutoSize = True
         Me.lblPassportNum.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPassportNum.Location = New System.Drawing.Point(1242, 469)
+        Me.lblPassportNum.Location = New System.Drawing.Point(1242, 403)
         Me.lblPassportNum.Name = "lblPassportNum"
         Me.lblPassportNum.Size = New System.Drawing.Size(168, 22)
         Me.lblPassportNum.TabIndex = 138
@@ -452,7 +454,7 @@ Partial Class ofwProfile
         Me.Label24.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label24.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label24.Location = New System.Drawing.Point(1242, 440)
+        Me.Label24.Location = New System.Drawing.Point(1242, 374)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(180, 22)
         Me.Label24.TabIndex = 137
@@ -466,9 +468,9 @@ Partial Class ofwProfile
         Me.EditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.EditProfile.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EditProfile.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.EditProfile.Location = New System.Drawing.Point(495, 407)
+        Me.EditProfile.Location = New System.Drawing.Point(478, 407)
         Me.EditProfile.Name = "EditProfile"
-        Me.EditProfile.Size = New System.Drawing.Size(174, 35)
+        Me.EditProfile.Size = New System.Drawing.Size(208, 35)
         Me.EditProfile.TabIndex = 139
         Me.EditProfile.Text = "Edit Profile"
         Me.EditProfile.UseVisualStyleBackColor = False
@@ -478,11 +480,11 @@ Partial Class ofwProfile
         Me.LogOut.BackColor = System.Drawing.SystemColors.Highlight
         Me.LogOut.FlatAppearance.BorderSize = 0
         Me.LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.LogOut.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOut.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LogOut.Location = New System.Drawing.Point(495, 457)
+        Me.LogOut.Location = New System.Drawing.Point(48, 768)
         Me.LogOut.Name = "LogOut"
-        Me.LogOut.Size = New System.Drawing.Size(174, 35)
+        Me.LogOut.Size = New System.Drawing.Size(281, 43)
         Me.LogOut.TabIndex = 140
         Me.LogOut.Text = "Log Out"
         Me.LogOut.UseVisualStyleBackColor = False
@@ -498,13 +500,28 @@ Partial Class ofwProfile
         Me.picProfile.TabIndex = 114
         Me.picProfile.TabStop = False
         '
+        'ApplicationLetter
+        '
+        Me.ApplicationLetter.BackColor = System.Drawing.SystemColors.Highlight
+        Me.ApplicationLetter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ApplicationLetter.FlatAppearance.BorderSize = 3
+        Me.ApplicationLetter.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ApplicationLetter.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApplicationLetter.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ApplicationLetter.Location = New System.Drawing.Point(478, 470)
+        Me.ApplicationLetter.Name = "ApplicationLetter"
+        Me.ApplicationLetter.Size = New System.Drawing.Size(208, 35)
+        Me.ApplicationLetter.TabIndex = 140
+        Me.ApplicationLetter.Text = "Application Letter"
+        Me.ApplicationLetter.UseVisualStyleBackColor = False
+        '
         'ofwProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1443, 862)
-        Me.Controls.Add(Me.LogOut)
+        Me.Controls.Add(Me.ApplicationLetter)
         Me.Controls.Add(Me.EditProfile)
         Me.Controls.Add(Me.lblPassportNum)
         Me.Controls.Add(Me.Label24)
@@ -583,4 +600,5 @@ Partial Class ofwProfile
     Friend WithEvents Label24 As Label
     Friend WithEvents EditProfile As Button
     Friend WithEvents LogOut As Button
+    Friend WithEvents ApplicationLetter As Button
 End Class

@@ -72,12 +72,12 @@ Public Class ofwProfile
     End Sub
 
     Private Sub LogOut_Click(sender As Object, e As EventArgs) Handles LogOut.Click
-        ' Optional: clear session if needed
-        Session.CurrentLoggedUser = Nothing
-        Session.CurrentReferenceID = -1
-
         Dim loginForm As New loginPage()
         loginForm.Show()
         Me.Close()
+    End Sub
+
+    Private Sub ApplicationLetter_Click(sender As Object, e As EventArgs) Handles ApplicationLetter.Click
+
     End Sub
 End Class
