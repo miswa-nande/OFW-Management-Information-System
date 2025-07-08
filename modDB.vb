@@ -43,13 +43,18 @@ Module modDB
                 End If
             Next
 
-            ' Validate required keys
+            ' Validate required keys (Password can be empty but must exist)
             Dim requiredKeys() As String = {"Localhost", "Root", "Password", "DB_Name"}
             For Each key As String In requiredKeys
-                If Not configDict.ContainsKey(key) OrElse String.IsNullOrWhiteSpace(configDict(key)) Then
-                    Throw New Exception($"Missing or empty config key: {key}")
+                If Not configDict.ContainsKey(key) Then
+                    Throw New Exception($"Missing config key: {key}")
+                End If
+
+                If key <> "Password" AndAlso String.IsNullOrWhiteSpace(configDict(key)) Then
+                    Throw New Exception($"Config key '{key}' cannot be empty.")
                 End If
             Next
+
 
             ' Build the connection string
             strConnection = $"server={configDict("Localhost")};uid={configDict("Root")};password={configDict("Password")};database={configDict("DB_Name")};allowuservariables=True;"
