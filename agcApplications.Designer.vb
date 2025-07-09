@@ -377,7 +377,7 @@ Partial Class agcApplications
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(1048, 831)
+        Me.DataGridView1.Size = New System.Drawing.Size(1048, 805)
         Me.DataGridView1.TabIndex = 185
         '
         'Label1
@@ -409,7 +409,7 @@ Partial Class agcApplications
         Me.ViewApplication.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ViewApplication.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.ViewApplication.ImageAlign = System.Drawing.ContentAlignment.BottomRight
-        Me.ViewApplication.Location = New System.Drawing.Point(1495, 966)
+        Me.ViewApplication.Location = New System.Drawing.Point(1495, 940)
         Me.ViewApplication.Name = "ViewApplication"
         Me.ViewApplication.Size = New System.Drawing.Size(343, 41)
         Me.ViewApplication.TabIndex = 360
@@ -441,6 +441,7 @@ Partial Class agcApplications
         Me.Controls.Add(Me.Label7)
         Me.Name = "agcApplications"
         Me.Text = "AGENCY | Applications"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()

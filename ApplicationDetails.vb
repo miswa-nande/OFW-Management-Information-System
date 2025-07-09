@@ -116,4 +116,10 @@ Public Class ApplicationDetails
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
+
+    Private Sub ApplicationLetterViewBTN_Click(sender As Object, e As EventArgs) Handles ApplicationLetterViewBTN.Click
+        Dim viewForm As New ApplicationLetterView(applicationId)
+        viewForm.ShowDialog()
+    End Sub
+
 End Class

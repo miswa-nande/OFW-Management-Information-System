@@ -26,7 +26,6 @@ Public Class AdminConfiguration
         End Try
     End Sub
 
-    ' Load Admin Users
     Private Sub LoadUsersToDGV()
         Try
             UpdateConnectionString()
@@ -50,7 +49,6 @@ Public Class AdminConfiguration
         End Try
     End Sub
 
-    ' Clear Text Fields
     Private Sub clearFields()
         txtUsername.Clear()
         txtEmail.Clear()
@@ -61,7 +59,6 @@ Public Class AdminConfiguration
         selectedUserId = -1
     End Sub
 
-    ' Add or Update Admin
     Private Sub btnAdduser_Click(sender As Object, e As EventArgs) Handles btnAdduser.Click
         Try
             UpdateConnectionString()
@@ -98,7 +95,6 @@ Public Class AdminConfiguration
         End Try
     End Sub
 
-    ' Edit Admin
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Try
             UpdateConnectionString()
@@ -133,7 +129,6 @@ Public Class AdminConfiguration
         End Try
     End Sub
 
-    ' Delete Admin
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Try
             UpdateConnectionString()
@@ -158,17 +153,16 @@ Public Class AdminConfiguration
         End Try
     End Sub
 
-    ' Save SQL Config to Text File and check DB
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             Dim folder As String = Path.GetDirectoryName(configFilePath)
             If Not Directory.Exists(folder) Then Directory.CreateDirectory(folder)
 
             Using writer As New StreamWriter(configFilePath, False)
-                writer.WriteLine("Localhost:" & txtLocalhost.Text.Trim())
-                writer.WriteLine("Root:" & txtRoot.Text.Trim())
-                writer.WriteLine("Password:" & txtPassword.Text.Trim())
-                writer.WriteLine("DB_Name:" & txtDBname.Text.Trim())
+                writer.WriteLine("Localhost=" & txtLocalhost.Text.Trim())
+                writer.WriteLine("Root=" & txtRoot.Text.Trim())
+                writer.WriteLine("Password=" & txtPassword.Text.Trim())
+                writer.WriteLine("DB_Name=" & txtDBname.Text.Trim())
             End Using
 
             MsgBox("SQL configuration saved to file successfully!", MsgBoxStyle.Information)
@@ -181,24 +175,35 @@ Public Class AdminConfiguration
         End Try
     End Sub
 
-    ' Load SQL Config into Fields
     Private Sub LoadSQLFieldsToForm()
         Try
             If Not File.Exists(configFilePath) Then Exit Sub
             Dim lines = File.ReadAllLines(configFilePath)
 
             For Each line As String In lines
-                If line.StartsWith("Localhost:") Then txtLocalhost.Text = line.Substring("Localhost:".Length)
-                If line.StartsWith("Root:") Then txtRoot.Text = line.Substring("Root:".Length)
-                If line.StartsWith("Password:") Then txtPassword.Text = line.Substring("Password:".Length)
-                If line.StartsWith("DB_Name:") Then txtDBname.Text = line.Substring("DB_Name:".Length)
+                If line.Contains("=") Then
+                    Dim parts() As String = line.Split("="c)
+                    If parts.Length = 2 Then
+                        Dim key = parts(0).Trim()
+                        Dim value = parts(1).Trim()
+                        Select Case key
+                            Case "Localhost"
+                                txtLocalhost.Text = value
+                            Case "Root"
+                                txtRoot.Text = value
+                            Case "Password"
+                                txtPassword.Text = value
+                            Case "DB_Name"
+                                txtDBname.Text = value
+                        End Select
+                    End If
+                End If
             Next
         Catch ex As Exception
             MsgBox("Error loading SQL config from file: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
-    ' Save to DB only if config changed
     Private Sub SaveSQLConnectionIfChanged()
         Try
             UpdateConnectionString()
@@ -232,7 +237,6 @@ Public Class AdminConfiguration
         End Try
     End Sub
 
-    ' Load SQL Configs from DB
     Private Sub LoadConnectionConfigs()
         Try
             UpdateConnectionString()
@@ -258,7 +262,7 @@ Public Class AdminConfiguration
         End Try
     End Sub
 
-    ' Navigation
+    ' === Navigation ===
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         Dim newForm As New dashboard()
         newForm.Show()
@@ -281,7 +285,6 @@ Public Class AdminConfiguration
         Me.Hide()
         Dim newForm As New agencies()
         newForm.Show()
-        Me.Hide()
     End Sub
 
     Private Sub btnEmployers_Click(sender As Object, e As EventArgs) Handles btnEmployers.Click

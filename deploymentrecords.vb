@@ -3,25 +3,23 @@
 Public Class deploymentrecords
     Private selectedOfwId As Integer
 
-    ' Constructor for OFW (no argument)
+    ' Constructor for OFW
     Public Sub New()
         InitializeComponent()
         selectedOfwId = Session.CurrentReferenceID
     End Sub
 
-    ' Constructor for Employer/Agency viewing a specific OFW
+    ' Constructor for Employer/Agency
     Public Sub New(ofwId As Integer)
         InitializeComponent()
         selectedOfwId = ofwId
     End Sub
 
     Private Sub deploymentrecords_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Session.CurrentLoggedUser.userType = "OFW" Then
-            If selectedOfwId <> Session.CurrentReferenceID Then
-                MsgBox("Access denied. You can only view your own records.", MsgBoxStyle.Critical)
-                Me.Close()
-                Exit Sub
-            End If
+        If Session.CurrentLoggedUser.userType = "OFW" AndAlso selectedOfwId <> Session.CurrentReferenceID Then
+            MsgBox("Access denied. You can only view your own records.", MsgBoxStyle.Critical)
+            Me.Close()
+            Exit Sub
         End If
 
         If Session.CurrentLoggedUser.userType = "Employer" Then
@@ -29,6 +27,10 @@ Public Class deploymentrecords
             btnApplications.Enabled = False
             btnJobOffers.Enabled = False
         End If
+
+        ' Uncheck date filters on load
+        dateContractStart.Checked = False
+        dateContractEnd.Checked = False
 
         PopulateFilters()
         LoadDeploymentRecords()
@@ -40,11 +42,7 @@ Public Class deploymentrecords
         cbxRepatriationStat.Items.Clear()
         cbxReasonforReturn.Items.Clear()
 
-        Dim fields As String() = {
-            "DeploymentStatus",
-            "RepatriationStatus",
-            "ReasonForReturn"
-        }
+        Dim fields As String() = {"DeploymentStatus", "RepatriationStatus", "ReasonForReturn"}
 
         For Each field In fields
             Dim query = $"SELECT DISTINCT {field} FROM deploymentrecord WHERE {field} IS NOT NULL AND {field} <> ''"
@@ -102,11 +100,11 @@ Public Class deploymentrecords
             End If
 
             If dateContractStart.Checked Then
-                query &= $" AND d.ContractStartDate >= '{dateContractStart.Value:yyyy-MM-dd}'"
+                query &= $" AND DATE(d.ContractStartDate) >= '{dateContractStart.Value:yyyy-MM-dd}'"
             End If
 
             If dateContractEnd.Checked Then
-                query &= $" AND d.ContractEndDate <= '{dateContractEnd.Value:yyyy-MM-dd}'"
+                query &= $" AND DATE(d.ContractEndDate) <= '{dateContractEnd.Value:yyyy-MM-dd}'"
             End If
 
             LoadToDGV(query, DataGridView1)
@@ -147,7 +145,7 @@ Public Class deploymentrecords
             If .Columns.Contains("DeploymentStatus") Then .Columns("DeploymentStatus").HeaderText = "Status"
             If .Columns.Contains("ContractStartDate") Then .Columns("ContractStartDate").HeaderText = "Start Date"
             If .Columns.Contains("ContractEndDate") Then .Columns("ContractEndDate").HeaderText = "End Date"
-            If .Columns.Contains("RepatriationStatus") Then .Columns("RepatriationStatus").HeaderText = "Repatriated?"
+            If .Columns.Contains("RepatriationStatus") Then .Columns("RepatriationStatus").HeaderText = "Repatriated"
             If .Columns.Contains("ReasonForReturn") Then .Columns("ReasonForReturn").HeaderText = "Reason for Return"
         End With
     End Sub
@@ -165,7 +163,7 @@ Public Class deploymentrecords
         LoadDeploymentRecords()
     End Sub
 
-    Private Sub txtbxSalary_TextChanged(sender As Object, e As EventArgs)
+    Private Sub txtbxSalary_TextChanged(sender As Object, e As EventArgs) Handles txtbxSalary.TextChanged
         LoadDeploymentRecords()
     End Sub
 
@@ -204,7 +202,7 @@ Public Class deploymentrecords
         LoadDeploymentRecords()
     End Sub
 
-    ' === Navigation ===
+    ' === Navigation Buttons ===
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
         Dim newForm As New ofwProfile()
         newForm.Show()

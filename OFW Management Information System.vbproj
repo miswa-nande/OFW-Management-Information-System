@@ -227,6 +227,12 @@
     <Compile Include="ApplicationLetter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ApplicationLetterView.Designer.vb">
+      <DependentUpon>ApplicationLetterView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationLetterView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="empAgencies.Designer.vb">
       <DependentUpon>empAgencies.vb</DependentUpon>
     </Compile>
@@ -273,6 +279,12 @@
       <DependentUpon>JobApplicants.vb</DependentUpon>
     </Compile>
     <Compile Include="JobApplicants.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registeredAgency.Designer.vb">
+      <DependentUpon>registeredAgency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="registeredAgency.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserRegistration.Designer.vb">
@@ -439,6 +451,9 @@
     <EmbeddedResource Include="ApplicationLetter.resx">
       <DependentUpon>ApplicationLetter.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApplicationLetterView.resx">
+      <DependentUpon>ApplicationLetterView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="empAgencies.resx">
       <DependentUpon>empAgencies.vb</DependentUpon>
     </EmbeddedResource>
@@ -517,6 +532,9 @@
     <EmbeddedResource Include="ofws.resx">
       <DependentUpon>ofws.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="registeredAgency.resx">
+      <DependentUpon>registeredAgency.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserRegistration.resx">
       <DependentUpon>UserRegistration.vb</DependentUpon>

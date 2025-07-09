@@ -25,7 +25,7 @@ Public Class ofwProfile
             lblPassportNum.Text = cmdRead("PassportNum").ToString()
             lblSkills.Text = cmdRead("Skills").ToString()
             lblVisaNum.Text = cmdRead("VISANum").ToString()
-            lblEmploymentStat.Text = cmdRead("EmploymentStatus").ToString()
+            lblRegisteredAgency.Text = cmdRead("EmploymentStatus").ToString()
             lblOemNum.Text = cmdRead("OECNum").ToString()
 
             ' Combine address fields
@@ -78,6 +78,12 @@ Public Class ofwProfile
     End Sub
 
     Private Sub ApplicationLetter_Click(sender As Object, e As EventArgs) Handles ApplicationLetter.Click
+        Dim newForm As New ApplicationLetter()
+        newForm.ShowDialog()
+    End Sub
 
+    Private Sub ChangeAgencyBTN_Click(sender As Object, e As EventArgs) Handles ChangeAgencyBTN.Click
+        Dim newForm As New registeredAgency()
+        newForm.ShowDialog()
     End Sub
 End Class

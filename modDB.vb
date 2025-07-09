@@ -8,10 +8,10 @@ Module modDB
     Public myadocon, conn As New MySqlConnection
     Public cmd As New MySqlCommand
     Public cmdRead As MySqlDataReader
-    Public db_server As String = "localhost"
-    Public db_uid As String = "root"
+    Public db_server As String = ""
+    Public db_uid As String = ""
     Public db_pwd As String = ""
-    Public db_name As String = "ofw_mis"
+    Public db_name As String = ""
     Public strConnection As String = "server=" & db_server & ";uid=" & db_uid & ";password=" & db_pwd & ";database=" & db_name & ";" & "allowuservariables='True';"
 
     Public Structure LoggedUser
@@ -55,17 +55,20 @@ Module modDB
                 End If
             Next
 
+            ' Update global DB connection variables
+            db_server = configDict("Localhost")
+            db_uid = configDict("Root")
+            db_pwd = configDict("Password")
+            db_name = configDict("DB_Name")
 
-            ' Build the connection string
-            strConnection = $"server={configDict("Localhost")};uid={configDict("Root")};password={configDict("Password")};database={configDict("DB_Name")};allowuservariables=True;"
+            ' Build the connection string using the updated variables
+            strConnection = $"server={db_server};uid={db_uid};password={db_pwd};database={db_name};allowuservariables=True;"
 
         Catch ex As Exception
             MsgBox("Error reading or parsing SQL config file:" & vbCrLf & ex.Message, MsgBoxStyle.Critical)
             Application.Exit()
         End Try
     End Sub
-
-
 
     Public CurrentLoggedUser As LoggedUser = Nothing
     Public Sub openConn(ByVal db_name As String)

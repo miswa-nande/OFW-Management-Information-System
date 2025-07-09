@@ -73,6 +73,7 @@ Partial Class applicationForm
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.picProfile = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.ApplicationLetterViewBTN = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.picProfile, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -642,12 +643,25 @@ Partial Class applicationForm
         Me.Label3.TabIndex = 254
         Me.Label3.Text = "Application Form"
         '
+        'ApplicationLetterViewBTN
+        '
+        Me.ApplicationLetterViewBTN.BackColor = System.Drawing.Color.DarkGray
+        Me.ApplicationLetterViewBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ApplicationLetterViewBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApplicationLetterViewBTN.Location = New System.Drawing.Point(724, 757)
+        Me.ApplicationLetterViewBTN.Name = "ApplicationLetterViewBTN"
+        Me.ApplicationLetterViewBTN.Size = New System.Drawing.Size(168, 56)
+        Me.ApplicationLetterViewBTN.TabIndex = 279
+        Me.ApplicationLetterViewBTN.Text = "Application Letter"
+        Me.ApplicationLetterViewBTN.UseVisualStyleBackColor = False
+        '
         'applicationForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1468, 832)
+        Me.Controls.Add(Me.ApplicationLetterViewBTN)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.txtbxVisaType)
@@ -739,4 +753,5 @@ Partial Class applicationForm
     Friend WithEvents Label33 As Label
     Friend WithEvents lblEducLevel As Label
     Friend WithEvents Label35 As Label
+    Friend WithEvents ApplicationLetterViewBTN As Button
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ofwProfile
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,14 @@ Partial Class ofwProfile
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.LogOut = New System.Windows.Forms.Button()
         Me.btnDeployment = New System.Windows.Forms.Button()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnApplications = New System.Windows.Forms.Button()
         Me.btnJobOffers = New System.Windows.Forms.Button()
         Me.btnProfile = New System.Windows.Forms.Button()
-        Me.logo = New System.Windows.Forms.PictureBox()
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblDOB = New System.Windows.Forms.Label()
@@ -44,7 +40,7 @@ Partial Class ofwProfile
         Me.Label10 = New System.Windows.Forms.Label()
         Me.lblContactNum = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.lblEmploymentStat = New System.Windows.Forms.Label()
+        Me.lblRegisteredAgency = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblEducLvl = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -57,16 +53,21 @@ Partial Class ofwProfile
         Me.lblPassportNum = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.EditProfile = New System.Windows.Forms.Button()
-        Me.LogOut = New System.Windows.Forms.Button()
-        Me.picProfile = New System.Windows.Forms.PictureBox()
         Me.ApplicationLetter = New System.Windows.Forms.Button()
+        Me.ChangeAgencyBTN = New System.Windows.Forms.Button()
+        Me.picProfile = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.logo = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.picProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -87,16 +88,19 @@ Partial Class ofwProfile
         Me.Panel1.Size = New System.Drawing.Size(382, 1094)
         Me.Panel1.TabIndex = 113
         '
-        'PictureBox6
+        'LogOut
         '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
-        Me.PictureBox6.Location = New System.Drawing.Point(32, 440)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 11
-        Me.PictureBox6.TabStop = False
+        Me.LogOut.BackColor = System.Drawing.SystemColors.Highlight
+        Me.LogOut.FlatAppearance.BorderSize = 0
+        Me.LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.LogOut.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.LogOut.Location = New System.Drawing.Point(47, 932)
+        Me.LogOut.Name = "LogOut"
+        Me.LogOut.Size = New System.Drawing.Size(281, 43)
+        Me.LogOut.TabIndex = 140
+        Me.LogOut.Text = "Log Out"
+        Me.LogOut.UseVisualStyleBackColor = False
         '
         'btnDeployment
         '
@@ -112,38 +116,6 @@ Partial Class ofwProfile
         Me.btnDeployment.Text = "DEPLOYMENT"
         Me.btnDeployment.UseVisualStyleBackColor = False
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofwProfile_ic
-        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 9
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
-        Me.PictureBox2.Location = New System.Drawing.Point(32, 546)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addjob_ic
-        Me.PictureBox1.Location = New System.Drawing.Point(32, 334)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 6
-        Me.PictureBox1.TabStop = False
-        '
         'btnApplications
         '
         Me.btnApplications.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -151,7 +123,7 @@ Partial Class ofwProfile
         Me.btnApplications.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnApplications.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnApplications.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btnApplications.Location = New System.Drawing.Point(13, 518)
+        Me.btnApplications.Location = New System.Drawing.Point(13, 517)
         Me.btnApplications.Name = "btnApplications"
         Me.btnApplications.Size = New System.Drawing.Size(382, 100)
         Me.btnApplications.TabIndex = 4
@@ -186,15 +158,6 @@ Partial Class ofwProfile
         Me.btnProfile.TabIndex = 2
         Me.btnProfile.Text = "PROFILE"
         Me.btnProfile.UseVisualStyleBackColor = False
-        '
-        'logo
-        '
-        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
-        Me.logo.Location = New System.Drawing.Point(32, 28)
-        Me.logo.Name = "logo"
-        Me.logo.Size = New System.Drawing.Size(307, 123)
-        Me.logo.TabIndex = 1
-        Me.logo.TabStop = False
         '
         'lblFullName
         '
@@ -328,15 +291,15 @@ Partial Class ofwProfile
         Me.Label12.TabIndex = 125
         Me.Label12.Text = "Contact Number :"
         '
-        'lblEmploymentStat
+        'lblRegisteredAgency
         '
-        Me.lblEmploymentStat.AutoSize = True
-        Me.lblEmploymentStat.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmploymentStat.Location = New System.Drawing.Point(776, 632)
-        Me.lblEmploymentStat.Name = "lblEmploymentStat"
-        Me.lblEmploymentStat.Size = New System.Drawing.Size(174, 22)
-        Me.lblEmploymentStat.TabIndex = 128
-        Me.lblEmploymentStat.Text = "StatusPlaceholder"
+        Me.lblRegisteredAgency.AutoSize = True
+        Me.lblRegisteredAgency.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRegisteredAgency.Location = New System.Drawing.Point(778, 632)
+        Me.lblRegisteredAgency.Name = "lblRegisteredAgency"
+        Me.lblRegisteredAgency.Size = New System.Drawing.Size(187, 22)
+        Me.lblRegisteredAgency.TabIndex = 128
+        Me.lblRegisteredAgency.Text = "Registered Agency"
         '
         'Label14
         '
@@ -346,9 +309,9 @@ Partial Class ofwProfile
         Me.Label14.ForeColor = System.Drawing.SystemColors.Highlight
         Me.Label14.Location = New System.Drawing.Point(776, 603)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(199, 22)
+        Me.Label14.Size = New System.Drawing.Size(192, 22)
         Me.Label14.TabIndex = 127
-        Me.Label14.Text = "Employment Status : "
+        Me.Label14.Text = "Registered Agency:"
         '
         'lblEducLvl
         '
@@ -475,31 +438,6 @@ Partial Class ofwProfile
         Me.EditProfile.Text = "Edit Profile"
         Me.EditProfile.UseVisualStyleBackColor = False
         '
-        'LogOut
-        '
-        Me.LogOut.BackColor = System.Drawing.SystemColors.Highlight
-        Me.LogOut.FlatAppearance.BorderSize = 0
-        Me.LogOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.LogOut.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LogOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LogOut.Location = New System.Drawing.Point(48, 768)
-        Me.LogOut.Name = "LogOut"
-        Me.LogOut.Size = New System.Drawing.Size(281, 43)
-        Me.LogOut.TabIndex = 140
-        Me.LogOut.Text = "Log Out"
-        Me.LogOut.UseVisualStyleBackColor = False
-        '
-        'picProfile
-        '
-        Me.picProfile.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.picProfile.Image = Global.OFW_Management_Information_System.My.Resources.Resources.profile_ic
-        Me.picProfile.Location = New System.Drawing.Point(425, 61)
-        Me.picProfile.Name = "picProfile"
-        Me.picProfile.Size = New System.Drawing.Size(314, 314)
-        Me.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picProfile.TabIndex = 114
-        Me.picProfile.TabStop = False
-        '
         'ApplicationLetter
         '
         Me.ApplicationLetter.BackColor = System.Drawing.SystemColors.Highlight
@@ -515,12 +453,91 @@ Partial Class ofwProfile
         Me.ApplicationLetter.Text = "Application Letter"
         Me.ApplicationLetter.UseVisualStyleBackColor = False
         '
+        'ChangeAgencyBTN
+        '
+        Me.ChangeAgencyBTN.BackColor = System.Drawing.Color.Red
+        Me.ChangeAgencyBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.ChangeAgencyBTN.FlatAppearance.BorderSize = 3
+        Me.ChangeAgencyBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChangeAgencyBTN.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChangeAgencyBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.ChangeAgencyBTN.Location = New System.Drawing.Point(780, 665)
+        Me.ChangeAgencyBTN.Name = "ChangeAgencyBTN"
+        Me.ChangeAgencyBTN.Size = New System.Drawing.Size(115, 38)
+        Me.ChangeAgencyBTN.TabIndex = 141
+        Me.ChangeAgencyBTN.Text = "Change Agency"
+        Me.ChangeAgencyBTN.UseVisualStyleBackColor = False
+        '
+        'picProfile
+        '
+        Me.picProfile.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.picProfile.Image = Global.OFW_Management_Information_System.My.Resources.Resources.profile_ic
+        Me.picProfile.Location = New System.Drawing.Point(425, 61)
+        Me.picProfile.Name = "picProfile"
+        Me.picProfile.Size = New System.Drawing.Size(314, 314)
+        Me.picProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picProfile.TabIndex = 114
+        Me.picProfile.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.Image = Global.OFW_Management_Information_System.My.Resources.Resources.deplo_ic
+        Me.PictureBox6.Location = New System.Drawing.Point(32, 440)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 11
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.OFW_Management_Information_System.My.Resources.Resources.ofwProfile_ic
+        Me.PictureBox4.Location = New System.Drawing.Point(32, 227)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 9
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.OFW_Management_Information_System.My.Resources.Resources.job_ic
+        Me.PictureBox2.Location = New System.Drawing.Point(32, 545)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.OFW_Management_Information_System.My.Resources.Resources.addjob_ic
+        Me.PictureBox1.Location = New System.Drawing.Point(32, 334)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 48)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 6
+        Me.PictureBox1.TabStop = False
+        '
+        'logo
+        '
+        Me.logo.Image = Global.OFW_Management_Information_System.My.Resources.Resources.logoM
+        Me.logo.Location = New System.Drawing.Point(32, 28)
+        Me.logo.Name = "logo"
+        Me.logo.Size = New System.Drawing.Size(307, 123)
+        Me.logo.TabIndex = 1
+        Me.logo.TabStop = False
+        '
         'ofwProfile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(1443, 862)
+        Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.ChangeAgencyBTN)
         Me.Controls.Add(Me.ApplicationLetter)
         Me.Controls.Add(Me.EditProfile)
         Me.Controls.Add(Me.lblPassportNum)
@@ -533,7 +550,7 @@ Partial Class ofwProfile
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.lblEducLvl)
         Me.Controls.Add(Me.Label16)
-        Me.Controls.Add(Me.lblEmploymentStat)
+        Me.Controls.Add(Me.lblRegisteredAgency)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.lblContactNum)
         Me.Controls.Add(Me.Label12)
@@ -553,12 +570,12 @@ Partial Class ofwProfile
         Me.Text = "OFW | Profile"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
+        CType(Me.picProfile, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -586,7 +603,7 @@ Partial Class ofwProfile
     Friend WithEvents Label10 As Label
     Friend WithEvents lblContactNum As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents lblEmploymentStat As Label
+    Friend WithEvents lblRegisteredAgency As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents lblEducLvl As Label
     Friend WithEvents Label16 As Label
@@ -601,4 +618,5 @@ Partial Class ofwProfile
     Friend WithEvents EditProfile As Button
     Friend WithEvents LogOut As Button
     Friend WithEvents ApplicationLetter As Button
+    Friend WithEvents ChangeAgencyBTN As Button
 End Class

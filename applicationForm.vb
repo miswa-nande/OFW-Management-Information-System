@@ -67,16 +67,23 @@ Public Class applicationForm
         End Try
     End Sub
 
-    'Load OFW profile using Session.CurrentReferenceID
     Private Sub LoadOfwProfile()
         Try
-            Dim query As String = "SELECT CONCAT(FirstName, ' ', MiddleName, ' ', LastName) AS full_name, " &
-                                  "DOB, CivilStatus, Sex, ContactNum, EducationalLevel, PassportNum, VISANum, OECNum " &
-                                  "FROM ofw WHERE OFWID = " & Session.CurrentReferenceID
+            ' Query to get profile and address
+            Dim query As String = "
+            SELECT 
+                o.OFWID,
+                CONCAT(o.FirstName, ' ', o.MiddleName, ' ', o.LastName) AS full_name,
+                o.DOB, o.CivilStatus, o.Sex, o.ContactNum,
+                o.EducationalLevel, o.PassportNum, o.VISANum, o.OECNum,
+                CONCAT(o.Street, ', ', o.City, ', ', o.Province, ' ', o.Zipcode) AS full_address
+            FROM ofw o
+            WHERE o.OFWID = " & Session.CurrentReferenceID
 
             readQuery(query)
 
             If cmdRead.Read() Then
+                Label4.Text = cmdRead("OFWId").ToString()
                 lblFullName.Text = cmdRead("full_name").ToString()
                 lblDOB.Text = CDate(cmdRead("DOB")).ToShortDateString()
                 lblCivilStat.Text = cmdRead("CivilStatus").ToString()
@@ -86,15 +93,33 @@ Public Class applicationForm
                 lblPassportNum.Text = cmdRead("PassportNum").ToString()
                 lblVisaNum.Text = cmdRead("VISANum").ToString()
                 lblOecNum.Text = cmdRead("OECNum").ToString()
+                lblFullAddress.Text = cmdRead("full_address").ToString()
             End If
-
             cmdRead.Close()
+
+            ' Get skills (separate query)
+            Dim skillQuery As String = "
+            SELECT GROUP_CONCAT(s.SkillName SEPARATOR ', ') AS skills
+            FROM ofwskill os
+            JOIN skill s ON os.SkillID = s.SkillID
+            WHERE os.OFWID = " & Session.CurrentReferenceID
+
+            readQuery(skillQuery)
+
+            If cmdRead.Read() Then
+                lblSkills.Text = cmdRead("skills").ToString()
+            Else
+                lblSkills.Text = "No skills listed"
+            End If
+            cmdRead.Close()
+
         Catch ex As Exception
             MsgBox("Error loading OFW profile: " & ex.Message, MsgBoxStyle.Critical)
         End Try
     End Sub
 
-    ' ✅ Handle job application submission
+
+    'Handle job application submission
     Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnApply.Click
         Try
             ' Check if already applied to this specific job
@@ -142,5 +167,37 @@ Public Class applicationForm
     ' Cancel and close form
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
+    End Sub
+
+    Private Sub ApplicationLetterViewBTN_Click(sender As Object, e As EventArgs) Handles ApplicationLetterViewBTN.Click
+        ' Still try to load existing application if it exists, but don’t block the form
+        Dim applicationId As Integer = -1
+
+        Try
+            Dim query As String = "SELECT ApplicationID FROM application " &
+                                  "WHERE OFWID = " & Session.CurrentReferenceID & " " &
+                                  "AND JobPlacementID = " & jobID & " " &
+                                  "ORDER BY ApplicationDate DESC LIMIT 1"
+            readQuery(query)
+
+            If cmdRead IsNot Nothing AndAlso cmdRead.Read() Then
+                applicationId = Convert.ToInt32(cmdRead("ApplicationID"))
+            End If
+            cmdRead?.Close()
+        Catch ex As Exception
+            MsgBox("Warning: Could not check existing applications. Proceeding anyway.", MsgBoxStyle.Exclamation)
+        End Try
+
+        ' Open the view form regardless
+        Dim viewForm As New ApplicationLetterView(applicationId)
+        viewForm.ShowDialog()
+    End Sub
+
+    Private Sub lblSkills_Click(sender As Object, e As EventArgs) Handles lblSkills.Click
+
+    End Sub
+
+    Private Sub lblFullAddress_Click(sender As Object, e As EventArgs) Handles lblFullAddress.Click
+
     End Sub
 End Class

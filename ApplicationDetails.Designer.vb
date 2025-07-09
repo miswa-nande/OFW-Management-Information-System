@@ -74,6 +74,7 @@ Partial Class ApplicationDetails
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnApprove = New System.Windows.Forms.Button()
+        Me.ApplicationLetterViewBTN = New System.Windows.Forms.Button()
         CType(Me.picProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -655,12 +656,25 @@ Partial Class ApplicationDetails
         Me.btnApprove.Text = "APPROVE"
         Me.btnApprove.UseVisualStyleBackColor = False
         '
+        'ApplicationLetterViewBTN
+        '
+        Me.ApplicationLetterViewBTN.BackColor = System.Drawing.Color.DarkGray
+        Me.ApplicationLetterViewBTN.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ApplicationLetterViewBTN.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApplicationLetterViewBTN.Location = New System.Drawing.Point(715, 753)
+        Me.ApplicationLetterViewBTN.Name = "ApplicationLetterViewBTN"
+        Me.ApplicationLetterViewBTN.Size = New System.Drawing.Size(168, 56)
+        Me.ApplicationLetterViewBTN.TabIndex = 307
+        Me.ApplicationLetterViewBTN.Text = "Application Letter"
+        Me.ApplicationLetterViewBTN.UseVisualStyleBackColor = False
+        '
         'ApplicationDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.ClientSize = New System.Drawing.Size(1468, 832)
+        Me.Controls.Add(Me.ApplicationLetterViewBTN)
         Me.Controls.Add(Me.btnApprove)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TextBox5)
@@ -754,4 +768,5 @@ Partial Class ApplicationDetails
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnApprove As Button
+    Friend WithEvents ApplicationLetterViewBTN As Button
 End Class
