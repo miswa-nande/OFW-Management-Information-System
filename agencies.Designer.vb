@@ -271,7 +271,7 @@ Partial Class agencies
         Me.Label15.ForeColor = System.Drawing.Color.Red
         Me.Label15.Location = New System.Drawing.Point(1796, 879)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(75, 23)
+        Me.Label15.Size = New System.Drawing.Size(64, 21)
         Me.Label15.TabIndex = 80
         Me.Label15.Text = "DELETE"
         '
@@ -282,7 +282,7 @@ Partial Class agencies
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label14.Location = New System.Drawing.Point(1685, 879)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(110, 23)
+        Me.Label14.Size = New System.Drawing.Size(94, 21)
         Me.Label14.TabIndex = 79
         Me.Label14.Text = "GENERATE"
         '
@@ -293,7 +293,7 @@ Partial Class agencies
         Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label13.Location = New System.Drawing.Point(1614, 879)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(49, 23)
+        Me.Label13.Size = New System.Drawing.Size(44, 21)
         Me.Label13.TabIndex = 78
         Me.Label13.Text = "EDIT"
         '
@@ -304,7 +304,7 @@ Partial Class agencies
         Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label12.Location = New System.Drawing.Point(1518, 879)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(55, 23)
+        Me.Label12.Size = New System.Drawing.Size(47, 21)
         Me.Label12.TabIndex = 77
         Me.Label12.Text = "ADD"
         '
@@ -328,7 +328,7 @@ Partial Class agencies
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(1509, 657)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(235, 23)
+        Me.Label11.Size = New System.Drawing.Size(191, 21)
         Me.Label11.TabIndex = 70
         Me.Label11.Text = "License Expiration Date"
         '
@@ -339,7 +339,7 @@ Partial Class agencies
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label10.Location = New System.Drawing.Point(1509, 599)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(253, 21)
+        Me.Label10.Size = New System.Drawing.Size(195, 17)
         Me.Label10.TabIndex = 68
         Me.Label10.Text = "Number of active Job Orders"
         '
@@ -349,7 +349,7 @@ Partial Class agencies
         Me.txtbxNumActiveJobs.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxNumActiveJobs.Location = New System.Drawing.Point(1513, 625)
         Me.txtbxNumActiveJobs.Name = "txtbxNumActiveJobs"
-        Me.txtbxNumActiveJobs.Size = New System.Drawing.Size(165, 32)
+        Me.txtbxNumActiveJobs.Size = New System.Drawing.Size(165, 27)
         Me.txtbxNumActiveJobs.TabIndex = 67
         '
         'Label9
@@ -359,7 +359,7 @@ Partial Class agencies
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(1509, 541)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(253, 21)
+        Me.Label9.Size = New System.Drawing.Size(197, 17)
         Me.Label9.TabIndex = 66
         Me.Label9.Text = "Number of Deployed Workers"
         '
@@ -369,7 +369,7 @@ Partial Class agencies
         Me.txtbxNumDepWorkers.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxNumDepWorkers.Location = New System.Drawing.Point(1513, 567)
         Me.txtbxNumDepWorkers.Name = "txtbxNumDepWorkers"
-        Me.txtbxNumDepWorkers.Size = New System.Drawing.Size(165, 32)
+        Me.txtbxNumDepWorkers.Size = New System.Drawing.Size(165, 27)
         Me.txtbxNumDepWorkers.TabIndex = 65
         '
         'Label8
@@ -379,7 +379,7 @@ Partial Class agencies
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(1691, 468)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(202, 20)
+        Me.Label8.Size = New System.Drawing.Size(169, 17)
         Me.Label8.TabIndex = 64
         Me.Label8.Text = "Govt. Accreditation Status"
         '
@@ -389,7 +389,7 @@ Partial Class agencies
         Me.cbxGovtAccredStat.FormattingEnabled = True
         Me.cbxGovtAccredStat.Location = New System.Drawing.Point(1695, 492)
         Me.cbxGovtAccredStat.Name = "cbxGovtAccredStat"
-        Me.cbxGovtAccredStat.Size = New System.Drawing.Size(165, 31)
+        Me.cbxGovtAccredStat.Size = New System.Drawing.Size(165, 29)
         Me.cbxGovtAccredStat.TabIndex = 63
         '
         'Label7
@@ -399,7 +399,7 @@ Partial Class agencies
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(1509, 466)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(143, 23)
+        Me.Label7.Size = New System.Drawing.Size(117, 21)
         Me.Label7.TabIndex = 62
         Me.Label7.Text = "Specialization"
         '
@@ -410,7 +410,7 @@ Partial Class agencies
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(1509, 408)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(177, 23)
+        Me.Label6.Size = New System.Drawing.Size(145, 21)
         Me.Label6.TabIndex = 60
         Me.Label6.Text = "Contact Number"
         '
@@ -420,7 +420,7 @@ Partial Class agencies
         Me.txtbxContactNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxContactNum.Location = New System.Drawing.Point(1513, 434)
         Me.txtbxContactNum.Name = "txtbxContactNum"
-        Me.txtbxContactNum.Size = New System.Drawing.Size(347, 32)
+        Me.txtbxContactNum.Size = New System.Drawing.Size(347, 27)
         Me.txtbxContactNum.TabIndex = 59
         '
         'Label5
@@ -430,7 +430,7 @@ Partial Class agencies
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(1509, 350)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(249, 23)
+        Me.Label5.Size = New System.Drawing.Size(199, 21)
         Me.Label5.TabIndex = 58
         Me.Label5.Text = "Agnecy License Number"
         '
@@ -440,7 +440,7 @@ Partial Class agencies
         Me.txtbxAgencyLicNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxAgencyLicNum.Location = New System.Drawing.Point(1513, 376)
         Me.txtbxAgencyLicNum.Name = "txtbxAgencyLicNum"
-        Me.txtbxAgencyLicNum.Size = New System.Drawing.Size(347, 32)
+        Me.txtbxAgencyLicNum.Size = New System.Drawing.Size(347, 27)
         Me.txtbxAgencyLicNum.TabIndex = 57
         '
         'Label4
@@ -450,7 +450,7 @@ Partial Class agencies
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(1509, 292)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(154, 23)
+        Me.Label4.Size = New System.Drawing.Size(124, 21)
         Me.Label4.TabIndex = 56
         Me.Label4.Text = "Agency Name"
         '
@@ -460,7 +460,7 @@ Partial Class agencies
         Me.txtbxAgencyName.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxAgencyName.Location = New System.Drawing.Point(1513, 318)
         Me.txtbxAgencyName.Name = "txtbxAgencyName"
-        Me.txtbxAgencyName.Size = New System.Drawing.Size(347, 32)
+        Me.txtbxAgencyName.Size = New System.Drawing.Size(347, 27)
         Me.txtbxAgencyName.TabIndex = 55
         '
         'Label3
@@ -470,7 +470,7 @@ Partial Class agencies
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(1509, 234)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(198, 23)
+        Me.Label3.Size = New System.Drawing.Size(160, 21)
         Me.Label3.TabIndex = 54
         Me.Label3.Text = "Agency ID Number"
         '
@@ -480,7 +480,7 @@ Partial Class agencies
         Me.txtbxIdNum.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxIdNum.Location = New System.Drawing.Point(1513, 260)
         Me.txtbxIdNum.Name = "txtbxIdNum"
-        Me.txtbxIdNum.Size = New System.Drawing.Size(100, 32)
+        Me.txtbxIdNum.Size = New System.Drawing.Size(100, 27)
         Me.txtbxIdNum.TabIndex = 53
         '
         'Label2
@@ -490,7 +490,7 @@ Partial Class agencies
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(1505, 183)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(299, 56)
+        Me.Label2.Size = New System.Drawing.Size(237, 44)
         Me.Label2.TabIndex = 52
         Me.Label2.Text = "Filter Search"
         '
@@ -513,7 +513,7 @@ Partial Class agencies
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(548, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(613, 141)
+        Me.Label1.Size = New System.Drawing.Size(487, 112)
         Me.Label1.TabIndex = 50
         Me.Label1.Text = "Agencies"
         '
@@ -523,7 +523,7 @@ Partial Class agencies
         Me.txtbxSpecialization.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxSpecialization.Location = New System.Drawing.Point(1513, 494)
         Me.txtbxSpecialization.Name = "txtbxSpecialization"
-        Me.txtbxSpecialization.Size = New System.Drawing.Size(165, 32)
+        Me.txtbxSpecialization.Size = New System.Drawing.Size(165, 27)
         Me.txtbxSpecialization.TabIndex = 82
         '
         'dateLicExp
@@ -532,7 +532,7 @@ Partial Class agencies
         Me.dateLicExp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dateLicExp.Location = New System.Drawing.Point(1513, 681)
         Me.dateLicExp.Name = "dateLicExp"
-        Me.dateLicExp.Size = New System.Drawing.Size(165, 32)
+        Me.dateLicExp.Size = New System.Drawing.Size(165, 27)
         Me.dateLicExp.TabIndex = 83
         '
         'btnDelete
@@ -590,7 +590,7 @@ Partial Class agencies
         '
         'agencies
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(14.0!, 30.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.ClientSize = New System.Drawing.Size(1904, 1041)

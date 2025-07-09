@@ -1,4 +1,6 @@
-﻿Public Class deployments
+﻿Imports System
+
+Public Class deployments
 
     Private Sub deployments_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadCustomDeploymentsQuery()
@@ -206,6 +208,11 @@
         dlg.ShowDialog()
         LoadCustomDeploymentsQuery()
         FormatDGVUniformly(DataGridView1)
+    End Sub
+
+    ' REPORT GENERATION
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        ' Report preview functionality removed as ReportPreviewForm is deleted.
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs)

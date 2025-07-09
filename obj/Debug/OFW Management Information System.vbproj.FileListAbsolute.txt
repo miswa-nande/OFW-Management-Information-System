@@ -668,3 +668,8 @@ D:\ofw_mis\obj\Debug\OFW_Management_Information_System.agcDeploymentTracking.res
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.ApplicationLetter.resources
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.ApplicationLetterView.resources
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW_Management_Information_System.registeredAgency.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.ApplicationLetter.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.ApplicationLetterView.resources
+D:\ofw_mis\obj\Debug\OFW_Management_Information_System.registeredAgency.resources
+D:\ofw_mis\bin\Debug\x86\SqlServerSpatial160.dll
+D:\ofw_mis\bin\Debug\x64\SqlServerSpatial160.dll

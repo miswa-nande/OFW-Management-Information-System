@@ -219,6 +219,11 @@ Public Class agcDeployment
         PopulateAllComboboxes()
     End Sub
 
+    ' REPORT GENERATION
+    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
+        ' Report preview functionality removed as ReportPreviewForm is deleted.
+    End Sub
+
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
@@ -232,6 +237,8 @@ Public Class agcDeployment
             MessageBox.Show("Please select a deployment record to edit.", "No Selection", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
+
 
     Private Sub ClearBTN_Click(sender As Object, e As EventArgs) Handles ClearBTN.Click
         txtbxIdNum.Clear()
