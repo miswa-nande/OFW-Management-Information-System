@@ -212,6 +212,15 @@ Public Class empJobs
     End Sub
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-
+        Try
+            Dim reportGenerator As New GenerateEmployerJobsReportData()
+            If reportGenerator.GenerateReport() Then
+                MessageBox.Show("Job placements report generated successfully! Check your Desktop for the PDF file.", "Report Generated", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Failed to generate job placements report.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error generating report: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

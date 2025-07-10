@@ -198,6 +198,11 @@ Public Class agencies
     End Sub
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-
+        Dim reportGenerator As New GenerateAgenciesReportData()
+        If reportGenerator.GenerateReport() Then
+            MessageBox.Show("Agencies report generated successfully!", "Report Generated", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Failed to generate agencies report.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 End Class

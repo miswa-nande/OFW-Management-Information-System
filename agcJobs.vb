@@ -255,6 +255,15 @@ Public Class agcJobs
     End Sub
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-
+        Try
+            Dim reportGenerator As New GenerateAgencyJobReportData()
+            If reportGenerator.GenerateReport() Then
+                MessageBox.Show("Agency Job Report generated successfully and saved to Desktop!", "Report Generated", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Failed to generate Agency Job Report. Please try again.", "Report Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error generating report: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

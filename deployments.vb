@@ -212,7 +212,16 @@ Public Class deployments
 
     ' REPORT GENERATION
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-        ' Report preview functionality removed as ReportPreviewForm is deleted.
+        Try
+            Dim reportGenerator As New GenerateDeploymentsGeneralReportData()
+            If reportGenerator.GenerateReport() Then
+                MessageBox.Show("Deployments report generated successfully! Check your Desktop for the PDF file.", "Report Generated", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Failed to generate deployments report.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error generating report: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs)

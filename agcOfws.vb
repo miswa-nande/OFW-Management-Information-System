@@ -251,6 +251,11 @@ Public Class agcOfws
     End Sub
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-
+        Dim reportGenerator As New GenerateAgencyOFWReportData()
+        If reportGenerator.GenerateReport() Then
+            MessageBox.Show("Agency OFW report generated successfully!", "Report Generated", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Failed to generate agency OFW report.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 End Class

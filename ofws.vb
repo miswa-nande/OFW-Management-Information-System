@@ -227,8 +227,16 @@ Public Class ofws
 
     ' REPORT GENERATION
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-        ' Report preview functionality removed as ReportPreviewForm is deleted.
+        Dim reportGen As New GenerateOFWReportData()
+        Dim success As Boolean = reportGen.GenerateReport()
+
+        If success Then
+            MessageBox.Show("Report generated successfully and saved to Desktop.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Failed to generate report. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
+
 
     ' DELETE
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
