@@ -35,11 +35,24 @@ Public Class ofws
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        Dim dlg As New editOfw()
-        dlg.ShowDialog()
+        If DataGridView1.SelectedRows.Count = 0 Then
+            MsgBox("Please select an OFW from the list.", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
+        ' Get the selected OFWID from the DataGridView
+        Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+        Dim ofwId As Integer = Convert.ToInt32(selectedRow.Cells("OFWID").Value)
+
+        ' Open the editOfw form with the selected OFW ID
+        Dim editForm As New editOfw(ofwId)
+        editForm.ShowDialog()
+
+        ' Refresh the table after possible update
         LoadOFWsToDGV(DataGridView1)
         FormatDGVUniformly(DataGridView1)
     End Sub
+
 
     Private Sub btnDeployments_Click(sender As Object, e As EventArgs) Handles btnDeployments.Click
         Dim newForm As New deployments()

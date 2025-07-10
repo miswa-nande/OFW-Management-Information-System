@@ -11,6 +11,36 @@ Public Class agcDashboard
     End Sub
 
     Private Sub LoadSummary()
+        ' === Auto-update aggregate fields in the agency table ===
+        Try
+            ' Update NumOfDeployedWorkers
+            Dim updateDeployedWorkers As String = $"
+            UPDATE agency a SET NumOfDeployedWorkers = (
+                SELECT COUNT(*) FROM deploymentrecord d
+                JOIN jobplacement jp ON d.JobPlacementID = jp.JobPlacementID
+                WHERE jp.AgencyID = a.AgencyID
+            ) WHERE a.AgencyID = {Session.CurrentReferenceID}"
+            readQuery(updateDeployedWorkers)
+
+            ' Update NumActiveJobOrders
+            Dim updateActiveJobs As String = $"
+            UPDATE agency a SET NumActiveJobOrders = (
+                SELECT COUNT(*) FROM jobplacement jp
+                WHERE jp.AgencyID = a.AgencyID AND jp.JobStatus = 'Active'
+            ) WHERE a.AgencyID = {Session.CurrentReferenceID}"
+            readQuery(updateActiveJobs)
+
+            ' Update YearsOfOperation (based on DateAdded)
+            Dim updateYears As String = $"
+            UPDATE agency 
+            SET YearsOfOperation = IF(DateAdded IS NOT NULL, TIMESTAMPDIFF(YEAR, DateAdded, CURDATE()), 0)
+            WHERE AgencyID = {Session.CurrentReferenceID}"
+            readQuery(updateYears)
+        Catch ex As Exception
+            MsgBox("Failed to update agency summary fields: " & ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+
+        ' === Load agency info (used only for display fields below) ===
         readQuery($"SELECT * FROM agency WHERE AgencyID = {Session.CurrentReferenceID}")
         If cmdRead.Read() Then
             lblIDNum.Text = Session.CurrentReferenceID.ToString()
@@ -24,26 +54,30 @@ Public Class agcDashboard
         End If
         cmdRead.Close()
 
+        ' === Load dashboard summary counters ===
         lblNumJobPosted.Text = CountRows($"SELECT JobPlacementID FROM jobplacement WHERE AgencyID = {Session.CurrentReferenceID}")
         TotalApplicationsReceived.Text = CountRows($"SELECT a.ApplicationID FROM application a JOIN jobplacement jp ON a.JobPlacementID = jp.JobPlacementID WHERE jp.AgencyID = {Session.CurrentReferenceID}")
         lblNumOfw.Text = CountRows($"SELECT OFWID FROM ofw WHERE AgencyID = {Session.CurrentReferenceID}")
         lblNumEmployers.Text = CountRows($"SELECT DISTINCT e.EmployerID FROM employer e JOIN agencypartneremployer ap ON e.EmployerID = ap.EmployerID WHERE ap.AgencyID = {Session.CurrentReferenceID}")
 
+        ' === Load partner employers into DGV ===
         LoadToDGV($"
-            SELECT 
-                e.EmployerID AS 'Employer ID', 
-                e.CompanyName AS 'Company Name', 
-                e.EmployerEmail AS 'Email', 
-                e.EmployerContactNum AS 'Contact Number', 
-                ap.DateStablished AS 'Date Partnered'
-            FROM employer e 
-            JOIN agencypartneremployer ap ON e.EmployerID = ap.EmployerID 
-            WHERE ap.AgencyID = {Session.CurrentReferenceID}
-            ORDER BY ap.DateStablished DESC", dgvPartnerEmployers)
+        SELECT 
+            e.EmployerID AS 'Employer ID', 
+            e.CompanyName AS 'Company Name', 
+            e.EmployerEmail AS 'Email', 
+            e.EmployerContactNum AS 'Contact Number', 
+            ap.DateStablished AS 'Date Partnered'
+        FROM employer e 
+        JOIN agencypartneremployer ap ON e.EmployerID = ap.EmployerID 
+        WHERE ap.AgencyID = {Session.CurrentReferenceID}
+        ORDER BY ap.DateStablished DESC", dgvPartnerEmployers)
         FormatDGV(dgvPartnerEmployers)
 
+        ' === Load recent applications ===
         LoadApplicationsSummary()
     End Sub
+
 
     Private Sub LoadApplicationsSummary()
         LoadToDGV($"

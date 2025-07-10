@@ -48,12 +48,14 @@ Public Class addEmployer
 
         ' Compose INSERT SQL
         Dim insertQuery As String = $"
-            INSERT INTO employer 
-            (FirstName, MiddleName, LastName, ContactNumber, Email, CompanyName, Industry, Street, City, State, Country, ZipCode)
-            VALUES 
-            ('{fName}', '{mName}', '{lName}', '{contact}', '{email}', 
-             '{company}', '{industry}', '{street}', '{city}', '{state}', '{country}', '{zipcode}');
-        "
+    INSERT INTO employer 
+    (EmployerFirstName, EmployerMiddleName, EmployerLastName, EmployerContactNum, EmployerEmail, 
+     CompanyName, Industry, CompanyStreet, CompanyCity, CompanyState, CompanyCountry, CompanyZipcode)
+    VALUES 
+    ('{fName}', '{mName}', '{lName}', '{contact}', '{email}', 
+     '{company}', '{industry}', '{street}', '{city}', '{state}', '{country}', '{zipcode}');
+"
+
 
         Try
             readQuery(insertQuery)

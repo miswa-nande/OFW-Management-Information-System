@@ -12,7 +12,30 @@ Public Class empDashboard
 
     ' === Load Employer Summary Info ===
     Private Sub LoadSummary()
-        ' Employer Info
+        ' === Auto-update employer summary fields ===
+        Try
+            ' Update NumOfOFWHired
+            Dim updateOFWs As String = $"
+            UPDATE employer e SET NumOfOFWHired = (
+                SELECT COUNT(DISTINCT a.OFWID)
+                FROM application a
+                JOIN jobplacement jp ON a.JobPlacementID = jp.JobPlacementID
+                WHERE jp.EmployerID = e.EmployerID
+            ) WHERE e.EmployerID = {Session.CurrentReferenceID}"
+            readQuery(updateOFWs)
+
+            ' Update ActiveJobPlacement
+            Dim updateActiveJobs As String = $"
+            UPDATE employer e SET ActiveJobPlacement = (
+                SELECT COUNT(*) FROM jobplacement jp 
+                WHERE jp.EmployerID = e.EmployerID AND jp.JobStatus = 'Active'
+            ) WHERE e.EmployerID = {Session.CurrentReferenceID}"
+            readQuery(updateActiveJobs)
+        Catch ex As Exception
+            MsgBox("Failed to update employer summary fields: " & ex.Message, MsgBoxStyle.Exclamation)
+        End Try
+
+        ' === Load Employer Info ===
         Dim query As String = $"SELECT * FROM employer WHERE EmployerID = {Session.CurrentReferenceID}"
         readQuery(query)
         If cmdRead.Read() Then
@@ -26,26 +49,25 @@ Public Class empDashboard
         End If
         cmdRead.Close()
 
-        ' Total Jobs
+        ' === Label summaries (use queries instead of db fields) ===
         readQuery($"SELECT COUNT(*) FROM jobplacement WHERE EmployerID = {Session.CurrentReferenceID}")
         If cmdRead.Read() Then lblNumJobPosted.Text = cmdRead(0).ToString()
         cmdRead.Close()
 
-        ' Total Agencies
         readQuery($"SELECT COUNT(DISTINCT AgencyID) FROM agencypartneremployer WHERE EmployerID = {Session.CurrentReferenceID}")
         If cmdRead.Read() Then lblNumAgencies.Text = cmdRead(0).ToString()
         cmdRead.Close()
 
-        ' Total OFWs
         Dim ofwQuery As String = $"
-            SELECT COUNT(DISTINCT a.OFWId)
-            FROM application a
-            JOIN jobplacement jp ON a.JobPlacementID = jp.JobPlacementID
-            WHERE jp.EmployerID = {Session.CurrentReferenceID}"
+        SELECT COUNT(DISTINCT a.OFWID)
+        FROM application a
+        JOIN jobplacement jp ON a.JobPlacementID = jp.JobPlacementID
+        WHERE jp.EmployerID = {Session.CurrentReferenceID}"
         readQuery(ofwQuery)
         If cmdRead.Read() Then lblNumOfw.Text = cmdRead(0).ToString()
         cmdRead.Close()
     End Sub
+
 
     ' === CHART 2: Top 5 Jobs by Applications (Pie) ===
     Private Sub LoadTopJobApplicationsPie(Optional fromDate As Date = Nothing)

@@ -3,48 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\applicationletterview.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:applicationletterview.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\empdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:empdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\applicationletterview.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:applicationletterview.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\agcdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\applicationletter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:applicationletter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\agcdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcdashboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\applicationletter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:applicationletter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\editemployer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editemployer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\addemployer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:addemployer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofwprofile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\addemployer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:addemployer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\loginfields.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:loginfields.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\ofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\loginfields.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:loginfields.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\editofw.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editofw.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\loginpage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:loginpage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\editofw.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:editofw.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\loginpage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:loginpage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\ofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofws.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\modDB.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:modDB.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\applicationform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:applicationform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\applicationform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:applicationform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\applicationdetails.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:applicationdetails.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\applicationdetails.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:applicationdetails.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetterView.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ApplicationLetterView.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetterView.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ApplicationLetterView.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ApplicationLetter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyDeploymentReportData.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ReportControllerClass\\GenerateAgencyDeploymentReportData.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -55,8 +83,40 @@
       "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcDeployment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyDeploymentReportData.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ReportControllerClass\\GenerateAgencyDeploymentReportData.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|c:\\users\\charl\\onedrive\\desktop\\ofw management information system\\agcdeploymenttracking.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:agcdeploymenttracking.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ApplicationLetter.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofwProfile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofwProfile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofwProfile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:ofwProfile.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginFields.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:loginFields.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginFields.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:loginFields.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginPage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:loginPage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginPage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:loginPage.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\modDB.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|solutionrelative:modDB.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BE72CA47-4F5A-475B-91DE-0A9F4CD2E4F4}|OFW Management Information System.vbproj|C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyJobReportData.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -119,19 +179,157 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ApplicationLetterView.vb",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetterView.vb",
-              "RelativeDocumentMoniker": "ApplicationLetterView.vb",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetterView.vb",
-              "RelativeToolTip": "ApplicationLetterView.vb",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAIwGQAAAAAAAAAAAAAAA==",
+              "Title": "empDashboard.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\empDashboard.vb",
+              "RelativeDocumentMoniker": "empDashboard.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\empDashboard.vb*",
+              "RelativeToolTip": "empDashboard.vb*",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwB8AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:59:06.024Z",
+              "WhenOpened": "2025-07-10T03:25:10.648Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "agcDashboard.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDashboard.vb",
+              "RelativeDocumentMoniker": "agcDashboard.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDashboard.vb",
+              "RelativeToolTip": "agcDashboard.vb",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowBwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:17:50.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "agcDashboard.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDashboard.vb",
+              "RelativeDocumentMoniker": "agcDashboard.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDashboard.vb [Design]",
+              "RelativeToolTip": "agcDashboard.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:17:49.001Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "editEmployer.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\editEmployer.vb",
+              "RelativeDocumentMoniker": "editEmployer.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\editEmployer.vb",
+              "RelativeToolTip": "editEmployer.vb",
+              "ViewState": "AgIAADYAAAAAAAAAAAAwwD0AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:15:25.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "addEmployer.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\addEmployer.vb",
+              "RelativeDocumentMoniker": "addEmployer.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\addEmployer.vb",
+              "RelativeToolTip": "addEmployer.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:13:58.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "addEmployer.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\addEmployer.vb",
+              "RelativeDocumentMoniker": "addEmployer.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\addEmployer.vb [Design]",
+              "RelativeToolTip": "addEmployer.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:13:56.921Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "editOfw.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\editOfw.vb",
+              "RelativeDocumentMoniker": "editOfw.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\editOfw.vb",
+              "RelativeToolTip": "editOfw.vb",
+              "ViewState": "AgIAAMsAAAAAAAAAAAA1wOkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:10:04.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "editOfw.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\editOfw.vb",
+              "RelativeDocumentMoniker": "editOfw.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\editOfw.vb [Design]",
+              "RelativeToolTip": "editOfw.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:10:02.226Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ofws.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofws.vb",
+              "RelativeDocumentMoniker": "ofws.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofws.vb",
+              "RelativeToolTip": "ofws.vb",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwDIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:09:35.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ofws.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofws.vb",
+              "RelativeDocumentMoniker": "ofws.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofws.vb [Design]",
+              "RelativeToolTip": "ofws.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T03:09:29.851Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "applicationForm.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\applicationForm.vb",
+              "RelativeDocumentMoniker": "applicationForm.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\applicationForm.vb",
+              "RelativeToolTip": "applicationForm.vb",
+              "ViewState": "AgIAAHQAAAAAAAAAAAD4v4UAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T02:37:14.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "applicationForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\applicationForm.vb",
+              "RelativeDocumentMoniker": "applicationForm.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\applicationForm.vb [Design]",
+              "RelativeToolTip": "applicationForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T02:37:11.307Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ApplicationLetterView.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetterView.vb",
               "RelativeDocumentMoniker": "ApplicationLetterView.vb",
@@ -143,7 +341,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
+              "Title": "ApplicationLetterView.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetterView.vb",
+              "RelativeDocumentMoniker": "ApplicationLetterView.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetterView.vb",
+              "RelativeToolTip": "ApplicationLetterView.vb",
+              "ViewState": "AgIAAGcAAAAAAAAAAAD4v3cAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T01:59:06.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApplicationDetails.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationDetails.vb",
+              "RelativeDocumentMoniker": "ApplicationDetails.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationDetails.vb [Design]",
+              "RelativeToolTip": "ApplicationDetails.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T02:42:47.568Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApplicationDetails.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationDetails.vb",
+              "RelativeDocumentMoniker": "ApplicationDetails.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationDetails.vb",
+              "RelativeToolTip": "ApplicationDetails.vb",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAtwHQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T02:42:50.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ApplicationLetter.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetter.vb",
+              "RelativeDocumentMoniker": "ApplicationLetter.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetter.vb [Design]",
+              "RelativeToolTip": "ApplicationLetter.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T01:57:04.997Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "agcDeploymentTracking.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeploymentTracking.vb",
+              "RelativeDocumentMoniker": "agcDeploymentTracking.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeploymentTracking.vb [Design]",
+              "RelativeToolTip": "agcDeploymentTracking.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T02:10:29.961Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ofwProfile.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofwProfile.vb",
+              "RelativeDocumentMoniker": "ofwProfile.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofwProfile.vb",
+              "RelativeToolTip": "ofwProfile.vb",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAWwFAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-10T01:56:58.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "agcDeployment.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb",
+              "RelativeDocumentMoniker": "agcDeployment.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb [Design]",
+              "RelativeToolTip": "agcDeployment.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-09T18:43:53.883Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "agcDeployment.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb",
+              "RelativeDocumentMoniker": "agcDeployment.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb",
+              "RelativeToolTip": "agcDeployment.vb",
+              "ViewState": "AgIAANUAAAAAAAAAAIA6wN4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-09T18:43:57.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GenerateAgencyDeploymentReportData.vb",
+              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyDeploymentReportData.vb",
+              "RelativeDocumentMoniker": "ReportControllerClass\\GenerateAgencyDeploymentReportData.vb",
+              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyDeploymentReportData.vb",
+              "RelativeToolTip": "ReportControllerClass\\GenerateAgencyDeploymentReportData.vb",
+              "ViewState": "AgIAAJABAAAAAAAAAAAmwKYBAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-07-09T18:20:02.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "ApplicationLetter.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetter.vb",
               "RelativeDocumentMoniker": "ApplicationLetter.vb",
@@ -156,44 +466,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationLetter.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetter.vb",
-              "RelativeDocumentMoniker": "ApplicationLetter.vb",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ApplicationLetter.vb [Design]",
-              "RelativeToolTip": "ApplicationLetter.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:57:04.997Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ofwProfile.vb",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofwProfile.vb",
-              "RelativeDocumentMoniker": "ofwProfile.vb",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofwProfile.vb",
-              "RelativeToolTip": "ofwProfile.vb",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAWwFAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:56:58.321Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 23,
               "Title": "ofwProfile.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofwProfile.vb",
               "RelativeDocumentMoniker": "ofwProfile.vb",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ofwProfile.vb [Design]",
               "RelativeToolTip": "ofwProfile.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:56:56.253Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-10T01:56:56.253Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 24,
               "Title": "loginFields.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginFields.vb",
               "RelativeDocumentMoniker": "loginFields.vb",
@@ -201,24 +485,22 @@
               "RelativeToolTip": "loginFields.vb",
               "ViewState": "AgIAAJMAAAAAAAAAAAAWwKYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:56:34.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T01:56:34.404Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 25,
               "Title": "loginFields.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginFields.vb",
               "RelativeDocumentMoniker": "loginFields.vb",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginFields.vb [Design]",
               "RelativeToolTip": "loginFields.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:55:18.989Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-10T01:55:18.989Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 26,
               "Title": "loginPage.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginPage.vb",
               "RelativeDocumentMoniker": "loginPage.vb",
@@ -226,24 +508,22 @@
               "RelativeToolTip": "loginPage.vb",
               "ViewState": "AgIAAEQAAAAAAAAAAAAmwEoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:53:29.047Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T01:53:29.047Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 27,
               "Title": "loginPage.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginPage.vb",
               "RelativeDocumentMoniker": "loginPage.vb",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\loginPage.vb [Design]",
               "RelativeToolTip": "loginPage.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:53:26.425Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-10T01:53:26.425Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 28,
               "Title": "modDB.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\modDB.vb",
               "RelativeDocumentMoniker": "modDB.vb",
@@ -251,50 +531,11 @@
               "RelativeToolTip": "modDB.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-10T01:20:18.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-10T01:20:18.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "agcDeployment.vb",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb",
-              "RelativeDocumentMoniker": "agcDeployment.vb",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb",
-              "RelativeToolTip": "agcDeployment.vb",
-              "ViewState": "AgIAANUAAAAAAAAAAAA6wOUAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T18:43:57.539Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "agcDeployment.vb [Design]",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb",
-              "RelativeDocumentMoniker": "agcDeployment.vb",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\agcDeployment.vb [Design]",
-              "RelativeToolTip": "agcDeployment.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T18:43:53.883Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "GenerateAgencyDeploymentReportData.vb",
-              "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyDeploymentReportData.vb",
-              "RelativeDocumentMoniker": "ReportControllerClass\\GenerateAgencyDeploymentReportData.vb",
-              "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyDeploymentReportData.vb",
-              "RelativeToolTip": "ReportControllerClass\\GenerateAgencyDeploymentReportData.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T18:20:02.092Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 29,
               "Title": "GenerateAgencyJobReportData.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyJobReportData.vb",
               "RelativeDocumentMoniker": "ReportControllerClass\\GenerateAgencyJobReportData.vb",
@@ -302,12 +543,11 @@
               "RelativeToolTip": "ReportControllerClass\\GenerateAgencyJobReportData.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T18:19:45.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T18:19:45.19Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 30,
               "Title": "GenerateAgencyOFWReportData.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgencyOFWReportData.vb",
               "RelativeDocumentMoniker": "ReportControllerClass\\GenerateAgencyOFWReportData.vb",
@@ -315,12 +555,11 @@
               "RelativeToolTip": "ReportControllerClass\\GenerateAgencyOFWReportData.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T18:19:26.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T18:19:26.304Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 31,
               "Title": "GenerateDeploymentsGeneralReportData.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateDeploymentsGeneralReportData.vb",
               "RelativeDocumentMoniker": "ReportControllerClass\\GenerateDeploymentsGeneralReportData.vb",
@@ -328,12 +567,11 @@
               "RelativeToolTip": "ReportControllerClass\\GenerateDeploymentsGeneralReportData.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T17:54:00.742Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T17:54:00.742Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 32,
               "Title": "GenerateEmployerJobsReportData.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateEmployerJobsReportData.vb",
               "RelativeDocumentMoniker": "ReportControllerClass\\GenerateEmployerJobsReportData.vb",
@@ -341,12 +579,11 @@
               "RelativeToolTip": "ReportControllerClass\\GenerateEmployerJobsReportData.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T17:53:38.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T17:53:38.059Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 33,
               "Title": "GenerateAgenciesReportData.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateAgenciesReportData.vb",
               "RelativeDocumentMoniker": "ReportControllerClass\\GenerateAgenciesReportData.vb",
@@ -354,12 +591,11 @@
               "RelativeToolTip": "ReportControllerClass\\GenerateAgenciesReportData.vb",
               "ViewState": "AgIAACoAAAAAAAAAAAAkwDUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T17:53:11.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T17:53:11.048Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 34,
               "Title": "employers.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\employers.vb",
               "RelativeDocumentMoniker": "employers.vb",
@@ -367,12 +603,11 @@
               "RelativeToolTip": "employers.vb",
               "ViewState": "AgIAALwAAAAAAAAAAAAkwMcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T17:31:49.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T17:31:49.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 35,
               "Title": "GenerateEmployersReportData.vb",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\ReportControllerClass\\GenerateEmployersReportData.vb",
               "RelativeDocumentMoniker": "ReportControllerClass\\GenerateEmployersReportData.vb",
@@ -380,20 +615,18 @@
               "RelativeToolTip": "ReportControllerClass\\GenerateEmployersReportData.vb",
               "ViewState": "AgIAABsBAAAAAAAAAAAUwD8BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T17:30:40.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-09T17:30:40.834Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 36,
               "Title": "employers.vb [Design]",
               "DocumentMoniker": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\employers.vb",
               "RelativeDocumentMoniker": "employers.vb",
               "ToolTip": "C:\\Users\\charl\\OneDrive\\Desktop\\OFW Management Information System\\employers.vb [Design]",
               "RelativeToolTip": "employers.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-07-09T17:24:40.288Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-07-09T17:24:40.288Z"
             }
           ]
         },

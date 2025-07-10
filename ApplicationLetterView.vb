@@ -3,24 +3,20 @@
 Public Class ApplicationLetterView
     Private applicationId As Integer
 
-    Public Sub New(appId As Integer)
+    Public Sub New(Optional appId As Integer = -1)
         InitializeComponent()
         Me.applicationId = appId
     End Sub
 
     Private Sub ApplicationLetterView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If applicationId = -1 Then
-            ' No application yet — show default placeholders
-            lblOFWName.Text = "[Your Name]"
-            OFWEmail.Text = "[email@example.com]"
-            lblDateApplicationSubmitted.Text = "Not yet submitted"
-            lblAgencyName.Text = "[Agency Name]"
-            LoadLetterHTML("You have not submitted an application for this job yet.")
+            LoadPreviewLetter()
         Else
             LoadApplicationDetails()
         End If
     End Sub
 
+    ' Load letter based on application ID (normal mode)
     Private Sub LoadApplicationDetails()
         Try
             Dim query As String = "
@@ -39,19 +35,11 @@ Public Class ApplicationLetterView
             readQuery(query)
 
             If cmdRead IsNot Nothing AndAlso cmdRead.Read() Then
-                ' OFW Name
                 lblOFWName.Text = $"{cmdRead("FirstName")} {cmdRead("LastName")}"
-
-                ' Email from users
                 OFWEmail.Text = cmdRead("email").ToString()
-
-                ' Date Submitted
                 lblDateApplicationSubmitted.Text = Convert.ToDateTime(cmdRead("ApplicationDate")).ToString("MMMM dd, yyyy")
-
-                ' Agency
                 lblAgencyName.Text = cmdRead("AgencyName").ToString()
 
-                ' Letter Content from ofw table
                 Dim letterBody As String = cmdRead("LetterBody").ToString()
                 LoadLetterHTML(letterBody)
             Else
@@ -68,8 +56,42 @@ Public Class ApplicationLetterView
         End Try
     End Sub
 
+    ' Load letter directly from OFW profile (preview mode)
+    Private Sub LoadPreviewLetter()
+        Try
+            Dim query As String = "
+                SELECT 
+                    o.FirstName, o.LastName,
+                    u.email,
+                    o.LetterBody
+                FROM ofw o
+                LEFT JOIN users u ON u.reference_id = o.OFWID AND u.user_type = 'OFW'
+                WHERE o.OFWID = " & Session.CurrentReferenceID
+
+            readQuery(query)
+
+            If cmdRead IsNot Nothing AndAlso cmdRead.Read() Then
+                lblOFWName.Text = $"{cmdRead("FirstName")} {cmdRead("LastName")}"
+                OFWEmail.Text = cmdRead("email").ToString()
+                lblDateApplicationSubmitted.Text = "(Preview Mode)"
+                lblAgencyName.Text = "(Not Yet Applied)"
+                LoadLetterHTML(cmdRead("LetterBody").ToString())
+            Else
+                lblOFWName.Text = "N/A"
+                OFWEmail.Text = "N/A"
+                lblDateApplicationSubmitted.Text = "N/A"
+                lblAgencyName.Text = "N/A"
+                LoadLetterHTML("You have not written your letter yet.")
+            End If
+
+            cmdRead?.Close()
+        Catch ex As Exception
+            MsgBox("Error loading preview: " & ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
+    ' Render the letter as styled HTML inside WebBrowser control
     Private Sub LoadLetterHTML(bodyText As String)
-        ' Simple HTML template for the WebBrowser
         Dim html As String = $"
             <html>
             <head>
