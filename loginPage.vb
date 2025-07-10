@@ -12,7 +12,6 @@ Public Class loginPage
         End If
     End Sub
 
-
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
         Session.CurrentLoggedUser.userType = "Admin"
         CheckConnectionAndOpenLogin()
@@ -47,9 +46,11 @@ Public Class loginPage
             Me.Hide()
 
         Catch ex As Exception
-            MsgBox("Cannot connect to the database. Please contact the administrator." & vbCrLf & ex.Message,
+            MsgBox("Cannot connect to the database." & vbCrLf &
+                   "You may fix the configuration file (SHIFT+C to open it)." & vbCrLf &
+                   ex.Message,
                    MsgBoxStyle.Critical)
-            Application.Exit()
+            ' No Application.Exit() here — just return to allow admin to fix
         End Try
     End Sub
 
@@ -63,27 +64,24 @@ Public Class loginPage
 
         If Not File.Exists(configPath) Then
             Dim defaultConfig As String() = {
-            "Localhost=127.0.0.1    ",
-            "Root=root",
-            "Password=",
-            "DB_Name=ofw_mis"
-        }
+                "Localhost=127.0.0.1",
+                "Root=root",
+                "Password=",
+                "DB_Name=ofw_mis"
+            }
             File.WriteAllLines(configPath, defaultConfig)
             MsgBox("SQL configuration file created with default values." & vbCrLf &
-               "Please edit the file before restarting." & vbCrLf & configPath,
-               MsgBoxStyle.Information)
-            Application.Exit()
+                   "Please edit the file before proceeding." & vbCrLf & configPath,
+                   MsgBoxStyle.Information)
         Else
-            ' Validate values are not empty
+            ' Validate values
             Dim configLines = File.ReadAllLines(configPath)
             If configLines.Length < 4 OrElse configLines.Any(Function(l) l.Trim() = "" OrElse Not l.Contains("=")) Then
                 MsgBox("SQL config file is incomplete or invalid. Please fix it at:" & vbCrLf & configPath,
-                   MsgBoxStyle.Critical)
-                Application.Exit()
+                       MsgBoxStyle.Critical)
             End If
         End If
     End Sub
-
 
     Private Sub TestDatabaseConnection()
         Using testConn As New MySqlConnection(strConnection)
@@ -91,7 +89,7 @@ Public Class loginPage
         End Using
     End Sub
 
-    ' === SHIFT+C to Open Config File ===
+    ' SHIFT+C to open config in Notepad
     Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
         If keyData = (Keys.Shift Or Keys.C) Then
             Dim configPath As String = Path.Combine(Application.StartupPath, "config", "sql_config.txt")
@@ -108,5 +106,4 @@ Public Class loginPage
         End If
         Return MyBase.ProcessCmdKey(msg, keyData)
     End Function
-
 End Class

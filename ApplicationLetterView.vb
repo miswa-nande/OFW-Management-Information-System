@@ -28,7 +28,7 @@ Public Class ApplicationLetterView
                     o.FirstName, o.LastName,
                     u.email,
                     a.ApplicationDate,
-                    a.LetterBody,
+                    o.LetterBody,
                     ag.AgencyName
                 FROM application a
                 LEFT JOIN ofw o ON a.OFWID = o.OFWID
@@ -51,7 +51,7 @@ Public Class ApplicationLetterView
                 ' Agency
                 lblAgencyName.Text = cmdRead("AgencyName").ToString()
 
-                ' Letter Content
+                ' Letter Content from ofw table
                 Dim letterBody As String = cmdRead("LetterBody").ToString()
                 LoadLetterHTML(letterBody)
             Else

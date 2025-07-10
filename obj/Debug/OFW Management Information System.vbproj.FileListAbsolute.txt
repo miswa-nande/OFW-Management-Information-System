@@ -387,8 +387,6 @@ C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\zh-C
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW Management Information System.vbproj.SuggestedBindingRedirects.cache
 C:\Users\charl\OneDrive\Desktop\OFW Management Information System\obj\Debug\OFW Management Information System.exe.config
-C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\x86\SqlServerSpatial160.dll
-C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\x64\SqlServerSpatial160.dll
 C:\Users\charl\Desktop\OFWMIS\bin\Debug\OFW Management Information System.exe.config
 C:\Users\charl\Desktop\OFWMIS\bin\Debug\OFW Management Information System.exe
 C:\Users\charl\Desktop\OFWMIS\bin\Debug\OFW Management Information System.pdb
@@ -851,3 +849,46 @@ D:\ofw_mis\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
 D:\ofw_mis\bin\Debug\Microsoft.Extensions.Options.xml
 D:\ofw_mis\bin\Debug\Microsoft.Extensions.Primitives.xml
 D:\ofw_mis\bin\Debug\Newtonsoft.Json.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.barcodes.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.bouncy-castle-connector.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.commons.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.forms.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.io.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.kernel.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.layout.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.pdfa.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.pdfua.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.sign.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.styledxmlparser.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.svg.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itextsharp.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Newtonsoft.Json.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\System.ValueTuple.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.barcodes.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.bouncy-castle-connector.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.commons.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.forms.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.io.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.kernel.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.layout.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.pdfa.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.pdfua.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.sign.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.styledxmlparser.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itext.svg.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\itextsharp.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\Newtonsoft.Json.xml
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\charl\OneDrive\Desktop\OFW Management Information System\bin\Debug\x64\SqlServerSpatial160.dll

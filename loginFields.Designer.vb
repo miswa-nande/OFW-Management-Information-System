@@ -31,6 +31,7 @@ Partial Class loginFields
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnUsers = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -83,9 +84,9 @@ Partial Class loginFields
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.Transparent
-        Me.btnLogin.Location = New System.Drawing.Point(1032, 679)
+        Me.btnLogin.Location = New System.Drawing.Point(999, 679)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(66, 32)
+        Me.btnLogin.Size = New System.Drawing.Size(99, 32)
         Me.btnLogin.TabIndex = 5
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
@@ -121,11 +122,25 @@ Partial Class loginFields
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Sign Up"
         '
+        'btnUsers
+        '
+        Me.btnUsers.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUsers.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUsers.ForeColor = System.Drawing.Color.Transparent
+        Me.btnUsers.Location = New System.Drawing.Point(894, 679)
+        Me.btnUsers.Name = "btnUsers"
+        Me.btnUsers.Size = New System.Drawing.Size(99, 32)
+        Me.btnUsers.TabIndex = 8
+        Me.btnUsers.Text = "Users"
+        Me.btnUsers.UseVisualStyleBackColor = False
+        '
         'loginFields
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.btnUsers)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLogin)
@@ -153,4 +168,5 @@ Partial Class loginFields
     Friend WithEvents btnLogin As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents btnUsers As Button
 End Class
