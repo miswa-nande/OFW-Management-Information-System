@@ -59,18 +59,20 @@ Public Class addAgency
         Dim years = txtbxYearsOfOperation.Text.Trim()
         Dim govtAccred = cbxGovtAccredStat.SelectedItem.ToString()
         Dim licenseExp = dateLicenseExpDate.Value.ToString("yyyy-MM-dd")
-        Dim notes = txtbxNotes.Text.Trim().Replace("'", "''")
+        Dim notes As String = If(String.IsNullOrWhiteSpace(txtbxNotes.Text), "NULL", $"'{txtbxNotes.Text.Trim().Replace("'", "''")}'")
+
 
         ' Query (uses readQuery)
         Dim insertQuery As String = $"
-            INSERT INTO agency (
-                AgencyName, AgencyLicenseNumber, City, State, Street, Zipcode, ContactNum,
-                Email, WebsiteUrl, Specialization, YearsOfOperation,
-                GovAccreditationStat, LicenseExpDate, Notes
-            ) VALUES (
-                '{name}', '{license}', '{city}', '{state}', '{street}', '{zip}', '{contact}',
-                '{email}', '{url}', '{spec}', '{years}', '{govtAccred}', '{licenseExp}', '{notes}'
-            )"
+    INSERT INTO agency (
+        AgencyName, AgencyLicenseNumber, City, State, Street, Zipcode, ContactNum,
+        Email, WebsiteUrl, Specialization, YearsOfOperation,
+        GovAccreditationStat, LicenseExpDate, Notes
+    ) VALUES (
+        '{name}', '{license}', '{city}', '{state}', '{street}', '{zip}', '{contact}',
+        '{email}', '{url}', '{spec}', '{years}', '{govtAccred}', '{licenseExp}', {notes}
+    )"
+
 
         Try
             readQuery(insertQuery)
