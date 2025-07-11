@@ -22,6 +22,7 @@ Partial Class joboffers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(joboffers))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.btnDeployment = New System.Windows.Forms.Button()
@@ -449,6 +450,7 @@ Partial Class joboffers
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "joboffers"
         Me.Text = "OFW | Job Offers"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

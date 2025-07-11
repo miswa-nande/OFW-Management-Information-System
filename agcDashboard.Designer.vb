@@ -28,6 +28,7 @@ Partial Class agcDashboard
         Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(agcDashboard))
         Me.EditProfile = New System.Windows.Forms.Button()
         Me.lblNumEmployers = New System.Windows.Forms.Label()
         Me.dgvPartnerEmployers = New System.Windows.Forms.DataGridView()
@@ -905,6 +906,7 @@ Partial Class agcDashboard
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.LastMonthBTN)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "agcDashboard"
         Me.Text = "AGENCY | Dashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

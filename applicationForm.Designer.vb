@@ -22,6 +22,7 @@ Partial Class applicationForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(applicationForm))
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.txtbxVisaType = New System.Windows.Forms.TextBox()
         Me.txtbxCountry = New System.Windows.Forms.TextBox()
@@ -701,6 +702,7 @@ Partial Class applicationForm
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "applicationForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "applicationForm"

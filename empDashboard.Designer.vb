@@ -28,6 +28,7 @@ Partial Class empDashboard
         Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(empDashboard))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnAgencies = New System.Windows.Forms.Button()
@@ -58,6 +59,9 @@ Partial Class empDashboard
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.lblNumAgencies = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PartneredAgencies = New System.Windows.Forms.DataGridView()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.ChartTopJobApplications = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -79,9 +83,6 @@ Partial Class empDashboard
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.Logout = New System.Windows.Forms.Button()
         Me.EditProfile = New System.Windows.Forms.Button()
-        Me.PartneredAgencies = New System.Windows.Forms.DataGridView()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,12 +97,12 @@ Partial Class empDashboard
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PartneredAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ChartTopJobApplications, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PartneredAgencies, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -454,6 +455,36 @@ Partial Class empDashboard
         Me.Panel5.Size = New System.Drawing.Size(322, 934)
         Me.Panel5.TabIndex = 59
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
+        Me.PictureBox3.Location = New System.Drawing.Point(15, 339)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(80, 76)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 13
+        Me.PictureBox3.TabStop = False
+        '
+        'PartneredAgencies
+        '
+        Me.PartneredAgencies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.PartneredAgencies.Location = New System.Drawing.Point(12, 427)
+        Me.PartneredAgencies.Name = "PartneredAgencies"
+        Me.PartneredAgencies.Size = New System.Drawing.Size(298, 490)
+        Me.PartneredAgencies.TabIndex = 17
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label6.Location = New System.Drawing.Point(94, 365)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(213, 25)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Partnered Agencies"
+        '
         'ChartTopJobApplications
         '
         Me.ChartTopJobApplications.BackColor = System.Drawing.SystemColors.GradientActiveCaption
@@ -694,36 +725,6 @@ Partial Class empDashboard
         Me.EditProfile.Text = "Edit Profile"
         Me.EditProfile.UseVisualStyleBackColor = True
         '
-        'PartneredAgencies
-        '
-        Me.PartneredAgencies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PartneredAgencies.Location = New System.Drawing.Point(12, 427)
-        Me.PartneredAgencies.Name = "PartneredAgencies"
-        Me.PartneredAgencies.Size = New System.Drawing.Size(298, 490)
-        Me.PartneredAgencies.TabIndex = 17
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.OFW_Management_Information_System.My.Resources.Resources.employer_ic
-        Me.PictureBox3.Location = New System.Drawing.Point(15, 339)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(80, 76)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 13
-        Me.PictureBox3.TabStop = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label6.Location = New System.Drawing.Point(94, 365)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(213, 25)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Partnered Agencies"
-        '
         'empDashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -756,6 +757,7 @@ Partial Class empDashboard
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel5)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "empDashboard"
         Me.Text = " EMPLOYER | Dashboard"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -777,13 +779,13 @@ Partial Class empDashboard
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PartneredAgencies, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ChartTopJobApplications, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PartneredAgencies, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

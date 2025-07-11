@@ -22,6 +22,7 @@ Partial Class empJobs
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(empJobs))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnAgencies = New System.Windows.Forms.Button()
@@ -580,6 +581,7 @@ Partial Class empJobs
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "empJobs"
         Me.Text = "EMPLOYER | Jobs"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

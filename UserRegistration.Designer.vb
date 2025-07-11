@@ -160,6 +160,7 @@ Partial Class UserRegistration
         Me.Controls.Add(Me.CreateAccBTN)
         Me.Controls.Add(Me.TxtbxUserName)
         Me.ForeColor = System.Drawing.Color.Black
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "UserRegistration"
         Me.Text = "User Registration"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

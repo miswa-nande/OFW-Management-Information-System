@@ -22,6 +22,7 @@ Partial Class editEmployer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(editEmployer))
         Me.txtbxCountry = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txtbxState = New System.Windows.Forms.TextBox()
@@ -362,6 +363,7 @@ Partial Class editEmployer
         Me.Controls.Add(Me.PictureBox1)
         Me.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Name = "editEmployer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -105,6 +105,7 @@ Partial Class loginPage
         Me.Controls.Add(Me.btnAdmin)
         Me.Controls.Add(Me.logo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "loginPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OFW Management Information System | LOGIN"

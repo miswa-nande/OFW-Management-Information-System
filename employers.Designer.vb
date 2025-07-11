@@ -22,6 +22,7 @@ Partial Class employers
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(employers))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnJobPlacements = New System.Windows.Forms.Button()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
@@ -666,6 +667,7 @@ Partial Class employers
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Name = "employers"
         Me.Text = "ADMIN | Employers"

@@ -22,6 +22,7 @@ Partial Class registeredAgency
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(registeredAgency))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvAvailableAgency = New System.Windows.Forms.DataGridView()
@@ -111,6 +112,7 @@ Partial Class registeredAgency
         Me.Controls.Add(Me.Label1)
         Me.ForeColor = System.Drawing.Color.Snow
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "registeredAgency"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "registeredAgency"

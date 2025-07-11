@@ -24,6 +24,7 @@ Partial Class agcOfws
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(agcOfws))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.btnEmployers = New System.Windows.Forms.Button()
@@ -658,6 +659,7 @@ Partial Class agcOfws
         Me.Controls.Add(Me.txtbxOecNum)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txtbxLName)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "agcOfws"
         Me.Text = "AGENCY | OFWs"
         Me.Panel1.ResumeLayout(False)

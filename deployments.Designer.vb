@@ -22,6 +22,7 @@ Partial Class deployments
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(deployments))
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
@@ -596,6 +597,7 @@ Partial Class deployments
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(8)
         Me.Name = "deployments"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

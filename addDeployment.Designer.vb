@@ -22,6 +22,7 @@ Partial Class addDeployment
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(addDeployment))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtbxSalary = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -417,6 +418,7 @@ Partial Class addDeployment
         Me.Controls.Add(Me.PictureBox1)
         Me.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "addDeployment"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

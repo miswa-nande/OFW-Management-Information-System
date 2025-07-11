@@ -150,6 +150,7 @@ Partial Class loginFields
         Me.Controls.Add(Me.txtbxId)
         Me.Controls.Add(Me.PictureBox1)
         Me.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "loginFields"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OFW Management Information System | LOGIN"

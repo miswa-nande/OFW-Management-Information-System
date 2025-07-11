@@ -22,6 +22,7 @@ Partial Class agcDeployment
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(agcDeployment))
         Me.btnEmployers = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.OFWDeploymentTarcking = New System.Windows.Forms.Button()
@@ -641,6 +642,7 @@ Partial Class agcDeployment
         Me.Controls.Add(Me.txtbxCountryOfDep)
         Me.Controls.Add(Me.txtbxContractNum)
         Me.Controls.Add(Me.Label9)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "agcDeployment"
         Me.Text = "AGENCY | Deployment"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

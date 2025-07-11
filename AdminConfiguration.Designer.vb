@@ -22,6 +22,7 @@ Partial Class AdminConfiguration
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminConfiguration))
         Me.SideBarPanel = New System.Windows.Forms.Panel()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.btnConfig = New System.Windows.Forms.Button()
@@ -635,6 +636,7 @@ Partial Class AdminConfiguration
         Me.Controls.Add(Me.SideBarPanel)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label15)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AdminConfiguration"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin Configuration"

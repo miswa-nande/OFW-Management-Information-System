@@ -22,6 +22,7 @@ Partial Class applications
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(applications))
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtbxJobTitle = New System.Windows.Forms.TextBox()
         Me.cbxContractStat = New System.Windows.Forms.ComboBox()
@@ -378,6 +379,7 @@ Partial Class applications
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "applications"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OFW | Applications"

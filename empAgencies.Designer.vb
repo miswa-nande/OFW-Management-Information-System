@@ -22,6 +22,7 @@ Partial Class empAgencies
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(empAgencies))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -510,6 +511,7 @@ Partial Class empAgencies
         Me.Controls.Add(Me.cbxGovtAccredStat)
         Me.Controls.Add(Me.txtbxNumDepWorkers)
         Me.Controls.Add(Me.Label8)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "empAgencies"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EMPLOYER | Agencies"

@@ -22,6 +22,7 @@ Partial Class agencies
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(agencies))
         Me.btnConfig = New System.Windows.Forms.Button()
         Me.btnDeployments = New System.Windows.Forms.Button()
         Me.btnEmployers = New System.Windows.Forms.Button()
@@ -627,6 +628,7 @@ Partial Class agencies
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox5)
         Me.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Name = "agencies"
         Me.Text = "ADMIN | Agencies"
