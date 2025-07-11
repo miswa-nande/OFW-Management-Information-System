@@ -50,7 +50,6 @@ Public Class loginPage
                    "You may fix the configuration file (SHIFT+C to open it)." & vbCrLf &
                    ex.Message,
                    MsgBoxStyle.Critical)
-            ' No Application.Exit() here — just return to allow admin to fix
         End Try
     End Sub
 

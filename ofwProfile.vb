@@ -10,11 +10,14 @@ Public Class ofwProfile
     End Sub
 
     Public Sub LoadOFWProfile()
-        Dim query As String = $"SELECT * FROM ofw WHERE OFWId = {Session.CurrentReferenceID}"
+        Dim query As String = $"
+        SELECT o.*, a.AgencyName 
+        FROM ofw o
+        LEFT JOIN agency a ON o.AgencyID = a.AgencyID
+        WHERE o.OFWId = {Session.CurrentReferenceID}"
         readQuery(query)
 
         If cmdRead IsNot Nothing AndAlso cmdRead.Read() Then
-            ' Load text labels
             Label10.Text = cmdRead("OFWId").ToString()
             lblFullName.Text = $"{cmdRead("FirstName")} {cmdRead("LastName")}"
             lblDOB.Text = Convert.ToDateTime(cmdRead("DOB")).ToString("MMMM dd, yyyy")
@@ -25,26 +28,29 @@ Public Class ofwProfile
             lblPassportNum.Text = cmdRead("PassportNum").ToString()
             lblSkills.Text = cmdRead("Skills").ToString()
             lblVisaNum.Text = cmdRead("VISANum").ToString()
-            lblRegisteredAgency.Text = cmdRead("EmploymentStatus").ToString()
             lblOemNum.Text = cmdRead("OECNum").ToString()
 
-            ' Combine address fields
+            ' ✅ Show agency name (or fallback)
+            lblRegisteredAgency.Text = If(Not IsDBNull(cmdRead("AgencyName")), cmdRead("AgencyName").ToString(), "Unassigned")
+
+            ' Combine address
             Dim fullAddress As String = $"{cmdRead("Street")}, {cmdRead("Barangay")}, {cmdRead("City")}, {cmdRead("Province")} {cmdRead("Zipcode")}"
             lblFullAddress.Text = fullAddress
 
-            ' Load image from BLOB
+            ' Load image
             If Not IsDBNull(cmdRead("PictureFace")) Then
                 Dim imageData As Byte() = CType(cmdRead("PictureFace"), Byte())
                 Using ms As New MemoryStream(imageData)
                     picProfile.Image = Image.FromStream(ms)
                 End Using
             Else
-                picProfile.Image = Nothing ' or load a default image
+                picProfile.Image = Nothing
             End If
         End If
 
         cmdRead?.Close()
     End Sub
+
 
     ' Navigation Buttons
     Private Sub btnJobOffers_Click(sender As Object, e As EventArgs) Handles btnJobOffers.Click

@@ -41,14 +41,13 @@ Public Class editOfw
             Case "Admin"
                 Label1.Text = "Edit OFW Profile"
                 btnSave.Visible = True
-                btnCancel.Text = "Close" ' or "Cancel" depending on your preference
+                btnCancel.Text = "Close"
 
             Case Else
                 MessageBox.Show("Access denied.", "Unauthorized", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Me.Close()
                 Return
         End Select
-
 
         If cbxSex.Items.Count = 0 Then cbxSex.Items.AddRange({"Male", "Female", "Other"})
         If cbxCivStat.Items.Count = 0 Then cbxCivStat.Items.AddRange({"Single", "Married", "Widowed", "Separated"})
@@ -113,93 +112,91 @@ Public Class editOfw
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         If Not IsNumeric(txtbxZipcode.Text.Trim()) OrElse
-       Not IsNumeric(txtbxContactNum.Text.Trim()) OrElse
-       Not IsNumeric(txtbxEContactNum.Text.Trim()) Then
+           Not IsNumeric(txtbxContactNum.Text.Trim()) OrElse
+           Not IsNumeric(txtbxEContactNum.Text.Trim()) Then
             MsgBox("Zip code and contact numbers must be numeric.", MsgBoxStyle.Exclamation)
             Return
         End If
 
-        ' Validation for required fields...
         If String.IsNullOrWhiteSpace(txtbxFName.Text) OrElse
-       cbxSex.SelectedItem Is Nothing OrElse
-       cbxCivStat.SelectedItem Is Nothing OrElse
-       cbxEducLevel.SelectedItem Is Nothing Then
+           cbxSex.SelectedItem Is Nothing OrElse
+           cbxCivStat.SelectedItem Is Nothing OrElse
+           cbxEducLevel.SelectedItem Is Nothing Then
             MsgBox("Please complete all required fields.", MsgBoxStyle.Exclamation)
             Return
         End If
 
-        ' Escape single quotes for safe string insertion
         Dim EscapeStr As Func(Of String, String) = Function(s) s.Replace("'", "''")
 
-        Dim fName As String = EscapeStr(txtbxFName.Text.Trim())
-        Dim mName As String = EscapeStr(txtbxMName.Text.Trim())
-        Dim lName As String = EscapeStr(txtbxLName.Text.Trim())
-        Dim dob As String = dateDOB.Value.ToString("yyyy-MM-dd")
-        Dim sex As String = EscapeStr(cbxSex.SelectedItem.ToString())
-        Dim civilStat As String = EscapeStr(cbxCivStat.SelectedItem.ToString())
-        Dim street As String = EscapeStr(txtbxStreet.Text.Trim())
-        Dim brgy As String = EscapeStr(txtbxBrgy.Text.Trim())
-        Dim city As String = EscapeStr(txtbxCity.Text.Trim())
-        Dim prov As String = EscapeStr(txtbxProv.Text.Trim())
-        Dim zip As String = txtbxZipcode.Text.Trim()
-        Dim contact As String = txtbxContactNum.Text.Trim()
-        Dim eContact As String = txtbxEContactNum.Text.Trim()
-        Dim passport As String = EscapeStr(txtbxPassport.Text.Trim())
-        Dim educ As String = EscapeStr(cbxEducLevel.SelectedItem.ToString())
-        Dim skills As String = EscapeStr(txtbxSkills.Text.Trim())
-        Dim visa As String = EscapeStr(txtbxVisa.Text.Trim())
-        Dim oec As String = EscapeStr(txtbxOec.Text.Trim())
-
-        ' Image is skipped for now (unless you’re base64 encoding or storing via BLOB)
+        Dim fName = EscapeStr(txtbxFName.Text.Trim())
+        Dim mName = EscapeStr(txtbxMName.Text.Trim())
+        Dim lName = EscapeStr(txtbxLName.Text.Trim())
+        Dim dob = dateDOB.Value.ToString("yyyy-MM-dd")
+        Dim sex = EscapeStr(cbxSex.SelectedItem.ToString())
+        Dim civilStat = EscapeStr(cbxCivStat.SelectedItem.ToString())
+        Dim street = EscapeStr(txtbxStreet.Text.Trim())
+        Dim brgy = EscapeStr(txtbxBrgy.Text.Trim())
+        Dim city = EscapeStr(txtbxCity.Text.Trim())
+        Dim prov = EscapeStr(txtbxProv.Text.Trim())
+        Dim zip = txtbxZipcode.Text.Trim()
+        Dim contact = txtbxContactNum.Text.Trim()
+        Dim eContact = txtbxEContactNum.Text.Trim()
+        Dim passport = EscapeStr(txtbxPassport.Text.Trim())
+        Dim educ = EscapeStr(cbxEducLevel.SelectedItem.ToString())
+        Dim skills = EscapeStr(txtbxSkills.Text.Trim())
+        Dim visa = EscapeStr(txtbxVisa.Text.Trim())
+        Dim oec = EscapeStr(txtbxOec.Text.Trim())
 
         Try
             openConn(db_name)
 
-            Dim updateQuery As String = $"
-            UPDATE ofw SET 
-                FirstName = '{fName}', 
-                MiddleName = '{mName}', 
-                LastName = '{lName}', 
-                DOB = '{dob}', 
-                Sex = '{sex}', 
-                CivilStatus = '{civilStat}', 
-                Street = '{street}', 
-                Barangay = '{brgy}', 
-                City = '{city}', 
-                Province = '{prov}', 
-                Zipcode = '{zip}', 
-                ContactNum = '{contact}', 
-                EmergencyContactNum = '{eContact}', 
-                PassportNum = '{passport}', 
-                EducationalLevel = '{educ}', 
-                Skills = '{skills}', 
-                VISANum = '{visa}', 
-                OECNum = '{oec}'
-            WHERE OFWId = {loadedOFWId}
-        "
+            If Not String.IsNullOrEmpty(selectedImagePath) Then
+                currentImageBytes = File.ReadAllBytes(selectedImagePath)
+            End If
 
-            readQuery(updateQuery)
+            Dim query As String = $"
+                UPDATE ofw SET 
+                    FirstName = @fName, MiddleName = @mName, LastName = @lName, 
+                    DOB = @dob, Sex = @sex, CivilStatus = @civil, Street = @street, 
+                    Barangay = @brgy, City = @city, Province = @prov, Zipcode = @zip, 
+                    ContactNum = @contact, EmergencyContactNum = @eContact, 
+                    PassportNum = @passport, EducationalLevel = @educ, Skills = @skills, 
+                    VISANum = @visa, OECNum = @oec, PictureFace = @img
+                WHERE OFWId = {loadedOFWId}"
+
+            Using cmd As New MySqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@fName", fName)
+                cmd.Parameters.AddWithValue("@mName", mName)
+                cmd.Parameters.AddWithValue("@lName", lName)
+                cmd.Parameters.AddWithValue("@dob", dob)
+                cmd.Parameters.AddWithValue("@sex", sex)
+                cmd.Parameters.AddWithValue("@civil", civilStat)
+                cmd.Parameters.AddWithValue("@street", street)
+                cmd.Parameters.AddWithValue("@brgy", brgy)
+                cmd.Parameters.AddWithValue("@city", city)
+                cmd.Parameters.AddWithValue("@prov", prov)
+                cmd.Parameters.AddWithValue("@zip", zip)
+                cmd.Parameters.AddWithValue("@contact", contact)
+                cmd.Parameters.AddWithValue("@eContact", eContact)
+                cmd.Parameters.AddWithValue("@passport", passport)
+                cmd.Parameters.AddWithValue("@educ", educ)
+                cmd.Parameters.AddWithValue("@skills", skills)
+                cmd.Parameters.AddWithValue("@visa", visa)
+                cmd.Parameters.AddWithValue("@oec", oec)
+                cmd.Parameters.AddWithValue("@img", currentImageBytes)
+                cmd.ExecuteNonQuery()
+            End Using
 
             MsgBox("Profile updated successfully!", MsgBoxStyle.Information)
 
-            If ofwProfile.Instance IsNot Nothing AndAlso Not ofwProfile.Instance.IsDisposed Then
-                ofwProfile.Instance.BringToFront()
-                ofwProfile.Instance.LoadOFWProfile()
-            Else
-                Dim profileForm As New ofwProfile()
-                profileForm.Show()
-            End If
-
+            Me.DialogResult = DialogResult.OK
             Me.Close()
         Catch ex As Exception
             MsgBox("Error while updating: " & ex.Message, MsgBoxStyle.Critical)
         Finally
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
-        Me.DialogResult = DialogResult.OK
-        Me.Close()
     End Sub
-
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.DialogResult = DialogResult.Cancel
