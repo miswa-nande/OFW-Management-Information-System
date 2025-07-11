@@ -2,6 +2,7 @@
 
 Public Class empJobs
     Private Sub empJobs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PopulateComboBoxes()
         ClearJobFilters()          ' Clear filters first
         LoadEmployerJobsSummary() ' Then apply filters (which are now empty)
     End Sub
@@ -209,6 +210,34 @@ Public Class empJobs
         Dim form As New empOfws()
         form.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub PopulateComboBoxes()
+        ' === Populate Country ComboBox ===
+        Try
+            Dim countryQuery As String = "SELECT DISTINCT CountryOfEmployment FROM jobplacement WHERE CountryOfEmployment IS NOT NULL ORDER BY CountryOfEmployment"
+            readQuery(countryQuery)
+            cbxCountry.Items.Clear()
+            While cmdRead.Read()
+                cbxCountry.Items.Add(cmdRead("CountryOfEmployment").ToString())
+            End While
+            cmdRead.Close()
+        Catch ex As Exception
+            MsgBox("Error loading countries: " & ex.Message, MsgBoxStyle.Critical)
+        End Try
+
+        ' === Populate Visa Type ComboBox ===
+        Try
+            Dim visaQuery As String = "SELECT DISTINCT VisaType FROM jobplacement WHERE VisaType IS NOT NULL ORDER BY VisaType"
+            readQuery(visaQuery)
+            cbxVisaType.Items.Clear()
+            While cmdRead.Read()
+                cbxVisaType.Items.Add(cmdRead("VisaType").ToString())
+            End While
+            cmdRead.Close()
+        Catch ex As Exception
+            MsgBox("Error loading visa types: " & ex.Message, MsgBoxStyle.Critical)
+        End Try
     End Sub
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click

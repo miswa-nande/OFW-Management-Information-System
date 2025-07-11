@@ -198,7 +198,7 @@ Partial Class empAgencies
         '
         Me.dateLicExp.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dateLicExp.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dateLicExp.Location = New System.Drawing.Point(1511, 692)
+        Me.dateLicExp.Location = New System.Drawing.Point(1511, 643)
         Me.dateLicExp.Name = "dateLicExp"
         Me.dateLicExp.Size = New System.Drawing.Size(165, 27)
         Me.dateLicExp.TabIndex = 114
@@ -230,7 +230,7 @@ Partial Class empAgencies
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(1507, 668)
+        Me.Label11.Location = New System.Drawing.Point(1507, 619)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(191, 21)
         Me.Label11.TabIndex = 103

@@ -55,17 +55,10 @@ Public Class agcDeployment
         End While
         cmdRead.Close()
 
-        cbxReasonforReturn.Items.Clear()
-        readQuery($"SELECT DISTINCT ReasonForReturn FROM deploymentrecord WHERE AgencyID = {agencyId} AND ReasonForReturn IS NOT NULL")
-        While cmdRead.Read()
-            cbxReasonforReturn.Items.Add(cmdRead("ReasonForReturn").ToString())
-        End While
-        cmdRead.Close()
 
         cbxSalary.SelectedIndex = -1
         cbxDeploymentStatus.SelectedIndex = -1
         cbxRepatriationStat.SelectedIndex = -1
-        cbxReasonforReturn.SelectedIndex = -1
     End Sub
 
     Private Sub ApplyDeploymentFilters()
@@ -78,7 +71,6 @@ Public Class agcDeployment
         cbxSalary.SelectedIndex = -1 AndAlso
         cbxDeploymentStatus.SelectedIndex = -1 AndAlso
         cbxRepatriationStat.SelectedIndex = -1 AndAlso
-        cbxReasonforReturn.SelectedIndex = -1 AndAlso
         Not dateContractStart.Checked AndAlso
         Not dateContractEnd.Checked
 
@@ -120,9 +112,6 @@ Public Class agcDeployment
         If cbxRepatriationStat.SelectedIndex <> -1 Then
             query &= " AND dr.RepatriationStatus = '" & cbxRepatriationStat.SelectedItem.ToString() & "'"
         End If
-        If cbxReasonforReturn.SelectedIndex <> -1 Then
-            query &= " AND dr.ReasonForReturn = '" & cbxReasonforReturn.SelectedItem.ToString() & "'"
-        End If
         If dateContractStart.Checked Then
             query &= " AND dr.ContractStartDate >= '" & dateContractStart.Value.ToString("yyyy-MM-dd") & "'"
         End If
@@ -162,7 +151,7 @@ Public Class agcDeployment
     Private Sub cbxRepatriationStat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxRepatriationStat.SelectedIndexChanged
         ApplyDeploymentFilters()
     End Sub
-    Private Sub cbxReasonforReturn_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxReasonforReturn.SelectedIndexChanged
+    Private Sub cbxReasonforReturn_SelectedIndexChanged(sender As Object, e As EventArgs)
         ApplyDeploymentFilters()
     End Sub
     Private Sub dateContractStart_ValueChanged(sender As Object, e As EventArgs) Handles dateContractStart.ValueChanged
@@ -257,7 +246,6 @@ Public Class agcDeployment
         cbxSalary.SelectedIndex = -1
         cbxDeploymentStatus.SelectedIndex = -1
         cbxRepatriationStat.SelectedIndex = -1
-        cbxReasonforReturn.SelectedIndex = -1
 
         dateContractStart.Checked = False
         dateContractStart.CustomFormat = " "

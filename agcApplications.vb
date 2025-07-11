@@ -9,6 +9,9 @@ Public Class agcApplications
     End Sub
 
     Private Sub agcApplications_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Initialize status options
+        cbxApplicationStatus.Items.AddRange({"Pending", "Accepted", "Rejected", "Deployed"})
+
         ' Initialize the DateTimePicker to be cleared
         dateDateSubmitted.Format = DateTimePickerFormat.Custom
         dateDateSubmitted.CustomFormat = " "
@@ -17,6 +20,7 @@ Public Class agcApplications
         LoadAgencyApplications()
         FormatDGVUniformly(DataGridView1)
     End Sub
+
 
     Private Sub LoadAgencyApplications()
         Dim agencyId As Integer = Session.CurrentReferenceID

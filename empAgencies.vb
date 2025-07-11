@@ -3,10 +3,28 @@ Imports MySql.Data.MySqlClient
 
 Public Class empAgencies
     Private Sub empAgencies_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbxGovtAccredStat.Items.AddRange(New String() {"Active", "Inactive"})
-        cbxGovtAccredStat.SelectedIndex = -1
+        PopulateGovtAccredStatCombo()
         LoadAgencyList()
     End Sub
+    Private Sub PopulateGovtAccredStatCombo()
+        Try
+            Dim query As String = "SELECT DISTINCT GovAccreditationStat FROM agency WHERE GovAccreditationStat IS NOT NULL ORDER BY GovAccreditationStat"
+            readQuery(query)
+
+            cbxGovtAccredStat.Items.Clear()
+            cbxGovtAccredStat.Items.Add("All") ' Optional: for no filtering
+
+            While cmdRead.Read()
+                cbxGovtAccredStat.Items.Add(cmdRead("GovAccreditationStat").ToString())
+            End While
+            cmdRead.Close()
+
+            cbxGovtAccredStat.SelectedIndex = -1 ' Start unselected
+        Catch ex As Exception
+            MsgBox("Error loading accreditation statuses: " & ex.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
 
     Private Sub LoadAgencyList()
         ApplyAgencyFilters()
@@ -45,12 +63,8 @@ Public Class empAgencies
         If txtbxContact.Text.Trim() <> "" Then
             query &= " AND a.ContactNum LIKE '%" & txtbxContact.Text.Trim().Replace("'", "''") & "%'"
         End If
-        If cbxGovtAccredStat.SelectedIndex <> -1 Then
-            If cbxGovtAccredStat.Text = "Active" Then
-                query &= " AND a.GovAccreditationStat = 'Accredited'"
-            ElseIf cbxGovtAccredStat.Text = "Inactive" Then
-                query &= " AND a.GovAccreditationStat <> 'Accredited'"
-            End If
+        If cbxGovtAccredStat.SelectedIndex <> -1 AndAlso cbxGovtAccredStat.Text <> "All" Then
+            query &= " AND a.GovAccreditationStat = '" & cbxGovtAccredStat.Text.Replace("'", "''") & "'"
         End If
         If txtbxSpecialization.Text.Trim() <> "" Then
             query &= " AND a.Specialization LIKE '%" & txtbxSpecialization.Text.Trim().Replace("'", "''") & "%'"

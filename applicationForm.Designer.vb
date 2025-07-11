@@ -81,6 +81,7 @@ Partial Class applicationForm
         '
         'TextBox5
         '
+        Me.TextBox5.Enabled = False
         Me.TextBox5.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox5.Location = New System.Drawing.Point(38, 533)
         Me.TextBox5.Name = "TextBox5"
@@ -90,6 +91,7 @@ Partial Class applicationForm
         '
         'txtbxVisaType
         '
+        Me.txtbxVisaType.Enabled = False
         Me.txtbxVisaType.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxVisaType.Location = New System.Drawing.Point(504, 464)
         Me.txtbxVisaType.Name = "txtbxVisaType"
@@ -99,6 +101,7 @@ Partial Class applicationForm
         '
         'txtbxCountry
         '
+        Me.txtbxCountry.Enabled = False
         Me.txtbxCountry.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxCountry.Location = New System.Drawing.Point(37, 374)
         Me.txtbxCountry.Name = "txtbxCountry"
@@ -108,6 +111,7 @@ Partial Class applicationForm
         '
         'txtbxContractDuration
         '
+        Me.txtbxContractDuration.Enabled = False
         Me.txtbxContractDuration.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxContractDuration.Location = New System.Drawing.Point(504, 374)
         Me.txtbxContractDuration.Name = "txtbxContractDuration"
@@ -128,6 +132,7 @@ Partial Class applicationForm
         '
         'txtbxConditions
         '
+        Me.txtbxConditions.Enabled = False
         Me.txtbxConditions.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxConditions.Location = New System.Drawing.Point(37, 593)
         Me.txtbxConditions.Multiline = True
@@ -160,6 +165,7 @@ Partial Class applicationForm
         '
         'txtbxJobType
         '
+        Me.txtbxJobType.Enabled = False
         Me.txtbxJobType.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxJobType.Location = New System.Drawing.Point(271, 464)
         Me.txtbxJobType.Name = "txtbxJobType"
@@ -180,6 +186,7 @@ Partial Class applicationForm
         '
         'txtbxReqSkill
         '
+        Me.txtbxReqSkill.Enabled = False
         Me.txtbxReqSkill.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxReqSkill.Location = New System.Drawing.Point(38, 464)
         Me.txtbxReqSkill.Name = "txtbxReqSkill"
@@ -200,6 +207,7 @@ Partial Class applicationForm
         '
         'txtbxBenefits
         '
+        Me.txtbxBenefits.Enabled = False
         Me.txtbxBenefits.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxBenefits.Location = New System.Drawing.Point(37, 701)
         Me.txtbxBenefits.Multiline = True
@@ -243,6 +251,7 @@ Partial Class applicationForm
         '
         'txtbxSalaryRange
         '
+        Me.txtbxSalaryRange.Enabled = False
         Me.txtbxSalaryRange.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxSalaryRange.Location = New System.Drawing.Point(271, 374)
         Me.txtbxSalaryRange.Name = "txtbxSalaryRange"
@@ -263,6 +272,7 @@ Partial Class applicationForm
         '
         'txtbxJobTitle
         '
+        Me.txtbxJobTitle.Enabled = False
         Me.txtbxJobTitle.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxJobTitle.Location = New System.Drawing.Point(36, 174)
         Me.txtbxJobTitle.Name = "txtbxJobTitle"
@@ -307,6 +317,7 @@ Partial Class applicationForm
         '
         'txtbxJobDescription
         '
+        Me.txtbxJobDescription.Enabled = False
         Me.txtbxJobDescription.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxJobDescription.Location = New System.Drawing.Point(37, 235)
         Me.txtbxJobDescription.Multiline = True

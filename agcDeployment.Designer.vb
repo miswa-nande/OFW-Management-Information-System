@@ -39,8 +39,6 @@ Partial Class agcDeployment
         Me.logo = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtbxJobTitle = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.cbxReasonforReturn = New System.Windows.Forms.ComboBox()
         Me.dateContractEnd = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cbxDeploymentStatus = New System.Windows.Forms.ComboBox()
@@ -300,26 +298,6 @@ Partial Class agcDeployment
         Me.txtbxJobTitle.Name = "txtbxJobTitle"
         Me.txtbxJobTitle.Size = New System.Drawing.Size(194, 27)
         Me.txtbxJobTitle.TabIndex = 180
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(1689, 575)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(147, 21)
-        Me.Label6.TabIndex = 179
-        Me.Label6.Text = "Reason for Return"
-        '
-        'cbxReasonforReturn
-        '
-        Me.cbxReasonforReturn.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxReasonforReturn.FormattingEnabled = True
-        Me.cbxReasonforReturn.Location = New System.Drawing.Point(1693, 601)
-        Me.cbxReasonforReturn.Name = "cbxReasonforReturn"
-        Me.cbxReasonforReturn.Size = New System.Drawing.Size(165, 29)
-        Me.cbxReasonforReturn.TabIndex = 178
         '
         'dateContractEnd
         '
@@ -643,9 +621,7 @@ Partial Class agcDeployment
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtbxJobTitle)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.cbxReasonforReturn)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.dateContractEnd)
         Me.Controls.Add(Me.Label2)
@@ -702,8 +678,6 @@ Partial Class agcDeployment
     Friend WithEvents btnDashboard As Button
     Friend WithEvents Label11 As Label
     Friend WithEvents txtbxJobTitle As TextBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents cbxReasonforReturn As ComboBox
     Friend WithEvents dateContractEnd As DateTimePicker
     Friend WithEvents Label5 As Label
     Friend WithEvents cbxDeploymentStatus As ComboBox
